@@ -10,7 +10,7 @@ import React from "react";
 
 function PythonIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <path
         d="M11.91 2c-5.08 0-4.75 2.2-4.75 2.2l.01 2.28h4.82v.69H5.21S2 6.79 2 11.93c0 5.14 2.8 4.96 2.8 4.96h1.67v-2.34s-.09-2.8 2.76-2.8h4.75s2.68.04 2.68-2.61V4.68S16.99 2 11.91 2zm-2.6 1.48a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z"
         fill="#3776AB"
@@ -25,7 +25,7 @@ function PythonIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function JavaIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       {/* Steam lines */}
       <path
         d="M8.5 7c.6-1.2 1.6-2 1.5-3.2-.4.6-.6 1.4 0 2 .4.4.9.8 0 1.6M12 6.2c.8-1.2 2-2 1.8-3.2-.4.6-.6 1.4 0 2 .5.4 1 .8 0 1.6M15 7c.6-1.2 1.6-2 1.5-3.2-.4.6-.6 1.4 0 2 .4.4.9.8 0 1.6"
@@ -58,7 +58,7 @@ function JavaIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function CIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <path d="M12 2.5 3 7.7v8.6l9 5.2 9-5.2V7.7L12 2.5z" fill="#00599C" />
       <path
         d="M12 7c-2.8 0-4.5 1.8-4.5 5s1.7 5 4.5 5c1.8 0 3.1-.7 3.8-1.5l-1.4-1.3c-.6.6-1.4 1-2.4 1-1.6 0-2.4-1.2-2.4-3.2s.8-3.2 2.4-3.2c1 0 1.8.4 2.4 1l1.4-1.3C15.1 7.7 13.8 7 12 7z"
@@ -70,7 +70,7 @@ function CIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function DsaIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       {/* Graph branches */}
       <path
         d="M12 7.5v3M12 10.5 7.5 15M12 10.5l4.5 4.5"
@@ -93,7 +93,7 @@ function DsaIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function GitIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <path
         d="M21.7 10.6 13.4 2.3c-.8-.8-2.1-.8-2.9 0L8.4 4.4l3.7 3.7c.6-.2 1.3-.1 1.8.4.5.5.7 1.2.4 1.8l3.5 3.5c.6-.2 1.3-.1 1.8.4.8.8.8 2.1 0 2.9s-2.1.8-2.9 0c-.6-.6-.7-1.4-.4-2.1L13 11.5v4.9c.2.1.4.3.6.5.8.8.8 2.1 0 2.9s-2.1.8-2.9 0-2.1-.8 0-2.9c.2-.2.4-.4.6-.5V11c-.4-.2-.8-.6-1-.9L6.5 6.3 2.3 10.5c-.8.8-.8 2.1 0 2.9l8.3 8.3c.8.8 2.1.8 2.9 0l8.2-8.2c.8-.8.8-2.1 0-2.9z"
         fill="#F05032"
@@ -104,7 +104,7 @@ function GitIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function PostgresIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <path
         d="M12.02 2.5c-4.46 0-7.86 3.06-8.35 7.15-.35 2.87.63 5.48 2.55 7.23v3.62h2.2v-2.61c1.13.41 2.37.61 3.6.61 4.97 0 9.02-3.8 9.02-8.5 0-4.14-4.04-7.5-9.02-7.5zm-3.5 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5.5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
         fill="#336791"
@@ -115,7 +115,7 @@ function PostgresIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function NumpyIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <path d="M12 2.5 3.5 7.5v9l8.5 5 8.5-5v-9L12 2.5z" fill="#013243" />
       <path d="M12 2.5v19M3.5 7.5l17 10M20.5 7.5l-17 10" stroke="#4DABCF" strokeWidth="1.2" />
       <path d="M7 16V8l5 8V8" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -126,7 +126,7 @@ function NumpyIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function PandasIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <rect x="3" y="11" width="3.5" height="9" rx="1.5" fill="#150458" />
       <rect x="7.8" y="4" width="3.5" height="16" rx="1.5" fill="#FF4336" />
       <rect x="12.6" y="8" width="3.5" height="12" rx="1.5" fill="#00A9E0" />
@@ -137,7 +137,7 @@ function PandasIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function LinuxIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <path
         d="M12 2c-3.1 0-5 2.5-5 6 0 1.8.4 3.7 1.1 5.1C7.3 14 6.8 15.2 6.8 16.5c0 2.5 2.2 4.5 5.2 4.5s5.2-2 5.2-4.5c0-1.3-.5-2.5-1.3-3.4.7-1.4 1.1-3.3 1.1-5.1 0-3.5-1.9-6-5-6z"
         fill="#111111"
@@ -152,7 +152,7 @@ function LinuxIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="#111111">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="#111111">
       <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
     </svg>
   );
@@ -160,7 +160,7 @@ function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function HuggingFaceIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <circle cx="12" cy="12" r="10" fill="#FFD21E" />
       <circle cx="8.5" cy="10" r="1.5" fill="#111111" />
       <circle cx="15.5" cy="10" r="1.5" fill="#111111" />
@@ -173,7 +173,7 @@ function HuggingFaceIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function AgentIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none">
+    <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <rect x="3" y="4" width="18" height="15" rx="3" fill="#173B70" />
       <circle cx="8.5" cy="11.5" r="2" fill="#FFFFFF" />
       <circle cx="15.5" cy="11.5" r="2" fill="#FFFFFF" />

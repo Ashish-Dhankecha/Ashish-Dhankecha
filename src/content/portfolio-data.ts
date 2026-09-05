@@ -231,7 +231,7 @@ export const selectedProjects: ProjectDossier[] = [
 ];
 
 export const aboutContent = {
-  sectionNumber: "/ 04",
+  sectionNumber: "/ 03",
   eyebrow: "BIOGRAPHICAL STATEMENT",
   headline: "Curious mind.\nBuilds for impact.",
   narrativeParagraphs: [
@@ -248,6 +248,229 @@ export const aboutContent = {
     { title: "Distributed Systems", desc: "Concurrency, state replication, RPC protocols, and fault isolation." },
     { title: "Evaluation & Verification", desc: "Empirical benchmarking, deterministic assertions, and failure analysis." },
   ],
+};
+
+export interface TrajectoryStage {
+  number: string;
+  stageCode: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  supportingTopics: string[];
+  annotation: string;
+  layerConcept: string;
+}
+
+export interface TheDirectionContent {
+  sectionNumber: string;
+  label: string;
+  eyebrow: string;
+  headline: string;
+  intro: {
+    lead: string;
+    body: string;
+  };
+  trajectory: TrajectoryStage[];
+  longTermGoal: {
+    label: string;
+    statement: {
+      prefix: string;
+      term1: string;
+      arrow1: string;
+      term2: string;
+      arrow2: string;
+      term3: string;
+      arrow3: string;
+      term4: string;
+      suffix: string;
+    };
+  };
+  capabilityLoop: {
+    label: string;
+    kicker: string;
+    steps: {
+      number: string;
+      label: string;
+      detail: string;
+    }[];
+  };
+  ambition: {
+    label: string;
+    paragraphs: string[];
+  };
+  ashiBridge: {
+    label: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    ctaPrimary: {
+      label: string;
+      href: string;
+    };
+    ctaSecondary: {
+      label: string;
+      href: string;
+    };
+  };
+}
+
+export const theDirectionContent: TheDirectionContent = {
+  sectionNumber: "/ 04",
+  label: "THE DIRECTION",
+  eyebrow: "CAPABILITY TRAJECTORY",
+  headline: "Becoming the kind of engineer\nwho can build what doesn't exist yet.",
+  intro: {
+    lead: "I don't want to spend my career only using the systems others build.",
+    body: "I want to understand the foundations deeply enough to design, build, and eventually lead the development of systems that push what technology can do.",
+  },
+  trajectory: [
+    {
+      number: "01",
+      stageCode: "CAPABILITY / 01",
+      title: "FOUNDATIONS",
+      subtitle: "Mathematics · Computer Science · Algorithms",
+      description: "Understand the underlying principles.",
+      supportingTopics: [
+        "LINEAR ALGEBRA",
+        "PROBABILITY",
+        "CALCULUS",
+        "DATA STRUCTURES",
+        "ALGORITHMS",
+      ],
+      annotation: "First Principles Rigor",
+      layerConcept: "Mathematical substrate & algorithmic correctness",
+    },
+    {
+      number: "02",
+      stageCode: "CAPABILITY / 02",
+      title: "INTELLIGENCE",
+      subtitle: "Machine Learning · Deep Learning · LLMs",
+      description: "Understand how machines learn, represent, reason, and generate.",
+      supportingTopics: [
+        "MACHINE LEARNING",
+        "DEEP LEARNING",
+        "TRANSFORMERS",
+        "LLMs",
+        "POST-TRAINING",
+      ],
+      annotation: "Neural & Statistical Cognition",
+      layerConcept: "Optimization geometry & representation spaces",
+    },
+    {
+      number: "03",
+      stageCode: "CAPABILITY / 03",
+      title: "SYSTEMS",
+      subtitle: "Distributed Systems · Infrastructure · Architecture",
+      description: "Turn intelligence into reliable computation.",
+      supportingTopics: [
+        "DISTRIBUTED SYSTEMS",
+        "DATABASES",
+        "NETWORKING",
+        "OPERATING SYSTEMS",
+        "COMPUTER ARCHITECTURE",
+      ],
+      annotation: "Deterministic Execution Scale",
+      layerConcept: "Fault isolation, memory boundaries & concurrency",
+    },
+    {
+      number: "04",
+      stageCode: "CAPABILITY / 04",
+      title: "AUTONOMY",
+      subtitle: "Agents · Memory · Planning · Tools · Evaluation",
+      description: "Build systems capable of sustained execution.",
+      supportingTopics: [
+        "MEMORY",
+        "PLANNING",
+        "TOOL USE",
+        "EXECUTION",
+        "VERIFICATION",
+        "RECOVERY",
+      ],
+      annotation: "Closed-Loop Agency",
+      layerConcept: "Persistent state, invariant gates & error recovery",
+    },
+    {
+      number: "05",
+      stageCode: "CAPABILITY / 05",
+      title: "RESEARCH",
+      subtitle: "Experiments · New Architectures · Reinforcement Learning",
+      description: "Move from implementing known ideas toward discovering better ones.",
+      supportingTopics: [
+        "EXPERIMENTATION",
+        "EVALUATION",
+        "RL",
+        "RLVR",
+        "NEW ARCHITECTURES",
+        "FAILURE ANALYSIS",
+      ],
+      annotation: "Empirical Discovery",
+      layerConcept: "Hypothesis testing, reward synthesis & falsification",
+    },
+    {
+      number: "06",
+      stageCode: "CAPABILITY / 06",
+      title: "CREATION",
+      subtitle: "Products · Research Systems · Companies",
+      description: "Turn difficult technical problems into systems that matter.",
+      supportingTopics: [
+        "ENDURING SYSTEMS",
+        "MISSION-CRITICAL UTILITY",
+        "DEEP ARCHITECTURE",
+        "NOVEL CAPABILITY",
+      ],
+      annotation: "Enduring Technical Reality",
+      layerConcept: "Translating fundamental breakthroughs into lasting software",
+    },
+  ],
+  longTermGoal: {
+    label: "THE LONG-TERM GOAL",
+    statement: {
+      prefix: "To become an engineer and researcher capable of taking a difficult problem from ",
+      term1: "first principles",
+      arrow1: " → ",
+      term2: "research",
+      arrow2: " → ",
+      term3: "system",
+      arrow3: " → ",
+      term4: "reality",
+      suffix: ".",
+    },
+  },
+  capabilityLoop: {
+    label: "ENGINEERING CAPABILITY LOOP",
+    kicker: "CONTINUOUS DISCOVERY & REFINEMENT CYCLE",
+    steps: [
+      { number: "01", label: "UNDERSTAND", detail: "Deconstruct laws and constraints from first principles" },
+      { number: "02", label: "DISCOVER", detail: "Formulate hypotheses and empirical investigations" },
+      { number: "03", label: "DESIGN", detail: "Architect invariants, state ledgers, and boundaries" },
+      { number: "04", label: "BUILD", detail: "Implement with deterministic software rigor" },
+      { number: "05", label: "VERIFY", detail: "Subject systems to stress, mutation, and invariant checks" },
+      { number: "06", label: "DEPLOY", detail: "Integrate into active operating runtime environments" },
+      { number: "07", label: "IMPROVE", detail: "Analyze failure modes and extract architectural gains" },
+    ],
+  },
+  ambition: {
+    label: "LOOKING FURTHER",
+    paragraphs: [
+      "Eventually, I want to work at the frontier of AI and intelligent systems — not simply by using increasingly capable models, but by understanding what is required to turn intelligence into reliable, autonomous systems.",
+      "That means becoming deeply capable across mathematics, machine learning, computer systems, research, and engineering — and eventually using those capabilities to build things that would be difficult for a small team to build today.",
+    ],
+  },
+  ashiBridge: {
+    label: "ONE EXPERIMENT IN THAT DIRECTION",
+    title: "Ashi",
+    subtitle: "An Autonomous AI Operating System",
+    description:
+      "Ashi is one of the ways I'm exploring this path today — a long-term attempt to understand what it takes to build AI systems with persistent state, reasoning, tools, verification, and autonomous execution.",
+    ctaPrimary: {
+      label: "Explore Ashi",
+      href: "#ashi-section",
+    },
+    ctaSecondary: {
+      label: "View the architecture",
+      href: "#ashi-section",
+    },
+  },
 };
 
 export const currentFocusTimeline = {
@@ -449,7 +672,7 @@ export const engineeringNotes: EngineeringNote[] = [
 ];
 
 export const skillsGrouped = {
-  sectionNumber: "/ 06",
+  sectionNumber: "/ 07",
   eyebrow: "TECHNICAL INDEX",
   title: "Tools & Technologies",
   subtitle: "Technologies I actively use and study from first principles.",
@@ -488,7 +711,7 @@ export const personalBrandStatement = {
 };
 
 export const contactContent = {
-  sectionNumber: "/ 07",
+  sectionNumber: "/ 08",
   eyebrow: "COMMUNICATION & COLLABORATION",
   headline: "Let's build something difficult.",
   supportingText:

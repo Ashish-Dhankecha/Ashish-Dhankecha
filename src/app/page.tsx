@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, Copy, Check, ExternalLink } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { AshiArchitectureDiagram } from "@/components/architecture/ashi-architecture";
+import { DirectionSection } from "@/components/direction/direction-section";
 import { NoteReaderModal } from "@/components/modals/note-reader-modal";
 import { ProjectDossierModal } from "@/components/modals/project-dossier-modal";
 import { TechMarquee } from "@/components/ui/tech-marquee";
@@ -275,89 +276,7 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          / 03 SELECTED WORK: EDITORIAL GRID & TECHNICAL DOSSIERS
-          ========================================================================= */}
-      <section id="projects" className="py-20 sm:py-24 border-b border-[#D8D4CB]">
-        <Container width="wide">
-          <div className="space-y-12">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D8D4CB] pb-4">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#555555] block">
-                  <span className="text-[#173B70] font-semibold">/ 03</span> SELECTED WORK
-                </span>
-                <h2 className="font-display text-3xl sm:text-4xl text-[#111111] font-light">
-                  Engineered Systems &amp; Experiments
-                </h2>
-              </div>
-
-              <span className="font-mono text-xs uppercase tracking-wider text-[#8B8579]">
-                VERIFIED IMPLEMENTATIONS ONLY
-              </span>
-            </div>
-
-            {/* 4 Selected Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {selectedProjects.map((proj) => (
-                <div
-                  key={proj.id}
-                  className="border border-[#D8D4CB] bg-[#EDE8DE]/30 p-7 sm:p-8 flex flex-col justify-between hover:border-[#111111] transition-all group"
-                >
-                  <div className="space-y-4">
-                    {/* Top Kicker */}
-                    <div className="flex items-center justify-between font-mono text-xs border-b border-[#D8D4CB] pb-3 text-[#555555]">
-                      <span className="text-[#173B70] font-semibold">[ {proj.number} ]</span>
-                      <span className="bg-[#F3F0E8] px-2 py-0.5 border border-[#D8D4CB] text-[10px]">
-                        {proj.status}
-                      </span>
-                    </div>
-
-                    {/* Title & Tagline */}
-                    <div>
-                      <h3 className="font-display text-2xl sm:text-3xl text-[#111111] font-normal group-hover:text-[#173B70] transition-colors">
-                        {proj.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-[#555555] mt-1.5 leading-relaxed">
-                        {proj.tagline}
-                      </p>
-                    </div>
-
-                    {/* Technology list */}
-                    <div className="flex flex-wrap gap-1.5 pt-2">
-                      {proj.technologies.map((t) => (
-                        <span
-                          key={t}
-                          className="px-2 py-0.5 border border-[#D8D4CB] bg-[#F3F0E8] text-[11px] font-mono text-[#555555]"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Bottom Action: Open Full Technical Dossier */}
-                  <div className="pt-8 mt-6 border-t border-[#D8D4CB] flex items-center justify-between">
-                    <span className="font-mono text-[11px] text-[#8B8579]">
-                      CYCLE: {proj.year}
-                    </span>
-
-                    <button
-                      type="button"
-                      onClick={() => setActiveProject(proj)}
-                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-[#111111] hover:text-[#173B70] group-hover:translate-x-0.5 transition-all cursor-pointer"
-                    >
-                      <span>View Project</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================================================================
-          / 04 ABOUT: BIOGRAPHICAL STATEMENT & TECHNICAL FOCUS
+          / 03 ABOUT: BIOGRAPHICAL STATEMENT & TECHNICAL FOCUS
           ========================================================================= */}
       <section id="about" className="py-20 sm:py-24 border-b border-[#D8D4CB]">
         <Container width="wide">
@@ -528,7 +447,96 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          / 05 ENGINEERING NOTES: THINKING THROUGH THE WORK
+          / 04 THE DIRECTION: PERSONAL & TECHNICAL TRAJECTORY
+          ========================================================================= */}
+      <DirectionSection
+        onExploreAshi={() => setActiveProject(selectedProjects[0])}
+      />
+
+      {/* =========================================================================
+          / 05 SELECTED WORK: EDITORIAL GRID & TECHNICAL DOSSIERS
+          ========================================================================= */}
+      <section id="projects" className="py-20 sm:py-24 border-b border-[#D8D4CB]">
+        <Container width="wide">
+          <div className="space-y-12">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D8D4CB] pb-4">
+              <div className="space-y-1">
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#555555] block">
+                  <span className="text-[#173B70] font-semibold">/ 05</span> SELECTED WORK
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl text-[#111111] font-light">
+                  Engineered Systems &amp; Experiments
+                </h2>
+              </div>
+
+              <span className="font-mono text-xs uppercase tracking-wider text-[#8B8579]">
+                VERIFIED IMPLEMENTATIONS ONLY
+              </span>
+            </div>
+
+            {/* 4 Selected Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {selectedProjects.map((proj) => (
+                <div
+                  key={proj.id}
+                  className="border border-[#D8D4CB] bg-[#EDE8DE]/30 p-7 sm:p-8 flex flex-col justify-between hover:border-[#111111] transition-all group"
+                >
+                  <div className="space-y-4">
+                    {/* Top Kicker */}
+                    <div className="flex items-center justify-between font-mono text-xs border-b border-[#D8D4CB] pb-3 text-[#555555]">
+                      <span className="text-[#173B70] font-semibold">[ {proj.number} ]</span>
+                      <span className="bg-[#F3F0E8] px-2 py-0.5 border border-[#D8D4CB] text-[10px]">
+                        {proj.status}
+                      </span>
+                    </div>
+
+                    {/* Title & Tagline */}
+                    <div>
+                      <h3 className="font-display text-2xl sm:text-3xl text-[#111111] font-normal group-hover:text-[#173B70] transition-colors">
+                        {proj.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#555555] mt-1.5 leading-relaxed">
+                        {proj.tagline}
+                      </p>
+                    </div>
+
+                    {/* Technology list */}
+                    <div className="flex flex-wrap gap-1.5 pt-2">
+                      {proj.technologies.map((t) => (
+                        <span
+                          key={t}
+                          className="px-2 py-0.5 border border-[#D8D4CB] bg-[#F3F0E8] text-[11px] font-mono text-[#555555]"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Action: Open Full Technical Dossier */}
+                  <div className="pt-8 mt-6 border-t border-[#D8D4CB] flex items-center justify-between">
+                    <span className="font-mono text-[11px] text-[#8B8579]">
+                      CYCLE: {proj.year}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={() => setActiveProject(proj)}
+                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-[#111111] hover:text-[#173B70] group-hover:translate-x-0.5 transition-all cursor-pointer"
+                    >
+                      <span>View Project</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================================
+          / 06 ENGINEERING NOTES: THINKING THROUGH THE WORK
           ========================================================================= */}
       <section id="writing" className="py-20 sm:py-24 border-b border-[#D8D4CB]">
         <Container width="wide">
@@ -536,7 +544,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D8D4CB] pb-4">
               <div className="space-y-1">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#555555] block">
-                  <span className="text-[#173B70] font-semibold">/ 05</span> ENGINEERING NOTES
+                  <span className="text-[#173B70] font-semibold">/ 06</span> ENGINEERING NOTES
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl text-[#111111] font-light">
                   Thinking through the work.
