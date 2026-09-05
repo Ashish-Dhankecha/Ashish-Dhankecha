@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ==========================================================================
+     Design Tokens - Color System (Warm Editorial Ivory / Archival Theme)
+     Exact user-specified palette:
+     - Primary background: #F3F0E8 (Warm ivory / parchment)
+     - Primary text: #111111 (Near-black)
+     - Secondary text: #555555 (Muted charcoal)
+     - Borders: #D8D4CB (Subtle warm gray)
+     - Accent: #173B70 (Deep restrained blue)
+     - Secondary accent: #2B4C7E (Muted steel blue)
+     ========================================================================== */
+  --bg-primary: 43 25% 93%;           /* #F3F0E8 - Warm ivory / parchment */
+  --bg-surface: 40 22% 90%;           /* #EDE8DE - Muted archival paper */
+  --bg-surface-elevated: 40 20% 86%;  /* #E5DFD4 - Elevated card surface */
+
+  --border-subtle: 40 15% 82%;       /* #D8D4CB - Hairline architectural rule */
+  --border-strong: 38 12% 65%;       /* #B0A99C - Emphasized frame border */
+
+  --text-primary: 0 0% 7%;            /* #111111 - Near-black printer's ink */
+  --text-muted: 0 0% 33%;             /* #555555 - Muted charcoal */
+  --text-subtle: 36 6% 54%;           /* #8B8579 - Metadata & caption */
+
+  --accent-primary: 216 66% 27%;      /* #173B70 - Deep restrained blue */
+  --accent-secondary: 216 49% 33%;    /* #2B4C7E - Muted steel blue */
+
+  --status-active: 216 66% 27%;       /* Deep blue indicator */
+  --status-research: 216 49% 33%;     /* Muted steel indicator */
+  --status-draft: 36 6% 54%;          /* Subtle gray indicator */
+  --status-archived: 40 10% 50%;      /* Stone */
+
+  /* ==========================================================================
+     Layout & Spacing Tokens
+     ========================================================================== */
+  --max-width-content: 68rem;         /* 1088px - reading/editorial width */
+  --max-width-wide: 80rem;            /* 1280px - wide editorial grid container */
+  --gutter-mobile: 1.25rem;
+  --gutter-tablet: 2rem;
+  --gutter-desktop: 2.5rem;
+}
+
+@layer base {
+  * {
+    border-color: #D8D4CB;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F3F0E8;
+    color: #111111;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #F3F0E8;
+    color: #111111;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Custom text selection using deep restrained blue */
+  ::selection {
+    background-color: #173B70;
+    color: #F3F0E8;
+  }
+
+  /* Keyboard focus states */
+  :focus-visible {
+    outline: 2px solid #173B70;
+    outline-offset: 2px;
+  }
+}
+
+/* ==========================================================================
+   Accessibility: Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Utility Layer & Structural Patterns
+   ========================================================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .hairline-border {
+    border: 1px solid #D8D4CB;
+  }
+
+  .hairline-border-b {
+    border-bottom: 1px solid #D8D4CB;
+  }
+
+  .hairline-border-t {
+    border-top: 1px solid #D8D4CB;
+  }
+
+  .hairline-border-l {
+    border-left: 1px solid #D8D4CB;
+  }
+
+  .hairline-border-r {
+    border-right: 1px solid #D8D4CB;
+  }
+
+  /* Hide scrollbars for clean aesthetic */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ==========================================================================
+   Infinite Marquee Animation for Tools & Technologies
+   ========================================================================== */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
