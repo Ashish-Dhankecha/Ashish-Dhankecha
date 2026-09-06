@@ -28,17 +28,18 @@ export function Header() {
             <div className="w-7 h-7 rounded bg-[#0E1420] border border-[#1E293B] flex items-center justify-center text-cyber-cyan group-hover:border-cyber-cyan/50 transition-colors">
               <Terminal className="w-3.5 h-3.5" />
             </div>
-            <span className="font-sans text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-cyber-cyan transition-colors">
+            <span className="font-sans text-sm sm:text-base lg:text-lg font-bold tracking-tight text-white group-hover:text-cyber-cyan transition-colors truncate">
               ASHISH DHANKECHA
             </span>
 
             {isLab ? (
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan font-mono text-[10px] uppercase tracking-widest font-medium">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan font-mono text-[10px] uppercase tracking-widest font-medium shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan animate-pulse" />
-                LAB / ARCHIVE
+                <span className="hidden xs:inline">LAB / ARCHIVE</span>
+                <span className="xs:hidden">LAB</span>
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-cyber-emerald/40 bg-cyber-emerald/10 text-cyber-emerald font-mono text-[10px] uppercase tracking-wider font-medium hidden sm:inline-flex">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-cyber-emerald/40 bg-cyber-emerald/10 text-cyber-emerald font-mono text-[10px] uppercase tracking-wider font-medium hidden sm:inline-flex shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyber-emerald animate-pulse" />
                 AI SYSTEMS DEV
               </span>
