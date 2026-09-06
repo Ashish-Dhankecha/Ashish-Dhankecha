@@ -43,7 +43,7 @@ export function ProjectDossierModal({
       role="dialog"
       aria-labelledby="project-dossier-title"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-6 overflow-y-auto"
     >
       {/* Backdrop */}
       <div
@@ -54,17 +54,17 @@ export function ProjectDossierModal({
 
       {/* Modal Dialog Body */}
       <div
-        className="relative w-full max-w-4xl bg-[#F3F0E8] border border-[#111111] shadow-2xl p-6 sm:p-10 md:p-12 my-auto max-h-[92vh] overflow-y-auto text-[#111111] flex flex-col z-10"
+        className="relative w-full max-w-4xl h-full sm:h-auto max-h-full sm:max-h-[92vh] bg-[#0D1117] border-0 sm:border border-[#1E293B] shadow-2xl rounded-none sm:rounded-lg p-4 sm:p-10 md:p-12 my-auto overflow-y-auto text-[#F8FAFC] flex flex-col z-10"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Plate */}
-        <div className="flex items-center justify-between border-b border-[#D8D4CB] pb-4 mb-8">
-          <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest">
-            <span className="text-[#173B70] font-semibold">PROJECT / {project.number}</span>
-            <span className="text-[#D8D4CB]">&middot;</span>
-            <span className="text-[#555555]">{project.year}</span>
-            <span className="text-[#D8D4CB]">&middot;</span>
-            <span className="bg-[#EDE8DE] px-2 py-0.5 border border-[#D8D4CB] text-[#111111]">
+        <div className="flex items-center justify-between border-b border-[#1E293B] pb-3 sm:pb-4 mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 sm:gap-3 font-mono text-[11px] sm:text-xs uppercase tracking-widest flex-wrap">
+            <span className="text-cyber-cyan font-semibold">PROJECT / {project.number}</span>
+            <span className="text-slate-600">&middot;</span>
+            <span className="text-slate-400">{project.year}</span>
+            <span className="text-slate-600">&middot;</span>
+            <span className="bg-cyber-cyan/10 px-2 py-0.5 rounded border border-cyber-cyan/30 text-cyber-cyan text-[10px] font-medium">
               {project.status}
             </span>
           </div>
@@ -74,30 +74,30 @@ export function ProjectDossierModal({
             type="button"
             onClick={onClose}
             aria-label="Close dossier"
-            className="p-1.5 border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-[#F3F0E8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173B70]"
+            className="p-2 rounded border border-[#1E293B] bg-[#070A0F] text-slate-400 hover:text-white hover:border-cyber-cyan transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-cyan min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Title & Tagline */}
-        <div className="space-y-3 mb-8">
+        <div className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
           <h2
             id="project-dossier-title"
-            className="font-display text-3xl sm:text-5xl font-light text-[#111111] tracking-tight"
+            className="font-sans text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight"
           >
             {project.title}
           </h2>
-          <p className="font-display italic text-lg sm:text-xl text-[#555555]">
+          <p className="font-mono text-sm sm:text-base text-cyber-cyan">
             {project.tagline}
           </p>
 
           {/* Technology badges */}
-          <div className="flex flex-wrap gap-2 pt-2">
+          <div className="flex flex-wrap gap-1.5 pt-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 text-xs font-mono border border-[#D8D4CB] bg-[#EDE8DE]/60 text-[#111111]"
+                className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-mono rounded border border-[#1E293B] bg-[#070A0F] text-slate-300"
               >
                 {tech}
               </span>
@@ -106,49 +106,49 @@ export function ProjectDossierModal({
         </div>
 
         {/* Separator */}
-        <div className="w-full h-[1px] bg-[#111111] mb-8" />
+        <div className="w-full h-[1px] bg-[#1E293B] mb-6 sm:mb-8" />
 
         {/* Structured Dossier Sections */}
-        <div className="space-y-8 text-sm sm:text-base leading-relaxed divide-y divide-[#D8D4CB]">
+        <div className="space-y-6 sm:space-y-8 text-xs sm:text-base leading-relaxed divide-y divide-[#1E293B]">
           {/* Section: Overview */}
-          <div className="space-y-3 pt-2">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-2">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               01 // OVERVIEW
             </h3>
-            <p className="text-[#111111] leading-relaxed">
+            <p className="text-slate-300 leading-relaxed">
               {project.overview}
             </p>
           </div>
 
           {/* Section: Architecture */}
-          <div className="space-y-3 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               02 // ARCHITECTURE
             </h3>
-            <div className="p-4 bg-[#EDE8DE] border border-[#D8D4CB] font-mono text-xs leading-relaxed text-[#111111]">
+            <div className="p-3.5 sm:p-4 rounded bg-[#070A0F] border border-[#1E293B] font-mono text-[11px] sm:text-xs leading-relaxed text-slate-300 break-words">
               {project.architecture}
             </div>
           </div>
 
           {/* Section: Problem */}
-          <div className="space-y-3 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               03 // PROBLEM DEFINITION
             </h3>
-            <p className="text-[#111111] leading-relaxed">
+            <p className="text-slate-300 leading-relaxed">
               {project.problem}
             </p>
           </div>
 
           {/* Section: Design Decisions */}
-          <div className="space-y-3 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               04 // DESIGN DECISIONS
             </h3>
-            <ul className="space-y-2 text-[#111111]">
+            <ul className="space-y-2 text-slate-300">
               {project.designDecisions.map((dec, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <span className="font-mono text-xs text-[#173B70] font-semibold mt-0.5">
+                <li key={i} className="flex items-start gap-2 sm:gap-2.5">
+                  <span className="font-mono text-xs text-cyber-cyan font-semibold mt-0.5">
                     &bull;
                   </span>
                   <span>{dec}</span>
@@ -158,48 +158,48 @@ export function ProjectDossierModal({
           </div>
 
           {/* Section: Implementation */}
-          <div className="space-y-3 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               05 // IMPLEMENTATION
             </h3>
-            <p className="text-[#111111] leading-relaxed">
+            <p className="text-slate-300 leading-relaxed">
               {project.implementation}
             </p>
           </div>
 
           {/* Section: Failure Modes */}
-          <div className="space-y-3 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               06 // OBSERVED FAILURE MODES
             </h3>
-            <ul className="space-y-2 text-[#555555]">
+            <ul className="space-y-2 text-slate-400">
               {project.failureModes.map((fm, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <span className="font-mono text-xs text-[#8B8579] mt-0.5">
-                    [x]
+                <li key={i} className="flex items-start gap-2 sm:gap-2.5">
+                  <span className="font-mono text-xs text-amber-400 mt-0.5 shrink-0">
+                    [!]
                   </span>
-                  <span className="text-[#111111]">{fm}</span>
+                  <span className="text-slate-300">{fm}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Section: Testing & Results */}
-          <div className="space-y-3 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               07 // TESTING &amp; VERIFICATION
             </h3>
-            <p className="text-[#111111] leading-relaxed">
+            <p className="text-slate-300 leading-relaxed">
               {project.testing}
             </p>
           </div>
 
           {/* Section: Code & Repository */}
-          <div className="space-y-4 pt-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#173B70] font-semibold">
+          <div className="space-y-3 sm:space-y-4 pt-5 sm:pt-6">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
               08 // CURRENT STATE &amp; REPOSITORY
             </h3>
-            <p className="text-[#111111] leading-relaxed">
+            <p className="text-slate-300 leading-relaxed">
               {project.currentState}
             </p>
 
@@ -209,9 +209,9 @@ export function ProjectDossierModal({
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#111111] bg-[#111111] text-[#F3F0E8] font-mono text-xs uppercase tracking-wider hover:bg-[#173B70] hover:border-[#173B70] transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan font-mono text-xs uppercase tracking-wider hover:bg-cyber-cyan hover:text-obsidian-dark font-semibold transition-colors min-h-[44px]"
                 >
-                  <GithubIcon className="w-3.5 h-3.5" />
+                  <GithubIcon className="w-4 h-4" />
                   <span>Inspect Code on GitHub</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
@@ -221,13 +221,13 @@ export function ProjectDossierModal({
         </div>
 
         {/* Bottom Bar */}
-        <div className="w-full h-[1px] bg-[#D8D4CB] mt-10 mb-6" />
+        <div className="w-full h-[1px] bg-[#1E293B] mt-8 sm:mt-10 mb-4 sm:mb-6" />
 
         <div className="flex justify-end">
           <button
             type="button"
             onClick={onClose}
-            className="py-2 px-6 border border-[#111111] bg-[#111111] text-[#F3F0E8] hover:bg-[#173B70] hover:border-[#173B70] uppercase font-mono text-xs tracking-wider transition-colors"
+            className="w-full sm:w-auto py-2.5 px-6 rounded border border-[#1E293B] bg-[#070A0F] text-slate-300 hover:text-white hover:border-cyber-cyan uppercase font-mono text-xs tracking-wider transition-colors text-center min-h-[44px]"
           >
             Close Dossier
           </button>

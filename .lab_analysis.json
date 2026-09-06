@@ -1,0 +1,1220 @@
+[
+  {
+    "project": "Ashi",
+    "filename": "001-vacuous-success-bug.md",
+    "fm_title": "The Vacuous Success Bug: When Empty Plans Count as Achievements",
+    "fm_slug": "vacuous-success-bug-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-11",
+    "fm_topics": [
+      "cognitive-systems",
+      "planning",
+      "action-integrity",
+      "debugging",
+      "software-correctness"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# The Vacuous Success Bug: When Empty Plans Count as Achievements",
+    "has_fm": true,
+    "size": 7607
+  },
+  {
+    "project": "Ashi",
+    "filename": "002-behavioral-audit-three-out-of-ten.md",
+    "fm_title": "Scoring a Running AI System 3/10: The Behavioral Integrity Audit",
+    "fm_slug": "behavioral-integrity-audit-ashi",
+    "fm_type": "POST_MORTEM",
+    "fm_status": "Partial \u2014 fixes applied, score moved to 6/10 as of Part 2 Final",
+    "fm_date": "2026-08-11",
+    "fm_topics": [
+      "cognitive-systems",
+      "evaluation",
+      "ai-assistants",
+      "honesty",
+      "behavioral-testing"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Scoring a Running AI System 3/10: The Behavioral Integrity Audit",
+    "has_fm": true,
+    "size": 9756
+  },
+  {
+    "project": "Ashi",
+    "filename": "003-sub-2b-model-benchmark.md",
+    "fm_title": "Benchmarking Six Sub-2B Language Models for On-Device Structured Intent Inference",
+    "fm_slug": "sub-2b-model-benchmark-ashi",
+    "fm_type": "EXPERIMENT",
+    "fm_status": "Completed",
+    "fm_date": "2026-08-06",
+    "fm_topics": [
+      "llm-benchmarking",
+      "local-inference",
+      "model-selection",
+      "structured-output",
+      "gguf",
+      "llama-cpp"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Benchmarking Six Sub-2B Language Models for On-Device Structured Intent Inference",
+    "has_fm": true,
+    "size": 10048
+  },
+  {
+    "project": "Ashi",
+    "filename": "004-no-action-capability-ceiling.md",
+    "fm_title": "Qwen2.5-1.5B's No-Action Ceiling: When Prompt Engineering Stops Working",
+    "fm_slug": "no-action-failure-investigation-ashi",
+    "fm_type": "EXPERIMENT",
+    "fm_status": "Completed \u2014 Recommendation: Option B (execution safeguard)",
+    "fm_date": "2026-08-08",
+    "fm_topics": [
+      "llm-evaluation",
+      "model-capability",
+      "structured-inference",
+      "quantization",
+      "failure-analysis"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Qwen2.5-1.5B's No-Action Ceiling: When Prompt Engineering Stops Working",
+    "has_fm": true,
+    "size": 10791
+  },
+  {
+    "project": "Ashi",
+    "filename": "005-benchmark-scorer-bugs.md",
+    "fm_title": "Three Scorer Bugs in a Single Benchmark: A Methodology Audit",
+    "fm_slug": "benchmark-scorer-bugs-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Completed \u2014 bugs fixed, numbers corrected",
+    "fm_date": "2026-08-07",
+    "fm_topics": [
+      "benchmark-design",
+      "evaluation",
+      "scoring-methodology",
+      "llm-evaluation",
+      "correctness"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Three Scorer Bugs in a Single Benchmark: A Methodology Audit",
+    "has_fm": true,
+    "size": 9392
+  },
+  {
+    "project": "Ashi",
+    "filename": "006-segfault-llama-cpp-cancellation.md",
+    "fm_title": "A Segfault in llama.cpp from an Abandoned Generation Thread",
+    "fm_slug": "segfault-llama-cpp-cancellation-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-05",
+    "fm_topics": [
+      "llm-inference",
+      "concurrency",
+      "asyncio",
+      "native-code",
+      "debugging",
+      "llama-cpp"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# A Segfault in llama.cpp from an Abandoned Generation Thread",
+    "has_fm": true,
+    "size": 7945
+  },
+  {
+    "project": "Ashi",
+    "filename": "007-benchmark-hang-monitoring-gap.md",
+    "fm_title": "The 12-Hour Benchmark Hang That Wasn't: Monitoring vs. Work",
+    "fm_slug": "benchmark-hang-monitoring-gap-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Closed \u2014 progress logging added",
+    "fm_date": "2026-08-06",
+    "fm_topics": [
+      "process-supervision",
+      "observability",
+      "long-running-tasks",
+      "development-process"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# The 12-Hour Benchmark Hang That Wasn't: Monitoring vs. Work",
+    "has_fm": true,
+    "size": 7813
+  },
+  {
+    "project": "Ashi",
+    "filename": "008-rate-limit-health-signal-bug.md",
+    "fm_title": "Rate Limit Is Not a Health Signal: Fixing a Provider Cascade Failure",
+    "fm_slug": "rate-limit-health-signal-bug-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-07-26",
+    "fm_topics": [
+      "distributed-systems",
+      "llm-routing",
+      "rate-limiting",
+      "health-monitoring",
+      "gemini-api"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Rate Limit Is Not a Health Signal: Fixing a Provider Cascade Failure",
+    "has_fm": true,
+    "size": 8418
+  },
+  {
+    "project": "Ashi",
+    "filename": "009-ollama-removal.md",
+    "fm_title": "Removing Ollama After 71 of 82 Soak Failures Were 'Timeout Connecting to Ollama'",
+    "fm_slug": "ollama-removal-gemini-migration-ashi",
+    "fm_type": "ARCHITECTURAL_DECISION",
+    "fm_status": "Implemented",
+    "fm_date": "2026-07-22",
+    "fm_topics": [
+      "architecture",
+      "dependencies",
+      "local-llm",
+      "cloud-migration",
+      "reliability"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Removing Ollama After 71 of 82 Soak Failures Were \"Timeout Connecting to Ollama\"",
+    "has_fm": true,
+    "size": 8386
+  },
+  {
+    "project": "Ashi",
+    "filename": "010-destructive-test-database-interlock.md",
+    "fm_title": "When pytest Truncates Your Live Database: The Destructive Test Interlock",
+    "fm_slug": "destructive-test-database-interlock-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-12",
+    "fm_topics": [
+      "testing",
+      "databases",
+      "production-safety",
+      "developer-experience",
+      "pytest"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# When pytest Truncates Your Live Database: The Destructive Test Interlock",
+    "has_fm": true,
+    "size": 9259
+  },
+  {
+    "project": "Ashi",
+    "filename": "011-dependency-cycle-discovery.md",
+    "fm_title": "A Three-Package Dependency Cycle Undetected Until an Invariant Audit",
+    "fm_slug": "dependency-cycle-execution-planning-reflection-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-21",
+    "fm_topics": [
+      "software-architecture",
+      "dependency-management",
+      "monorepo",
+      "python",
+      "type-safety"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# A Three-Package Dependency Cycle Undetected Until an Invariant Audit",
+    "has_fm": true,
+    "size": 9107
+  },
+  {
+    "project": "Ashi",
+    "filename": "012-initiative-note-dead-cognition.md",
+    "fm_title": "The Initiative Note That Was Computed Every Turn and Dropped Before Rendering",
+    "fm_slug": "initiative-note-dead-cognition-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-11",
+    "fm_topics": [
+      "cognitive-systems",
+      "debugging",
+      "software-integration",
+      "dead-code",
+      "ai-assistants"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# The Initiative Note That Was Computed Every Turn and Dropped Before Rendering",
+    "has_fm": true,
+    "size": 7727
+  },
+  {
+    "project": "Ashi",
+    "filename": "013-learning-amplifying-noise.md",
+    "fm_title": "Learning Made Judgment Worse: Strength Reinforcement Promoted a Benchmark Fixture",
+    "fm_slug": "learning-amplifying-noise-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Identified \u2014 remediation in progress",
+    "fm_date": "2026-08-11",
+    "fm_topics": [
+      "machine-learning",
+      "cognitive-systems",
+      "reinforcement",
+      "ai-assistants",
+      "feedback-loops"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Learning Made Judgment Worse: Strength Reinforcement Promoted a Benchmark Fixture",
+    "has_fm": true,
+    "size": 8978
+  },
+  {
+    "project": "Ashi",
+    "filename": "014-world-perception-design.md",
+    "fm_title": "World Perception at 24 Microseconds: Designing an LLM-Free Ambient Awareness Layer",
+    "fm_slug": "world-perception-on-turn-path-design-ashi",
+    "fm_type": "TECHNICAL_DESIGN",
+    "fm_status": "Implemented and benchmarked",
+    "fm_date": "2026-07-27",
+    "fm_topics": [
+      "systems-design",
+      "performance",
+      "context-awareness",
+      "git",
+      "ambient-computing"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# World Perception at 24 Microseconds: Designing an LLM-Free Ambient Awareness Layer",
+    "has_fm": true,
+    "size": 9482
+  },
+  {
+    "project": "Ashi",
+    "filename": "015-latency-reduction-32s-to-5s.md",
+    "fm_title": "From 32 Seconds to 5.4 Seconds: Tracing and Eliminating Latency in a 28-Package LLM System",
+    "fm_slug": "latency-reduction-32s-to-5s-ashi",
+    "fm_type": "EXPERIMENT",
+    "fm_status": "Completed",
+    "fm_date": "2026-07-26",
+    "fm_topics": [
+      "performance",
+      "latency",
+      "llm-systems",
+      "tracing",
+      "optimization"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# From 32 Seconds to 5.4 Seconds: Tracing and Eliminating Latency in a 28-Package LLM System",
+    "has_fm": true,
+    "size": 8231
+  },
+  {
+    "project": "Ashi",
+    "filename": "016-litellm-hidden-fastapi-dependency.md",
+    "fm_title": "litellm's Undeclared fastapi Dependency: A Hidden Import That Broke Tool Calling",
+    "fm_slug": "litellm-hidden-fastapi-dependency-ashi",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-11",
+    "fm_topics": [
+      "dependencies",
+      "debugging",
+      "python-packaging",
+      "llm-tooling",
+      "litellm"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# litellm's Undeclared fastapi Dependency: A Hidden Import That Broke Tool Calling",
+    "has_fm": true,
+    "size": 7698
+  },
+  {
+    "project": "Ashi",
+    "filename": "017-m5-voice-bugs-live-testing.md",
+    "fm_title": "SPACE BAR Does Nothing: Four Real Bugs Found Only by Actually Running the Product",
+    "fm_slug": "m5-voice-bugs-only-visible-live-ashi",
+    "fm_type": "POST_MORTEM",
+    "fm_status": "Fixed",
+    "fm_date": "2026-08-14",
+    "fm_topics": [
+      "debugging",
+      "voice-interfaces",
+      "browser",
+      "concurrency",
+      "full-stack"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# SPACE BAR Does Nothing: Four Real Bugs Found Only by Actually Running the Product",
+    "has_fm": true,
+    "size": 10135
+  },
+  {
+    "project": "Ashi",
+    "filename": "018-architecture-freeze-decision.md",
+    "fm_title": "Architecture Freeze: When to Lock Down a Cognitive Substrate and Why",
+    "fm_slug": "architecture-freeze-decision-ashi",
+    "fm_type": "ARCHITECTURAL_DECISION",
+    "fm_status": "In effect",
+    "fm_date": "2026-07-25",
+    "fm_topics": [
+      "software-architecture",
+      "decision-making",
+      "engineering-process",
+      "cognitive-systems",
+      "maintenance"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Architecture Freeze: When to Lock Down a Cognitive Substrate and Why",
+    "has_fm": true,
+    "size": 7903
+  },
+  {
+    "project": "Ashi",
+    "filename": "019-monorepo-architecture-overview.md",
+    "fm_title": "28 Packages, One Acyclic Graph: Building a Personal AI as a Monorepo",
+    "fm_slug": "ashi-monorepo-architecture-overview",
+    "fm_type": "TECHNICAL_DESIGN",
+    "fm_status": "Active",
+    "fm_date": "2026-07-25",
+    "fm_topics": [
+      "architecture",
+      "monorepo",
+      "cognitive-systems",
+      "python",
+      "software-design"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# 28 Packages, One Acyclic Graph: Building a Personal AI as a Monorepo",
+    "has_fm": true,
+    "size": 9495
+  },
+  {
+    "project": "Ashi",
+    "filename": "020-gemini-quota-management.md",
+    "fm_title": "Managing a Free-Tier Gemini Quota Across 21 API Keys",
+    "fm_slug": "gemini-quota-management-credential-pool-ashi",
+    "fm_type": "TECHNICAL_DESIGN",
+    "fm_status": "Implemented",
+    "fm_date": "2026-07-28",
+    "fm_topics": [
+      "api-management",
+      "rate-limiting",
+      "cost-engineering",
+      "gemini",
+      "resource-constraints"
+    ],
+    "fm_project": "Ashi",
+    "first_heading": "# Managing a Free-Tier Gemini Quota Across 21 API Keys",
+    "has_fm": true,
+    "size": 9023
+  },
+  {
+    "project": "Leo",
+    "filename": "001-cognitive-os-architecture-vision.md",
+    "fm_title": "Designing a Cognitive Operating System: The LEO Architecture Vision",
+    "fm_slug": "leo-cognitive-os-architecture-vision",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Partial",
+    "fm_date": "None",
+    "fm_topics": [
+      "cognitive-os",
+      "systems-architecture",
+      "ai-infrastructure",
+      "operating-systems"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Designing a Cognitive Operating System: The LEO Architecture Vision",
+    "has_fm": true,
+    "size": 7762
+  },
+  {
+    "project": "Leo",
+    "filename": "002-cmmu-as-memory-gatekeeper.md",
+    "fm_title": "Building a Memory Management Unit for AI: The CMMU Design",
+    "fm_slug": "cmmu-cognitive-memory-management-unit",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Partial",
+    "fm_date": "None",
+    "fm_topics": [
+      "memory-architecture",
+      "cognitive-os",
+      "ai-infrastructure",
+      "systems-design"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Building a Memory Management Unit for AI: The CMMU Design",
+    "has_fm": true,
+    "size": 6977
+  },
+  {
+    "project": "Leo",
+    "filename": "003-architecture-guardian-drift-detection.md",
+    "fm_title": "Runtime Architecture Enforcement: Building an Architecture Guardian",
+    "fm_slug": "architecture-guardian-drift-detection",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Partial",
+    "fm_date": "None",
+    "fm_topics": [
+      "architecture-governance",
+      "drift-detection",
+      "cognitive-os",
+      "design-enforcement"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Runtime Architecture Enforcement: Building an Architecture Guardian",
+    "has_fm": true,
+    "size": 7101
+  },
+  {
+    "project": "Leo",
+    "filename": "004-281-violation-debt-architecture-enforcement.md",
+    "fm_title": "281 Violations: What Happens When Architecture and Implementation Diverge",
+    "fm_slug": "281-architectural-violations-phase-28",
+    "fm_type": "POST-MORTEM",
+    "fm_status": "Documented",
+    "fm_date": "None",
+    "fm_topics": [
+      "architectural-debt",
+      "enforcement-gap",
+      "refactoring",
+      "system-design"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# 281 Violations: What Happens When Architecture and Implementation Diverge",
+    "has_fm": true,
+    "size": 6850
+  },
+  {
+    "project": "Leo",
+    "filename": "005-provider-platform-vendor-lock-prevention.md",
+    "fm_title": "Preventing AI Vendor Lock-In: The LEO Provider Platform Design",
+    "fm_slug": "provider-platform-vendor-lock-prevention",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Completed",
+    "fm_date": "None",
+    "fm_topics": [
+      "ai-provider-abstraction",
+      "vendor-independence",
+      "capability-routing",
+      "provider-failover"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Preventing AI Vendor Lock-In: The LEO Provider Platform Design",
+    "has_fm": true,
+    "size": 8083
+  },
+  {
+    "project": "Leo",
+    "filename": "006-gemini-json-parsing-bug-semantic-router.md",
+    "fm_title": "When Gemini Returns an Array Instead of an Object: A Semantic Router Bug",
+    "fm_slug": "gemini-json-array-vs-object-semantic-router",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Completed",
+    "fm_date": "2026-06-22",
+    "fm_topics": [
+      "llm-output-parsing",
+      "defensive-programming",
+      "semantic-routing",
+      "gemini-api"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# When Gemini Returns an Array Instead of an Object: A Semantic Router Bug",
+    "has_fm": true,
+    "size": 5556
+  },
+  {
+    "project": "Leo",
+    "filename": "007-provider-failover-model-name-injection-bug.md",
+    "fm_title": "Cross-Provider Failover Bug: Physical Model Names Lost in Abstraction",
+    "fm_slug": "provider-failover-model-name-injection-bug",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Completed",
+    "fm_date": "None",
+    "fm_topics": [
+      "provider-failover",
+      "ai-routing",
+      "abstraction-leakage",
+      "debugging"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Cross-Provider Failover Bug: Physical Model Names Lost in Abstraction",
+    "has_fm": true,
+    "size": 5513
+  },
+  {
+    "project": "Leo",
+    "filename": "008-execution-graph-dag-cognitive-tasks.md",
+    "fm_title": "Replacing Sequential Execution with a DAG: The Cognitive Execution Graph",
+    "fm_slug": "execution-graph-dag-cognitive-tasks",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Partial",
+    "fm_date": "None",
+    "fm_topics": [
+      "execution-graph",
+      "dag-architecture",
+      "parallel-execution",
+      "cognitive-os"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Replacing Sequential Execution with a DAG: The Cognitive Execution Graph",
+    "has_fm": true,
+    "size": 7336
+  },
+  {
+    "project": "Leo",
+    "filename": "009-four-tier-memory-model-ai.md",
+    "fm_title": "A Four-Tier Cognitive Memory Model: Working, Episodic, Semantic, and More",
+    "fm_slug": "four-tier-cognitive-memory-model",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Partial",
+    "fm_date": "None",
+    "fm_topics": [
+      "memory-architecture",
+      "cognitive-ai",
+      "episodic-memory",
+      "semantic-memory"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# A Four-Tier Cognitive Memory Model: Working, Episodic, Semantic, and More",
+    "has_fm": true,
+    "size": 7816
+  },
+  {
+    "project": "Leo",
+    "filename": "010-mock-stub-proliferation-large-codebase.md",
+    "fm_title": "Mock Proliferation: When 100+ Stub Implementations Signal Incomplete Integration",
+    "fm_slug": "mock-stub-proliferation-incomplete-integration",
+    "fm_type": "ENGINEERING_NOTE",
+    "fm_status": "Documented",
+    "fm_date": "None",
+    "fm_topics": [
+      "testing-strategy",
+      "mock-overuse",
+      "integration-debt",
+      "codebase-health"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Mock Proliferation: When 100+ Stub Implementations Signal Incomplete Integration",
+    "has_fm": true,
+    "size": 7388
+  },
+  {
+    "project": "Leo",
+    "filename": "011-test-suite-297-passing-11-failing.md",
+    "fm_title": "297 Passing, 11 Failing: What the Test Suite Reveals About Architecture Maturity",
+    "fm_slug": "test-suite-297-passing-11-failing",
+    "fm_type": "ENGINEERING_NOTE",
+    "fm_status": "Documented",
+    "fm_date": "None",
+    "fm_topics": [
+      "test-engineering",
+      "test-failures",
+      "architecture-maturity",
+      "event-bus-contract"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# 297 Passing, 11 Failing: What the Test Suite Reveals About Architecture Maturity",
+    "has_fm": true,
+    "size": 6484
+  },
+  {
+    "project": "Leo",
+    "filename": "012-yagni-violations-interface-over-engineering.md",
+    "fm_title": "YAGNI Violations: 36 Single-Implementation Interfaces and the Cost of Over-Engineering",
+    "fm_slug": "yagni-violations-single-implementation-interfaces",
+    "fm_type": "ENGINEERING_NOTE",
+    "fm_status": "Documented",
+    "fm_date": "None",
+    "fm_topics": [
+      "yagni",
+      "over-engineering",
+      "interface-design",
+      "code-simplicity"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# YAGNI Violations: 36 Single-Implementation Interfaces and the Cost of Over-Engineering",
+    "has_fm": true,
+    "size": 6364
+  },
+  {
+    "project": "Leo",
+    "filename": "013-interconnect-network-on-chip-for-ai.md",
+    "fm_title": "Network-on-Chip for AI: Building an OS Interconnect Between Cognitive Subsystems",
+    "fm_slug": "interconnect-network-on-chip-ai-os",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Completed",
+    "fm_date": "None",
+    "fm_topics": [
+      "interconnect",
+      "network-on-chip",
+      "event-bus",
+      "cognitive-os",
+      "zero-bypass"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Network-on-Chip for AI: Building an OS Interconnect Between Cognitive Subsystems",
+    "has_fm": true,
+    "size": 6632
+  },
+  {
+    "project": "Leo",
+    "filename": "014-boot-sequence-atomic-rollback.md",
+    "fm_title": "Atomic Boot Sequence with Rollback: Designing a Fail-Safe OS Startup",
+    "fm_slug": "atomic-boot-sequence-with-rollback",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Completed",
+    "fm_date": "None",
+    "fm_topics": [
+      "boot-sequence",
+      "atomic-operations",
+      "fault-recovery",
+      "cognitive-os",
+      "dependency-management"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Atomic Boot Sequence with Rollback: Designing a Fail-Safe OS Startup",
+    "has_fm": true,
+    "size": 6822
+  },
+  {
+    "project": "Leo",
+    "filename": "015-regression-testing-50-scenarios-fast-path.md",
+    "fm_title": "50 Regression Scenarios and a 9ms Fast Path: How LEO Validated its Routing Pipeline",
+    "fm_slug": "regression-50-scenarios-fast-path-routing",
+    "fm_type": "EXPERIMENT",
+    "fm_status": "Completed",
+    "fm_date": "2026-06-22",
+    "fm_topics": [
+      "regression-testing",
+      "intent-routing",
+      "performance",
+      "fast-path-optimization"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# 50 Regression Scenarios and a 9ms Fast Path: How LEO Validated its Routing Pipeline",
+    "has_fm": true,
+    "size": 5688
+  },
+  {
+    "project": "Leo",
+    "filename": "016-deliberate-architecture-constitution.md",
+    "fm_title": "Writing an Architecture Constitution: LEO's Approach to Preventing Drift",
+    "fm_slug": "architecture-constitution-preventing-drift",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Completed",
+    "fm_date": "None",
+    "fm_topics": [
+      "architecture-governance",
+      "engineering-culture",
+      "architecture-decision-records",
+      "constitution"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Writing an Architecture Constitution: LEO's Approach to Preventing Drift",
+    "has_fm": true,
+    "size": 6822
+  },
+  {
+    "project": "Leo",
+    "filename": "017-43-cognition-subsystems-depth.md",
+    "fm_title": "43 Cognition Subsystems: The Scope and Structure of a Cognitive AI Layer",
+    "fm_slug": "43-cognition-subsystems-ai-cognitive-layer",
+    "fm_type": "ARCHITECTURE_DECISION",
+    "fm_status": "Partial",
+    "fm_date": "None",
+    "fm_topics": [
+      "cognitive-architecture",
+      "ai-subsystems",
+      "metacognition",
+      "self-modeling"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# 43 Cognition Subsystems: The Scope and Structure of a Cognitive AI Layer",
+    "has_fm": true,
+    "size": 7775
+  },
+  {
+    "project": "Leo",
+    "filename": "018-langgraph-conversational-state-machines.md",
+    "fm_title": "Using LangGraph for Conversational State Machines in LEO",
+    "fm_slug": "langgraph-conversational-state-machines",
+    "fm_type": "ENGINEERING_NOTE",
+    "fm_status": "Completed",
+    "fm_date": "None",
+    "fm_topics": [
+      "langgraph",
+      "state-machines",
+      "conversational-ai",
+      "node-routing"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Using LangGraph for Conversational State Machines in LEO",
+    "has_fm": true,
+    "size": 5186
+  },
+  {
+    "project": "Leo",
+    "filename": "019-deprecated-sdk-gemini-startup-warning.md",
+    "fm_title": "Silent Deprecation: Discovering a Dead SDK Through Startup Warnings",
+    "fm_slug": "deprecated-gemini-sdk-startup-warning",
+    "fm_type": "DEBUGGING_DISCOVERY",
+    "fm_status": "Documented",
+    "fm_date": "2026-06-28",
+    "fm_topics": [
+      "sdk-deprecation",
+      "startup-diagnostics",
+      "dependency-management",
+      "gemini-api"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Silent Deprecation: Discovering a Dead SDK Through Startup Warnings",
+    "has_fm": true,
+    "size": 3847
+  },
+  {
+    "project": "Leo",
+    "filename": "020-225kb-models-monolith.md",
+    "fm_title": "The 225KB models.py: When a Single File Becomes the Data Model",
+    "fm_slug": "225kb-models-monolith-sqlalchemy",
+    "fm_type": "ENGINEERING_NOTE",
+    "fm_status": "Documented",
+    "fm_date": "None",
+    "fm_topics": [
+      "code-organization",
+      "monolith",
+      "sqlalchemy",
+      "data-modeling",
+      "technical-debt"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# The 225KB models.py: When a Single File Becomes the Data Model",
+    "has_fm": true,
+    "size": 4098
+  },
+  {
+    "project": "Leo",
+    "filename": "021-scratch-migration-workers-iterative-attempts.md",
+    "fm_title": "Four Migration Workers: Iterative Attempts at Fixing 281 Violations",
+    "fm_slug": "scratch-migration-workers-iterative-attempts",
+    "fm_type": "BUILD_LOG",
+    "fm_status": "Incomplete",
+    "fm_date": "None",
+    "fm_topics": [
+      "migration",
+      "iterative-development",
+      "architectural-debt",
+      "debugging"
+    ],
+    "fm_project": "LEO",
+    "first_heading": "# Four Migration Workers: Iterative Attempts at Fixing 281 Violations",
+    "has_fm": true,
+    "size": 4719
+  },
+  {
+    "project": "Vani",
+    "filename": "001-cognitive-os-over-chatbot.md",
+    "fm_title": "Why VANI Is Not a Chatbot: Designing a Cognitive Operating System",
+    "fm_slug": "cognitive-os-over-chatbot",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Active \u2014 Phase 0 completed, Phase 1 in progress",
+    "fm_date": "2026-07",
+    "fm_topics": [
+      "cognitive-architecture",
+      "system-design",
+      "ai-philosophy",
+      "personal-ai",
+      "operating-systems"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Why VANI Is Not a Chatbot: Designing a Cognitive Operating System",
+    "has_fm": true,
+    "size": 6899
+  },
+  {
+    "project": "Vani",
+    "filename": "002-architecture-before-implementation.md",
+    "fm_title": "Architecture Before Implementation: How Phase 0 Produced No Features and Why That Was Correct",
+    "fm_slug": "architecture-before-implementation",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Completed (Phase 0)",
+    "fm_date": "2026",
+    "fm_topics": [
+      "software-architecture",
+      "engineering-process",
+      "technical-discipline",
+      "cognitive-systems"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Architecture Before Implementation: How Phase 0 Produced No Features and Why That Was Correct",
+    "has_fm": true,
+    "size": 8138
+  },
+  {
+    "project": "Vani",
+    "filename": "003-graph-database-rejection.md",
+    "fm_title": "Why I Rejected Every Graph Database and Used SQLite Instead",
+    "fm_slug": "graph-database-rejection-sqlite",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Decided \u2014 July 2026",
+    "fm_date": "2026-07",
+    "fm_topics": [
+      "databases",
+      "graph-databases",
+      "sqlite",
+      "knowledge-graphs",
+      "technology-selection"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Why I Rejected Every Graph Database and Used SQLite Instead",
+    "has_fm": true,
+    "size": 7603
+  },
+  {
+    "project": "Vani",
+    "filename": "004-ai-models-as-fuel.md",
+    "fm_title": "AI Models Are Fuel, Not Architecture: The Model-Independent Cognitive Design",
+    "fm_slug": "ai-models-as-fuel",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Canonical \u2014 July 2026",
+    "fm_date": "2026-07",
+    "fm_topics": [
+      "ai-architecture",
+      "llm-integration",
+      "model-independence",
+      "cognitive-systems",
+      "provider-abstraction"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# AI Models Are Fuel, Not Architecture: The Model-Independent Cognitive Design",
+    "has_fm": true,
+    "size": 8556
+  },
+  {
+    "project": "Vani",
+    "filename": "005-subsystem-layering-pattern.md",
+    "fm_title": "The Subsystem Pattern: Foundation \u2192 Context \u2192 State Machine \u2192 Engine \u2192 Executor \u2192 Orchestrator",
+    "fm_slug": "subsystem-layering-pattern",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Established \u2014 used across all Phase 0 subsystems",
+    "fm_date": "2026",
+    "fm_topics": [
+      "software-architecture",
+      "design-patterns",
+      "separation-of-concerns",
+      "component-design"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Subsystem Pattern: Foundation \u2192 Context \u2192 State Machine \u2192 Engine \u2192 Executor \u2192 Orchestrator",
+    "has_fm": true,
+    "size": 8456
+  },
+  {
+    "project": "Vani",
+    "filename": "006-certification-driven-development.md",
+    "fm_title": "Certification vs Testing: Building a System That Validates Its Own Architecture",
+    "fm_slug": "certification-driven-development",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Implemented \u2014 Phase 0 certification passed",
+    "fm_date": "2026",
+    "fm_topics": [
+      "certification",
+      "testing-philosophy",
+      "software-quality",
+      "static-analysis",
+      "ast-analysis"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Certification vs Testing: Building a System That Validates Its Own Architecture",
+    "has_fm": true,
+    "size": 8123
+  },
+  {
+    "project": "Vani",
+    "filename": "007-zero-infrastructure-strategy.md",
+    "fm_title": "Zero Infrastructure: Designing a 50-Year Personal AI with 15 Dependencies",
+    "fm_slug": "zero-infrastructure-technology-strategy",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Canonical \u2014 July 2026",
+    "fm_date": "2026-07",
+    "fm_topics": [
+      "technology-strategy",
+      "infrastructure",
+      "longevity",
+      "dependency-management",
+      "sqlite"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Zero Infrastructure: Designing a 50-Year Personal AI with 15 Dependencies",
+    "has_fm": true,
+    "size": 8950
+  },
+  {
+    "project": "Vani",
+    "filename": "008-eight-adrs-service-framework.md",
+    "fm_title": "Eight ADRs in Phase 1: What Every Service Framework Decision Reveals",
+    "fm_slug": "eight-adrs-service-framework",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Accepted \u2014 Phase 1 in progress",
+    "fm_date": "2026",
+    "fm_topics": [
+      "architectural-decision-records",
+      "service-framework",
+      "dependency-injection",
+      "lifecycle-management",
+      "engineering-governance"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Eight ADRs in Phase 1: What Every Service Framework Decision Reveals",
+    "has_fm": true,
+    "size": 8849
+  },
+  {
+    "project": "Vani",
+    "filename": "009-architecture-guardian-ast.md",
+    "fm_title": "The Guardian: Using AST Analysis to Make Architecture Self-Validating",
+    "fm_slug": "architecture-guardian-ast-analysis",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Implemented \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "static-analysis",
+      "ast-analysis",
+      "architecture-enforcement",
+      "software-quality",
+      "tooling"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Guardian: Using AST Analysis to Make Architecture Self-Validating",
+    "has_fm": true,
+    "size": 7501
+  },
+  {
+    "project": "Vani",
+    "filename": "010-local-first-personal-ai.md",
+    "fm_title": "Building an AI That Lasts a Lifetime: The Case for Local-First Personal AI",
+    "fm_slug": "local-first-personal-ai",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Canonical \u2014 July 2026",
+    "fm_date": "2026-07",
+    "fm_topics": [
+      "local-first",
+      "privacy",
+      "ai-architecture",
+      "data-sovereignty",
+      "personal-ai"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Building an AI That Lasts a Lifetime: The Case for Local-First Personal AI",
+    "has_fm": true,
+    "size": 8333
+  },
+  {
+    "project": "Vani",
+    "filename": "011-phase0-known-limitations.md",
+    "fm_title": "Phase 0 Known Limitations: What Was Deliberately Left Out and Why",
+    "fm_slug": "phase0-known-limitations",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Completed \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "engineering-discipline",
+      "scope-management",
+      "technical-debt",
+      "cognitive-systems"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Phase 0 Known Limitations: What Was Deliberately Left Out and Why",
+    "has_fm": true,
+    "size": 7254
+  },
+  {
+    "project": "Vani",
+    "filename": "012-runtime-refactoring-discoveries.md",
+    "fm_title": "The Runtime Refactoring: How Three Design Improvements Were Discovered Mid-Implementation",
+    "fm_slug": "runtime-refactoring-discoveries",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Completed \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "refactoring",
+      "architecture-evolution",
+      "design-discovery",
+      "separation-of-concerns"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Runtime Refactoring: How Three Design Improvements Were Discovered Mid-Implementation",
+    "has_fm": true,
+    "size": 8219
+  },
+  {
+    "project": "Vani",
+    "filename": "013-composition-root-pattern.md",
+    "fm_title": "The Composition Root Pattern: Eliminating Startup Duplication Between Production and Certification",
+    "fm_slug": "composition-root-pattern",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Completed \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "design-patterns",
+      "dependency-injection",
+      "composition-root",
+      "testing-patterns",
+      "startup-architecture"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Composition Root Pattern: Eliminating Startup Duplication Between Production and Certification",
+    "has_fm": true,
+    "size": 6077
+  },
+  {
+    "project": "Vani",
+    "filename": "014-rejecting-langchain.md",
+    "fm_title": "Rejecting LangChain: Why Direct AI Contracts Are More Maintainable Over Decades",
+    "fm_slug": "rejecting-langchain-direct-contracts",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Decided \u2014 July 2026",
+    "fm_date": "2026-07",
+    "fm_topics": [
+      "langchain",
+      "ai-frameworks",
+      "vendor-lock-in",
+      "abstractions",
+      "long-term-maintenance"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# Rejecting LangChain: Why Direct AI Contracts Are More Maintainable Over Decades",
+    "has_fm": true,
+    "size": 7585
+  },
+  {
+    "project": "Vani",
+    "filename": "015-no-placeholder-modules.md",
+    "fm_title": "No Placeholder Modules: Engineering Discipline in a Long-Horizon Project",
+    "fm_slug": "no-placeholder-modules",
+    "fm_type": "ENGINEERING NOTE",
+    "fm_status": "Active principle \u2014 enforced from project start",
+    "fm_date": "2026",
+    "fm_topics": [
+      "engineering-discipline",
+      "cognitive-systems",
+      "code-quality",
+      "software-craftsmanship"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# No Placeholder Modules: Engineering Discipline in a Long-Horizon Project",
+    "has_fm": true,
+    "size": 6539
+  },
+  {
+    "project": "Vani",
+    "filename": "016-governance-hierarchy.md",
+    "fm_title": "The Governance Hierarchy: How Documentation Governs Engineering Decisions in VANI",
+    "fm_slug": "governance-hierarchy-documentation",
+    "fm_type": "SYSTEM DESIGN",
+    "fm_status": "Canonical \u2014 frozen",
+    "fm_date": "2026",
+    "fm_topics": [
+      "engineering-governance",
+      "architectural-decision-records",
+      "documentation",
+      "engineering-process",
+      "software-methodology"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Governance Hierarchy: How Documentation Governs Engineering Decisions in VANI",
+    "has_fm": true,
+    "size": 8093
+  },
+  {
+    "project": "Vani",
+    "filename": "017-event-bus-architecture.md",
+    "fm_title": "The Event Bus Architecture: Why VANI Services Never Call Each Other Directly",
+    "fm_slug": "event-bus-no-direct-calls",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Implemented \u2014 Phase 0 (Event System)",
+    "fm_date": "2026",
+    "fm_topics": [
+      "event-driven-architecture",
+      "message-bus",
+      "loose-coupling",
+      "cognitive-systems",
+      "dead-letter-queue"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Event Bus Architecture: Why VANI Services Never Call Each Other Directly",
+    "has_fm": true,
+    "size": 7171
+  },
+  {
+    "project": "Vani",
+    "filename": "018-runtime-execution-cycle.md",
+    "fm_title": "The Runtime Cycle: The Fundamental Execution Unit of an AI OS",
+    "fm_slug": "runtime-cycle-execution-unit",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Implemented \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "runtime-architecture",
+      "execution-loop",
+      "operating-systems",
+      "determinism",
+      "cognitive-systems"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Runtime Cycle: The Fundamental Execution Unit of an AI OS",
+    "has_fm": true,
+    "size": 5157
+  },
+  {
+    "project": "Vani",
+    "filename": "019-cognitive-scheduler.md",
+    "fm_title": "The Cognitive Scheduler: Decoupling Time from Execution",
+    "fm_slug": "cognitive-scheduler-decoupling",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Implemented \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "scheduling",
+      "autonomous-agents",
+      "software-architecture",
+      "cognitive-systems",
+      "decoupling"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Cognitive Scheduler: Decoupling Time from Execution",
+    "has_fm": true,
+    "size": 3940
+  },
+  {
+    "project": "Vani",
+    "filename": "020-kernel-boot-sequence.md",
+    "fm_title": "The Deterministic Boot Sequence: How an AI OS Starts Up",
+    "fm_slug": "deterministic-kernel-boot-sequence",
+    "fm_type": "ARCHITECTURE DECISION",
+    "fm_status": "Implemented \u2014 Phase 0",
+    "fm_date": "2026",
+    "fm_topics": [
+      "operating-systems",
+      "boot-sequence",
+      "kernel-architecture",
+      "deterministic-execution",
+      "cognitive-systems"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Deterministic Boot Sequence: How an AI OS Starts Up",
+    "has_fm": true,
+    "size": 4374
+  },
+  {
+    "project": "Vani",
+    "filename": "021-design-system-mission-control.md",
+    "fm_title": "The Mission Control Dashboard: Designing UI for an AI Operating System",
+    "fm_slug": "design-system-mission-control",
+    "fm_type": "SYSTEM DESIGN",
+    "fm_status": "Frozen \u2014 Design Standards",
+    "fm_date": "2026",
+    "fm_topics": [
+      "ui-design",
+      "ux",
+      "dashboard",
+      "mission-control",
+      "cognitive-systems"
+    ],
+    "fm_project": "VANI",
+    "first_heading": "# The Mission Control Dashboard: Designing UI for an AI Operating System",
+    "has_fm": true,
+    "size": 4887
+  }
+]

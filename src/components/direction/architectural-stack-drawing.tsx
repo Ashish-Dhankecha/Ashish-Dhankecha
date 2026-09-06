@@ -74,29 +74,34 @@ export function ArchitecturalStackDrawing({
   return (
     <div
       className={cn(
-        "border border-[#D8D4CB] bg-[#EDE8DE]/40 p-5 sm:p-6 select-none relative",
+        "rounded border border-[#1E293B] bg-[#0D1117] p-4 sm:p-6 select-none relative",
         className
       )}
     >
       {/* Plate Header */}
-      <div className="flex items-center justify-between border-b border-[#D8D4CB] pb-3 text-[10px] font-mono tracking-widest text-[#555555] uppercase">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#1E293B] pb-2.5 sm:pb-3 text-[10px] font-mono tracking-widest text-slate-400 uppercase gap-1">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-[#173B70]" />
-          <span className="text-[#111111] font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan" />
+          <span className="text-white font-semibold">
             FIG. 04A // CAPABILITY STACK SCHEMATIC
           </span>
         </div>
-        <span className="hidden sm:inline-block">ORDER: FOUNDATION → REALITY</span>
+        <span className="text-[9px] sm:text-[10px] text-slate-400">ORDER: FOUNDATION → REALITY</span>
       </div>
 
       {/* Drawing Canvas */}
-      <div className="pt-4 pb-2">
+      <div className="pt-3 sm:pt-4 pb-1 sm:pb-2">
         <svg
           viewBox="0 0 540 316"
           className="w-full h-auto"
           aria-label="Abstract technical diagram showing layered progression from foundations to creation"
         >
           <defs>
+            <style>{`
+              @media (max-width: 640px) {
+                .arch-layer-type { display: none !important; }
+              }
+            `}</style>
             {/* Fine Grid Pattern */}
             <pattern
               id="archGrid"
@@ -107,9 +112,9 @@ export function ArchitecturalStackDrawing({
               <path
                 d="M 20 0 L 0 0 0 20"
                 fill="none"
-                stroke="#D8D4CB"
-                strokeWidth="0.4"
-                strokeOpacity="0.6"
+                stroke="#1E293B"
+                strokeWidth="0.5"
+                strokeOpacity="0.8"
               />
             </pattern>
           </defs>
@@ -123,7 +128,7 @@ export function ArchitecturalStackDrawing({
             y1="10"
             x2="270"
             y2="306"
-            stroke="#173B70"
+            stroke="#38BDF8"
             strokeWidth="0.8"
             strokeDasharray="2 3"
             strokeOpacity="0.45"
@@ -135,7 +140,7 @@ export function ArchitecturalStackDrawing({
             y1="20"
             x2="30"
             y2="300"
-            stroke="#D8D4CB"
+            stroke="#1E293B"
             strokeWidth="0.6"
           />
           <line
@@ -143,7 +148,7 @@ export function ArchitecturalStackDrawing({
             y1="20"
             x2="36"
             y2="20"
-            stroke="#D8D4CB"
+            stroke="#1E293B"
             strokeWidth="0.6"
           />
           <line
@@ -151,7 +156,7 @@ export function ArchitecturalStackDrawing({
             y1="300"
             x2="36"
             y2="300"
-            stroke="#D8D4CB"
+            stroke="#1E293B"
             strokeWidth="0.6"
           />
 
@@ -160,7 +165,7 @@ export function ArchitecturalStackDrawing({
             y="160"
             fontSize="8"
             fontFamily="monospace"
-            fill="#8B8579"
+            fill="#64748B"
             letterSpacing="0.2em"
             transform="rotate(-90 20 160)"
             textAnchor="middle"
@@ -193,20 +198,19 @@ export function ArchitecturalStackDrawing({
                   height={layer.height}
                   fill={
                     isActive
-                      ? "#173B70"
-                      : layer.accent
-                      ? "#F3F0E8"
-                      : "#EDE8DE"
+                      ? "#151D2A"
+                      : "#070A0F"
                   }
                   stroke={
                     isActive
-                      ? "#173B70"
+                      ? "#38BDF8"
                       : layer.accent
-                      ? "#173B70"
-                      : "#111111"
+                      ? "#334155"
+                      : "#1E293B"
                   }
                   strokeWidth={isActive ? "1.5" : "1"}
                   className="transition-colors duration-200"
+                  rx="3"
                 />
 
                 {/* Left Number Tag */}
@@ -216,7 +220,7 @@ export function ArchitecturalStackDrawing({
                   fontSize="10"
                   fontFamily="monospace"
                   fontWeight="600"
-                  fill={isActive ? "#F3F0E8" : "#173B70"}
+                  fill={isActive ? "#38BDF8" : "#64748B"}
                   letterSpacing="0.1em"
                 >
                   {layer.number}
@@ -230,7 +234,7 @@ export function ArchitecturalStackDrawing({
                   fontFamily="monospace"
                   fontWeight="600"
                   letterSpacing="0.15em"
-                  fill={isActive ? "#F3F0E8" : "#111111"}
+                  fill={isActive ? "#38BDF8" : "#F8FAFC"}
                 >
                   {layer.title}
                 </text>
@@ -243,8 +247,8 @@ export function ArchitecturalStackDrawing({
                   fontFamily="monospace"
                   textAnchor="end"
                   letterSpacing="0.1em"
-                  fill={isActive ? "#D8D4CB" : "#555555"}
-                  className="hidden sm:inline"
+                  fill={isActive ? "#94A3B8" : "#64748B"}
+                  className="arch-layer-type"
                 >
                   {layer.type}
                 </text>
@@ -255,7 +259,7 @@ export function ArchitecturalStackDrawing({
                   y1={layer.y + layer.height / 2}
                   x2={x + 4}
                   y2={layer.y + layer.height / 2}
-                  stroke={isActive ? "#F3F0E8" : "#173B70"}
+                  stroke={isActive ? "#38BDF8" : "#334155"}
                   strokeWidth="1"
                 />
                 <line
@@ -263,7 +267,7 @@ export function ArchitecturalStackDrawing({
                   y1={layer.y + layer.height / 2}
                   x2={x + currentW}
                   y2={layer.y + layer.height / 2}
-                  stroke={isActive ? "#F3F0E8" : "#173B70"}
+                  stroke={isActive ? "#38BDF8" : "#334155"}
                   strokeWidth="1"
                 />
               </g>
@@ -273,9 +277,9 @@ export function ArchitecturalStackDrawing({
       </div>
 
       {/* Footer metadata legend */}
-      <div className="pt-2 border-t border-[#D8D4CB] flex flex-wrap items-center justify-between text-[9px] font-mono text-[#8B8579] tracking-wider uppercase">
+      <div className="pt-2 border-t border-[#1E293B] flex flex-wrap items-center justify-between text-[9px] font-mono text-slate-400 tracking-wider uppercase">
         <span>SCHEMATIC REF // DIR-2026-LAYERED</span>
-        <span>MONOCHROME + RESTRAINED STEEL</span>
+        <span className="text-cyber-cyan">RUNTIME: DETERMINISTIC STACK</span>
       </div>
     </div>
   );

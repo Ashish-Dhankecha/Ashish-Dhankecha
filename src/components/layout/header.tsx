@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Terminal } from "lucide-react";
 import { Container } from "./container";
 import { NavLinks } from "@/components/navigation/nav-links";
 import { MobileNav } from "@/components/navigation/mobile-nav";
@@ -15,43 +15,37 @@ export function Header() {
   return (
     <header
       role="banner"
-      className={`sticky top-0 z-50 w-full backdrop-blur-sm transition-colors duration-200 ${
-        isLab
-          ? "bg-[#0A0D14]/95 border-b border-[#1E293B] text-[#F3F0E8]"
-          : "bg-[#F3F0E8]/95 border-b border-[#D8D4CB] text-[#111111]"
-      }`}
+      className="sticky top-0 z-50 w-full backdrop-blur-md transition-colors duration-200 bg-[#070A0F]/90 border-b border-[#1E293B] text-[#F8FAFC]"
     >
       <Container width="wide">
-        <div className="flex items-center justify-between h-20">
-          {/* Personal Wordmark */}
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Personal Wordmark & AI telemetry */}
           <Link
             href="/"
             aria-label={`${siteConfig.name} — Home`}
-            className="group flex items-baseline gap-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#173B70]"
+            className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyber-cyan"
           >
-            <span
-              className={`font-display text-xl sm:text-2xl font-light tracking-tight transition-colors ${
-                isLab
-                  ? "text-[#F8FAFC] hover:text-[#38BDF8]"
-                  : "text-[#111111] hover:text-[#173B70]"
-              }`}
-            >
+            <div className="w-7 h-7 rounded bg-[#0E1420] border border-[#1E293B] flex items-center justify-center text-cyber-cyan group-hover:border-cyber-cyan/50 transition-colors">
+              <Terminal className="w-3.5 h-3.5" />
+            </div>
+            <span className="font-sans text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-cyber-cyan transition-colors">
               ASHISH DHANKECHA
             </span>
 
             {isLab ? (
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 border border-emerald-500/40 bg-emerald-950/40 text-emerald-400 font-mono text-[9px] uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                LAB ACTIVE
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan font-mono text-[10px] uppercase tracking-widest font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan animate-pulse" />
+                LAB / ARCHIVE
               </span>
             ) : (
-              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#555555] hidden lg:inline-block">
-                ENGINEER · BUILDER
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-cyber-emerald/40 bg-cyber-emerald/10 text-cyber-emerald font-mono text-[10px] uppercase tracking-wider font-medium hidden sm:inline-flex">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyber-emerald animate-pulse" />
+                AI SYSTEMS DEV
               </span>
             )}
           </Link>
 
-          {/* Desktop Navigation (01 Home to 06 Contact, with 04 Lab) */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center">
             <NavLinks />
           </div>
@@ -60,14 +54,10 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/#contact"
-              className={`group hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-mono uppercase tracking-wider transition-all ${
-                isLab
-                  ? "border border-[#334155] bg-[#111726] text-[#F8FAFC] hover:bg-[#1E293B] hover:border-[#38BDF8] hover:text-[#38BDF8]"
-                  : "border border-[#111111] text-[#111111] hover:bg-[#173B70] hover:border-[#173B70] hover:text-[#F3F0E8]"
-              }`}
+              className="group hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-mono uppercase tracking-wider transition-all rounded border border-[#334155] bg-[#0E1420] text-slate-200 hover:border-cyber-cyan hover:text-white hover:bg-[#151D2A]"
             >
-              <span>Let&apos;s Connect</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span>Initialize Contact</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-cyber-cyan transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
             <MobileNav />

@@ -9,21 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        parchment: {
-          DEFAULT: "#F3F0E8",
-          surface: "#EDE8DE",
-          elevated: "#E5DFD4",
+        obsidian: {
+          DEFAULT: "#070A0F",
+          surface: "#0D1117",
+          elevated: "#151D2A",
+          card: "#0E1420",
         },
-        nearblack: "#111111",
-        charcoal: "#555555",
+        cyber: {
+          cyan: "#38BDF8",
+          blue: "#3B82F6",
+          emerald: "#10B981",
+          amber: "#F59E0B",
+          purple: "#A855F7",
+        },
+        slate: {
+          border: "#1E293B",
+          borderStrong: "#334155",
+          muted: "#94A3B8",
+          subtle: "#64748B",
+        },
+        parchment: {
+          DEFAULT: "#070A0F",
+          surface: "#0D1117",
+          elevated: "#151D2A",
+        },
+        nearblack: "#F1F5F9",
+        charcoal: "#94A3B8",
         warmgray: {
-          subtle: "#D8D4CB",
-          strong: "#B0A99C",
+          subtle: "#1E293B",
+          strong: "#334155",
         },
         restrainedblue: {
-          DEFAULT: "#173B70",
-          steel: "#2B4C7E",
-          subtle: "#E8EEF5",
+          DEFAULT: "#38BDF8",
+          steel: "#3B82F6",
+          subtle: "#0D1E36",
         },
         bg: {
           primary: "hsl(var(--bg-primary) / <alpha-value>)",
@@ -51,7 +70,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Newsreader", "Georgia", "serif"],
+        display: ["var(--font-sans)", "Inter", "system-ui", "-apple-system", "sans-serif"],
         sans: ["var(--font-sans)", "Inter", "system-ui", "-apple-system", "sans-serif"],
         mono: ["var(--font-mono)", "JetBrains Mono", "Menlo", "monospace"],
       },

@@ -25,8 +25,8 @@ export function Display({
   return (
     <Component
       className={cn(
-        "font-display text-text-primary leading-[1.1] font-normal text-balance",
-        italic && "italic font-serif",
+        "font-display text-text-primary leading-[1.1] font-semibold text-balance",
+        italic && "italic",
         sizeClasses[size],
         className
       )}

@@ -44,11 +44,7 @@ export function MobileNav() {
         onClick={() => setIsOpen(true)}
         aria-expanded={isOpen}
         aria-label="Open navigation menu"
-        className={`p-2 border transition-colors focus-visible:outline-none focus-visible:ring-2 ${
-          isLab
-            ? "border-[#1E293B] bg-[#111726] text-[#F8FAFC] hover:border-[#38BDF8] focus-visible:ring-[#38BDF8]"
-            : "border-[#D8D4CB] bg-[#F3F0E8] text-[#111111] hover:border-[#111111] focus-visible:ring-[#173B70]"
-        }`}
+        className="p-2.5 rounded border transition-colors focus-visible:outline-none focus-visible:ring-2 border-[#1E293B] bg-[#0E1420] text-slate-200 hover:border-cyber-cyan hover:text-white focus-visible:ring-cyber-cyan min-h-[44px] min-w-[44px] flex items-center justify-center"
       >
         <Menu className="w-5 h-5" aria-hidden="true" />
       </button>
@@ -63,34 +59,22 @@ export function MobileNav() {
           {/* Backdrop */}
           <div
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
             aria-hidden="true"
           />
 
           {/* Drawer content */}
           <div
-            className={`relative w-full max-w-xs p-6 shadow-2xl flex flex-col justify-between z-10 animate-slide-down border-l ${
-              isLab
-                ? "bg-[#0A0D14] border-[#1E293B] text-[#F8FAFC]"
-                : "bg-[#F3F0E8] border-[#D8D4CB] text-[#111111]"
-            }`}
+            className="relative w-full max-w-xs p-6 shadow-2xl flex flex-col justify-between z-10 animate-slide-down border-l bg-[#070A0F] border-[#1E293B] text-[#F8FAFC]"
           >
             <div>
-              <div
-                className={`flex items-center justify-between pb-6 border-b ${
-                  isLab ? "border-[#1E293B]" : "border-[#D8D4CB]"
-                }`}
-              >
+              <div className="flex items-center justify-between pb-6 border-b border-[#1E293B]">
                 <div className="flex items-center gap-2">
-                  <span
-                    className={`font-mono text-xs uppercase tracking-widest ${
-                      isLab ? "text-[#94A3B8]" : "text-[#555555]"
-                    }`}
-                  >
-                    Navigation Index
+                  <span className="font-mono text-xs uppercase tracking-widest text-slate-400">
+                    System Navigation
                   </span>
                   {isLab && (
-                    <span className="px-1.5 py-0.5 border border-emerald-500/40 bg-emerald-950/40 text-emerald-400 font-mono text-[8px] uppercase">
+                    <span className="px-1.5 py-0.5 rounded border border-cyber-cyan/30 bg-cyber-cyan/10 text-cyber-cyan font-mono text-[9px] uppercase font-medium">
                       LAB
                     </span>
                   )}
@@ -99,11 +83,7 @@ export function MobileNav() {
                   type="button"
                   onClick={() => setIsOpen(false)}
                   aria-label="Close navigation menu"
-                  className={`p-1.5 border transition-colors focus-visible:outline-none focus-visible:ring-1 ${
-                    isLab
-                      ? "border-[#1E293B] text-[#F8FAFC] hover:border-[#38BDF8] hover:bg-[#111726] focus-visible:ring-[#38BDF8]"
-                      : "border-[#D8D4CB] text-[#111111] hover:border-[#111111] hover:bg-[#EDE8DE] focus-visible:ring-[#173B70]"
-                  }`}
+                  className="p-2 rounded border border-[#1E293B] text-slate-400 hover:border-cyber-cyan hover:text-white hover:bg-[#0E1420] focus-visible:ring-cyber-cyan min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
                 >
                   <X className="w-5 h-5" aria-hidden="true" />
                 </button>
@@ -121,31 +101,19 @@ export function MobileNav() {
                       key={item.title}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`px-3 py-2.5 text-sm transition-colors flex items-center justify-between border-b group ${
-                        isLab
-                          ? `border-[#1E293B]/60 ${
-                              isItemActive
-                                ? "text-[#38BDF8] bg-[#111726]/60 font-medium"
-                                : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#111726]"
-                            }`
-                          : `border-[#D8D4CB]/50 ${
-                              isItemActive
-                                ? "text-[#173B70] bg-[#EDE8DE] font-medium"
-                                : "text-[#555555] hover:text-[#111111] hover:bg-[#EDE8DE]/70"
-                            }`
+                      className={`px-3 py-3 rounded text-sm transition-colors flex items-center justify-between border-b border-[#1E293B]/50 group min-h-[44px] ${
+                        isItemActive
+                          ? "text-cyber-cyan bg-[#0E1420] border-cyber-cyan/30 font-semibold"
+                          : "text-slate-300 hover:text-white hover:bg-[#0E1420]/70"
                       }`}
                     >
-                      <div className="flex items-baseline gap-2.5">
+                      <div className="flex items-center gap-2.5">
                         {item.index && (
                           <span
                             className={`font-mono text-xs transition-colors ${
-                              isLab
-                                ? isItemActive
-                                  ? "text-[#38BDF8]"
-                                  : "text-[#64748B] group-hover:text-[#38BDF8]"
-                                : isItemActive
-                                ? "text-[#173B70]"
-                                : "text-[#8B8579] group-hover:text-[#173B70]"
+                              isItemActive
+                                ? "text-cyber-cyan"
+                                : "text-slate-500 group-hover:text-cyber-cyan"
                             }`}
                           >
                             {item.index}
@@ -155,18 +123,16 @@ export function MobileNav() {
                           {item.title}
                         </span>
                         {item.href === "/lab" && (
-                          <span className="text-[8px] font-mono uppercase tracking-widest px-1 py-0.2 bg-[#0284C7] text-white">
-                            EXP
+                          <span className="text-[8px] font-mono uppercase tracking-widest px-1.5 py-0.5 rounded border border-cyber-cyan/30 bg-cyber-cyan/10 text-cyber-cyan font-semibold">
+                            ARCHIVE
                           </span>
                         )}
                       </div>
                       <ArrowUpRight
-                        className={`w-3.5 h-3.5 transition-opacity ${
+                        className={`w-4 h-4 transition-transform ${
                           isItemActive
-                            ? "opacity-100 text-[#38BDF8]"
-                            : isLab
-                            ? "opacity-0 group-hover:opacity-100 text-[#38BDF8]"
-                            : "opacity-0 group-hover:opacity-100 text-[#173B70]"
+                            ? "opacity-100 text-cyber-cyan"
+                            : "opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 text-cyber-cyan"
                         }`}
                       />
                     </Link>
@@ -177,37 +143,21 @@ export function MobileNav() {
                   <Link
                     href="/#contact"
                     onClick={() => setIsOpen(false)}
-                    className={`w-full py-3 px-4 text-center font-mono uppercase text-xs tracking-wider flex items-center justify-center gap-2 transition-colors ${
-                      isLab
-                        ? "border border-[#38BDF8] bg-[#0284C7] text-white hover:bg-[#0369A1]"
-                        : "border border-[#111111] bg-[#111111] text-[#F3F0E8] hover:bg-[#173B70] hover:border-[#173B70]"
-                    }`}
+                    className="w-full py-3 px-4 rounded text-center font-mono uppercase text-xs tracking-wider flex items-center justify-center gap-2 transition-colors border border-cyber-cyan/50 bg-cyber-cyan/10 text-cyber-cyan hover:bg-cyber-cyan hover:text-obsidian-dark font-semibold min-h-[44px]"
                   >
-                    <span>Let&apos;s Connect</span>
+                    <span>Initialize Contact</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </nav>
             </div>
 
-            <div
-              className={`pt-6 border-t ${
-                isLab ? "border-[#1E293B]" : "border-[#D8D4CB]"
-              }`}
-            >
-              <p
-                className={`font-display text-base font-normal ${
-                  isLab ? "text-[#F8FAFC]" : "text-[#111111]"
-                }`}
-              >
+            <div className="pt-6 border-t border-[#1E293B]">
+              <p className="font-sans text-sm font-bold text-white tracking-tight">
                 {siteConfig.name}
               </p>
-              <p
-                className={`font-mono text-[11px] mt-0.5 ${
-                  isLab ? "text-[#64748B]" : "text-[#555555]"
-                }`}
-              >
-                Computer Engineering Student &middot; AI Systems Builder
+              <p className="font-mono text-[11px] mt-1 text-slate-400">
+                AI Systems Engineer &middot; Kernel Architect
               </p>
             </div>
           </div>

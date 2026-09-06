@@ -64,17 +64,17 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "border border-[#111111] bg-[#EDE8DE]/40 p-5 sm:p-7 relative select-none",
+        "rounded border border-[#1E293B] bg-[#0D1117] p-5 sm:p-7 relative select-none",
         className
       )}
     >
       {/* Top Architectural Plate Header */}
-      <div className="flex items-center justify-between border-b border-[#D8D4CB] pb-3 text-[10px] font-mono tracking-widest text-[#555555] uppercase">
+      <div className="flex items-center justify-between border-b border-[#1E293B] pb-3 text-[10px] font-mono tracking-widest text-slate-400 uppercase">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-[#173B70]" />
-          <span className="text-[#111111] font-semibold">FIG. 02A // ARCHITECTURAL SCHEMATIC</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan" />
+          <span className="text-white font-semibold">FIG. 02A // KERNEL SCHEMATIC</span>
         </div>
-        <span>SCALE: 1:1 STATE FLOW</span>
+        <span className="text-cyber-cyan">SCALE: DETERMINISTIC STATE MACHINE</span>
       </div>
 
       {/* Main Diagram Canvas */}
@@ -85,33 +85,33 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
           onClick={() => setActiveNode("memory")}
           onMouseEnter={() => setActiveNode("memory")}
           className={cn(
-            "w-52 sm:w-60 py-3 px-4 border text-center transition-all duration-200 cursor-pointer",
+            "w-52 sm:w-60 py-3 px-4 rounded border text-center transition-all duration-200 cursor-pointer",
             activeNode === "memory"
-              ? "border-[#173B70] bg-[#173B70] text-[#F3F0E8] shadow-sm"
-              : "border-[#111111] bg-[#F3F0E8] text-[#111111] hover:border-[#173B70]"
+              ? "border-cyber-cyan bg-[#151D2A] text-white shadow-md shadow-cyber-cyan/10"
+              : "border-[#1E293B] bg-[#070A0F] text-slate-200 hover:border-cyber-cyan/50"
           )}
         >
           <div className="flex items-center justify-between text-[10px] font-mono tracking-widest">
-            <span>[ 01 ]</span>
-            <span>STATE</span>
+            <span className="text-cyber-cyan">[ 01 ]</span>
+            <span className="text-slate-400">STATE</span>
           </div>
-          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5">
+          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5 text-white">
             MEMORY
           </p>
-          <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "memory" ? "text-slate-200" : "text-[#555555]")}>
+          <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "memory" ? "text-cyber-cyan" : "text-slate-400")}>
             Cryptographic Event Ledger
           </p>
         </button>
 
         {/* Bi-directional Connector: Memory ↕ Planning */}
         <div className="flex flex-col items-center my-1">
-          <div className="w-[1px] h-3 bg-[#111111]" />
-          <div className="flex items-center gap-1 font-mono text-[9px] text-[#555555]">
+          <div className="w-[1px] h-3 bg-[#1E293B]" />
+          <div className="flex items-center gap-1 font-mono text-[9px] text-slate-500">
             <span>▲</span>
-            <span className="text-[8px] tracking-tighter">RECALL / SYNC</span>
+            <span className="text-[8px] tracking-tighter text-slate-400">RECALL / SYNC</span>
             <span>▼</span>
           </div>
-          <div className="w-[1px] h-3 bg-[#111111]" />
+          <div className="w-[1px] h-3 bg-[#1E293B]" />
         </div>
 
         {/* Planning Node */}
@@ -120,28 +120,28 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
           onClick={() => setActiveNode("planning")}
           onMouseEnter={() => setActiveNode("planning")}
           className={cn(
-            "w-52 sm:w-60 py-3 px-4 border text-center transition-all duration-200 cursor-pointer",
+            "w-52 sm:w-60 py-3 px-4 rounded border text-center transition-all duration-200 cursor-pointer",
             activeNode === "planning"
-              ? "border-[#173B70] bg-[#173B70] text-[#F3F0E8] shadow-sm"
-              : "border-[#111111] bg-[#F3F0E8] text-[#111111] hover:border-[#173B70]"
+              ? "border-cyber-cyan bg-[#151D2A] text-white shadow-md shadow-cyber-cyan/10"
+              : "border-[#1E293B] bg-[#070A0F] text-slate-200 hover:border-cyber-cyan/50"
           )}
         >
           <div className="flex items-center justify-between text-[10px] font-mono tracking-widest">
-            <span>[ 02 ]</span>
-            <span>REASONING</span>
+            <span className="text-cyber-cyan">[ 02 ]</span>
+            <span className="text-slate-400">REASONING</span>
           </div>
-          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5">
+          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5 text-white">
             PLANNING
           </p>
-          <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "planning" ? "text-slate-200" : "text-[#555555]")}>
+          <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "planning" ? "text-cyber-cyan" : "text-slate-400")}>
             Goal Synthesis &amp; Tree Search
           </p>
         </button>
 
         {/* Connector: Planning ↓ Ashi */}
         <div className="flex flex-col items-center my-1">
-          <div className="w-[1px] h-4 bg-[#111111]" />
-          <span className="font-mono text-[9px] text-[#111111]">▼</span>
+          <div className="w-[1px] h-4 bg-[#1E293B]" />
+          <span className="font-mono text-[9px] text-cyber-cyan">▼</span>
         </div>
 
         {/* Ashi Kernel Node (Center) */}
@@ -150,20 +150,23 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
           onClick={() => setActiveNode("ashi")}
           onMouseEnter={() => setActiveNode("ashi")}
           className={cn(
-            "w-64 sm:w-72 py-4 px-6 border-2 text-center transition-all duration-200 relative",
+            "w-64 sm:w-72 py-4 px-6 rounded-lg border-2 text-center transition-all duration-200 relative",
             activeNode === "ashi"
-              ? "border-[#173B70] bg-[#111111] text-[#F3F0E8] shadow-md ring-2 ring-[#173B70]/30"
-              : "border-[#111111] bg-[#F3F0E8] text-[#111111] hover:border-[#173B70]"
+              ? "border-cyber-cyan bg-[#151D2A] text-white shadow-lg shadow-cyber-cyan/15 ring-2 ring-cyber-cyan/30"
+              : "border-[#1E293B] bg-[#070A0F] text-white hover:border-cyber-cyan/50"
           )}
         >
-          <div className="flex items-center justify-between text-[10px] font-mono tracking-widest text-[#D8D4CB]">
+          <div className="flex items-center justify-between text-[10px] font-mono tracking-widest text-slate-400">
             <span>CORE KERNEL</span>
-            <span className="text-[#173B70] font-bold">● ACTIVE</span>
+            <span className="text-cyber-emerald font-bold flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyber-emerald animate-pulse" />
+              ACTIVE
+            </span>
           </div>
-          <h4 className="font-display text-xl sm:text-2xl font-light tracking-tight mt-1 text-[#F3F0E8]">
+          <h4 className="font-sans text-xl sm:text-2xl font-bold tracking-tight mt-1 text-white">
             ASHI
           </h4>
-          <p className="font-mono text-[10px] uppercase tracking-wider text-[#A5B4C7] mt-0.5">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-cyber-cyan mt-0.5">
             Autonomous Operating Runtime
           </p>
         </button>
@@ -174,18 +177,18 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
           <svg className="w-full h-full" viewBox="0 0 320 40" fill="none">
             <path
               d="M160 0 L160 12 L70 12 L70 36"
-              stroke="#111111"
+              stroke="#38BDF8"
               strokeWidth="1"
               strokeDasharray={activeNode === "tools" ? "3 3" : undefined}
             />
-            <polygon points="67,34 73,34 70,39" fill="#111111" />
+            <polygon points="67,34 73,34 70,39" fill="#38BDF8" />
             <path
               d="M160 0 L160 12 L250 12 L250 36"
-              stroke="#111111"
+              stroke="#38BDF8"
               strokeWidth="1"
               strokeDasharray={activeNode === "execution" ? "3 3" : undefined}
             />
-            <polygon points="247,34 253,34 250,39" fill="#111111" />
+            <polygon points="247,34 253,34 250,39" fill="#38BDF8" />
           </svg>
         </div>
 
@@ -197,17 +200,17 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
             onClick={() => setActiveNode("tools")}
             onMouseEnter={() => setActiveNode("tools")}
             className={cn(
-              "py-3 px-3.5 border text-center transition-all duration-200 cursor-pointer",
+              "py-3 px-3.5 rounded border text-center transition-all duration-200 cursor-pointer",
               activeNode === "tools"
-                ? "border-[#173B70] bg-[#173B70] text-[#F3F0E8] shadow-sm"
-                : "border-[#111111] bg-[#F3F0E8] text-[#111111] hover:border-[#173B70]"
+                ? "border-cyber-cyan bg-[#151D2A] text-white shadow-md shadow-cyber-cyan/10"
+                : "border-[#1E293B] bg-[#070A0F] text-slate-200 hover:border-cyber-cyan/50"
             )}
           >
-            <div className="text-[9px] font-mono tracking-widest">[ 03A ]</div>
-            <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5">
+            <div className="text-[9px] font-mono tracking-widest text-cyber-cyan">[ 03A ]</div>
+            <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5 text-white">
               TOOLS
             </p>
-            <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "tools" ? "text-slate-200" : "text-[#555555]")}>
+            <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "tools" ? "text-cyber-cyan" : "text-slate-400")}>
               Validated Schemas
             </p>
           </button>
@@ -218,17 +221,17 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
             onClick={() => setActiveNode("execution")}
             onMouseEnter={() => setActiveNode("execution")}
             className={cn(
-              "py-3 px-3.5 border text-center transition-all duration-200 cursor-pointer",
+              "py-3 px-3.5 rounded border text-center transition-all duration-200 cursor-pointer",
               activeNode === "execution"
-                ? "border-[#173B70] bg-[#173B70] text-[#F3F0E8] shadow-sm"
-                : "border-[#111111] bg-[#F3F0E8] text-[#111111] hover:border-[#173B70]"
+                ? "border-cyber-cyan bg-[#151D2A] text-white shadow-md shadow-cyber-cyan/10"
+                : "border-[#1E293B] bg-[#070A0F] text-slate-200 hover:border-cyber-cyan/50"
             )}
           >
-            <div className="text-[9px] font-mono tracking-widest">[ 03B ]</div>
-            <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5">
+            <div className="text-[9px] font-mono tracking-widest text-cyber-cyan">[ 03B ]</div>
+            <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5 text-white">
               EXECUTION
             </p>
-            <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "execution" ? "text-slate-200" : "text-[#555555]")}>
+            <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "execution" ? "text-cyber-cyan" : "text-slate-400")}>
               Linux Sandboxes
             </p>
           </button>
@@ -239,16 +242,16 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
           <svg className="w-full h-full" viewBox="0 0 320 40" fill="none">
             <path
               d="M70 0 L70 16 L160 16 L160 36"
-              stroke="#111111"
+              stroke="#38BDF8"
               strokeWidth="1"
               strokeDasharray={activeNode === "evaluation" ? "3 3" : undefined}
             />
             <path
               d="M250 0 L250 16 L160 16"
-              stroke="#111111"
+              stroke="#38BDF8"
               strokeWidth="1"
             />
-            <polygon points="157,34 163,34 160,39" fill="#111111" />
+            <polygon points="157,34 163,34 160,39" fill="#38BDF8" />
           </svg>
         </div>
 
@@ -258,36 +261,36 @@ export function AshiArchitectureDiagram({ className }: { className?: string }) {
           onClick={() => setActiveNode("evaluation")}
           onMouseEnter={() => setActiveNode("evaluation")}
           className={cn(
-            "w-52 sm:w-60 py-3 px-4 border text-center transition-all duration-200 cursor-pointer mt-1",
+            "w-52 sm:w-60 py-3 px-4 rounded border text-center transition-all duration-200 cursor-pointer mt-1",
             activeNode === "evaluation"
-              ? "border-[#173B70] bg-[#173B70] text-[#F3F0E8] shadow-sm"
-              : "border-[#111111] bg-[#F3F0E8] text-[#111111] hover:border-[#173B70]"
+              ? "border-cyber-cyan bg-[#151D2A] text-white shadow-md shadow-cyber-cyan/10"
+              : "border-[#1E293B] bg-[#070A0F] text-slate-200 hover:border-cyber-cyan/50"
           )}
         >
           <div className="flex items-center justify-between text-[10px] font-mono tracking-widest">
-            <span>[ 04 ]</span>
-            <span>VERIFICATION</span>
+            <span className="text-cyber-cyan">[ 04 ]</span>
+            <span className="text-slate-400">VERIFICATION</span>
           </div>
-          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5">
+          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider mt-0.5 text-white">
             EVALUATION
           </p>
-          <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "evaluation" ? "text-slate-200" : "text-[#555555]")}>
+          <p className={cn("text-[9px] font-mono mt-0.5", activeNode === "evaluation" ? "text-cyber-cyan" : "text-slate-400")}>
             Deterministic Assertions
           </p>
         </button>
       </div>
 
       {/* Dynamic Sub-plate Inspector for the selected node */}
-      <div className="mt-4 pt-3 border-t border-[#D8D4CB] bg-[#F3F0E8] p-3 sm:p-4 border border-[#D8D4CB]">
+      <div className="mt-4 pt-3 border-t border-[#1E293B] bg-[#070A0F] p-3 sm:p-4 rounded border border-[#1E293B]">
         <div className="flex items-baseline justify-between gap-2">
-          <span className="font-mono text-[10px] uppercase tracking-wider text-[#173B70] font-semibold">
+          <span className="font-mono text-[10px] uppercase tracking-wider text-cyber-cyan font-semibold">
             NODE SPECIFICATION &middot; {selectedNode.name}
           </span>
-          <span className="font-mono text-[9px] uppercase tracking-widest text-[#555555]">
+          <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">
             LAYER: {selectedNode.role}
           </span>
         </div>
-        <p className="text-xs text-[#111111] font-sans mt-1.5 leading-relaxed">
+        <p className="text-xs text-slate-300 font-sans mt-1.5 leading-relaxed">
           {selectedNode.spec}
         </p>
       </div>

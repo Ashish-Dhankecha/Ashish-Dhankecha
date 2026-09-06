@@ -1,17 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Newsreader } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SkipToContent } from "@/components/layout/skip-to-content";
 import { constructMetadata } from "@/lib/metadata";
 import "@/styles/globals.css";
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = constructMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#F3F0E8",
+  themeColor: "#070A0F",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -42,9 +35,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} dark`}
     >
-      <body className="min-h-screen flex flex-col bg-bg-primary text-text-primary antialiased">
+      <body className="min-h-screen flex flex-col bg-bg-primary text-text-primary antialiased selection:bg-accent-primary/20 selection:text-accent-primary">
         <SkipToContent />
         <Header />
         <main id="main-content" className="flex-1 flex flex-col">

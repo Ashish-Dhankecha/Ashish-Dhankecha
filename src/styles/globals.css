@@ -4,39 +4,44 @@
 
 :root {
   /* ==========================================================================
-     Design Tokens - Color System (Warm Editorial Ivory / Archival Theme)
-     Exact user-specified palette:
-     - Primary background: #F3F0E8 (Warm ivory / parchment)
-     - Primary text: #111111 (Near-black)
-     - Secondary text: #555555 (Muted charcoal)
-     - Borders: #D8D4CB (Subtle warm gray)
-     - Accent: #173B70 (Deep restrained blue)
-     - Secondary accent: #2B4C7E (Muted steel blue)
+     Design Tokens - Color System (Deep Obsidian / AI Systems Laboratory Theme)
+     - Primary background: #070A0F (Deep obsidian void)
+     - Primary surface: #0D1117 (Graphite terminal surface)
+     - Elevated surface: #151D2A (Card elevation)
+     - Borders: #1E293B (Hairline technical rule)
+     - Strong border: #334155 (Framed accent rule)
+     - Text primary: #F8FAFC (Crisp near-white)
+     - Text muted: #94A3B8 (Slate)
+     - Text subtle: #64748B (Dark slate metadata)
+     - Accent: #38BDF8 (Electric cyber cyan)
+     - Secondary accent: #3B82F6 (Neural blue)
+     - Operational: #10B981 (Active runtime green)
+     - Alert: #F59E0B (Audit warning amber)
      ========================================================================== */
-  --bg-primary: 43 25% 93%;           /* #F3F0E8 - Warm ivory / parchment */
-  --bg-surface: 40 22% 90%;           /* #EDE8DE - Muted archival paper */
-  --bg-surface-elevated: 40 20% 86%;  /* #E5DFD4 - Elevated card surface */
+  --bg-primary: 222 47% 4%;           /* #070A0F */
+  --bg-surface: 217 33% 7%;           /* #0D1117 */
+  --bg-surface-elevated: 217 33% 12%;  /* #151D2A */
 
-  --border-subtle: 40 15% 82%;       /* #D8D4CB - Hairline architectural rule */
-  --border-strong: 38 12% 65%;       /* #B0A99C - Emphasized frame border */
+  --border-subtle: 217 33% 17%;       /* #1E293B */
+  --border-strong: 217 28% 27%;       /* #334155 */
 
-  --text-primary: 0 0% 7%;            /* #111111 - Near-black printer's ink */
-  --text-muted: 0 0% 33%;             /* #555555 - Muted charcoal */
-  --text-subtle: 36 6% 54%;           /* #8B8579 - Metadata & caption */
+  --text-primary: 210 40% 98%;        /* #F8FAFC */
+  --text-muted: 215 20% 65%;          /* #94A3B8 */
+  --text-subtle: 215 16% 47%;         /* #64748B */
 
-  --accent-primary: 216 66% 27%;      /* #173B70 - Deep restrained blue */
-  --accent-secondary: 216 49% 33%;    /* #2B4C7E - Muted steel blue */
+  --accent-primary: 199 89% 48%;      /* #38BDF8 / #0284C7 */
+  --accent-secondary: 217 91% 60%;    /* #3B82F6 */
 
-  --status-active: 216 66% 27%;       /* Deep blue indicator */
-  --status-research: 216 49% 33%;     /* Muted steel indicator */
-  --status-draft: 36 6% 54%;          /* Subtle gray indicator */
-  --status-archived: 40 10% 50%;      /* Stone */
+  --status-active: 142 71% 45%;       /* #10B981 emerald */
+  --status-research: 199 89% 48%;     /* #38BDF8 cyan */
+  --status-draft: 215 16% 47%;        /* #64748B slate */
+  --status-archived: 217 19% 35%;     /* #475569 */
 
   /* ==========================================================================
      Layout & Spacing Tokens
      ========================================================================== */
   --max-width-content: 68rem;         /* 1088px - reading/editorial width */
-  --max-width-wide: 80rem;            /* 1280px - wide editorial grid container */
+  --max-width-wide: 80rem;            /* 1280px - wide systems grid container */
   --gutter-mobile: 1.25rem;
   --gutter-tablet: 2rem;
   --gutter-desktop: 2.5rem;
@@ -44,13 +49,14 @@
 
 @layer base {
   * {
-    border-color: #D8D4CB;
+    border-color: #1E293B;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #F3F0E8;
-    color: #111111;
+    background-color: #070A0F;
+    color: #F8FAFC;
+    color-scheme: dark;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -59,22 +65,22 @@
 
   body {
     min-height: 100vh;
-    background-color: #F3F0E8;
-    color: #111111;
+    background-color: #070A0F;
+    color: #F8FAFC;
     font-family: var(--font-sans), system-ui, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
   }
 
-  /* Custom text selection using deep restrained blue */
+  /* Custom text selection using electric cyan */
   ::selection {
-    background-color: #173B70;
-    color: #F3F0E8;
+    background-color: #0284C7;
+    color: #FFFFFF;
   }
 
   /* Keyboard focus states */
   :focus-visible {
-    outline: 2px solid #173B70;
+    outline: 2px solid #38BDF8;
     outline-offset: 2px;
   }
 }
@@ -106,23 +112,23 @@
   }
 
   .hairline-border {
-    border: 1px solid #D8D4CB;
+    border: 1px solid #1E293B;
   }
 
   .hairline-border-b {
-    border-bottom: 1px solid #D8D4CB;
+    border-bottom: 1px solid #1E293B;
   }
 
   .hairline-border-t {
-    border-top: 1px solid #D8D4CB;
+    border-top: 1px solid #1E293B;
   }
 
   .hairline-border-l {
-    border-left: 1px solid #D8D4CB;
+    border-left: 1px solid #1E293B;
   }
 
   .hairline-border-r {
-    border-right: 1px solid #D8D4CB;
+    border-right: 1px solid #1E293B;
   }
 
   /* Hide scrollbars for clean aesthetic */

@@ -81,3 +81,6 @@ Thumbs.db
 *.temp
 .eslintcache
 .stylelintcache
+
+lab-content
+lab-content/
