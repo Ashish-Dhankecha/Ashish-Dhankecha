@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/ui/icons";
 import { ProjectDossier } from "@/content/portfolio-data";
@@ -15,6 +16,11 @@ export function ProjectDossierModal({
   onClose,
 }: ProjectDossierModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!project) return;
@@ -36,14 +42,14 @@ export function ProjectDossierModal({
     };
   }, [project, onClose]);
 
-  if (!project) return null;
+  if (!project || !mounted) return null;
 
-  return (
+  return createPortal(
     <div
       role="dialog"
       aria-labelledby="project-dossier-title"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-0 sm:p-6 overflow-y-auto"
     >
       {/* Backdrop */}
       <div
@@ -233,6 +239,7 @@ export function ProjectDossierModal({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

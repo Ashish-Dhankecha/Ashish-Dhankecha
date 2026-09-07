@@ -876,7 +876,7 @@
         "count": 1
       }
     ],
-    "generated_at": "2026-09-06T10:41:48.232716+00:00"
+    "generated_at": "2026-09-07T10:41:55.398Z"
   },
   "projects": [
     {
@@ -3016,7 +3016,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Partial",
-      "date": null,
+      "date": "null",
       "topics": [
         "cognitive-os",
         "systems-architecture",
@@ -3112,7 +3112,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Partial",
-      "date": null,
+      "date": "null",
       "topics": [
         "memory-architecture",
         "cognitive-os",
@@ -3204,7 +3204,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Partial",
-      "date": null,
+      "date": "null",
       "topics": [
         "architecture-governance",
         "drift-detection",
@@ -3295,7 +3295,7 @@
       "content_type_display": "Post-Mortem",
       "category_group": "Post-Mortems",
       "status": "Documented",
-      "date": null,
+      "date": "null",
       "topics": [
         "architectural-debt",
         "enforcement-gap",
@@ -3381,7 +3381,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Completed",
-      "date": null,
+      "date": "null",
       "topics": [
         "ai-provider-abstraction",
         "vendor-independence",
@@ -3560,7 +3560,7 @@
       "content_type_display": "Debugging Discovery",
       "category_group": "Debugging",
       "status": "Completed",
-      "date": null,
+      "date": "null",
       "topics": [
         "provider-failover",
         "ai-routing",
@@ -3648,7 +3648,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Partial",
-      "date": null,
+      "date": "null",
       "topics": [
         "execution-graph",
         "dag-architecture",
@@ -3739,7 +3739,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Partial",
-      "date": null,
+      "date": "null",
       "topics": [
         "memory-architecture",
         "cognitive-ai",
@@ -3832,7 +3832,7 @@
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
       "status": "Documented",
-      "date": null,
+      "date": "null",
       "topics": [
         "testing-strategy",
         "mock-overuse",
@@ -3919,7 +3919,7 @@
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
       "status": "Documented",
-      "date": null,
+      "date": "null",
       "topics": [
         "test-engineering",
         "test-failures",
@@ -4007,7 +4007,7 @@
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
       "status": "Documented",
-      "date": null,
+      "date": "null",
       "topics": [
         "yagni",
         "over-engineering",
@@ -4093,7 +4093,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Completed",
-      "date": null,
+      "date": "null",
       "topics": [
         "interconnect",
         "network-on-chip",
@@ -4182,7 +4182,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Completed",
-      "date": null,
+      "date": "null",
       "topics": [
         "boot-sequence",
         "atomic-operations",
@@ -4358,7 +4358,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Completed",
-      "date": null,
+      "date": "null",
       "topics": [
         "architecture-governance",
         "engineering-culture",
@@ -4443,7 +4443,7 @@
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
       "status": "Partial",
-      "date": null,
+      "date": "null",
       "topics": [
         "cognitive-architecture",
         "ai-subsystems",
@@ -4522,7 +4522,7 @@
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
       "status": "Completed",
-      "date": null,
+      "date": "null",
       "topics": [
         "langgraph",
         "state-machines",
@@ -4676,7 +4676,7 @@
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
       "status": "Documented",
-      "date": null,
+      "date": "null",
       "topics": [
         "code-organization",
         "monolith",
@@ -4752,7 +4752,7 @@
       "content_type_display": "Build Log",
       "category_group": "Build Logs",
       "status": "Incomplete",
-      "date": null,
+      "date": "null",
       "topics": [
         "migration",
         "iterative-development",

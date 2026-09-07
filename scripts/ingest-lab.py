@@ -22,7 +22,56 @@ import re
 import json
 import glob
 from datetime import datetime, timezone
-import yaml
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
+
+def parse_yaml_fallback(raw: str) -> dict:
+    result = {}
+    lines = raw.split("\n")
+    current_key = None
+    in_array = False
+    for line in lines:
+        trimmed = line.strip()
+        if not trimmed or trimmed.startswith("#"):
+            continue
+        if trimmed.startswith("- ") and current_key and in_array:
+            item = trimmed[2:].strip().strip("\"'")
+            result[current_key].append(item)
+            continue
+        if ":" in line:
+            key, val = line.split(":", 1)
+            key = key.strip()
+            val = val.strip()
+            if val == "" or val == "[]":
+                current_key = key
+                in_array = True
+                result[key] = []
+            else:
+                in_array = False
+                current_key = key
+                if val.startswith("[") and val.endswith("]"):
+                    result[key] = [s.strip().strip("\"'") for s in val[1:-1].split(",") if s.strip()]
+                elif val.lower() == "true":
+                    result[key] = True
+                elif val.lower() == "false":
+                    result[key] = False
+                else:
+                    try:
+                        if "." in val:
+                            result[key] = float(val)
+                        else:
+                            result[key] = int(val)
+                    except ValueError:
+                        result[key] = val.strip("\"'")
+    return result
+
+def parse_frontmatter(raw: str) -> dict:
+    if yaml is not None:
+        return yaml.safe_load(raw)
+    return parse_yaml_fallback(raw)
 
 WORKSPACE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LAB_CONTENT_DIR = os.path.join(WORKSPACE_ROOT, "lab-content")
@@ -275,7 +324,7 @@ def ingest_all():
             body_raw = parts[2].strip()
 
             try:
-                fm = yaml.safe_load(frontmatter_raw)
+                fm = parse_frontmatter(frontmatter_raw)
             except Exception as e:
                 print(f"[!] YAML Error in {basename}: {e}")
                 continue

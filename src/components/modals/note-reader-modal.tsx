@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { EngineeringNote } from "@/content/portfolio-data";
 
@@ -18,6 +19,11 @@ export function NoteReaderModal({
   allNotes,
 }: NoteReaderModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!note) return;
@@ -39,18 +45,18 @@ export function NoteReaderModal({
     };
   }, [note, onClose]);
 
-  if (!note) return null;
+  if (!note || !mounted) return null;
 
   const currentIndex = allNotes.findIndex((n) => n.id === note.id);
   const prevNote = currentIndex > 0 ? allNotes[currentIndex - 1] : null;
   const nextNote = currentIndex < allNotes.length - 1 ? allNotes[currentIndex + 1] : null;
 
-  return (
+  return createPortal(
     <div
       role="dialog"
       aria-labelledby="note-reader-title"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-0 sm:p-6 overflow-y-auto"
     >
       {/* Backdrop */}
       <div
@@ -188,6 +194,7 @@ export function NoteReaderModal({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "python3 scripts/ingest-lab.py",
+    "prebuild": "node scripts/ingest-lab.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "ingest:lab": "python3 scripts/ingest-lab.py"
+    "ingest:lab": "node scripts/ingest-lab.js"
   },
   "dependencies": {
     "clsx": "^2.1.1",
