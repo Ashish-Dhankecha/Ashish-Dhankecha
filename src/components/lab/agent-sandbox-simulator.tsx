@@ -208,17 +208,17 @@ export function AgentSandboxSimulator() {
   };
 
   return (
-    <div className="border border-[#1E293B] bg-[#0E1420] text-[#F8FAFC] p-5 sm:p-7 space-y-6">
+    <div className="border border-[#2D161C] bg-[#140A0D] text-[#F5EBE1] p-5 sm:p-7 space-y-6 rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1E293B] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2D161C] pb-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#38BDF8]">
+            <span className="w-2 h-2 rounded-full bg-[#DF7987] animate-pulse" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#DF7987]">
               INTERACTIVE TRIAL SANDBOX
             </span>
           </div>
-          <h3 className="font-mono text-base sm:text-lg font-medium text-[#F8FAFC]">
+          <h3 className="font-mono text-base sm:text-lg font-medium text-[#F5EBE1]">
             Autonomous Agent State Execution Engine
           </h3>
         </div>
@@ -229,7 +229,7 @@ export function AgentSandboxSimulator() {
             type="button"
             onClick={handleRunAll}
             disabled={isRunning}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#38BDF8] bg-[#0284C7]/20 hover:bg-[#0284C7]/40 text-[#38BDF8] font-mono text-xs uppercase tracking-wider transition-all disabled:opacity-50"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#A6263A] bg-[#801D2C] hover:bg-[#A6263A] text-white font-mono text-xs uppercase tracking-wider rounded-lg transition-all disabled:opacity-50 shadow-[0_0_15px_rgba(128,29,44,0.3)] font-semibold"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
             <span>{isRunning ? "Running..." : "Run Trial"}</span>
@@ -239,7 +239,7 @@ export function AgentSandboxSimulator() {
             type="button"
             onClick={handleStep}
             disabled={isRunning || currentStep >= scenario.steps.length}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#334155] bg-[#161F30] hover:bg-[#1E293B] text-[#94A3B8] hover:text-[#F8FAFC] font-mono text-xs uppercase tracking-wider transition-all disabled:opacity-50"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#2D161C] bg-[#0C0608] hover:border-[#801D2C] hover:bg-[#1F1015] text-[#D9C7B8] hover:text-[#F5EBE1] font-mono text-xs uppercase tracking-wider rounded-lg transition-all disabled:opacity-50"
           >
             <SkipForward className="w-3.5 h-3.5" />
             <span>Step</span>
@@ -248,7 +248,7 @@ export function AgentSandboxSimulator() {
           <button
             type="button"
             onClick={handleReset}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 border border-[#334155] bg-[#161F30] hover:bg-[#1E293B] text-[#94A3B8] hover:text-[#F8FAFC] font-mono text-xs transition-all"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 border border-[#2D161C] bg-[#0C0608] hover:border-[#801D2C] hover:bg-[#1F1015] text-[#8E7C79] hover:text-[#DF7987] font-mono text-xs rounded-lg transition-all"
             title="Reset sandbox"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -263,17 +263,17 @@ export function AgentSandboxSimulator() {
             key={sc.id}
             type="button"
             onClick={() => handleSelectScenario(idx)}
-            className={`p-3 text-left border transition-all ${
+            className={`p-3 text-left border rounded-xl transition-all ${
               selectedScenarioIdx === idx
-                ? "border-[#38BDF8] bg-[#162238] text-[#F8FAFC]"
-                : "border-[#1E293B] bg-[#111726]/60 text-[#94A3B8] hover:border-[#334155] hover:text-[#F8FAFC]"
+                ? "border-[#801D2C] bg-[#1F1015] text-[#F5EBE1] shadow-[0_0_16px_rgba(128,29,44,0.25)]"
+                : "border-[#2D161C] bg-[#0C0608] text-[#8E7C79] hover:border-[#801D2C]/60 hover:text-[#F5EBE1]"
             }`}
           >
             <div className="flex items-center justify-between font-mono text-[10px] pb-1">
-              <span className={selectedScenarioIdx === idx ? "text-[#38BDF8]" : "text-[#64748B]"}>
+              <span className={selectedScenarioIdx === idx ? "text-[#DF7987] font-semibold" : "text-[#8E7C79]"}>
                 TRIAL 0{idx + 1}
               </span>
-              <span className="text-[9px] uppercase px-1 border border-[#334155]">
+              <span className="text-[9px] uppercase px-1.5 py-0.5 border border-[#2D161C] rounded">
                 {idx === 0 ? "CRYPTOGRAPHIC" : idx === 1 ? "SANDBOX" : "COMPACTION"}
               </span>
             </div>
@@ -284,7 +284,7 @@ export function AgentSandboxSimulator() {
 
       {/* Execution Pipeline Steps */}
       <div className="space-y-2">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-[#64748B] block">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-[#8E7C79] block">
           PIPELINE DAG STATE MACHINE
         </span>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
@@ -295,18 +295,18 @@ export function AgentSandboxSimulator() {
             return (
               <div
                 key={st.stage}
-                className={`p-2.5 border text-center transition-all ${
+                className={`p-2.5 border rounded-lg text-center transition-all ${
                   isDone
                     ? "border-emerald-500/50 bg-emerald-950/20 text-emerald-400"
                     : isCurrent
-                    ? "border-[#38BDF8] bg-[#0284C7]/20 text-[#38BDF8] animate-pulse"
-                    : "border-[#1E293B] bg-[#111726]/40 text-[#64748B]"
+                    ? "border-[#DF7987] bg-[#801D2C]/20 text-[#DF7987] animate-pulse font-semibold"
+                    : "border-[#2D161C] bg-[#0C0608] text-[#8E7C79]"
                 }`}
               >
                 <div className="font-mono text-[10px] font-semibold tracking-wider">
                   0{idx + 1}: {st.stage}
                 </div>
-                <div className="text-[9px] font-mono pt-1 text-[#94A3B8] truncate">
+                <div className="text-[9px] font-mono pt-1 text-[#8E7C79] truncate">
                   {isDone ? "VERIFIED" : isCurrent ? "EXECUTING" : "WAITING"}
                 </div>
               </div>
@@ -317,9 +317,9 @@ export function AgentSandboxSimulator() {
 
       {/* Live Terminal & Trace Log Console */}
       <div className="space-y-2">
-        <div className="flex items-center justify-between font-mono text-[10px] text-[#64748B]">
+        <div className="flex items-center justify-between font-mono text-[10px] text-[#8E7C79]">
           <div className="flex items-center gap-1.5">
-            <Terminal className="w-3.5 h-3.5 text-[#38BDF8]" />
+            <Terminal className="w-3.5 h-3.5 text-[#DF7987]" />
             <span className="uppercase tracking-widest">LIVE TRACE LOG &amp; INVARIANT SENTINEL</span>
           </div>
           <span>
@@ -329,17 +329,17 @@ export function AgentSandboxSimulator() {
 
         <div
           ref={logContainerRef}
-          className="h-44 overflow-y-auto bg-[#070A0F] border border-[#1E293B] p-3 font-mono text-xs space-y-1.5 rounded-none"
+          className="h-44 overflow-y-auto bg-[#0C0608] border border-[#2D161C] p-3 font-mono text-xs space-y-1.5 rounded-xl"
         >
           {logs.length === 0 ? (
-            <div className="h-full flex items-center justify-center text-[#475569] text-xs">
+            <div className="h-full flex items-center justify-center text-[#8E7C79] text-xs">
               <span>[ Trial ready. Click &ldquo;Run Trial&rdquo; or &ldquo;Step&rdquo; to launch simulation. ]</span>
             </div>
           ) : (
             logs.map((log) => (
-              <div key={log.id} className="flex items-start gap-2.5 leading-relaxed text-[#CBD5E1]">
-                <span className="text-[#64748B] text-[10px] shrink-0 pt-0.5">[{log.timestamp}]</span>
-                <span className="text-[#38BDF8] text-[10px] uppercase shrink-0 font-semibold">
+              <div key={log.id} className="flex items-start gap-2.5 leading-relaxed text-[#D9C7B8]">
+                <span className="text-[#8E7C79] text-[10px] shrink-0 pt-0.5">[{log.timestamp}]</span>
+                <span className="text-[#DF7987] text-[10px] uppercase shrink-0 font-semibold">
                   [{log.stage}]
                 </span>
                 <span className="text-xs break-all">{log.message}</span>
@@ -350,28 +350,28 @@ export function AgentSandboxSimulator() {
       </div>
 
       {/* Real-time Hardware & Telemetry Readouts */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-[#1E293B] pt-4 font-mono text-xs">
-        <div className="flex items-center gap-2.5 p-2.5 border border-[#1E293B] bg-[#111726]/40">
-          <Cpu className="w-4 h-4 text-[#38BDF8]" />
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-[#2D161C] pt-4 font-mono text-xs">
+        <div className="flex items-center gap-2.5 p-2.5 border border-[#2D161C] bg-[#0C0608] rounded-xl">
+          <Cpu className="w-4 h-4 text-[#DF7987]" />
           <div>
-            <span className="text-[9px] uppercase text-[#64748B] block">ISOLATION KERNEL</span>
-            <span className="text-[#F8FAFC]">Linux Namespace v6.8</span>
+            <span className="text-[9px] uppercase text-[#8E7C79] block">ISOLATION KERNEL</span>
+            <span className="text-[#F5EBE1]">Linux Namespace v6.8</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2.5 p-2.5 border border-[#1E293B] bg-[#111726]/40">
+        <div className="flex items-center gap-2.5 p-2.5 border border-[#2D161C] bg-[#0C0608] rounded-xl">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
           <div>
-            <span className="text-[9px] uppercase text-[#64748B] block">SENTINEL ASSERTION</span>
+            <span className="text-[9px] uppercase text-[#8E7C79] block">SENTINEL ASSERTION</span>
             <span className="text-emerald-400">Deterministic Invariant OK</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2.5 p-2.5 border border-[#1E293B] bg-[#111726]/40">
-          <CheckCircle2 className="w-4 h-4 text-[#F59E0B]" />
+        <div className="flex items-center gap-2.5 p-2.5 border border-[#2D161C] bg-[#0C0608] rounded-xl">
+          <CheckCircle2 className="w-4 h-4 text-[#DF7987]" />
           <div>
-            <span className="text-[9px] uppercase text-[#64748B] block">TRACE HASH DIGEST</span>
-            <span className="text-[#94A3B8]">0x8f2c...4d9e</span>
+            <span className="text-[9px] uppercase text-[#8E7C79] block">TRACE HASH DIGEST</span>
+            <span className="text-[#D9C7B8]">0x8f2c...4d9e</span>
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function LabPage() {
   const allPieces = getAllLabPieces();
 
   return (
-    <div className="w-full flex flex-col flex-1 bg-[#070A0F] text-[#F8FAFC]">
+    <div className="w-full flex flex-col flex-1 bg-[#0C0608] text-[#F5EBE1] pb-24">
       {/* 01 Hero Section */}
       <LabHero metrics={metrics} />
 

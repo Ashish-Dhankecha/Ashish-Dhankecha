@@ -131,24 +131,24 @@ export function BenchmarkMatrix() {
   };
 
   return (
-    <div className="border border-[#1E293B] bg-[#0E1420] text-[#F8FAFC] p-5 sm:p-7 space-y-6">
+    <div className="border border-[#2D161C] bg-[#140A0D] text-[#F5EBE1] p-5 sm:p-7 space-y-6 rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
       {/* Bench Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1E293B] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2D161C] pb-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <Activity className="w-4 h-4 text-emerald-400" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-emerald-400">
+            <Activity className="w-4 h-4 text-[#DF7987]" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#DF7987]">
               EMPIRICAL BENCHMARK MATRIX
             </span>
           </div>
-          <h3 className="font-mono text-base sm:text-lg font-medium text-[#F8FAFC]">
+          <h3 className="font-mono text-base sm:text-lg font-medium text-[#F5EBE1]">
             Inference Latency, Quantization &amp; Tool Integrity Profiles
           </h3>
         </div>
 
         {/* Architecture Filters */}
         <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="font-mono text-[10px] uppercase text-[#64748B] flex items-center gap-1 mr-1">
+          <span className="font-mono text-[10px] uppercase text-[#8E7C79] flex items-center gap-1 mr-1">
             <Filter className="w-3 h-3" /> Filter:
           </span>
           {["ALL", "TRANSFORMER", "MIXTURE_OF_EXPERTS", "STATE_SPACE"].map((arch) => (
@@ -156,10 +156,10 @@ export function BenchmarkMatrix() {
               key={arch}
               type="button"
               onClick={() => setFilterArch(arch)}
-              className={`px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider border transition-all ${
+              className={`px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider border rounded-md transition-all ${
                 filterArch === arch
-                  ? "border-[#38BDF8] bg-[#0284C7]/20 text-[#38BDF8]"
-                  : "border-[#1E293B] bg-[#111726]/60 text-[#94A3B8] hover:border-[#334155]"
+                  ? "border-[#801D2C] bg-[#801D2C]/25 text-[#DF7987] font-semibold"
+                  : "border-[#2D161C] bg-[#0C0608] text-[#8E7C79] hover:border-[#801D2C]/60 hover:text-[#F5EBE1]"
               }`}
             >
               {arch === "ALL"
@@ -175,14 +175,14 @@ export function BenchmarkMatrix() {
       </div>
 
       {/* Benchmark Table */}
-      <div className="overflow-x-auto border border-[#1E293B] bg-[#070A0F]">
+      <div className="overflow-x-auto border border-[#2D161C] bg-[#0C0608] rounded-xl">
         <table className="w-full text-left font-mono text-xs border-collapse">
           <thead>
-            <tr className="border-b border-[#1E293B] bg-[#111726]/80 text-[10px] text-[#94A3B8] uppercase tracking-wider">
+            <tr className="border-b border-[#2D161C] bg-[#140A0D] text-[10px] text-[#8E7C79] uppercase tracking-wider">
               <th className="p-3">Model Architecture</th>
               <th className="p-3">Precision</th>
               <th
-                className="p-3 cursor-pointer hover:text-[#38BDF8] transition-colors select-none"
+                className="p-3 cursor-pointer hover:text-[#DF7987] transition-colors select-none"
                 onClick={() => toggleSort("prefillLatencyMs")}
               >
                 <div className="flex items-center gap-1">
@@ -191,7 +191,7 @@ export function BenchmarkMatrix() {
                 </div>
               </th>
               <th
-                className="p-3 cursor-pointer hover:text-[#38BDF8] transition-colors select-none"
+                className="p-3 cursor-pointer hover:text-[#DF7987] transition-colors select-none"
                 onClick={() => toggleSort("decodeThroughputTokSec")}
               >
                 <div className="flex items-center gap-1">
@@ -200,7 +200,7 @@ export function BenchmarkMatrix() {
                 </div>
               </th>
               <th
-                className="p-3 cursor-pointer hover:text-[#38BDF8] transition-colors select-none"
+                className="p-3 cursor-pointer hover:text-[#DF7987] transition-colors select-none"
                 onClick={() => toggleSort("vramGb")}
               >
                 <div className="flex items-center gap-1">
@@ -209,7 +209,7 @@ export function BenchmarkMatrix() {
                 </div>
               </th>
               <th
-                className="p-3 cursor-pointer hover:text-[#38BDF8] transition-colors select-none"
+                className="p-3 cursor-pointer hover:text-[#DF7987] transition-colors select-none"
                 onClick={() => toggleSort("toolPassRate")}
               >
                 <div className="flex items-center gap-1">
@@ -219,38 +219,38 @@ export function BenchmarkMatrix() {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#1E293B]">
+          <tbody className="divide-y divide-[#2D161C]">
             {sorted.map((row) => (
               <tr
                 key={row.id}
-                className="hover:bg-[#111726]/50 transition-colors text-[#CBD5E1]"
+                className="hover:bg-[#1F1015] transition-colors text-[#D9C7B8]"
               >
                 <td className="p-3">
-                  <div className="font-semibold text-[#F8FAFC]">{row.model}</div>
-                  <div className="text-[10px] text-[#64748B]">
+                  <div className="font-semibold text-[#F5EBE1]">{row.model}</div>
+                  <div className="text-[10px] text-[#8E7C79]">
                     {row.parameters} &middot; {row.architecture}
                   </div>
                 </td>
                 <td className="p-3">
                   <span
-                    className={`inline-block px-1.5 py-0.5 text-[9px] uppercase border ${
+                    className={`inline-block px-1.5 py-0.5 text-[9px] uppercase border rounded ${
                       row.quantization === "INT8-AWQ"
-                        ? "border-[#0284C7] bg-[#0284C7]/10 text-[#38BDF8]"
+                        ? "border-[#801D2C] bg-[#801D2C]/20 text-[#DF7987]"
                         : row.quantization === "INT4-GPTQ"
                         ? "border-[#F59E0B]/60 bg-[#F59E0B]/10 text-[#F59E0B]"
-                        : "border-slate-700 bg-slate-800/40 text-slate-300"
+                        : "border-[#2D161C] bg-[#0C0608] text-[#8E7C79]"
                     }`}
                   >
                     {row.quantization}
                   </span>
                 </td>
-                <td className="p-3 text-slate-300">{row.prefillLatencyMs} ms</td>
-                <td className="p-3 font-semibold text-emerald-400">
+                <td className="p-3 text-[#D9C7B8]">{row.prefillLatencyMs} ms</td>
+                <td className="p-3 font-semibold text-[#34D399]">
                   <div className="flex items-center gap-2">
                     <span>{row.decodeThroughputTokSec}</span>
-                    <div className="w-12 h-1.5 bg-[#1E293B] rounded-full overflow-hidden hidden sm:block">
+                    <div className="w-12 h-1.5 bg-[#2D161C] rounded-full overflow-hidden hidden sm:block">
                       <div
-                        className="h-full bg-emerald-400"
+                        className="h-full bg-[#34D399]"
                         style={{
                           width: `${Math.min(100, (row.decodeThroughputTokSec / 220) * 100)}%`,
                         }}
@@ -258,8 +258,8 @@ export function BenchmarkMatrix() {
                     </div>
                   </div>
                 </td>
-                <td className="p-3 text-slate-300">
-                  <span className={row.vramGb > 16 ? "text-[#F59E0B]" : "text-slate-300"}>
+                <td className="p-3 text-[#D9C7B8]">
+                  <span className={row.vramGb > 16 ? "text-[#F59E0B]" : "text-[#D9C7B8]"}>
                     {row.vramGb} GB
                   </span>
                 </td>
@@ -268,16 +268,16 @@ export function BenchmarkMatrix() {
                     <span
                       className={`font-semibold ${
                         row.toolPassRate >= 94
-                          ? "text-emerald-400"
+                          ? "text-[#34D399]"
                           : row.toolPassRate >= 90
-                          ? "text-[#38BDF8]"
+                          ? "text-[#DF7987]"
                           : "text-[#F59E0B]"
                       }`}
                     >
                       {row.toolPassRate}%
                     </span>
                     {row.toolPassRate >= 94 && (
-                      <Zap className="w-3 h-3 text-emerald-400 shrink-0" />
+                      <Zap className="w-3 h-3 text-[#34D399] shrink-0" />
                     )}
                   </div>
                 </td>
@@ -288,9 +288,9 @@ export function BenchmarkMatrix() {
       </div>
 
       {/* Bench Footnote / Observation */}
-      <div className="p-3 border border-[#1E293B] bg-[#111726]/40 text-xs font-mono text-[#94A3B8] flex items-start gap-2">
-        <span className="text-[#38BDF8] shrink-0 font-bold">[OBSERVATION]</span>
-        <span>
+      <div className="p-3.5 border border-[#2D161C] bg-[#0C0608] text-xs font-mono text-[#8E7C79] flex items-start gap-2 rounded-xl">
+        <span className="text-[#DF7987] shrink-0 font-bold">[OBSERVATION]</span>
+        <span className="leading-relaxed">
           INT8 AWQ provides optimal Pareto frontier: 39.5% faster decode throughput than BF16 with only a 0.4%
           degradation in complex JSON tool calling schema compliance. INT4 quantization leads to a 12.8% syntax error
           spike in multi-parameter tool calls.

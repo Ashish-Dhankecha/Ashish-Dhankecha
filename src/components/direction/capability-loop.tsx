@@ -28,20 +28,20 @@ export function CapabilityLoop({
   return (
     <div
       className={cn(
-        "rounded border border-[#1E293B] bg-[#0D1117] p-4 sm:p-8 space-y-4 sm:space-y-6 select-none",
+        "rounded-xl border border-[#2D161C] bg-[#140A0D] p-4 sm:p-8 space-y-4 sm:space-y-6 select-none shadow-xl",
         className
       )}
     >
       {/* Plate Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#1E293B] pb-3 sm:pb-4 gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#2D161C] pb-3 sm:pb-4 gap-2">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan" />
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#DF7987]" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#DF7987] font-semibold">
             {label}
           </span>
         </div>
-        <div className="flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400">
-          <RotateCw className="w-3 h-3 text-cyber-cyan animate-spin-slow" />
+        <div className="flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-[#8E7C79]">
+          <RotateCw className="w-3 h-3 text-[#DF7987] animate-spin-slow" />
           <span>{kicker}</span>
         </div>
       </div>
@@ -64,41 +64,41 @@ export function CapabilityLoop({
                 onFocus={() => setActiveStep(step.number)}
                 onBlur={() => setActiveStep(null)}
                 className={cn(
-                  "p-3 sm:p-4 rounded border transition-all duration-200 flex flex-col justify-between group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyber-cyan",
+                  "p-3 sm:p-4 rounded-lg border transition-all duration-200 flex flex-col justify-between group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#801D2C]",
                   isLast ? "col-span-2 sm:col-span-1" : "col-span-1",
                   isHovered
-                    ? "border-cyber-cyan bg-[#151D2A] shadow-md shadow-cyber-cyan/10 -translate-y-0.5"
-                    : "border-[#1E293B] bg-[#070A0F] hover:border-[#334155]"
+                    ? "border-[#801D2C] bg-[#1F1015] shadow-lg shadow-[#801D2C]/20 -translate-y-0.5"
+                    : "border-[#2D161C] bg-[#1A0A0F] hover:border-[#4A202A] hover:bg-[#1A0C11]"
                 )}
               >
                 <div>
-                  <div className="flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-slate-400 pb-1.5 sm:pb-2 border-b border-[#1E293B]">
+                  <div className="flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-[#8E7C79] pb-1.5 sm:pb-2 border-b border-[#2D161C]">
                     <span
                       className={cn(
                         "transition-colors",
-                        isHovered ? "text-cyber-cyan font-bold" : ""
+                        isHovered ? "text-[#DF7987] font-bold" : ""
                       )}
                     >
                       [ {step.number} ]
                     </span>
                     {!isLast ? (
-                      <ArrowRight className="w-2.5 h-2.5 text-slate-400 group-hover:text-cyber-cyan group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="w-2.5 h-2.5 text-[#8E7C79] group-hover:text-[#DF7987] group-hover:translate-x-0.5 transition-all" />
                     ) : (
-                      <RotateCw className="w-2.5 h-2.5 text-cyber-cyan group-hover:rotate-180 transition-transform duration-300" />
+                      <RotateCw className="w-2.5 h-2.5 text-[#DF7987] group-hover:rotate-180 transition-transform duration-300" />
                     )}
                   </div>
 
                   <h3
                     className={cn(
                       "font-mono text-[11px] sm:text-xs font-semibold uppercase tracking-wider mt-2 sm:mt-2.5 transition-colors",
-                      isHovered ? "text-cyber-cyan" : "text-white"
+                      isHovered ? "text-[#DF7987]" : "text-[#F5EBE1]"
                     )}
                   >
                     {step.label}
                   </h3>
                 </div>
 
-                <p className="text-[10px] sm:text-[11px] text-slate-400 font-sans leading-snug mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#1E293B]">
+                <p className="text-[10px] sm:text-[11px] text-[#D9C7B8] font-sans leading-snug mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#2D161C]">
                   {step.detail}
                 </p>
               </div>
@@ -108,9 +108,9 @@ export function CapabilityLoop({
       </div>
 
       {/* Closed Loop Legend */}
-      <div className="pt-2 border-t border-[#1E293B] flex flex-col sm:flex-row sm:items-center justify-between text-[9px] sm:text-[10px] font-mono text-slate-400 tracking-wider uppercase gap-1">
+      <div className="pt-2 border-t border-[#2D161C] flex flex-col sm:flex-row sm:items-center justify-between text-[9px] sm:text-[10px] font-mono text-[#8E7C79] tracking-wider uppercase gap-1">
         <span>CLOSED ITERATION PROTOCOL // DETERMINISTIC EMPIRICAL FEEDBACK</span>
-        <span className="text-cyber-cyan font-semibold">CYCLE: ACTIVE VERIFICATION</span>
+        <span className="text-[#DF7987] font-semibold">CYCLE: ACTIVE VERIFICATION</span>
       </div>
     </div>
   );

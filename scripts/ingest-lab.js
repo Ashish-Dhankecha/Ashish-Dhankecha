@@ -435,6 +435,18 @@ function ingestAll() {
 
   console.log(`[*] Successfully parsed ${pieces.length} content pieces.`);
 
+  if (pieces.length === 0 && fs.existsSync(OUTPUT_JSON_PATH)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(OUTPUT_JSON_PATH, "utf-8"));
+      if (existing.pieces && existing.pieces.length > 0) {
+        console.log(`[!] Notice: 0 pieces parsed from ${LAB_CONTENT_DIR}. Preserving existing ${OUTPUT_JSON_PATH} (${existing.pieces.length} records).`);
+        return;
+      }
+    } catch (e) {
+      // Fall through if file is corrupted
+    }
+  }
+
   const totalPieces = pieces.length;
   const byProject = {};
   const byType = {};

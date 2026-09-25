@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",
+    "@imgly/background-removal-node": "^1.4.5",
     "@netlify/plugin-nextjs": "^5.15.13",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.8",

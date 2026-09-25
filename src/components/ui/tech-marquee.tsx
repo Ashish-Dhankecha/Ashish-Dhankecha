@@ -80,13 +80,13 @@ function DsaIcon({ className = "w-5 h-5" }: { className?: string }) {
       />
       {/* Root Node */}
       <circle cx="12" cy="5.5" r="3" fill="#38BDF8" />
-      <circle cx="12" cy="5.5" r="1.2" fill="#070A0F" />
+      <circle cx="12" cy="5.5" r="1.2" fill="#0C0608" />
       {/* Left Child Node */}
       <circle cx="7" cy="17" r="2.8" fill="#38BDF8" />
-      <circle cx="7" cy="17" r="1" fill="#070A0F" />
+      <circle cx="7" cy="17" r="1" fill="#0C0608" />
       {/* Right Child Node */}
       <circle cx="17" cy="17" r="2.8" fill="#38BDF8" />
-      <circle cx="17" cy="17" r="1" fill="#070A0F" />
+      <circle cx="17" cy="17" r="1" fill="#0C0608" />
     </svg>
   );
 }
@@ -175,8 +175,8 @@ function AgentIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg width={20} height={20} viewBox="0 0 24 24" className={className} fill="none">
       <rect x="3" y="4" width="18" height="15" rx="3" fill="#38BDF8" />
-      <circle cx="8.5" cy="11.5" r="2" fill="#070A0F" />
-      <circle cx="15.5" cy="11.5" r="2" fill="#070A0F" />
+      <circle cx="8.5" cy="11.5" r="2" fill="#0C0608" />
+      <circle cx="15.5" cy="11.5" r="2" fill="#0C0608" />
       <path d="M12 2v2M8 19v3M16 19v3" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
@@ -216,28 +216,28 @@ export function TechMarquee() {
   return (
     <section
       aria-label="Core Tools & Technologies Ticker"
-      className="py-5 sm:py-6 border-b border-[#1E293B] bg-[#070A0F] overflow-hidden relative group"
+      className="py-5 sm:py-6 border-b border-[#2D161C] bg-[#0C0608] overflow-hidden relative group"
     >
       {/* Top subtle technical label strip */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-3.5 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#DF7987]" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#D9C7B8]/70">
             ENGINEERING STACK &middot; CORE RUNTIMES
           </span>
         </div>
-        <span className="font-mono text-[10px] tracking-wider text-cyber-cyan hidden sm:inline uppercase">
+        <span className="font-mono text-[10px] tracking-wider text-[#DF7987] hidden sm:inline uppercase">
           [ ACTIVE ENVIRONMENT &middot; CONTINUOUS EVALUATION ]
         </span>
       </div>
 
       {/* Subtle edge gradient masks for gentle fade in/out */}
       <div
-        className="pointer-events-none absolute left-0 top-12 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#070A0F] to-transparent z-10"
+        className="pointer-events-none absolute left-0 top-12 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0C0608] to-transparent z-10"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-12 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#070A0F] to-transparent z-10"
+        className="pointer-events-none absolute right-0 top-12 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0C0608] to-transparent z-10"
         aria-hidden="true"
       />
 
@@ -248,15 +248,15 @@ export function TechMarquee() {
           {techStackItems.map((item, idx) => (
             <div
               key={`tech-1-${item.name}-${idx}`}
-              className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded border border-[#1E293B] bg-[#0D1117] hover:bg-[#151D2A] hover:border-cyber-cyan/60 transition-all shrink-0 cursor-default shadow-xs"
+              className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-[#2D161C] bg-[#140A0D] hover:bg-[#1F1015] hover:border-[#801D2C]/60 transition-all shrink-0 cursor-default shadow-xs"
             >
               <div className="w-5 h-5 flex items-center justify-center shrink-0">
                 <item.Icon className="w-5 h-5" />
               </div>
-              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wide text-white">
+              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wide text-[#F5EBE1]">
                 {item.name}
               </span>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400 border-l border-[#1E293B] pl-2.5 hidden xs:inline">
+              <span className="font-mono text-[9px] uppercase tracking-widest text-[#D9C7B8]/60 border-l border-[#2D161C] pl-2.5 hidden xs:inline">
                 {item.category}
               </span>
             </div>
@@ -267,15 +267,15 @@ export function TechMarquee() {
             <div
               key={`tech-2-${item.name}-${idx}`}
               aria-hidden="true"
-              className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded border border-[#1E293B] bg-[#0D1117] hover:bg-[#151D2A] hover:border-cyber-cyan/60 transition-all shrink-0 cursor-default shadow-xs"
+              className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-[#2D161C] bg-[#140A0D] hover:bg-[#1F1015] hover:border-[#801D2C]/60 transition-all shrink-0 cursor-default shadow-xs"
             >
               <div className="w-5 h-5 flex items-center justify-center shrink-0">
                 <item.Icon className="w-5 h-5" />
               </div>
-              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wide text-white">
+              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wide text-[#F5EBE1]">
                 {item.name}
               </span>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400 border-l border-[#1E293B] pl-2.5 hidden xs:inline">
+              <span className="font-mono text-[9px] uppercase tracking-widest text-[#D9C7B8]/60 border-l border-[#2D161C] pl-2.5 hidden xs:inline">
                 {item.category}
               </span>
             </div>

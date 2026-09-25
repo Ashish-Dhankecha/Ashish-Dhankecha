@@ -67,17 +67,17 @@ export function NoteReaderModal({
 
       {/* Modal Dialog Body */}
       <div
-        className="relative w-full max-w-3xl h-full sm:h-auto max-h-full sm:max-h-[90vh] bg-[#0D1117] border-0 sm:border border-[#1E293B] shadow-2xl rounded-none sm:rounded-lg p-4 sm:p-10 md:p-12 my-auto overflow-y-auto text-[#F8FAFC] flex flex-col z-10"
+        className="relative w-full max-w-3xl h-full sm:h-auto max-h-full sm:max-h-[90vh] bg-[#140A0D] border-0 sm:border border-[#2D161C] shadow-2xl rounded-none sm:rounded-xl p-4 sm:p-10 md:p-12 my-auto overflow-y-auto text-[#F5EBE1] flex flex-col z-10"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Action Bar */}
-        <div className="flex items-center justify-between border-b border-[#1E293B] pb-3 sm:pb-4 mb-5 sm:mb-8">
+        <div className="flex items-center justify-between border-b border-[#2D161C] pb-3 sm:pb-4 mb-5 sm:mb-8">
           <div className="flex items-center gap-2 sm:gap-3 text-xs font-mono uppercase tracking-widest">
-            <span className="text-cyber-cyan font-semibold">
+            <span className="text-[#DF7987] font-semibold">
               {note.issue}
             </span>
-            <span className="text-slate-600">&middot;</span>
-            <span className="text-slate-400">
+            <span className="text-[#8E7C79]">&middot;</span>
+            <span className="text-[#D9C7B8]">
               {note.category}
             </span>
           </div>
@@ -87,7 +87,7 @@ export function NoteReaderModal({
             type="button"
             onClick={onClose}
             aria-label="Close reader"
-            className="p-2 rounded border border-[#1E293B] bg-[#070A0F] text-slate-400 hover:text-white hover:border-cyber-cyan transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-cyan min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="p-2 rounded-full border border-[#2D161C] bg-[#0C0608] text-[#D9C7B8] hover:text-[#F5EBE1] hover:border-[#801D2C] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#801D2C] min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             <X className="w-5 h-5" />
           </button>
@@ -95,36 +95,36 @@ export function NoteReaderModal({
 
         {/* Note Metadata Header */}
         <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-mono text-slate-400">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-mono text-[#8E7C79]">
             <span>{note.date}</span>
             <span>&middot;</span>
             <span>{note.readTime}</span>
             <span>&middot;</span>
-            <span className="text-cyber-cyan font-medium bg-cyber-cyan/10 px-2 py-0.5 rounded border border-cyber-cyan/30">
+            <span className="text-[#DF7987] font-medium bg-[#801D2C]/20 px-2 py-0.5 rounded-full border border-[#801D2C]/40">
               {note.statusLabel}
             </span>
           </div>
 
           <h2
             id="note-reader-title"
-            className="font-sans text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight"
+            className="font-serif text-2xl sm:text-3xl font-bold text-[#F5EBE1] tracking-tight leading-tight"
           >
             {note.title}
           </h2>
 
-          <p className="font-mono text-sm sm:text-base text-cyber-cyan leading-relaxed">
+          <p className="font-mono text-sm sm:text-base text-[#DF7987] leading-relaxed">
             {note.subtitle}
           </p>
         </div>
 
         {/* Separator Rule */}
-        <div className="w-full h-[1px] bg-[#1E293B] mb-6 sm:mb-8" />
+        <div className="w-full h-[1px] bg-[#2D161C] mb-6 sm:mb-8" />
 
         {/* Note Body */}
-        <div className="prose prose-invert max-w-none space-y-5 sm:space-y-6 flex-1 text-sm sm:text-base leading-relaxed text-slate-300">
+        <div className="prose prose-invert max-w-none space-y-5 sm:space-y-6 flex-1 text-sm sm:text-base leading-relaxed text-[#D9C7B8]">
           {/* Authentic Draft Disclaimer Banner */}
-          <div className="p-3.5 sm:p-4 rounded bg-[#070A0F] border-l-2 border-cyber-cyan text-xs font-mono text-slate-400 space-y-1">
-            <p className="font-semibold text-cyber-cyan uppercase tracking-wider">
+          <div className="p-3.5 sm:p-4 rounded-lg bg-[#0C0608] border-l-2 border-[#801D2C] text-xs font-mono text-[#8E7C79] space-y-1">
+            <p className="font-semibold text-[#DF7987] uppercase tracking-wider">
               AUTHOR&apos;S WORKING NOTE // AUDIT LOG
             </p>
             <p>
@@ -135,12 +135,12 @@ export function NoteReaderModal({
           {note.content.sections.map((sec, idx) => (
             <div key={idx} className="space-y-2.5 sm:space-y-3">
               {sec.heading && (
-                <h3 className="font-sans text-lg sm:text-xl text-white font-semibold pt-2">
+                <h3 className="font-serif text-lg sm:text-xl text-[#F5EBE1] font-semibold pt-2">
                   {sec.heading}
                 </h3>
               )}
               {sec.paragraphs.map((para, pIdx) => (
-                <p key={pIdx} className="text-slate-300 leading-relaxed text-xs sm:text-base">
+                <p key={pIdx} className="text-[#D9C7B8] leading-relaxed text-xs sm:text-base">
                   {para}
                 </p>
               ))}
@@ -149,7 +149,7 @@ export function NoteReaderModal({
         </div>
 
         {/* Bottom Rule */}
-        <div className="w-full h-[1px] bg-[#1E293B] mt-8 sm:mt-10 mb-4 sm:mb-6" />
+        <div className="w-full h-[1px] bg-[#2D161C] mt-8 sm:mt-10 mb-4 sm:mb-6" />
 
         {/* Previous / Next & Close Navigation */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs font-mono">
@@ -158,13 +158,13 @@ export function NoteReaderModal({
               <button
                 type="button"
                 onClick={() => onSelectNote(prevNote)}
-                className="inline-flex items-center gap-1.5 py-2 px-3 rounded border border-[#1E293B] bg-[#070A0F] hover:border-cyber-cyan text-slate-300 hover:text-white transition-colors min-h-[44px]"
+                className="inline-flex items-center gap-1.5 py-2 px-3.5 rounded-full border border-[#2D161C] bg-[#0C0608] hover:border-[#801D2C] text-[#D9C7B8] hover:text-[#F5EBE1] transition-colors min-h-[44px]"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Previous Note</span>
               </button>
             ) : (
-              <span className="text-slate-600 py-2 px-3 border border-transparent">
+              <span className="text-[#8E7C79] py-2 px-3 border border-transparent">
                 First Dispatch
               </span>
             )}
@@ -173,13 +173,13 @@ export function NoteReaderModal({
               <button
                 type="button"
                 onClick={() => onSelectNote(nextNote)}
-                className="inline-flex items-center gap-1.5 py-2 px-3 rounded border border-[#1E293B] bg-[#070A0F] hover:border-cyber-cyan text-slate-300 hover:text-white transition-colors min-h-[44px]"
+                className="inline-flex items-center gap-1.5 py-2 px-3.5 rounded-full border border-[#2D161C] bg-[#0C0608] hover:border-[#801D2C] text-[#D9C7B8] hover:text-[#F5EBE1] transition-colors min-h-[44px]"
               >
                 <span>Next Note</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             ) : (
-              <span className="text-slate-600 py-2 px-3 border border-transparent">
+              <span className="text-[#8E7C79] py-2 px-3 border border-transparent">
                 Latest Dispatch
               </span>
             )}
@@ -188,7 +188,7 @@ export function NoteReaderModal({
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto py-2.5 px-6 rounded border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan hover:bg-cyber-cyan hover:text-obsidian-dark uppercase font-semibold tracking-wider transition-colors text-center min-h-[44px]"
+            className="w-full sm:w-auto py-2.5 px-6 rounded-full bg-[#801D2C] hover:bg-[#A6263A] text-[#F5EBE1] uppercase font-semibold tracking-wider transition-colors text-center min-h-[44px]"
           >
             Close Reader
           </button>

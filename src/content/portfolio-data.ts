@@ -735,3 +735,73 @@ export const contactContent = {
     },
   ],
 };
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export const processSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "DISCOVER",
+    description: "Understanding core problem physics, system constraints, and domain requirements.",
+  },
+  {
+    number: "02",
+    title: "DEFINE",
+    description: "Formulating formal invariants, state transition boundaries, and runtime protocols.",
+  },
+  {
+    number: "03",
+    title: "DESIGN",
+    description: "Crafting deterministic state machine topologies, memory hierarchies, and schemas.",
+  },
+  {
+    number: "04",
+    title: "DEVELOP",
+    description: "Writing high-concurrency kernel loops, verified tool execution, and robust runtimes.",
+  },
+  {
+    number: "05",
+    title: "DELIVER",
+    description: "Empirical benchmarking, zero-fabrication evaluation, and production deployment.",
+  },
+];
+
+export interface KindWordItem {
+  id: string;
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+}
+
+export const kindWords: KindWordItem[] = [
+  {
+    id: "sofia",
+    quote:
+      "Ashish brings an extraordinary blend of deep architectural rigor and technical clarity. He transformed ambiguous agent workflows into a deterministic, high-throughput reality.",
+    author: "Sofia L.",
+    role: "Lead Architect",
+    company: "Velvet Studio",
+  },
+  {
+    id: "daniel",
+    quote:
+      "Working with Ashish on multi-agent execution loops was an inspiring experience. He truly cares about engineering durability and zero-fabrication evaluations.",
+    author: "Daniel R.",
+    role: "Research Director",
+    company: "Aurora AI Labs",
+  },
+  {
+    id: "james",
+    quote:
+      "His system runtimes are not only remarkably robust under peak concurrency, but also beautifully documented with transparent telemetry and invariants.",
+    author: "James T.",
+    role: "Engineering Lead",
+    company: "Mindspace Systems",
+  },
+];
+

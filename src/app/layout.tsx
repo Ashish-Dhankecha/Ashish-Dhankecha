@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Playfair_Display, Alex_Brush } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SkipToContent } from "@/components/layout/skip-to-content";
@@ -18,10 +18,23 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif-display",
+  display: "swap",
+});
+
+const alexBrush = Alex_Brush({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-script",
+  display: "swap",
+});
+
 export const metadata: Metadata = constructMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#070A0F",
+  themeColor: "#0C0608",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -35,9 +48,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} dark`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} ${alexBrush.variable} dark`}
     >
-      <body className="min-h-screen flex flex-col bg-bg-primary text-text-primary antialiased selection:bg-accent-primary/20 selection:text-accent-primary">
+      <body className="min-h-screen flex flex-col bg-[#0C0608] text-[#F5EBE1] antialiased selection:bg-[#801D2C] selection:text-[#FFFFFF]">
         <SkipToContent />
         <Header />
         <main id="main-content" className="flex-1 flex flex-col">

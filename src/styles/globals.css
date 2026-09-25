@@ -4,38 +4,38 @@
 
 :root {
   /* ==========================================================================
-     Design Tokens - Color System (Deep Obsidian / AI Systems Laboratory Theme)
-     - Primary background: #070A0F (Deep obsidian void)
-     - Primary surface: #0D1117 (Graphite terminal surface)
-     - Elevated surface: #151D2A (Card elevation)
-     - Borders: #1E293B (Hairline technical rule)
-     - Strong border: #334155 (Framed accent rule)
-     - Text primary: #F8FAFC (Crisp near-white)
-     - Text muted: #94A3B8 (Slate)
-     - Text subtle: #64748B (Dark slate metadata)
-     - Accent: #38BDF8 (Electric cyber cyan)
-     - Secondary accent: #3B82F6 (Neural blue)
-     - Operational: #10B981 (Active runtime green)
-     - Alert: #F59E0B (Audit warning amber)
+     Design Tokens - Color System (Luxury Dark Editorial / Haute Tech Theme)
+     - Primary background: #0C0608 (Velvet espresso dark)
+     - Primary surface: #140A0D (Rich dark wine surface)
+     - Elevated surface: #1F1015 (Warm elevated velvet)
+     - Borders: #2D161C (Hairline wine technical rule)
+     - Strong border: #4A202A (Framed wine accent rule)
+     - Text primary: #F5EBE1 (Warm champagne / ivory)
+     - Text muted: #D9C7B8 (Oatmeal cream)
+     - Text subtle: #8E7C79 (Warm sepia metadata)
+     - Accent: #801D2C (Deep Crimson / Rose Wine)
+     - Secondary accent: #A6263A (Vibrant Crimson)
+     - Operational: #E598A3 (Soft rose highlight)
+     - Alert: #DF7987 (Rose gold)
      ========================================================================== */
-  --bg-primary: 222 47% 4%;           /* #070A0F */
-  --bg-surface: 217 33% 7%;           /* #0D1117 */
-  --bg-surface-elevated: 217 33% 12%;  /* #151D2A */
+  --bg-primary: 345 33% 4%;           /* #0C0608 */
+  --bg-surface: 343 33% 6%;           /* #140A0D */
+  --bg-surface-elevated: 343 32% 10%;  /* #1F1015 */
 
-  --border-subtle: 217 33% 17%;       /* #1E293B */
-  --border-strong: 217 28% 27%;       /* #334155 */
+  --border-subtle: 345 33% 13%;       /* #2D161C */
+  --border-strong: 346 39% 21%;       /* #4A202A */
 
-  --text-primary: 210 40% 98%;        /* #F8FAFC */
-  --text-muted: 215 20% 65%;          /* #94A3B8 */
-  --text-subtle: 215 16% 47%;         /* #64748B */
+  --text-primary: 32 40% 92%;         /* #F5EBE1 */
+  --text-muted: 27 27% 79%;           /* #D9C7B8 */
+  --text-subtle: 11 9% 52%;           /* #8E7C79 */
 
-  --accent-primary: 199 89% 48%;      /* #38BDF8 / #0284C7 */
-  --accent-secondary: 217 91% 60%;    /* #3B82F6 */
+  --accent-primary: 351 63% 31%;      /* #801D2C crimson */
+  --accent-secondary: 351 62% 40%;    /* #A6263A vibrant */
 
-  --status-active: 142 71% 45%;       /* #10B981 emerald */
-  --status-research: 199 89% 48%;     /* #38BDF8 cyan */
-  --status-draft: 215 16% 47%;        /* #64748B slate */
-  --status-archived: 217 19% 35%;     /* #475569 */
+  --status-active: 351 62% 75%;       /* #E598A3 */
+  --status-research: 351 55% 67%;     /* #DF7987 */
+  --status-draft: 11 9% 52%;          /* #8E7C79 */
+  --status-archived: 345 20% 25%;
 
   /* ==========================================================================
      Layout & Spacing Tokens
@@ -49,13 +49,13 @@
 
 @layer base {
   * {
-    border-color: #1E293B;
+    border-color: #2D161C;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #070A0F;
-    color: #F8FAFC;
+    background-color: #0C0608;
+    color: #F5EBE1;
     color-scheme: dark;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
@@ -65,22 +65,22 @@
 
   body {
     min-height: 100vh;
-    background-color: #070A0F;
-    color: #F8FAFC;
+    background-color: #0C0608;
+    color: #F5EBE1;
     font-family: var(--font-sans), system-ui, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
   }
 
-  /* Custom text selection using electric cyan */
+  /* Custom text selection using deep crimson */
   ::selection {
-    background-color: #0284C7;
+    background-color: #801D2C;
     color: #FFFFFF;
   }
 
   /* Keyboard focus states */
   :focus-visible {
-    outline: 2px solid #38BDF8;
+    outline: 2px solid #A6263A;
     outline-offset: 2px;
   }
 }
@@ -112,23 +112,48 @@
   }
 
   .hairline-border {
-    border: 1px solid #1E293B;
+    border: 1px solid #2D161C;
   }
 
   .hairline-border-b {
-    border-bottom: 1px solid #1E293B;
+    border-bottom: 1px solid #2D161C;
   }
 
   .hairline-border-t {
-    border-top: 1px solid #1E293B;
+    border-top: 1px solid #2D161C;
   }
 
   .hairline-border-l {
-    border-left: 1px solid #1E293B;
+    border-left: 1px solid #2D161C;
   }
 
   .hairline-border-r {
-    border-right: 1px solid #1E293B;
+    border-right: 1px solid #2D161C;
+  }
+
+  .font-serif-display {
+    font-family: var(--font-serif-display), "Playfair Display", Georgia, serif;
+  }
+
+  .font-script {
+    font-family: var(--font-script), "Alex Brush", cursive;
+  }
+
+  .wine-glass {
+    background: rgba(20, 10, 13, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(45, 22, 28, 0.9);
+  }
+
+  .wine-glow {
+    box-shadow: 0 0 60px -10px rgba(128, 29, 44, 0.35);
+  }
+
+  .wine-pill {
+    background: #230E14;
+    border: 1px solid #4A202A;
+    color: #F5EBE1;
   }
 
   /* Hide scrollbars for clean aesthetic */

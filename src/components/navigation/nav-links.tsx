@@ -35,8 +35,8 @@ export function NavLinks({ className, onNavigate }: NavLinksProps) {
             className={cn(
               "group relative inline-flex items-center gap-1.5 text-xs transition-colors py-1.5 select-none font-medium",
               isItemActive
-                ? "text-cyber-cyan font-semibold"
-                : "text-slate-400 hover:text-white"
+                ? "text-[#F5EBE1] font-semibold"
+                : "text-[#D9C7B8]/70 hover:text-[#F5EBE1]"
             )}
           >
             {item.index && (
@@ -44,8 +44,8 @@ export function NavLinks({ className, onNavigate }: NavLinksProps) {
                 className={cn(
                   "font-mono text-[10px] transition-colors",
                   isItemActive
-                    ? "text-cyber-cyan font-semibold"
-                    : "text-slate-500 group-hover:text-cyber-cyan"
+                    ? "text-[#DF7987] font-semibold"
+                    : "text-[#8E7C79] group-hover:text-[#DF7987]"
                 )}
               >
                 {item.index}
@@ -56,7 +56,7 @@ export function NavLinks({ className, onNavigate }: NavLinksProps) {
             </span>
 
             {isLabItem && (
-              <span className="ml-1 px-1.5 py-0.2 rounded text-[8px] font-mono uppercase tracking-widest bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30">
+              <span className="ml-1 px-1.5 py-0.2 rounded-full text-[8px] font-mono uppercase tracking-widest bg-[#2B0F15] text-[#DF7987] border border-[#801D2C]/40">
                 ACTIVE
               </span>
             )}
@@ -64,7 +64,7 @@ export function NavLinks({ className, onNavigate }: NavLinksProps) {
             <span
               className={cn(
                 "absolute -bottom-1 left-0 right-0 h-[2px] rounded-full transition-transform origin-left duration-200",
-                "bg-cyber-cyan",
+                "bg-[#801D2C]",
                 isItemActive
                   ? "scale-x-100"
                   : "scale-x-0 group-hover:scale-x-100"
