@@ -876,7 +876,7 @@
         "count": 1
       }
     ],
-    "generated_at": "2026-09-07T10:41:55.398Z"
+    "generated_at": "2026-09-27T11:27:40.567Z"
   },
   "projects": [
     {
@@ -1294,7 +1294,7 @@
       "content_type": "POST_MORTEM",
       "content_type_display": "Post-Mortem",
       "category_group": "Post-Mortems",
-      "status": "Partial — fixes applied, score moved to 6/10 as of Part 2 Final",
+      "status": "Partial \\u2014 fixes applied, score moved to 6/10 as of Part 2 Final",
       "date": "2026-08-11",
       "topics": [
         "cognitive-systems",
@@ -1474,13 +1474,13 @@
     {
       "slug": "no-action-failure-investigation-ashi",
       "order": 4,
-      "title": "Qwen2.5-1.5B's No-Action Ceiling: When Prompt Engineering Stops Working",
+      "title": "Qwen2.5-1.5B''s No-Action Ceiling: When Prompt Engineering Stops Working",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "EXPERIMENT",
       "content_type_display": "Experiment",
       "category_group": "Experiments",
-      "status": "Completed — Recommendation: Option B (execution safeguard)",
+      "status": "Completed \\u2014 Recommendation: Option B (execution safeguard)",
       "date": "2026-08-08",
       "topics": [
         "llm-evaluation",
@@ -1572,7 +1572,7 @@
       "content_type": "DEBUGGING_DISCOVERY",
       "content_type_display": "Debugging Discovery",
       "category_group": "Debugging",
-      "status": "Completed — bugs fixed, numbers corrected",
+      "status": "Completed \\u2014 bugs fixed, numbers corrected",
       "date": "2026-08-07",
       "topics": [
         "benchmark-design",
@@ -1750,13 +1750,13 @@
     {
       "slug": "benchmark-hang-monitoring-gap-ashi",
       "order": 7,
-      "title": "The 12-Hour Benchmark Hang That Wasn't: Monitoring vs. Work",
+      "title": "The 12-Hour Benchmark Hang That Wasn''t: Monitoring vs. Work",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "DEBUGGING_DISCOVERY",
       "content_type_display": "Debugging Discovery",
       "category_group": "Debugging",
-      "status": "Closed — progress logging added",
+      "status": "Closed \\u2014 progress logging added",
       "date": "2026-08-06",
       "topics": [
         "process-supervision",
@@ -2296,13 +2296,13 @@
     {
       "slug": "learning-amplifying-noise-ashi",
       "order": 13,
-      "title": "Learning Made Judgment Worse: Strength Reinforcement Promoted a Benchmark Fixture",
+      "title": "'Learning Made Judgment Worse: Strength Reinforcement Promoted a Benchmark",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "DEBUGGING_DISCOVERY",
       "content_type_display": "Debugging Discovery",
       "category_group": "Debugging",
-      "status": "Identified — remediation in progress",
+      "status": "Identified \\u2014 remediation in progress",
       "date": "2026-08-11",
       "topics": [
         "machine-learning",
@@ -2388,7 +2388,7 @@
     {
       "slug": "world-perception-on-turn-path-design-ashi",
       "order": 14,
-      "title": "World Perception at 24 Microseconds: Designing an LLM-Free Ambient Awareness Layer",
+      "title": "'World Perception at 24 Microseconds: Designing an LLM-Free Ambient Awareness",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "TECHNICAL_DESIGN",
@@ -2477,7 +2477,7 @@
     {
       "slug": "latency-reduction-32s-to-5s-ashi",
       "order": 15,
-      "title": "From 32 Seconds to 5.4 Seconds: Tracing and Eliminating Latency in a 28-Package LLM System",
+      "title": "'From 32 Seconds to 5.4 Seconds: Tracing and Eliminating Latency in a 28-Package",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "EXPERIMENT",
@@ -2565,7 +2565,7 @@
     {
       "slug": "litellm-hidden-fastapi-dependency-ashi",
       "order": 16,
-      "title": "litellm's Undeclared fastapi Dependency: A Hidden Import That Broke Tool Calling",
+      "title": "'litellm''s Undeclared fastapi Dependency: A Hidden Import That Broke Tool",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "DEBUGGING_DISCOVERY",
@@ -2656,7 +2656,7 @@
     {
       "slug": "m5-voice-bugs-only-visible-live-ashi",
       "order": 17,
-      "title": "SPACE BAR Does Nothing: Four Real Bugs Found Only by Actually Running the Product",
+      "title": "'SPACE BAR Does Nothing: Four Real Bugs Found Only by Actually Running the",
       "project": "Ashi",
       "project_slug": "ashi",
       "content_type": "POST_MORTEM",
@@ -4267,7 +4267,7 @@
     {
       "slug": "regression-50-scenarios-fast-path-routing",
       "order": 15,
-      "title": "50 Regression Scenarios and a 9ms Fast Path: How LEO Validated its Routing Pipeline",
+      "title": "'50 Regression Scenarios and a 9ms Fast Path: How LEO Validated its Routing",
       "project": "LEO",
       "project_slug": "leo",
       "content_type": "EXPERIMENT",
@@ -4351,7 +4351,7 @@
     {
       "slug": "architecture-constitution-preventing-drift",
       "order": 16,
-      "title": "Writing an Architecture Constitution: LEO's Approach to Preventing Drift",
+      "title": "Writing an Architecture Constitution: LEO''s Approach to Preventing Drift",
       "project": "LEO",
       "project_slug": "leo",
       "content_type": "ARCHITECTURE_DECISION",
@@ -4826,7 +4826,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Active — Phase 0 completed, Phase 1 in progress",
+      "status": "Active \\u2014 Phase 0 completed, Phase 1 in progress",
       "date": "2026-07",
       "topics": [
         "cognitive-architecture",
@@ -4913,7 +4913,7 @@
     {
       "slug": "architecture-before-implementation",
       "order": 2,
-      "title": "Architecture Before Implementation: How Phase 0 Produced No Features and Why That Was Correct",
+      "title": "'Architecture Before Implementation: How Phase 0 Produced No Features and Why",
       "project": "VANI",
       "project_slug": "vani",
       "content_type": "ENGINEERING_NOTE",
@@ -5011,7 +5011,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Decided — July 2026",
+      "status": "Decided \\u2014 July 2026",
       "date": "2026-07",
       "topics": [
         "databases",
@@ -5102,7 +5102,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Canonical — July 2026",
+      "status": "Canonical \\u2014 July 2026",
       "date": "2026-07",
       "topics": [
         "ai-architecture",
@@ -5189,13 +5189,13 @@
     {
       "slug": "subsystem-layering-pattern",
       "order": 5,
-      "title": "The Subsystem Pattern: Foundation → Context → State Machine → Engine → Executor → Orchestrator",
+      "title": "\"The Subsystem Pattern: Foundation \\u2192 Context \\u2192 State Machine \\u2192\\",
       "project": "VANI",
       "project_slug": "vani",
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Established — used across all Phase 0 subsystems",
+      "status": "Established \\u2014 used across all Phase 0 subsystems",
       "date": "2026",
       "topics": [
         "software-architecture",
@@ -5285,7 +5285,7 @@
       "content_type": "ENGINEERING_NOTE",
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
-      "status": "Implemented — Phase 0 certification passed",
+      "status": "Implemented \\u2014 Phase 0 certification passed",
       "date": "2026",
       "topics": [
         "certification",
@@ -5377,7 +5377,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Canonical — July 2026",
+      "status": "Canonical \\u2014 July 2026",
       "date": "2026-07",
       "topics": [
         "technology-strategy",
@@ -5470,7 +5470,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Accepted — Phase 1 in progress",
+      "status": "Accepted \\u2014 Phase 1 in progress",
       "date": "2026",
       "topics": [
         "architectural-decision-records",
@@ -5550,7 +5550,7 @@
       "content_type": "ENGINEERING_NOTE",
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
-      "status": "Implemented — Phase 0",
+      "status": "Implemented \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "static-analysis",
@@ -5642,7 +5642,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Canonical — July 2026",
+      "status": "Canonical \\u2014 July 2026",
       "date": "2026-07",
       "topics": [
         "local-first",
@@ -5730,7 +5730,7 @@
       "content_type": "ENGINEERING_NOTE",
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
-      "status": "Completed — Phase 0",
+      "status": "Completed \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "engineering-discipline",
@@ -5811,7 +5811,7 @@
       "content_type": "ENGINEERING_NOTE",
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
-      "status": "Completed — Phase 0",
+      "status": "Completed \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "refactoring",
@@ -5891,13 +5891,13 @@
     {
       "slug": "composition-root-pattern",
       "order": 13,
-      "title": "The Composition Root Pattern: Eliminating Startup Duplication Between Production and Certification",
+      "title": "'The Composition Root Pattern: Eliminating Startup Duplication Between Production",
       "project": "VANI",
       "project_slug": "vani",
       "content_type": "ENGINEERING_NOTE",
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
-      "status": "Completed — Phase 0",
+      "status": "Completed \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "design-patterns",
@@ -5980,7 +5980,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Decided — July 2026",
+      "status": "Decided \\u2014 July 2026",
       "date": "2026-07",
       "topics": [
         "langchain",
@@ -6067,7 +6067,7 @@
       "content_type": "ENGINEERING_NOTE",
       "content_type_display": "Engineering Note",
       "category_group": "Engineering Notes",
-      "status": "Active principle — enforced from project start",
+      "status": "Active principle \\u2014 enforced from project start",
       "date": "2026",
       "topics": [
         "engineering-discipline",
@@ -6139,13 +6139,13 @@
     {
       "slug": "governance-hierarchy-documentation",
       "order": 16,
-      "title": "The Governance Hierarchy: How Documentation Governs Engineering Decisions in VANI",
+      "title": "'The Governance Hierarchy: How Documentation Governs Engineering Decisions",
       "project": "VANI",
       "project_slug": "vani",
       "content_type": "SYSTEM_DESIGN",
       "content_type_display": "System Design",
       "category_group": "System Design",
-      "status": "Canonical — frozen",
+      "status": "Canonical \\u2014 frozen",
       "date": "2026",
       "topics": [
         "engineering-governance",
@@ -6232,7 +6232,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Implemented — Phase 0 (Event System)",
+      "status": "Implemented \\u2014 Phase 0 (Event System)",
       "date": "2026",
       "topics": [
         "event-driven-architecture",
@@ -6323,7 +6323,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Implemented — Phase 0",
+      "status": "Implemented \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "runtime-architecture",
@@ -6404,7 +6404,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Implemented — Phase 0",
+      "status": "Implemented \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "scheduling",
@@ -6480,7 +6480,7 @@
       "content_type": "ARCHITECTURE_DECISION",
       "content_type_display": "Architecture Decision",
       "category_group": "Architecture",
-      "status": "Implemented — Phase 0",
+      "status": "Implemented \\u2014 Phase 0",
       "date": "2026",
       "topics": [
         "operating-systems",
@@ -6557,7 +6557,7 @@
       "content_type": "SYSTEM_DESIGN",
       "content_type_display": "System Design",
       "category_group": "System Design",
-      "status": "Frozen — Design Standards",
+      "status": "Frozen \\u2014 Design Standards",
       "date": "2026",
       "topics": [
         "ui-design",

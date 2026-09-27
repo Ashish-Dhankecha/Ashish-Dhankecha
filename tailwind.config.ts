@@ -9,6 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        pakcat: {
+          bg: "#100306",
+          surface: "#1B060D",
+          "surface-hover": "#280A15",
+          border: "#3B121E",
+          "border-strong": "#5A1A2C",
+          accent: "#E27D95",
+          "accent-code": "#F0A0B5",
+          "accent-burgundy": "#80142B",
+          "accent-crimson": "#9B223D",
+          "text-primary": "#F7ECEF",
+          "text-secondary": "#D8B8C1",
+          "text-subtle": "#9E7480",
+        },
         velvet: {
           DEFAULT: "#0C0608",
           surface: "#140A0D",
@@ -27,41 +41,6 @@ const config: Config = {
           DEFAULT: "#F5EBE1",
           muted: "#D9C7B8",
           subtle: "#8E7C79",
-        },
-        obsidian: {
-          DEFAULT: "#0C0608",
-          surface: "#140A0D",
-          elevated: "#1F1015",
-          card: "#160B0F",
-        },
-        cyber: {
-          cyan: "#DF7987",
-          blue: "#A6263A",
-          emerald: "#E598A3",
-          amber: "#F5EBE1",
-          purple: "#801D2C",
-        },
-        slate: {
-          border: "#2D161C",
-          borderStrong: "#4A202A",
-          muted: "#D9C7B8",
-          subtle: "#8E7C79",
-        },
-        parchment: {
-          DEFAULT: "#0C0608",
-          surface: "#140A0D",
-          elevated: "#1F1015",
-        },
-        nearblack: "#F5EBE1",
-        charcoal: "#D9C7B8",
-        warmgray: {
-          subtle: "#2D161C",
-          strong: "#4A202A",
-        },
-        restrainedblue: {
-          DEFAULT: "#801D2C",
-          steel: "#A6263A",
-          subtle: "#2D161C",
         },
         bg: {
           primary: "hsl(var(--bg-primary) / <alpha-value>)",
@@ -89,11 +68,11 @@ const config: Config = {
         },
       },
       fontFamily: {
+        sans: ["var(--font-sans)", "Space Grotesk", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "Menlo", "monospace"],
         serif: ["var(--font-serif-display)", "Playfair Display", "Georgia", "serif"],
         script: ["var(--font-script)", "Alex Brush", "cursive"],
-        display: ["var(--font-serif-display)", "Playfair Display", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "Inter", "system-ui", "-apple-system", "sans-serif"],
-        mono: ["var(--font-mono)", "JetBrains Mono", "Menlo", "monospace"],
       },
       maxWidth: {
         content: "var(--max-width-content)",
