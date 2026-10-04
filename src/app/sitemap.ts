@@ -1,11 +1,20 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { getAllProjects, getAllLabPieces } from "@/lib/lab";
+import { getAllProjectSlugs } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
   const projects = getAllProjects();
   const pieces = getAllLabPieces();
+  const caseStudySlugs = getAllProjectSlugs();
+
+  const caseStudyUrls: MetadataRoute.Sitemap = caseStudySlugs.map((slug) => ({
+    url: `${siteConfig.url}/projects/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.95,
+  }));
 
   const projectUrls: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${siteConfig.url}/lab/${p.id}`,
@@ -29,11 +38,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${siteConfig.url}/projects`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${siteConfig.url}/lab`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...caseStudyUrls,
     ...projectUrls,
     ...pieceUrls,
   ];

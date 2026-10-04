@@ -71,7 +71,7 @@ export default async function ProjectOrPiecePage({ params }: Props) {
   if (project) {
     const pieces = getLabPiecesByProject(project.id);
     return (
-      <div className="w-full min-h-screen bg-[#100306] text-[#F7ECEF] pb-24">
+      <div className="w-full min-h-screen bg-[var(--bg)] text-[var(--ink)] transition-colors duration-700 pb-24">
         <Container width="wide">
           <ProjectDossierView
             project={project}
@@ -87,7 +87,7 @@ export default async function ProjectOrPiecePage({ params }: Props) {
   const piece = getLabPieceBySlug(segment);
   if (piece) {
     return (
-      <div className="w-full min-h-screen bg-[#100306] text-[#F7ECEF] pb-24">
+      <div className="w-full min-h-screen bg-[var(--bg)] text-[var(--ink)] transition-colors duration-700 pb-24">
         <Container width="wide">
           <ContentReader piece={piece} />
         </Container>

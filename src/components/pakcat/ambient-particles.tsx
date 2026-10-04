@@ -13,20 +13,21 @@ interface Particle {
   delay: number;
 }
 
-const COLORS = ["#E27D95", "#80142B", "#F7ECEF", "#B02242", "#5A1A2C"];
+// Vintage Banker Lamp aesthetic particles: brass, gold, eucalyptus sage, and forest enamel
+const COLORS = ["#d4a568", "#ffe4a5", "#436a58", "#a0afa6", "#e5ca97"];
 
 export function AmbientParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    // Generate 20 floating particles matching PakCat Labs
+    // Generate 20 floating particles matching Banker Lamp ambient aesthetic
     const items: Particle[] = Array.from({ length: 20 }, (_, i) => ({
       id: i,
       left: Math.random() * 96 + 2,
       top: Math.random() * 90 + 5,
       size: Math.random() * 2.6 + 1.2,
       color: COLORS[i % COLORS.length],
-      opacity: Math.random() * 0.14 + 0.06,
+      opacity: Math.random() * 0.16 + 0.08,
       duration: Math.random() * 14 + 11,
       delay: Math.random() * 8,
     }));

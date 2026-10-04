@@ -3,20 +3,20 @@
 import React, { useEffect } from "react";
 import { AmbientParticles } from "@/components/pakcat/ambient-particles";
 import { ScrollProgressBar } from "@/components/pakcat/scroll-progress";
-import { BootScreen } from "@/components/pakcat/boot-screen";
-import { MeowToast } from "@/components/pakcat/meow-toast";
 import { HeroSection } from "@/components/pakcat/hero-section";
+import { IdentityProofStrip } from "@/components/pakcat/identity-proof-strip";
 import { AboutSection } from "@/components/pakcat/about-section";
-import { ExpertiseSection } from "@/components/pakcat/expertise-section";
 import { ProjectsSection } from "@/components/pakcat/projects-section";
 import { ExperienceSection } from "@/components/pakcat/experience-section";
+import { ExpertiseSection } from "@/components/pakcat/expertise-section";
 import { ProcessSection } from "@/components/pakcat/process-section";
 import { StackSection } from "@/components/pakcat/stack-section";
+import { CurrentFocusSection } from "@/components/pakcat/current-focus";
 import { ContactSection } from "@/components/pakcat/contact-section";
 
 export default function HomePage() {
   useEffect(() => {
-    // Reveal animation observer matching PakCat Labs
+    // Reveal animation observer
     const elements = document.querySelectorAll(
       ".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale"
     );
@@ -49,32 +49,32 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-pakcat-bg text-pakcat-text-primary overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#101b17] text-[#f2eee0] bg-[var(--bg)] text-[var(--ink)] overflow-x-hidden transition-colors duration-700">
       {/* Background Particle and Texture Elements */}
       <AmbientParticles />
       <ScrollProgressBar />
-      <BootScreen />
-      <MeowToast />
 
-      {/* Ambient Burgundy Radial Glows */}
+      {/* Ambient Banker Lamp & Forest Green Radial Glows */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(128,20,43,0.18),transparent_70%)]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(67,106,88,0.18),transparent_70%)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(90,26,44,0.14),transparent_70%)]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(212,165,104,0.1),transparent_70%)]"
         aria-hidden="true"
       />
 
-      {/* Main Single-Page Sections matching PakCat Labs hierarchy */}
+      {/* Main Single-Page Sections (Ordered per Section 21 of Master Prompt) */}
       <div className="relative z-10 flex flex-col">
         <HeroSection />
+        <IdentityProofStrip />
         <AboutSection />
-        <ExpertiseSection />
         <ProjectsSection />
         <ExperienceSection />
+        <ExpertiseSection />
         <ProcessSection />
         <StackSection />
+        <CurrentFocusSection />
         <ContactSection />
       </div>
     </div>

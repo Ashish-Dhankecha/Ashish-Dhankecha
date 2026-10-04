@@ -6,7 +6,7 @@ import { Magnetic } from "./magnetic-button";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const email = "ashishdhankecha.business@gmail.com";
+  const email = "ashishdhankecha256@gmail.com";
 
   const handleCopyEmail = async () => {
     try {
@@ -33,31 +33,32 @@ export function ContactSection() {
         {/* Section Header */}
         <div className="mb-8 reveal reveal-up visible">
           <span className="section-number">
-            <ScrambleText text="07 // contact" />
+            <ScrambleText text="08 // contact" />
           </span>
           <h2
             id="contact-heading"
-            className="text-3xl md:text-4xl font-bold text-pakcat-text-primary mt-3 font-sans"
+            className="text-3xl md:text-4xl font-bold text-[var(--ink)] mt-3 font-sans"
           >
-            Have an AI system, research problem, or architecture to build?
+            Have a problem, system, or idea to build?
           </h2>
         </div>
 
         {/* Card */}
         <div className="max-w-3xl reveal reveal-scale visible">
-          <div className="brutal-card p-8 md:p-12 rounded-sm">
-            <p className="text-pakcat-text-secondary mb-8 font-body leading-relaxed">
-              Ashish Labs is open for technical discussions, AI systems engineering collaborations, 
-              cognitive architecture reviews, and high-integrity research experiments.
+          <div className="brutal-card p-5 sm:p-8 md:p-12 rounded-sm shadow-xl">
+            <p className="text-[var(--muted)] mb-6 sm:mb-8 font-body leading-relaxed text-sm sm:text-base">
+              Ashish Labs is open for technical discussions, AI systems engineering collaborations,
+              research inquiries, and ambitious build challenges. Whether it requires AI agents, systems programming,
+              or unfamiliar infrastructure — I will figure it out and make it happen.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3.5 mb-6 sm:mb-8">
               <Magnetic>
                 <a
                   href={`mailto:${email}`}
-                  className="inline-block font-mono text-sm bg-[#80142B] text-[#F7ECEF] px-6 py-3 border border-[#B02242] hover:bg-[#9B223D] transition-all rounded-sm font-medium shadow-lg shadow-[#80142B]/35"
+                  className="inline-block font-mono text-xs sm:text-sm bg-[var(--accent-enamel)] text-[var(--ink)] px-5 sm:px-6 py-2.5 sm:py-3 border border-[var(--accent-brass)] hover:bg-[var(--accent-enamel-bright)] hover:border-[var(--accent-gold)] transition-all rounded-sm font-medium shadow-lg shadow-[var(--accent-glow)]"
                 >
-                  [CONTACT ME]
+                  [GET IN TOUCH]
                 </a>
               </Magnetic>
 
@@ -66,9 +67,9 @@ export function ContactSection() {
                   href="https://github.com/Ashish-Dhankecha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-mono text-sm border border-[#5A1A2C] text-[#E27D95] px-6 py-3 hover:border-[#E27D95] hover:bg-[#280A15] transition-all rounded-sm"
+                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--accent-brass)] px-4 sm:px-5 py-2.5 sm:py-3 hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
                 >
-                  [VIEW GITHUB]
+                  [GITHUB]
                 </a>
               </Magnetic>
 
@@ -77,27 +78,38 @@ export function ContactSection() {
                   href="https://linkedin.com/in/ashish-dhankecha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-mono text-sm border border-[#3B121E] text-pakcat-text-secondary px-6 py-3 hover:border-[#80142B] hover:text-[#F7ECEF] hover:bg-[#280A15] transition-all rounded-sm"
+                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2.5 sm:py-3 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
                 >
-                  [VIEW LINKEDIN]
+                  [LINKEDIN]
+                </a>
+              </Magnetic>
+
+              <Magnetic>
+                <a
+                  href="https://x.com/Ashish-Dhankecha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2.5 sm:py-3 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
+                >
+                  [X]
                 </a>
               </Magnetic>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-[var(--line)]">
               <a
                 href={`mailto:${email}`}
-                className="font-mono text-sm text-[#E27D95] hover:text-[#F0A0B5] transition-colors"
+                className="font-mono text-xs sm:text-sm text-[var(--accent-brass)] hover:text-[var(--accent-gold)] transition-colors break-all sm:break-normal"
               >
                 {email}
               </a>
 
               <button
                 onClick={handleCopyEmail}
-                className="font-mono text-xs text-pakcat-text-secondary hover:text-[#F7ECEF] border border-[#3B121E] hover:border-[#80142B] hover:bg-[#280A15] px-2.5 py-1 rounded-sm transition-colors"
+                className="font-mono text-[11px] sm:text-xs text-[var(--muted)] hover:text-[var(--ink)] border border-[var(--line)] hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] px-2.5 py-1 rounded-sm transition-colors cursor-pointer shrink-0"
                 title="Copy email to clipboard"
               >
-                {copied ? "[COPIED! ✓]" : "[COPY]"}
+                {copied ? "[COPIED! ✓]" : "[COPY EMAIL]"}
               </button>
             </div>
           </div>

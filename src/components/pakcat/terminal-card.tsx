@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { triggerMeow } from "./meow-toast";
 
 interface CommandHistoryItem {
   command: string;
@@ -14,9 +13,7 @@ export function TerminalCard() {
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalEndRef = useRef<HTMLDivElement>(null);
 
-  const handleCatClick = () => {
-    triggerMeow("meow! [purr.exe executed]");
-  };
+  const handleCatClick = () => {};
 
   const executeCommand = (cmd: string) => {
     const clean = cmd.trim().toLowerCase();
@@ -27,22 +24,22 @@ export function TerminalCard() {
     switch (clean) {
       case "help":
         output = (
-          <div className="text-xs space-y-0.5 text-pakcat-text-secondary">
+          <div className="text-xs space-y-0.5 text-[var(--muted)]">
             <p>Available commands:</p>
-            <p><span className="text-pakcat-accent">about</span> - First-principles architecture philosophy</p>
-            <p><span className="text-pakcat-accent">systems</span> - Active cognitive systems (Ashi, Leo, Vani)</p>
-            <p><span className="text-pakcat-accent">status</span> - Core runtime invariants & telemetry</p>
-            <p><span className="text-pakcat-accent">meow</span> - Calibrate cat sensors</p>
-            <p><span className="text-pakcat-accent">contact</span> - Reach out to Ashish</p>
-            <p><span className="text-pakcat-accent">clear</span> - Clear terminal session</p>
+            <p><span className="text-[var(--accent-brass)]">about</span> - First-principles architecture philosophy</p>
+            <p><span className="text-[var(--accent-brass)]">systems</span> - Active cognitive systems (Ashi, Leo, Vani)</p>
+            <p><span className="text-[var(--accent-brass)]">status</span> - Core runtime invariants &amp; telemetry</p>
+            <p><span className="text-[var(--accent-brass)]">meow</span> - Calibrate cat sensors</p>
+            <p><span className="text-[var(--accent-brass)]">contact</span> - Reach out to Ashish</p>
+            <p><span className="text-[var(--accent-brass)]">clear</span> - Clear terminal session</p>
           </div>
         );
         break;
       case "about":
         output = (
-          <p className="text-xs text-pakcat-text-secondary">
-            Ashish Dhankecha builds AI systems from first principles: neural foundations, 
-            stateful cognitive operating systems, and acyclic architectures.
+          <p className="text-xs text-[var(--muted)]">
+            Ashish Dhankecha is an AI Developer &amp; Systems Builder.
+            All-rounder skill: <span className="text-[var(--accent-gold)] font-bold">I WILL MAKE IT HAPPEN. No matter what.</span>
           </p>
         );
         break;
@@ -50,37 +47,37 @@ export function TerminalCard() {
       case "projects":
       case "ls":
         output = (
-          <div className="text-xs space-y-1 text-pakcat-text-secondary">
-            <p><span className="text-pakcat-accent-code">[01] Ashi:</span> 28-package cognitive OS monorepo</p>
-            <p><span className="text-pakcat-accent-code">[02] LEO:</span> Companion OS kernel & forensic audit</p>
-            <p><span className="text-pakcat-accent-code">[03] VANI:</span> 50-year sovereign AI OS with AST guardian</p>
+          <div className="text-xs space-y-1 text-[var(--muted)]">
+            <p><span className="text-[var(--accent-gold)]">[01] Ashi:</span> 28-package cognitive OS monorepo (Flagship)</p>
+            <p><span className="text-[var(--accent-gold)]">[02] LEO:</span> Companion OS kernel &amp; forensic audit</p>
+            <p><span className="text-[var(--accent-gold)]">[03] VANI:</span> 50-year sovereign AI OS with AST guardian</p>
+            <p><span className="text-[var(--accent-gold)]">[04] SIH26117:</span> Sovereign agentic AI workbench (hackathon sprint)</p>
           </div>
         );
         break;
       case "status":
       case "sys":
         output = (
-          <div className="text-xs space-y-0.5 text-pakcat-text-secondary">
-            <p><span className="text-pakcat-accent-code">● CPU/Runtime:</span> Active (Linux / uv environment)</p>
-            <p><span className="text-pakcat-accent-code">● Inference:</span> llama.cpp quantized sub-2B SLM</p>
-            <p><span className="text-pakcat-accent-code">● Invariants:</span> 100% acyclic graph checks passed</p>
-            <p><span className="text-pakcat-accent-code">● Vacuous Success:</span> Eliminated</p>
+          <div className="text-xs space-y-0.5 text-[var(--muted)]">
+            <p><span className="text-[var(--accent-gold)]">● CPU/Runtime:</span> Active (Linux / uv environment)</p>
+            <p><span className="text-[var(--accent-gold)]">● Inference:</span> llama.cpp quantized sub-2B SLM</p>
+            <p><span className="text-[var(--accent-gold)]">● Invariants:</span> 100% acyclic graph checks passed</p>
+            <p><span className="text-[var(--accent-gold)]">● Vacuous Success:</span> Eliminated</p>
           </div>
         );
         break;
       case "meow":
       case "cat":
-        triggerMeow("meow! [cat sensor online]");
         output = (
-          <p className="text-xs text-pakcat-accent">
+          <p className="text-xs text-[var(--accent-brass)]">
             😺 Purr subsystem active. Sensor telemetry nominal.
           </p>
         );
         break;
       case "contact":
         output = (
-          <p className="text-xs text-pakcat-text-secondary">
-            Email: <a href="mailto:ashishdhankecha.business@gmail.com" className="text-pakcat-accent-code underline">ashishdhankecha.business@gmail.com</a>
+          <p className="text-xs text-[var(--muted)]">
+            Email: <a href="mailto:ashishdhankecha256@gmail.com" className="text-[var(--accent-gold)] underline">ashishdhankecha256@gmail.com</a>
           </p>
         );
         break;
@@ -90,8 +87,8 @@ export function TerminalCard() {
         return;
       default:
         output = (
-          <span className="text-xs text-[#ff5555]">
-            command not found: {clean}. Type <span className="text-pakcat-accent">help</span> for commands.
+          <span className="text-xs text-[#e58e8e]">
+            command not found: {clean}. Type <span className="text-[var(--accent-brass)]">help</span> for commands.
           </span>
         );
     }
@@ -115,30 +112,30 @@ export function TerminalCard() {
   return (
     <div className="brutal-card p-5 sm:p-6 font-mono text-sm rounded-sm shadow-2xl relative">
       {/* Top Window Bar */}
-      <div className="border-b border-[#3B121E] pb-3 mb-4 flex items-center justify-between gap-2">
+      <div className="border-b border-[var(--line)] pb-3 mb-4 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-[#80142B] shadow-[0_0_8px_rgba(128,20,43,0.7)]" />
-          <div className="w-3 h-3 rounded-full bg-[#B02242]" />
-          <div className="w-3 h-3 rounded-full bg-[#E27D95]" />
+          <div className="w-3 h-3 rounded-full bg-[var(--accent-enamel)] shadow-[0_0_8px_var(--accent-glow)]" />
+          <div className="w-3 h-3 rounded-full bg-[#bf9c62]" />
+          <div className="w-3 h-3 rounded-full bg-[#ffe4a5]" />
         </div>
-        <span className="text-pakcat-text-secondary text-xs tracking-wider">
+        <span className="text-[var(--muted)] text-xs tracking-wider">
           system.terminal
         </span>
       </div>
 
-      <div className="text-pakcat-text-primary leading-relaxed space-y-1">
+      <div className="text-[var(--ink)] leading-relaxed space-y-1">
         {/* Clickable Cat ASCII */}
         <div className="flex items-start justify-between">
           <pre
             onClick={handleCatClick}
             title="Click me!"
-            className="font-mono text-pakcat-accent text-xs leading-tight hover:text-pakcat-accent-code transition-colors cursor-pointer select-none py-1"
+            className="font-mono text-[var(--accent-brass)] text-xs leading-tight hover:text-[var(--accent-gold)] transition-colors cursor-pointer select-none py-1"
           >
 {`  /\\_/\\
  ( o.o )
   > ^ <`}
           </pre>
-          <span className="text-[10px] text-pakcat-text-secondary/60 font-mono mt-1">
+          <span className="text-[10px] text-[var(--muted)]/60 font-mono mt-1">
             [click cat]
           </span>
         </div>
@@ -146,34 +143,34 @@ export function TerminalCard() {
         {/* Live Telemetry Lines */}
         <div className="pt-2 space-y-1 text-xs">
           <p>
-            <span className="text-pakcat-accent-code">$</span> system.online{" "}
-            <span className="text-pakcat-accent-code">true</span>
+            <span className="text-[var(--accent-gold)]">$</span> system.online{" "}
+            <span className="text-[var(--accent-gold)]">true</span>
           </p>
           <p>
-            <span className="text-pakcat-accent-code">$</span> build.status{" "}
-            <span className="text-pakcat-accent-code">stable</span>
+            <span className="text-[var(--accent-gold)]">$</span> build.status{" "}
+            <span className="text-[var(--accent-gold)]">stable</span>
           </p>
           <p>
-            <span className="text-pakcat-accent-code">$</span> uptime{" "}
-            <span className="text-pakcat-accent-code">2026.09+</span>
+            <span className="text-[var(--accent-gold)]">$</span> uptime{" "}
+            <span className="text-[var(--accent-gold)]">2026.09+</span>
           </p>
           <p>
-            <span className="text-pakcat-accent-code">$</span> architecture{" "}
-            <span className="text-pakcat-accent-code">acyclic_monorepo</span>
+            <span className="text-[var(--accent-gold)]">$</span> architecture{" "}
+            <span className="text-[var(--accent-gold)]">acyclic_monorepo</span>
           </p>
           <p>
-            <span className="text-pakcat-accent-code">$</span> mode{" "}
-            <span className="text-pakcat-accent-code">production_lab</span>
+            <span className="text-[var(--accent-gold)]">$</span> mode{" "}
+            <span className="text-[var(--accent-gold)]">production_lab</span>
           </p>
         </div>
 
         {/* Command Output History */}
         {history.length > 0 && (
-          <div className="pt-3 border-t border-pakcat-border mt-3 space-y-2 max-h-48 overflow-y-auto pr-1">
+          <div className="pt-3 border-t border-[var(--line)] mt-3 space-y-2 max-h-48 overflow-y-auto pr-1">
             {history.map((item, idx) => (
               <div key={idx} className="space-y-0.5">
-                <p className="text-xs text-pakcat-text-secondary">
-                  <span className="text-pakcat-accent-code">$</span> {item.command}
+                <p className="text-xs text-[var(--muted)]">
+                  <span className="text-[var(--accent-gold)]">$</span> {item.command}
                 </p>
                 <div className="pl-3">{item.output}</div>
               </div>
@@ -183,8 +180,8 @@ export function TerminalCard() {
         )}
 
         {/* Interactive Input Prompt */}
-        <div className="pt-3 border-t border-pakcat-border mt-3 flex items-center gap-2">
-          <span className="text-pakcat-accent-code text-xs shrink-0">&gt;</span>
+        <div className="pt-3 border-t border-[var(--line)] mt-3 flex items-center gap-2">
+          <span className="text-[var(--accent-gold)] text-xs shrink-0">&gt;</span>
           <input
             ref={inputRef}
             type="text"
@@ -192,19 +189,19 @@ export function TerminalCard() {
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="type 'help', 'systems', 'meow'..."
-            className="w-full bg-transparent text-xs text-pakcat-text-primary placeholder:text-pakcat-text-secondary/50 focus:outline-none font-mono"
+            className="w-full bg-transparent text-xs text-[var(--ink)] placeholder:text-[var(--muted)]/50 focus:outline-none font-mono"
           />
-          <span className="cursor-blink text-pakcat-accent text-xs">_</span>
+          <span className="cursor-blink text-[var(--accent-brass)] text-xs">_</span>
         </div>
 
         {/* Quick Command Chips */}
         <div className="pt-2 flex flex-wrap gap-1.5 text-[10px]">
-          <span className="text-pakcat-text-secondary self-center mr-1">run:</span>
+          <span className="text-[var(--muted)] self-center mr-1">run:</span>
           {["about", "systems", "status", "meow", "clear"].map((cmd) => (
             <button
               key={cmd}
               onClick={() => executeCommand(cmd)}
-              className="px-1.5 py-0.5 border border-[#3B121E] text-pakcat-text-secondary hover:border-[#80142B] hover:text-[#E27D95] hover:bg-[#280A15] transition-colors rounded-sm"
+              className="px-1.5 py-0.5 border border-[var(--line)] text-[var(--muted)] hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)] hover:bg-[var(--panel-hover)] transition-colors rounded-sm"
             >
               {cmd}
             </button>
@@ -212,18 +209,18 @@ export function TerminalCard() {
         </div>
 
         {/* Bottom Tech Tags */}
-        <div className="pt-3 border-t border-[#3B121E] mt-3">
-          <p className="text-pakcat-text-secondary text-xs mb-1">substrate:</p>
+        <div className="pt-3 border-t border-[var(--line)] mt-3">
+          <p className="text-[var(--muted)] text-xs mb-1">substrate:</p>
           <div className="flex flex-wrap gap-1 text-xs">
-            <span className="text-[#E27D95]">python</span>
-            <span className="text-pakcat-text-secondary">pytorch</span>
-            <span className="text-[#E27D95]">uv</span>
-            <span className="text-pakcat-text-secondary">postgres</span>
-            <span className="text-[#E27D95]">sqlite</span>
-            <span className="text-pakcat-text-secondary">ast</span>
-            <span className="text-[#E27D95]">llama.cpp</span>
-            <span className="text-pakcat-text-secondary">fastapi</span>
-            <span className="text-pakcat-accent-code">docker</span>
+            <span className="text-[var(--accent-brass)]">python</span>
+            <span className="text-[var(--muted)]">pytorch</span>
+            <span className="text-[var(--accent-brass)]">uv</span>
+            <span className="text-[var(--muted)]">postgres</span>
+            <span className="text-[var(--accent-brass)]">sqlite</span>
+            <span className="text-[var(--muted)]">ast</span>
+            <span className="text-[var(--accent-brass)]">llama.cpp</span>
+            <span className="text-[var(--muted)]">fastapi</span>
+            <span className="text-[var(--accent-gold)]">docker</span>
           </div>
         </div>
       </div>

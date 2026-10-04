@@ -23,17 +23,17 @@ const PROJECT_META = {
     number: "01",
     short_name: "Ashi",
     name: "Ashi — Personal Cognitive Operating System",
-    status: "Active / Production",
-    documented_period: "2025–2026",
+    status: "Active Long-Term Build",
+    documented_period: "16 July 2026 – Present",
     technologies: ["Python", "uv Monorepo", "PostgreSQL", "llama.cpp", "Gemini API", "FastAPI"],
     one_line_summary: "A 28-package personal AI operating system built from first principles to think alongside one person, running locally with cloud fallback.",
     problem_statement: "Building an autonomous personal AI that operates persistently across days requires maintaining rigorous action integrity, avoiding silent empty completions, and executing local inference without destabilizing system latency.",
     project_story: "Ashi was developed as an independent research investigation toward an autonomous personal cognitive operating system. Built as a 28-package Python monorepo with an acyclic dependency graph, Ashi was subjected to intense empirical audits—including a 3/10 behavioral integrity scoring, discovery of the vacuous success bug where empty plans counted as completed achievements, and benchmarking six sub-2B models to find the real capability ceiling on consumer hardware.",
     documented_milestones: [
-      { date: "2025-11", label: "Initial Monorepo Architecture", detail: "28 packages established in uv workspace with strict 6-layer dependency rules." },
-      { date: "2026-03", label: "Inference Engine Benchmark", detail: "6 sub-2B models evaluated on consumer hardware; discovered llama.cpp cancellation segfault." },
-      { date: "2026-05", label: "Latency Cascade Elimination", detail: "Turn latency reduced from 32.8s to 5.4s by removing Ollama and fixing provider timeout cascades." },
-      { date: "2026-08", label: "Behavioral Integrity Audit & Phase T", detail: "Scored system 3/10; discovered Vacuous Success Bug; instituted strict action-integrity gates." }
+      { date: "2026-07", label: "Initial Monorepo Architecture", detail: "28 packages established in uv workspace with strict 6-layer dependency rules." },
+      { date: "2026-07", label: "Inference Engine Benchmark", detail: "6 sub-2B models evaluated on consumer hardware; discovered llama.cpp cancellation segfault." },
+      { date: "2026-08", label: "Latency Cascade Elimination", detail: "Turn latency reduced from 32.8s to 5.4s by removing Ollama and fixing provider timeout cascades." },
+      { date: "2026-08", label: "Behavioral Integrity Audit & Truth Gates", detail: "Scored system 3/10; discovered Vacuous Success Bug; instituted strict action-integrity gates." }
     ],
     logical_sequence: [
       { step: "01", title: "Subsystem Proliferation", desc: "Built 28 modular subsystems with high test coverage and certified protocols." },
@@ -58,16 +58,16 @@ const PROJECT_META = {
     short_name: "LEO",
     name: "LEO — AI Operating Companion",
     status: "Archived Research / Forensic Exploration",
-    documented_period: "2025–2026",
+    documented_period: "16 June 2026 – 10 July 2026",
     technologies: ["Python", "FastAPI", "PostgreSQL", "Neo4j", "Redis", "LangGraph", "Gemini"],
     one_line_summary: "An ambitious research exploration into modeling an AI companion as an operating system kernel with 43 cognitive subsystems.",
     problem_statement: "Can an intelligent companion be structured as an operating system—with a Kernel, CMMU (Cognitive Memory Management Unit), Interconnect, and Scheduler—without collapsing under architectural drift and integration debt?",
     project_story: "LEO represents an ambitious, conceptually deep exploration into treating AI companion software as a full operating system. It defined 43 granular cognitive subsystems, an atomic rollback boot sequence, and a multi-tier memory architecture. However, an exhaustive audit revealed an acute implementation reality gap: 281 direct-database violations bypassed the CMMU gatekeeper, test suites relied excessively on stubs, and interface over-engineering accumulated substantial technical debt.",
     documented_milestones: [
-      { date: "2025-08", label: "Cognitive OS Architecture Vision", detail: "Drafted constitution for AI operating companion with CMMU and Interconnect Network-on-Chip." },
-      { date: "2025-12", label: "43 Subsystems & Memory Hierarchy", detail: "Implemented multi-tier memory (working, episodic, semantic, procedural) across Postgres, Neo4j, and Redis." },
-      { date: "2026-04", label: "Provider Failover & Router Debugging", detail: "Discovered Gemini JSON parsing anomalies and failover model-name injection bugs." },
-      { date: "2026-06", label: "Phase 28 Architectural Violation Audit", detail: "Automated audit exposed 281 direct database violations bypassing the central CMMU gateway." }
+      { date: "2026-06", label: "Cognitive OS Architecture Vision", detail: "Drafted constitution for AI operating companion with CMMU and Interconnect Network-on-Chip." },
+      { date: "2026-06", label: "43 Subsystems & Memory Hierarchy", detail: "Implemented multi-tier memory (working, episodic, semantic, procedural) across Postgres, Neo4j, and Redis." },
+      { date: "2026-07", label: "Provider Failover & Router Debugging", detail: "Discovered Gemini JSON parsing anomalies and failover model-name injection bugs." },
+      { date: "2026-07", label: "Phase 28 Architectural Violation Audit", detail: "Automated audit exposed 281 direct database violations bypassing the central CMMU gateway." }
     ],
     logical_sequence: [
       { step: "01", title: "Architectural Ambition", desc: "Specified an elaborate 43-subsystem OS architecture with multi-database persistence." },
@@ -92,7 +92,7 @@ const PROJECT_META = {
     short_name: "VANI",
     name: "VANI — Cognitive Operating System",
     status: "Phase 0 Complete / Phase 1 Active",
-    documented_period: "2026",
+    documented_period: "10 July 2026 – 16 July 2026",
     technologies: ["Python", "Strict Typing", "SQLite", "AST Static Analysis", "Custom Event Bus", "Zero Cloud Infra"],
     one_line_summary: "A 50-year personal AI operating system engineered with zero external infrastructure, strict AST certification, and complete local sovereignty.",
     problem_statement: "How to design a personal AI system intended to last 50 years without succumbing to vendor churn, graph database deprecation, or framework abstraction collapse?",

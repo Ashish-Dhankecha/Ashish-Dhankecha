@@ -1,325 +1,380 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { ScrambleText } from "./scramble-text";
 
-export interface LabReport {
-  id: string;
-  number: string;
-  status: string;
-  domain: string;
-  category: "all" | "os" | "agents" | "inference" | "analysis";
-  title: string;
-  description: string;
-  problem: string;
-  solution: string;
-  empiricalFindings: string;
-  tags: string[];
-  githubUrl?: string;
-  labUrl?: string;
-}
-
-const LAB_REPORTS: LabReport[] = [
-  {
-    id: "ashi",
-    number: "#01",
-    status: "[ACTIVE / PROD]",
-    domain: "AI Systems / Python / uv Monorepo",
-    category: "os",
-    title: "Ashi — Personal Cognitive Operating System",
-    description:
-      "A 28-package personal AI operating system built from first principles to think alongside one person, running locally with cloud fallback and acyclic architecture.",
-    problem:
-      "Autonomous personal AI operating persistently across days must avoid silent empty completions, maintain stateful memory across sessions, and execute inference without turn latency cascades.",
-    solution:
-      "Engineered an acyclic 28-package Python monorepo using uv workspaces. Built decoupled cognitive layers, eliminated Ollama to drop turn latency from 32.8s to 5.4s, and established 24µs ambient perception.",
-    empiricalFindings:
-      "Empirical audit uncovered the Vacuous Success Bug where empty plans scored 100% achieved in 370ms. Rewrote verification gates to require concrete execution evidence before marking goals complete.",
-    tags: ["Python", "uv Monorepo", "PostgreSQL", "llama.cpp", "FastAPI", "AsyncIO", "Cognitive OS"],
-    githubUrl: "https://github.com/Ashish-Dhankecha",
-    labUrl: "/lab",
-  },
-  {
-    id: "leo",
-    number: "#02",
-    status: "[ARCHIVED RESEARCH]",
-    domain: "OS Architecture / Cognitive Memory / Audit",
-    category: "analysis",
-    title: "LEO — AI Companion Operating System & Forensic Audit",
-    description:
-      "An ambitious research exploration into modeling an intelligent companion as an operating system kernel with 43 cognitive subsystems and multi-tier memory.",
-    problem:
-      "Can an intelligent companion be structured as an operating system with a CMMU (Cognitive Memory Management Unit) and Interconnect without collapsing under architectural drift?",
-    solution:
-      "Defined 43 granular cognitive subsystems, atomic boot rollbacks, and multi-tier memory (working, episodic, semantic, procedural) across relational and vector stores.",
-    empiricalFindings:
-      "Automated forensic audit revealed an implementation reality gap: 281 direct-database violations bypassed the CMMU gatekeeper, and 297 mock tests masked 11 broken real-world integrations.",
-    tags: ["Python", "FastAPI", "PostgreSQL", "Neo4j", "Redis", "CMMU", "Forensic Audit"],
-    githubUrl: "https://github.com/Ashish-Dhankecha",
-    labUrl: "/lab",
-  },
-  {
-    id: "vani",
-    number: "#03",
-    status: "[PHASE 0 CERTIFIED]",
-    domain: "50-Year Longevity / Zero Cloud / AST Guardian",
-    category: "os",
-    title: "VANI — 50-Year Sovereign AI Operating System",
-    description:
-      "A personal AI system engineered with zero external cloud infrastructure, strict AST certification, custom event bus, and complete local sovereignty.",
-    problem:
-      "How to build an AI operating system intended to run for 50 years without succumbing to vendor churn, graph database deprecation, or framework abstraction collapse?",
-    solution:
-      "Completed full kernel, deterministic boot sequence, event bus, and cognitive scheduler with zero external cloud dependencies. Replaced LangChain with raw AIPort contracts and SQLite schemas.",
-    empiricalFindings:
-      "Built an AST Architecture Guardian that runs in CI to statically verify that zero modules bypass architectural layers, guaranteeing zero-dependency drift over decades.",
-    tags: ["Python", "Strict Typing", "SQLite", "AST Analysis", "Zero Cloud", "Longevity"],
-    githubUrl: "https://github.com/Ashish-Dhankecha",
-    labUrl: "/lab",
-  },
-  {
-    id: "sub2b-inference",
-    number: "#04",
-    status: "[BENCHMARKED]",
-    domain: "Inference Engine / llama.cpp / Quantization",
-    category: "inference",
-    title: "Sub-2B SLM Local Inference Engine & Benchmarking",
-    description:
-      "Comprehensive evaluation of 6 sub-2B small language models on consumer hardware to establish the empirical capability ceiling for local-first cognitive systems.",
-    problem:
-      "Local AI systems require sub-2-second turn latencies to maintain interactive conversational flow, but small models frequently suffer from output truncation and provider timeout cascades.",
-    solution:
-      "Benchmarked models via raw llama.cpp bindings. Discovered llama.cpp cancellation segfaults during abrupt user interruptions, wrote defensive signal handling, and quantized weights to Q4_K_M.",
-    empiricalFindings:
-      "Eliminating the Ollama proxy layer and running native llama.cpp reduced per-turn inference overhead from 32.8s down to 5.4s while stabilizing memory footprint under 2.4GB VRAM.",
-    tags: ["llama.cpp", "GGUF", "Sub-2B SLM", "Quantization", "C++", "Profiling", "Edge AI"],
-    githubUrl: "https://github.com/Ashish-Dhankecha",
-    labUrl: "/lab",
-  },
-  {
-    id: "vacuous-success",
-    number: "#05",
-    status: "[SOLVED & HARDENED]",
-    domain: "Autonomous Execution / Truth Boundaries",
-    category: "agents",
-    title: "Vacuous Success Bug Eliminator & Invariant Verifier",
-    description:
-      "Algorithmic verification system preventing autonomous agents from falsely marking empty or unexecuted plans as successfully completed tasks.",
-    problem:
-      "In traditional agent loops, if an LLM outputs an empty plan or invalid tool invocation, standard unit tests frequently pass vacuously because zero tasks failed.",
-    solution:
-      "Engineered deterministic truth boundary assertions: every task marked 'ACHIEVED' must present cryptographic execution proofs, filesystem diffs, or verifiable HTTP responses.",
-    empiricalFindings:
-      "Eliminated 100% of false-positive achievements in Ashi's test suite, raising live behavioral evaluation integrity from 3/10 to 9.4/10 across multi-step execution runs.",
-    tags: ["Agent Loops", "Truth Boundaries", "Verification", "Testing", "Python", "Invariants"],
-    githubUrl: "https://github.com/Ashish-Dhankecha",
-    labUrl: "/lab",
-  },
-  {
-    id: "cognitive-event-log",
-    number: "#06",
-    status: "[SHIPPED]",
-    domain: "Event Log / Stateful Persistence / Telemetry",
-    category: "agents",
-    title: "Cognitive Event Stream & Verifiable Execution Log",
-    description:
-      "Append-only, immutable event log capturing every cognitive step, perception tick, and tool invocation with nanosecond timestamps and causal graphs.",
-    problem:
-      "Debugging complex cognitive loops without reproducible state history makes diagnosing multi-turn reasoning degradation nearly impossible.",
-    solution:
-      "Implemented a high-throughput event bus writing to WAL-mode SQLite and PostgreSQL. Structured every thought, tool call, and invariant check into an immutable causal sequence.",
-    empiricalFindings:
-      "Enables instant deterministic replay of failed agent trajectories, pinpointing prompt drift or tool timeout cascades within seconds.",
-    tags: ["Event Bus", "Append-Only", "SQLite WAL", "Observability", "Telemetry", "Audit"],
-    githubUrl: "https://github.com/Ashish-Dhankecha",
-    labUrl: "/lab",
-  },
-];
-
-type CategoryKey = "all" | "os" | "agents" | "inference" | "analysis";
-
 export function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState<CategoryKey>("all");
-  const [expandedReports, setExpandedReports] = useState<Record<string, boolean>>({});
-
-  const toggleReport = (id: string) => {
-    setExpandedReports((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  const filteredReports = activeFilter === "all"
-    ? LAB_REPORTS
-    : LAB_REPORTS.filter((r) => r.category === activeFilter);
-
-  const filterButtons: { label: string; key: CategoryKey }[] = [
-    { label: "[ALL]", key: "all" },
-    { label: "[COGNITIVE OS]", key: "os" },
-    { label: "[AGENT INTEGRITY]", key: "agents" },
-    { label: "[LOCAL INFERENCE]", key: "inference" },
-    { label: "[STATIC ANALYSIS]", key: "analysis" },
-  ];
 
   return (
     <section id="projects" aria-labelledby="projects-heading" className="relative z-10">
       <div className="section-container section-padding">
         {/* Section Header */}
-        <div className="mb-8 reveal reveal-up visible max-w-3xl">
+        <div className="mb-12 reveal reveal-up visible">
           <span className="section-number">
-            <ScrambleText text="03 // shipped work" />
+            <ScrambleText text="02 // systems & experiments" />
           </span>
           <h2
             id="projects-heading"
-            className="text-3xl md:text-4xl font-bold text-pakcat-text-primary mt-3 font-sans"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--ink)] mt-3 font-sans"
           >
-            Lab Reports & Systems
+            Things I&apos;ve Built
           </h2>
-          <p className="text-sm md:text-base text-pakcat-text-secondary mt-4 font-body leading-relaxed">
-            Production systems, cognitive runtimes, and field-tested research experiments, 
-            cataloged with empirical failure modes and lessons learned.
+          <p className="text-[var(--muted)] text-sm sm:text-base mt-2 max-w-2xl font-body">
+            Flagship cognitive operating systems, empirical failure post-mortems, and rapid hackathon prototypes.
+            Documented with real code, architecture decision records, and honest failure logs.
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-2 mb-8 reveal reveal-up visible" role="list">
-          {filterButtons.map((btn) => {
-            const isActive = activeFilter === btn.key;
-            return (
-              <button
-                key={btn.key}
-                onClick={() => setActiveFilter(btn.key)}
-                className={`px-4 py-2 text-xs md:text-sm font-mono rounded-sm transition-colors ${
-                  isActive
-                    ? "bg-[#80142B] text-[#F7ECEF] border border-[#B02242] font-semibold shadow-md shadow-[#80142B]/35"
-                    : "border border-[#3B121E] text-pakcat-text-secondary hover:border-[#80142B] hover:text-[#F7ECEF] hover:bg-[#280A15]"
-                }`}
-                aria-pressed={isActive}
-              >
-                {btn.label}
-              </button>
-            );
-          })}
-        </div>
+        {/* ============================================================== */}
+        {/* 1. FLAGSHIP SYSTEM: ASHI                                       */}
+        {/* ============================================================== */}
+        <div className="mb-14 reveal reveal-up visible">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent-brass)] shadow-[0_0_10px_var(--accent-glow-strong)]" />
+            <span className="font-mono text-xs text-[var(--accent-brass)] uppercase tracking-widest font-semibold">
+              FLAGSHIP SYSTEM // ACTIVE LONG-TERM BUILD
+            </span>
+            <span className="font-mono text-xs text-[var(--muted)] ml-auto">
+              16 July 2026 — Present
+            </span>
+          </div>
 
-        {/* Counter */}
-        <div className="mb-6 reveal reveal-up visible">
-          <p className="font-mono text-xs text-pakcat-text-secondary">
-            <span className="text-pakcat-accent-code">{filteredReports.length}</span>{" "}
-            shipped reports shown
-          </p>
-        </div>
+          <div className="brutal-card p-6 sm:p-8 lg:p-10 rounded-sm border-[var(--border-strong)] shadow-2xl relative overflow-hidden">
+            {/* Ambient subtle glow */}
+            <div
+              className="pointer-events-none absolute -top-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,var(--accent-glow)_0%,transparent_70%)] blur-2xl"
+              aria-hidden="true"
+            />
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {filteredReports.map((report, idx) => {
-            const isExpanded = !!expandedReports[report.id];
-            return (
-              <div
-                key={report.id}
-                className={`stagger-${(idx % 4) + 1} brutal-card reveal reveal-left visible rounded-sm flex flex-col min-h-[320px] transition-all`}
-              >
-                <div className="p-6 flex flex-col h-full">
-                  {/* Top Badges */}
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="font-mono text-xs px-2 py-1 border border-[#80142B] text-[#E27D95] bg-[#280A15]/60 rounded-sm">
-                      {report.status}
-                    </span>
-                    <span className="font-mono text-xs px-2 py-1 border border-[#3B121E] text-pakcat-text-secondary bg-[#100306] rounded-sm">
-                      {report.domain}
-                    </span>
-                  </div>
-
-                  {/* Title & Description */}
-                  <h3 className="text-xl font-semibold text-pakcat-text-primary mb-3 font-sans">
-                    {report.title}
+            <div className="relative z-10 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--ink)] font-sans tracking-tight">
+                    Ashi — Personal Cognitive Operating System
                   </h3>
-                  <p className="text-sm text-pakcat-text-secondary mb-5 font-body leading-relaxed">
-                    {report.description}
+                  <p className="text-sm sm:text-base font-mono text-[var(--accent-brass)] mt-1.5">
+                    A 28-package personal AI operating system built from first principles
                   </p>
-
-                  {/* Expandable Report Drawer */}
-                  {isExpanded && (
-                    <div className="mb-5 space-y-4 border-t border-pakcat-border pt-4 animate-fade-in">
-                      <div>
-                        <h4 className="text-xs font-mono text-pakcat-accent uppercase tracking-wider mb-1">
-                          &gt; Problem
-                        </h4>
-                        <p className="text-sm text-pakcat-text-secondary font-body leading-relaxed">
-                          {report.problem}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xs font-mono text-pakcat-accent-code uppercase tracking-wider mb-1">
-                          &gt; Solution & Architecture
-                        </h4>
-                        <p className="text-sm text-pakcat-text-secondary font-body leading-relaxed">
-                          {report.solution}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xs font-mono text-pakcat-accent uppercase tracking-wider mb-1">
-                          &gt; Empirical Findings & Audits
-                        </h4>
-                        <p className="text-sm text-pakcat-text-secondary font-body leading-relaxed">
-                          {report.empiricalFindings}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-5 mt-auto pt-2">
-                    {report.tags.map((tag) => (
-                      <span key={tag} className="brutal-tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Bottom Action Row */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 border-t border-pakcat-border pt-4">
-                    <div className="flex flex-wrap items-center gap-4">
-                      <button
-                        onClick={() => toggleReport(report.id)}
-                        className="text-sm font-mono text-pakcat-accent hover:text-pakcat-accent-code transition-colors"
-                        aria-expanded={isExpanded}
-                      >
-                        {isExpanded ? "[CLOSE REPORT ✕]" : "[READ REPORT ->]"}
-                      </button>
-
-                      {report.labUrl && (
-                        <Link
-                          href={report.labUrl}
-                          className="text-sm font-mono text-pakcat-accent-code hover:text-pakcat-accent transition-colors"
-                        >
-                          [LAB DOSSIER]
-                        </Link>
-                      )}
-
-                      {report.githubUrl && (
-                        <a
-                          href={report.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm font-mono text-pakcat-text-secondary hover:text-pakcat-text-primary transition-colors"
-                        >
-                          [GITHUB]
-                        </a>
-                      )}
-                    </div>
-
-                    <span className="font-mono text-xs text-pakcat-text-secondary">
-                      {report.number}
-                    </span>
-                  </div>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className="font-mono text-xs text-[var(--accent-gold)] bg-[var(--accent-enamel)]/40 border border-[var(--accent-brass)]/60 px-3 py-1 rounded-sm">
+                    ● CORE RUNTIME ACTIVE
+                  </span>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Problem & Solution Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-[var(--line)]">
+                <div className="space-y-2">
+                  <span className="font-mono text-xs text-[var(--accent-brass)] uppercase tracking-wider">
+                    [ PROBLEM SOLVED ]
+                  </span>
+                  <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed">
+                    Building an autonomous personal AI that operates persistently across days without suffering
+                    from context drift, silent tool errors, hallucinated task completion, or turn latency cascades.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <span className="font-mono text-xs text-[var(--accent-brass)] uppercase tracking-wider">
+                    [ WHAT MAKES IT INTERESTING ]
+                  </span>
+                  <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed">
+                    Acyclic 28-package Python uv monorepo. Subjected to live audits: scored 3/10 initially,
+                    discovered the <strong className="text-[var(--ink)] font-medium">Vacuous Success Bug</strong> (empty plans marked 100% achieved),
+                    instituted strict truth boundary assertions, and eliminated Ollama to drop turn latency from 32.8s to 5.4s.
+                  </p>
+                </div>
+              </div>
+
+              {/* Technical Breakdown Pillars */}
+              <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-3 border-t border-[var(--line)] text-xs font-mono">
+                <div className="p-3 bg-[var(--bg)]/50 border border-[var(--line)] rounded-sm">
+                  <span className="text-[var(--accent-brass)] block text-[10px]">ARCHITECTURE</span>
+                  <span className="text-[var(--ink)] font-semibold">28 uv Packages</span>
+                  <p className="text-[11px] text-[var(--muted)] mt-0.5">Strict acyclic graph</p>
+                </div>
+                <div className="p-3 bg-[var(--bg)]/50 border border-[var(--line)] rounded-sm">
+                  <span className="text-[var(--accent-brass)] block text-[10px]">INFERENCE</span>
+                  <span className="text-[var(--ink)] font-semibold">llama.cpp SLM</span>
+                  <p className="text-[11px] text-[var(--muted)] mt-0.5">5.4s latency (down from 32.8s)</p>
+                </div>
+                <div className="p-3 bg-[var(--bg)]/50 border border-[var(--line)] rounded-sm">
+                  <span className="text-[var(--accent-brass)] block text-[10px]">INTEGRITY GATE</span>
+                  <span className="text-[var(--ink)] font-semibold">Truth Boundaries</span>
+                  <p className="text-[11px] text-[var(--muted)] mt-0.5">Vacuous success eliminated</p>
+                </div>
+                <div className="p-3 bg-[var(--bg)]/50 border border-[var(--line)] rounded-sm">
+                  <span className="text-[var(--accent-brass)] block text-[10px]">STORAGE</span>
+                  <span className="text-[var(--ink)] font-semibold">Postgres + SQLite</span>
+                  <p className="text-[11px] text-[var(--muted)] mt-0.5">Acyclic relational store</p>
+                </div>
+              </div>
+
+              {/* Tech Tags & CTAs */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-[var(--line)]">
+                <div className="flex flex-wrap gap-1.5">
+                  {["Python", "uv Monorepo", "PostgreSQL", "llama.cpp", "FastAPI", "AsyncIO", "Cognitive OS"].map((tech) => (
+                    <span key={tech} className="brutal-tag text-[11px]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 shrink-0">
+                  <Link
+                    href="/projects/ashi"
+                    className="inline-flex items-center gap-1.5 font-mono text-xs px-4 py-2 bg-[var(--accent-enamel)] text-[var(--ink)] border border-[var(--accent-brass)] hover:bg-[var(--accent-enamel-bright)] hover:border-[var(--accent-gold)] transition-colors rounded-sm font-semibold shadow-md shadow-[var(--accent-glow)]"
+                  >
+                    [ EXPLORE ASHI CASE STUDY → ]
+                  </Link>
+                  <Link
+                    href="/lab/ashi"
+                    className="font-mono text-xs text-[var(--muted)] hover:text-[var(--accent-brass)] transition-colors"
+                  >
+                    [Raw Lab ADRs]
+                  </Link>
+                  <a
+                    href="https://github.com/Ashish-Dhankecha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs text-[var(--muted)] hover:text-[var(--accent-brass)] transition-colors"
+                  >
+                    [GitHub]
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================== */}
+        {/* 2. OTHER SYSTEMS & EXPERIMENTS                                 */}
+        {/* ============================================================== */}
+        <div className="space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-2 border-b border-[var(--line)]">
+            <h3 className="font-mono text-xs sm:text-sm text-[var(--accent-brass)] tracking-widest uppercase font-semibold">
+              OTHER SYSTEMS &amp; EXPERIMENTS
+            </h3>
+            <span className="text-xs font-mono text-[var(--muted)]">
+              Real codebases · Empirical audits · Hackathon speed
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card: SIH26117 Hackathon Sprint */}
+            <div className="brutal-card p-6 rounded-sm flex flex-col justify-between border-[var(--accent-brass)]/40 hover:border-[var(--accent-brass)] transition-all">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="font-mono text-[10px] text-[var(--accent-gold)] bg-[var(--accent-enamel)]/40 border border-[var(--accent-brass)]/50 px-2 py-0.5 rounded-sm">
+                    ★ BUILT DURING A HACKATHON
+                  </span>
+                  <span className="font-mono text-xs text-[var(--muted)]">
+                    30 August 2026
+                  </span>
+                </div>
+
+                <h4 className="text-xl font-bold text-[var(--ink)] font-sans mb-1">
+                  SIH26117 — Sovereign Agentic AI Workbench
+                </h4>
+                <p className="text-xs font-mono text-[var(--accent-brass)] mb-3">
+                  Air-gapped on-premise workbench for confidential environments
+                </p>
+
+                <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed mb-4">
+                  <strong className="text-[var(--ink)] font-medium">Built in a rapid 1-day hackathon sprint:</strong> A complete sovereign
+                  workbench enforcing a strict local-only policy (zero external network requests) with Qwen SLM inference,
+                  isolated sandbox tool execution, RAG pipeline, and workspace management.
+                </p>
+
+                <div className="p-3 bg-[var(--bg)]/60 border border-[var(--line)] rounded-sm mb-4 text-xs font-mono text-[var(--muted)] space-y-1">
+                  <p className="text-[var(--accent-gold)] font-medium">Core takeaway:</p>
+                  <p>&ldquo;I can spend months on a deep system like Ashi, but I can also build a working solution rapidly when constraints demand it.&rdquo;</p>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {["FastAPI", "Qwen SLM", "RAG", "Docker Sandbox", "Python", "TypeScript"].map((t) => (
+                    <span key={t} className="brutal-tag text-[10px]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-3 border-t border-[var(--line)] text-xs font-mono">
+                  <Link href="/projects/sih" className="text-[var(--accent-brass)] font-semibold hover:underline">
+                    [Read SIH Case Study →]
+                  </Link>
+                  <a
+                    href="https://github.com/Ashish-Dhankecha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--muted)] hover:text-[var(--accent-brass)]"
+                  >
+                    [GitHub]
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Card: LEO */}
+            <div className="brutal-card p-6 rounded-sm flex flex-col justify-between hover:border-[var(--accent-brass)] transition-all">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="font-mono text-[10px] text-[var(--muted)] border border-[var(--line)] px-2 py-0.5 rounded-sm">
+                    ARCHIVED RESEARCH // FORENSIC AUDIT
+                  </span>
+                  <span className="font-mono text-xs text-[var(--muted)]">
+                    16 June – 10 July 2026
+                  </span>
+                </div>
+
+                <h4 className="text-xl font-bold text-[var(--ink)] font-sans mb-1">
+                  LEO — AI Companion OS &amp; Forensic Audit
+                </h4>
+                <p className="text-xs font-mono text-[var(--accent-brass)] mb-3">
+                  43 cognitive subsystems &amp; multi-tier memory architecture
+                </p>
+
+                <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed mb-4">
+                  An ambitious exploration modeling an AI companion as an operating system kernel with a Cognitive Memory Management
+                  Unit (CMMU) and Interconnect. An automated audit exposed 281 direct-database bypasses and revealed that 297 mock tests
+                  masked 11 broken live integrations—establishing the rule: architecture without enforcement rots.
+                </p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {["Python", "FastAPI", "PostgreSQL", "Neo4j", "Redis", "CMMU", "Forensic Audit"].map((t) => (
+                    <span key={t} className="brutal-tag text-[10px]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-3 border-t border-[var(--line)] text-xs font-mono">
+                  <Link href="/projects/leo" className="text-[var(--accent-brass)] font-semibold hover:underline">
+                    [Read Leo Case Study →]
+                  </Link>
+                  <Link href="/lab/leo" className="text-[var(--muted)] hover:text-[var(--accent-brass)]">
+                    [21 Notes]
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card: VANI */}
+            <div className="brutal-card p-6 rounded-sm flex flex-col justify-between hover:border-[var(--accent-brass)] transition-all">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="font-mono text-[10px] text-[var(--accent-brass)] border border-[var(--accent-brass)]/50 px-2 py-0.5 rounded-sm">
+                    PHASE 0 CERTIFIED // ZERO CLOUD
+                  </span>
+                  <span className="font-mono text-xs text-[var(--muted)]">
+                    10 July – 16 July 2026
+                  </span>
+                </div>
+
+                <h4 className="text-xl font-bold text-[var(--ink)] font-sans mb-1">
+                  VANI — 50-Year Sovereign AI Operating System
+                </h4>
+                <p className="text-xs font-mono text-[var(--accent-brass)] mb-3">
+                  AST architecture guardian &amp; zero-infrastructure strategy
+                </p>
+
+                <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed mb-4">
+                  Built as a direct counter-reaction to fragile AI abstraction churn. Formally rejected LangChain in favor of raw AIPort contracts,
+                  rejected graph databases in favor of SQLite, and constructed an AST Static Analysis Guardian that mechanically blocks imports
+                  violating subsystem layer hierarchies.
+                </p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {["Python", "Strict Typing", "SQLite", "AST Static Analysis", "Custom Event Bus", "Longevity"].map((t) => (
+                    <span key={t} className="brutal-tag text-[10px]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-3 border-t border-[var(--line)] text-xs font-mono">
+                  <Link href="/projects/vani" className="text-[var(--accent-brass)] font-semibold hover:underline">
+                    [Read Vani Case Study →]
+                  </Link>
+                  <Link href="/lab/vani" className="text-[var(--muted)] hover:text-[var(--accent-brass)]">
+                    [21 ADRs]
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card: Sub-2B Local SLM Benchmark */}
+            <div className="brutal-card p-6 rounded-sm flex flex-col justify-between hover:border-[var(--accent-brass)] transition-all">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="font-mono text-[10px] text-[var(--accent-brass)] border border-[var(--line)] px-2 py-0.5 rounded-sm">
+                    EMPIRICAL BENCHMARK // LATENCY AUDIT
+                  </span>
+                  <span className="font-mono text-xs text-[var(--muted)]">
+                    2026 Research
+                  </span>
+                </div>
+
+                <h4 className="text-xl font-bold text-[var(--ink)] font-sans mb-1">
+                  Sub-2B Local SLM Engine &amp; Latency Benchmark
+                </h4>
+                <p className="text-xs font-mono text-[var(--accent-brass)] mb-3">
+                  llama.cpp profiling, segfault mitigation &amp; Q4_K_M quantization
+                </p>
+
+                <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed mb-4">
+                  Comprehensive benchmarking of 6 small language models on consumer hardware. Discovered llama.cpp cancellation segfaults during
+                  interrupted prompts, patched signal handlers, and eliminated Ollama proxy overhead to reduce turn latency from 32.8s to 5.4s
+                  under 2.4GB VRAM.
+                </p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {["llama.cpp", "GGUF", "Sub-2B SLM", "Quantization", "C++", "Latency Profiling"].map((t) => (
+                    <span key={t} className="brutal-tag text-[10px]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-3 border-t border-[var(--line)] text-xs font-mono">
+                  <Link href="/projects/ashi#architecture" className="text-[var(--accent-brass)] font-semibold hover:underline">
+                    [Ashi SLM Integration →]
+                  </Link>
+                  <Link href="/lab/ashi/sub-2b-model-benchmark-ashi" className="text-[var(--muted)] hover:text-[var(--accent-brass)]">
+                    [Benchmark]
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Global Case Study System CTA Banner */}
+        <div className="mt-12 text-center reveal reveal-up visible space-y-4">
+          <Link
+            href="/projects"
+            className="inline-flex items-center justify-center text-center gap-2 font-mono text-xs sm:text-sm px-4 py-3 sm:px-6 sm:py-3.5 bg-[var(--panel)] hover:bg-[var(--line)] border border-[var(--accent-brass)] text-[var(--ink)] transition-all rounded-sm font-semibold shadow-lg hover:shadow-[var(--accent-glow)] max-w-full flex-wrap leading-relaxed"
+          >
+            <span>[ EXPLORE THE FULL DEEP CASE STUDY SYSTEM &amp; SYSTEM LINEAGE (/projects) ]</span>
+            <span className="text-[var(--accent-gold)]">→</span>
+          </Link>
+          <div>
+            <span className="text-xs font-mono text-[var(--muted)] mr-2">
+              Looking for raw post-mortems and architecture decision records?
+            </span>
+            <Link
+              href="/lab"
+              className="text-xs font-mono text-[var(--accent-brass)] hover:text-[var(--accent-gold)] underline font-medium"
+            >
+              [Explore the 62-piece Raw Lab Archive →]
+            </Link>
+          </div>
         </div>
       </div>
     </section>

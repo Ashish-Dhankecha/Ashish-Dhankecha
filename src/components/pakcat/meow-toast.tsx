@@ -29,8 +29,8 @@ export function MeowToast() {
       role="status"
       aria-live="polite"
     >
-      <span className="text-[#E27D95] text-lg">😺</span>
-      <span className="font-mono text-xs sm:text-sm text-[#F7ECEF]">
+      <span className="text-[var(--accent-brass)] text-lg">😺</span>
+      <span className="font-mono text-xs sm:text-sm text-[var(--ink)]">
         {message}
       </span>
     </div>
