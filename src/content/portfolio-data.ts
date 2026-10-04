@@ -725,8 +725,13 @@ export const contactContent = {
     },
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com",
-      label: "linkedin.com/in/ashishdhankecha",
+      url: "https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false",
+      label: "linkedin.com/in/ashish-dhankecha-a993703a5",
+    },
+    {
+      platform: "X",
+      url: "https://x.com/Ashishdhankecha",
+      label: "x.com/Ashishdhankecha",
     },
     {
       platform: "Email",

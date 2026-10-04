@@ -77,7 +77,7 @@ export function AboutSection() {
             </div>
 
             <p className="text-[var(--muted)] leading-relaxed font-body text-sm sm:text-base">
-              I am a Computer Engineering bachelor&apos;s student at Shantilal Shah Engineering College.
+              I am a Computer Engineering bachelor&apos;s student at SSASIT, Surat.
               I treat every project as an engineering inquiry: measuring turn latencies, finding failure modes,
               and building systems from first principles.
             </p>

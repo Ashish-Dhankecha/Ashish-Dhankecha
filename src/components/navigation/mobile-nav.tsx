@@ -312,7 +312,7 @@ export function MobileNav() {
                   <span className="text-[11px] font-semibold">GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2.5 rounded-lg border border-[#2D161C] bg-[#140A0D] hover:border-[#801D2C] hover:bg-[#1A0C11] text-[#D9C7B8] hover:text-[#F5EBE1] flex items-center justify-center gap-1.5 transition-all min-h-[44px] active:scale-95 shadow-sm"

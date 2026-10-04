@@ -21,7 +21,7 @@ export function ExperienceSection() {
       period: "JULY 2024 — PRESENT",
       type: "academic",
       title: "Bachelor of Engineering — Computer Engineering",
-      subtitle: "Shantilal Shah Engineering College · Ongoing",
+      subtitle: "SSASIT, Surat · Ongoing",
       summary:
         "Academic foundation covering computer architecture, operating systems, compiler theory, Linux kernels, algorithms, discrete mathematics, and systems-level programming. Studying the underlying machinery before trusting high-level abstractions.",
       takeaway: "Foundation: rigorous computer science fundamentals from first principles.",
@@ -99,7 +99,7 @@ export function ExperienceSection() {
             {"// TRAJECTORY: FOUNDATION → EXPERIMENTATION → ITERATION → LARGER SYSTEM"}
           </div>
           <pre className="text-[11px] leading-relaxed text-[var(--ink)]/80">
-{`JUL 2024  ─── Computer Engineering (Shantilal Shah Engineering College)
+{`JUL 2024  ─── Computer Engineering (SSASIT, Surat)
     │
 JUN 2026  ─── LEO (43 Subsystems & Forensic Audit)
     │

@@ -50,7 +50,12 @@ export const footerNav = {
     },
     {
       title: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false",
+      external: true,
+    },
+    {
+      title: "X (Twitter)",
+      href: "https://x.com/Ashishdhankecha",
       external: true,
     },
     {

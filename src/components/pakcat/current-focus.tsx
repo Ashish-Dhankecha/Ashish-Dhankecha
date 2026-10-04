@@ -124,7 +124,7 @@ export function CurrentFocusSection() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-[var(--accent-gold)] shrink-0">→</span>
-                  <span>Academic study: Computer Engineering at Shantilal Shah Engineering College</span>
+                  <span>Academic study: Computer Engineering at SSASIT, Surat</span>
                 </div>
               </div>
             </div>

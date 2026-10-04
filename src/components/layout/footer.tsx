@@ -120,7 +120,7 @@ export function Footer() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/ashish-dhankecha"
+                href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
@@ -128,7 +128,7 @@ export function Footer() {
                 LinkedIn
               </a>
               <a
-                href="https://x.com/Ashish-Dhankecha"
+                href="https://x.com/Ashishdhankecha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"

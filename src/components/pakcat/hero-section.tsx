@@ -338,7 +338,7 @@ export function HeroSection() {
             </a>
             <span className="text-[var(--line-strong)]">/</span>
             <a
-              href="https://linkedin.com/in/ashish-dhankecha"
+              href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--accent-brass)] transition-colors"
@@ -347,7 +347,7 @@ export function HeroSection() {
             </a>
             <span className="text-[var(--line-strong)]">/</span>
             <a
-              href="https://x.com/Ashish-Dhankecha"
+              href="https://x.com/Ashishdhankecha"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--accent-brass)] transition-colors"

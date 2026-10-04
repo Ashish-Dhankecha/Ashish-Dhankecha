@@ -23,8 +23,13 @@ export const foundationPerson: Person = {
     },
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false",
       label: "Professional Profile",
+    },
+    {
+      platform: "X",
+      url: "https://x.com/Ashishdhankecha",
+      label: "X (Twitter) Profile",
     },
   ],
 };

@@ -52,22 +52,48 @@ export function ContactSection() {
               or unfamiliar infrastructure — I will figure it out and make it happen.
             </p>
 
-            <div className="flex flex-wrap gap-2.5 sm:gap-3.5 mb-6 sm:mb-8">
-              <Magnetic>
+            {/* Direct Email Channel */}
+            <div className="p-3.5 sm:p-4 rounded-sm border border-[var(--line-strong)] bg-[var(--bg)]/70 mb-6 sm:mb-8">
+              <div className="text-[10px] font-mono text-[var(--accent-brass)] uppercase tracking-wider mb-2 font-bold flex items-center justify-between">
+                <span>{"// DIRECT EMAIL CHANNEL"}</span>
+                <span className="text-[var(--muted)] font-normal hidden sm:inline">Replies typically within 24h</span>
+              </div>
+              <div className="flex flex-wrap items-center justify-between gap-3">
                 <a
                   href={`mailto:${email}`}
-                  className="inline-block font-mono text-xs sm:text-sm bg-[var(--accent-enamel)] text-[var(--ink)] px-5 sm:px-6 py-2.5 sm:py-3 border border-[var(--accent-brass)] hover:bg-[var(--accent-enamel-bright)] hover:border-[var(--accent-gold)] transition-all rounded-sm font-medium shadow-lg shadow-[var(--accent-glow)]"
+                  className="font-mono text-xs sm:text-sm md:text-base text-[var(--ink)] hover:text-[var(--accent-gold)] font-medium transition-colors break-all"
                 >
-                  [GET IN TOUCH]
+                  {email}
                 </a>
-              </Magnetic>
 
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    onClick={handleCopyEmail}
+                    className="font-mono text-[11px] sm:text-xs text-[var(--muted)] hover:text-[var(--ink)] border border-[var(--line)] hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] px-2.5 sm:px-3 py-1.5 rounded-sm transition-colors cursor-pointer"
+                    title="Copy email to clipboard"
+                  >
+                    {copied ? "[COPIED! ✓]" : "[COPY EMAIL]"}
+                  </button>
+                  <Magnetic>
+                    <a
+                      href={`mailto:${email}`}
+                      className="inline-block font-mono text-[11px] sm:text-xs bg-[var(--accent-enamel)] text-[var(--ink)] px-3 sm:px-4 py-1.5 border border-[var(--accent-brass)] hover:bg-[var(--accent-enamel-bright)] hover:border-[var(--accent-gold)] transition-all rounded-sm font-medium shadow-md shadow-[var(--accent-glow)]"
+                    >
+                      [SEND EMAIL ↗]
+                    </a>
+                  </Magnetic>
+                </div>
+              </div>
+            </div>
+
+            {/* Social / External Channels */}
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5">
               <Magnetic>
                 <a
                   href="https://github.com/Ashish-Dhankecha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--accent-brass)] px-4 sm:px-5 py-2.5 sm:py-3 hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
+                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--accent-brass)] px-4 sm:px-5 py-2 sm:py-2.5 hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
                 >
                   [GITHUB]
                 </a>
@@ -75,10 +101,10 @@ export function ContactSection() {
 
               <Magnetic>
                 <a
-                  href="https://linkedin.com/in/ashish-dhankecha"
+                  href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2.5 sm:py-3 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
+                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2 sm:py-2.5 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
                 >
                   [LINKEDIN]
                 </a>
@@ -86,31 +112,14 @@ export function ContactSection() {
 
               <Magnetic>
                 <a
-                  href="https://x.com/Ashish-Dhankecha"
+                  href="https://x.com/Ashishdhankecha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2.5 sm:py-3 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
+                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2 sm:py-2.5 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
                 >
                   [X]
                 </a>
               </Magnetic>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-[var(--line)]">
-              <a
-                href={`mailto:${email}`}
-                className="font-mono text-xs sm:text-sm text-[var(--accent-brass)] hover:text-[var(--accent-gold)] transition-colors break-all sm:break-normal"
-              >
-                {email}
-              </a>
-
-              <button
-                onClick={handleCopyEmail}
-                className="font-mono text-[11px] sm:text-xs text-[var(--muted)] hover:text-[var(--ink)] border border-[var(--line)] hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] px-2.5 py-1 rounded-sm transition-colors cursor-pointer shrink-0"
-                title="Copy email to clipboard"
-              >
-                {copied ? "[COPIED! ✓]" : "[COPY EMAIL]"}
-              </button>
             </div>
           </div>
         </div>

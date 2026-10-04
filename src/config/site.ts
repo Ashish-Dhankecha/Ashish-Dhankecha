@@ -9,6 +9,6 @@ export const siteConfig: SiteMetadata = {
   author: {
     name: "Ashish Dhankecha",
     github: "Ashish-Dhankecha",
-    twitter: "Ashish-Dhankecha",
+    twitter: "Ashishdhankecha",
   },
 };

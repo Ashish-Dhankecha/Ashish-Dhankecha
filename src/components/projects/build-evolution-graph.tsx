@@ -38,7 +38,7 @@ export function BuildEvolutionGraph() {
                     FOUNDATION · JULY 2024 — PRESENT
                   </span>
                   <h4 className="text-sm font-bold text-[var(--ink)] font-sans">
-                    Computer Engineering (B.E.) · Shantilal Shah Engineering College
+                    Computer Engineering (B.E.) · SSASIT, Surat
                   </h4>
                   <p className="text-xs text-[var(--muted)] font-body mt-0.5">
                     Operating systems, discrete mathematics, computer architecture, and distributed systems fundamentals.
