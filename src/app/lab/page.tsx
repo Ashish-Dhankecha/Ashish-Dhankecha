@@ -42,7 +42,7 @@ export default function LabPage() {
         {/* 04 Interactive Full Chronological Archive Catalog */}
         <Suspense
           fallback={
-            <div className="py-12 text-center font-mono text-xs text-[#777777]">
+            <div className="py-12 text-center font-mono text-xs text-[var(--muted)]">
               INITIALIZING ARCHIVE SEARCH INDEX...
             </div>
           }

@@ -66,19 +66,19 @@ export function LabCatalogInteractive({ initialPieces, metrics }: Props) {
   };
 
   return (
-    <section id="archive-catalog" className="my-10 sm:my-16 pt-6 sm:pt-10 border-t border-[#2D161C]">
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-[#2D161C] pb-3 sm:pb-4 mb-4 sm:mb-6">
+    <section id="archive-catalog" className="my-10 sm:my-16 pt-6 sm:pt-10 border-t border-[var(--line)]">
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-[var(--line)] pb-3 sm:pb-4 mb-4 sm:mb-6">
         <div>
-          <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#DF7987] font-semibold">
+          <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[var(--accent-brass)] font-semibold">
             COMPLETE TECHNICAL RECORD · {metrics.total_pieces} PIECES
           </div>
-          <h2 className="font-sans text-xl sm:text-3xl text-[#F5EBE1] font-semibold tracking-tight mt-0.5 sm:mt-1">
+          <h2 className="font-sans text-xl sm:text-3xl text-[var(--ink)] font-semibold tracking-tight mt-0.5 sm:mt-1">
             Forensic Archive Records
           </h2>
         </div>
-        <div className="font-mono text-[11px] sm:text-xs text-[#8E7C79]">
+        <div className="font-mono text-[11px] sm:text-xs text-[var(--muted)]">
           SHOWING{" "}
-          <span className="text-[#DF7987] font-semibold">
+          <span className="text-[var(--accent-brass)] font-semibold">
             {String(filteredPieces.length).padStart(2, "0")}
           </span>{" "}
           OF {String(metrics.total_pieces).padStart(2, "0")} RECORDS
@@ -97,7 +97,7 @@ export function LabCatalogInteractive({ initialPieces, metrics }: Props) {
 
       {/* Pieces Grid / List */}
       {filteredPieces.length === 0 ? (
-        <div className="p-8 sm:p-12 text-center bg-[#140A0D] border border-[#2D161C] rounded-xl font-mono text-xs text-[#8E7C79]">
+        <div className="p-8 sm:p-12 text-center bg-[var(--panel)] border border-[var(--line)] rounded-xl font-mono text-xs text-[var(--muted)]">
           NO ARCHIVE PIECES MATCH YOUR CURRENT FILTER CRITERIA.
           <div className="mt-4">
             <button
@@ -106,7 +106,7 @@ export function LabCatalogInteractive({ initialPieces, metrics }: Props) {
                 setSelectedCategory("All");
                 setSearchQuery("");
               }}
-              className="px-5 py-2.5 bg-[#801D2C] hover:bg-[#A6263A] text-[#F5EBE1] border border-[#A6263A] font-bold uppercase tracking-wider rounded-lg transition-colors min-h-[44px]"
+              className="px-5 py-2.5 bg-[var(--accent-brass)] hover:bg-[var(--accent-brass-hover)] text-[var(--ink)] border border-[var(--accent-brass-hover)] font-bold uppercase tracking-wider rounded-lg transition-colors min-h-[44px]"
             >
               RESET FILTERS
             </button>
@@ -124,40 +124,40 @@ export function LabCatalogInteractive({ initialPieces, metrics }: Props) {
               <div
                 key={piece.slug}
                 onClick={() => handleOpenPiece(piece)}
-                className="group cursor-pointer p-4 sm:p-6 bg-[#140A0D] border border-[#2D161C] hover:border-[#801D2C] hover:bg-[#1F1015] rounded-xl transition-all flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+                className="group cursor-pointer p-4 sm:p-6 bg-[var(--panel)] border border-[var(--line)] hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] rounded-xl transition-all flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
               >
                 <div>
                   {/* Card Eyebrow */}
-                  <div className="flex items-center justify-between font-mono text-[10px] text-[#8E7C79] mb-2">
+                  <div className="flex items-center justify-between font-mono text-[10px] text-[var(--muted)] mb-2">
                     <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                      <span className="font-semibold text-[#DF7987]">
+                      <span className="font-semibold text-[var(--accent-brass)]">
                         {piece.project.toUpperCase()}
                       </span>
-                      <span className="text-[#4A202A]">·</span>
-                      <span className="px-2 py-0.5 bg-[#0C0608] border border-[#2D161C] rounded uppercase text-[9px] sm:text-[10px] text-[#8E7C79]">
+                      <span className="text-[var(--border-subtle)]">·</span>
+                      <span className="px-2 py-0.5 bg-[var(--bg)] border border-[var(--line)] rounded uppercase text-[9px] sm:text-[10px] text-[var(--muted)]">
                         {piece.content_type_display}
                       </span>
                     </div>
-                    <span className="text-[#8E7C79] shrink-0">
+                    <span className="text-[var(--muted)] shrink-0">
                       #{String(piece.order).padStart(3, "0")}
                     </span>
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="font-sans text-base sm:text-lg font-semibold text-[#F5EBE1] group-hover:text-[#DF7987] transition-colors leading-snug mb-2">
+                  <h3 className="font-sans text-base sm:text-lg font-semibold text-[var(--ink)] group-hover:text-[var(--accent-brass)] transition-colors leading-snug mb-2">
                     {piece.title}
                   </h3>
 
                   {/* One-Line Summary */}
-                  <p className="font-sans text-xs sm:text-sm text-[#D9C7B8] line-clamp-2 leading-relaxed mb-4">
+                  <p className="font-sans text-xs sm:text-sm text-[var(--muted)] line-clamp-2 leading-relaxed mb-4">
                     {piece.one_line_summary}
                   </p>
                 </div>
 
                 {/* Footer Metadata */}
-                <div className="pt-3 border-t border-[#2D161C] flex items-center justify-between font-mono text-[10px] text-[#8E7C79] gap-2">
+                <div className="pt-3 border-t border-[var(--line)] flex items-center justify-between font-mono text-[10px] text-[var(--muted)] gap-2">
                   <span className="truncate">{subtleConfidence}</span>
-                  <span className="text-[#DF7987] font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform shrink-0">
+                  <span className="text-[var(--accent-brass)] font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform shrink-0">
                     READ →
                   </span>
                 </div>

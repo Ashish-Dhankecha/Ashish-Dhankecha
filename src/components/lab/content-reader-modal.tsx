@@ -39,19 +39,19 @@ export function ContentReaderModal({ piece, onClose }: Props) {
       role="dialog"
       aria-modal="true"
       aria-label={piece.title}
-      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-6 bg-[#0C0608]/90 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-6 bg-[var(--bg)]/90 backdrop-blur-md animate-in fade-in duration-200"
     >
       <div
-        className="relative w-full max-w-5xl h-full sm:h-auto max-h-full sm:max-h-[92vh] flex flex-col bg-[#0C0608] border-0 sm:border border-[#2D161C] shadow-[0_0_80px_rgba(0,0,0,0.9)] sm:rounded-2xl overflow-hidden"
+        className="relative w-full max-w-5xl h-full sm:h-auto max-h-full sm:max-h-[92vh] flex flex-col bg-[var(--bg)] border-0 sm:border border-[var(--line)] shadow-[0_0_80px_rgba(0,0,0,0.9)] sm:rounded-2xl overflow-hidden"
       >
         {/* Modal Top Control Bar */}
-        <div className="flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 border-b border-[#2D161C] bg-[#140A0D] font-mono text-xs text-[#8E7C79] shrink-0">
+        <div className="flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 border-b border-[var(--line)] bg-[var(--panel)] font-mono text-xs text-[var(--muted)] shrink-0">
           <div className="flex items-center gap-1.5 sm:gap-3 truncate mr-2">
-            <span className="text-[#DF7987] font-semibold truncate text-[10px] sm:text-xs">
+            <span className="text-[var(--accent-brass)] font-semibold truncate text-[10px] sm:text-xs">
               LAB ARCHIVE
             </span>
-            <span className="text-[#4A202A]">|</span>
-            <span className="text-[#F5EBE1] text-[10px] sm:text-xs truncate">
+            <span className="text-[var(--border-subtle)]">|</span>
+            <span className="text-[var(--ink)] text-[10px] sm:text-xs truncate">
               {piece.project.toUpperCase()} · #{String(piece.order).padStart(3, "0")}
             </span>
           </div>
@@ -61,16 +61,16 @@ export function ContentReaderModal({ piece, onClose }: Props) {
               href={`/lab/${piece.project_slug}/${piece.slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-[#8E7C79] hover:text-[#DF7987] uppercase transition-colors p-1.5 min-h-[44px]"
+              className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-[var(--muted)] hover:text-[var(--accent-brass)] uppercase transition-colors p-1.5 min-h-[44px]"
             >
               <span className="hidden xs:inline">FULL PAGE</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
-            <span className="text-[#4A202A]">|</span>
+            <span className="text-[var(--border-subtle)]">|</span>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex items-center gap-1 text-[11px] text-[#D9C7B8] hover:text-[#DF7987] uppercase font-semibold transition-colors py-2 px-2.5 -mr-1 min-h-[44px] min-w-[44px] justify-center"
+              className="inline-flex items-center gap-1 text-[11px] text-[var(--muted)] hover:text-[var(--accent-brass)] uppercase font-semibold transition-colors py-2 px-2.5 -mr-1 min-h-[44px] min-w-[44px] justify-center"
             >
               <X className="w-4 h-4" />
               <span>CLOSE</span>

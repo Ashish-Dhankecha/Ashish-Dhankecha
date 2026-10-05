@@ -82,23 +82,23 @@ export function ResearchDossierModal({
 
       {/* Modal Dialog Body */}
       <div
-        className="relative w-full max-w-5xl h-full sm:h-auto max-h-full sm:max-h-[92vh] bg-[#0C0608] border-0 sm:border border-[#2D161C] shadow-[0_0_80px_rgba(0,0,0,0.9)] sm:rounded-2xl my-auto overflow-y-auto text-[#F5EBE1] flex flex-col z-10 selection:bg-[#801D2C] selection:text-white"
+        className="relative w-full max-w-5xl h-full sm:h-auto max-h-full sm:max-h-[92vh] bg-[var(--bg)] border-0 sm:border border-[var(--line)] shadow-[0_0_80px_rgba(0,0,0,0.9)] sm:rounded-2xl my-auto overflow-y-auto text-[var(--ink)] flex flex-col z-10 selection:bg-[var(--accent-brass)] selection:text-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Plate */}
-        <div className="sticky top-0 z-30 flex items-center justify-between border-b border-[#2D161C] bg-[#140A0D]/95 backdrop-blur-md px-3 sm:px-8 py-2.5 sm:py-3.5">
-          <div className="flex items-center gap-2 sm:gap-4 flex-wrap font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8E7C79]">
-            <span className="text-[#DF7987] font-bold flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5 text-[#DF7987]" />
+        <div className="sticky top-0 z-30 flex items-center justify-between border-b border-[var(--line)] bg-[var(--panel)]/95 backdrop-blur-md px-3 sm:px-8 py-2.5 sm:py-3.5">
+          <div className="flex items-center gap-2 sm:gap-4 flex-wrap font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[var(--muted)]">
+            <span className="text-[var(--accent-brass)] font-bold flex items-center gap-1.5">
+              <Terminal className="w-3.5 h-3.5 text-[var(--accent-brass)]" />
               {research.code}
             </span>
-            <span className="text-[#4A202A]">&middot;</span>
-            <span className="px-2 py-0.5 border border-[#801D2C]/40 bg-[#801D2C]/15 text-[#DF7987] rounded text-[9px] sm:text-[10px] font-semibold">
+            <span className="text-[var(--border-subtle)]">&middot;</span>
+            <span className="px-2 py-0.5 border border-[var(--accent-brass)]/40 bg-[var(--accent-brass)]/15 text-[var(--accent-brass)] rounded text-[9px] sm:text-[10px] font-semibold">
               {research.contentType}
             </span>
-            <span className="text-[#4A202A] hidden sm:inline">&middot;</span>
-            <span className="text-[#D9C7B8] hidden sm:inline">PROJECT: {research.project}</span>
-            <span className="text-[#4A202A] hidden md:inline">&middot;</span>
+            <span className="text-[var(--border-subtle)] hidden sm:inline">&middot;</span>
+            <span className="text-[var(--muted)] hidden sm:inline">PROJECT: {research.project}</span>
+            <span className="text-[var(--border-subtle)] hidden md:inline">&middot;</span>
             <span className="text-amber-400 hidden md:inline flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
               STATUS: {research.status}
@@ -110,7 +110,7 @@ export function ResearchDossierModal({
               type="button"
               onClick={handleCopyLink}
               title="Copy link to this research"
-              className="p-2 border border-[#2D161C] bg-[#0C0608] text-[#8E7C79] hover:text-[#F5EBE1] hover:border-[#DF7987] rounded-lg transition-colors font-mono text-[11px] flex items-center gap-1.5 px-2.5 min-h-[40px]"
+              className="p-2 border border-[var(--line)] bg-[var(--bg)] text-[var(--muted)] hover:text-[var(--ink)] hover:border-[var(--accent-brass)] rounded-lg transition-colors font-mono text-[11px] flex items-center gap-1.5 px-2.5 min-h-[40px]"
             >
               {copied ? (
                 <>
@@ -130,7 +130,7 @@ export function ResearchDossierModal({
               type="button"
               onClick={onClose}
               aria-label="Close research dossier"
-              className="p-2 border border-[#2D161C] bg-[#0C0608] text-[#8E7C79] hover:bg-[#1F1015] hover:text-[#F5EBE1] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DF7987] min-h-[40px] min-w-[40px] flex items-center justify-center"
+              className="p-2 border border-[var(--line)] bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--panel-hover)] hover:text-[var(--ink)] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-brass)] min-h-[40px] min-w-[40px] flex items-center justify-center"
             >
               <X className="w-4 h-4" />
             </button>
@@ -138,13 +138,13 @@ export function ResearchDossierModal({
         </div>
 
         {/* Hero Section */}
-        <div className="px-4 sm:px-8 md:px-10 pt-8 pb-6 border-b border-[#2D161C] bg-gradient-to-b from-[#1A0A0F] to-[#0C0608]">
+        <div className="px-4 sm:px-8 md:px-10 pt-8 pb-6 border-b border-[var(--line)] bg-gradient-to-b from-[var(--panel)] to-[var(--bg)]">
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2">
               {research.topics.map((topic) => (
                 <span
                   key={topic}
-                  className="px-2.5 py-0.5 font-mono text-[10px] text-[#DF7987] bg-[#801D2C]/15 border border-[#801D2C]/30 rounded tracking-wide"
+                  className="px-2.5 py-0.5 font-mono text-[10px] text-[var(--accent-brass)] bg-[var(--accent-brass)]/15 border border-[var(--accent-brass)]/30 rounded tracking-wide"
                 >
                   #{topic}
                 </span>
@@ -153,40 +153,40 @@ export function ResearchDossierModal({
 
             <h1
               id="research-dossier-title"
-              className="font-mono text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F5EBE1] leading-tight"
+              className="font-mono text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--ink)] leading-tight"
             >
               {research.title}
             </h1>
 
-            <p className="font-sans text-sm sm:text-base text-[#D9C7B8] leading-relaxed max-w-4xl border-l-2 border-[#DF7987] pl-3 py-0.5">
+            <p className="font-sans text-sm sm:text-base text-[var(--muted)] leading-relaxed max-w-4xl border-l-2 border-[var(--accent-brass)] pl-3 py-0.5">
               {research.oneLineSummary}
             </p>
 
             {/* Quick Metrics Strip */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
-              <div className="p-2.5 border border-[#2D161C] bg-[#140A0D] rounded-lg">
-                <span className="text-[10px] font-mono uppercase text-[#8E7C79] block">BOOT TIMING</span>
+              <div className="p-2.5 border border-[var(--line)] bg-[var(--panel)] rounded-lg">
+                <span className="text-[10px] font-mono uppercase text-[var(--muted)] block">BOOT TIMING</span>
                 <span className="text-xs sm:text-sm font-mono font-semibold text-emerald-400 flex items-center gap-1.5 mt-0.5">
                   <Zap className="w-3.5 h-3.5" />
                   {research.whatHappened.bootTime}
                 </span>
               </div>
-              <div className="p-2.5 border border-[#2D161C] bg-[#140A0D] rounded-lg">
-                <span className="text-[10px] font-mono uppercase text-[#8E7C79] block">OS SUBSYSTEMS</span>
-                <span className="text-xs sm:text-sm font-mono font-semibold text-[#DF7987] flex items-center gap-1.5 mt-0.5">
+              <div className="p-2.5 border border-[var(--line)] bg-[var(--panel)] rounded-lg">
+                <span className="text-[10px] font-mono uppercase text-[var(--muted)] block">OS SUBSYSTEMS</span>
+                <span className="text-xs sm:text-sm font-mono font-semibold text-[var(--accent-brass)] flex items-center gap-1.5 mt-0.5">
                   <Cpu className="w-3.5 h-3.5" />
                   9 Core Subsystems
                 </span>
               </div>
-              <div className="p-2.5 border border-[#2D161C] bg-[#140A0D] rounded-lg">
-                <span className="text-[10px] font-mono uppercase text-[#8E7C79] block">EVIDENCE TRACES</span>
-                <span className="text-xs sm:text-sm font-mono font-semibold text-[#F5EBE1] flex items-center gap-1.5 mt-0.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#DF7987]" />
+              <div className="p-2.5 border border-[var(--line)] bg-[var(--panel)] rounded-lg">
+                <span className="text-[10px] font-mono uppercase text-[var(--muted)] block">EVIDENCE TRACES</span>
+                <span className="text-xs sm:text-sm font-mono font-semibold text-[var(--ink)] flex items-center gap-1.5 mt-0.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[var(--accent-brass)]" />
                   12 Primary Sources
                 </span>
               </div>
-              <div className="p-2.5 border border-[#2D161C] bg-[#140A0D] rounded-lg">
-                <span className="text-[10px] font-mono uppercase text-[#8E7C79] block">EVALUATION SCORE</span>
+              <div className="p-2.5 border border-[var(--line)] bg-[var(--panel)] rounded-lg">
+                <span className="text-[10px] font-mono uppercase text-[var(--muted)] block">EVALUATION SCORE</span>
                 <span className="text-xs sm:text-sm font-mono font-semibold text-amber-400 flex items-center gap-1.5 mt-0.5">
                   <Award className="w-3.5 h-3.5" />
                   5.0 / 5.0 (High Depth)
@@ -197,7 +197,7 @@ export function ResearchDossierModal({
         </div>
 
         {/* Interactive Navigation Tabs */}
-        <div className="flex items-center border-b border-[#2D161C] bg-[#140A0D] px-3 sm:px-8 overflow-x-auto scrollbar-none touch-pan-x">
+        <div className="flex items-center border-b border-[var(--line)] bg-[var(--panel)] px-3 sm:px-8 overflow-x-auto scrollbar-none touch-pan-x">
           {[
             { id: "overview" as TabType, label: "01 // CONTEXT & PROBLEM" },
             { id: "subsystems" as TabType, label: "02 // OS ARCHITECTURE & LAYERS" },
@@ -211,8 +211,8 @@ export function ResearchDossierModal({
               onClick={() => setActiveTab(tab.id)}
               className={`py-3 px-3 sm:px-4 font-mono text-[11px] sm:text-xs whitespace-nowrap border-b-2 transition-all font-semibold min-h-[44px] flex items-center ${
                 activeTab === tab.id
-                  ? "border-[#DF7987] text-[#DF7987] bg-[#1F1015]"
-                  : "border-transparent text-[#8E7C79] hover:text-[#F5EBE1] hover:bg-[#1F1015]/50"
+                  ? "border-[var(--accent-brass)] text-[var(--accent-brass)] bg-[var(--panel-hover)]"
+                  : "border-transparent text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)]/50"
               }`}
             >
               {tab.label}
@@ -226,34 +226,34 @@ export function ResearchDossierModal({
           {activeTab === "overview" && (
             <div className="space-y-8 animate-fadeIn">
               {/* Vision Callout Box */}
-              <div className="p-5 sm:p-6 border border-[#801D2C]/40 bg-[#801D2C]/10 rounded-xl relative overflow-hidden">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[#DF7987] mb-2 flex items-center gap-1.5">
+              <div className="p-5 sm:p-6 border border-[var(--accent-brass)]/40 bg-[var(--accent-brass)]/10 rounded-xl relative overflow-hidden">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--accent-brass)] mb-2 flex items-center gap-1.5">
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>PROJECT VISION DECLARATION (docs/00_VISION.md)</span>
                 </div>
-                <blockquote className="font-mono text-sm sm:text-base text-[#F5EBE1] leading-relaxed italic border-l-2 border-[#DF7987] pl-4 my-2">
-                  &ldquo;LEO IS: <strong className="text-[#DF7987] font-bold">A Cognitive Operating System.</strong> It is explicitly stated NOT to be: a chatbot, an AI assistant wrapper, a prompt collection, or an agent framework.&rdquo;
+                <blockquote className="font-mono text-sm sm:text-base text-[var(--ink)] leading-relaxed italic border-l-2 border-[var(--accent-brass)] pl-4 my-2">
+                  &ldquo;LEO IS: <strong className="text-[var(--accent-brass)] font-bold">A Cognitive Operating System.</strong> It is explicitly stated NOT to be: a chatbot, an AI assistant wrapper, a prompt collection, or an agent framework.&rdquo;
                 </blockquote>
-                <p className="font-sans text-xs sm:text-sm text-[#D9C7B8] mt-3 leading-relaxed">
+                <p className="font-sans text-xs sm:text-sm text-[var(--muted)] mt-3 leading-relaxed">
                   {research.context.description}
                 </p>
               </div>
 
               {/* The Question */}
-              <div className="p-5 sm:p-6 border border-[#2D161C] bg-[#140A0D] rounded-xl">
+              <div className="p-5 sm:p-6 border border-[var(--line)] bg-[var(--panel)] rounded-xl">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-amber-400 mb-2 flex items-center gap-1.5">
                   <AlertTriangle className="w-3.5 h-3.5" />
                   <span>THE CENTRAL RESEARCH QUESTION</span>
                 </div>
-                <h3 className="font-mono text-base sm:text-lg text-[#F5EBE1] font-semibold leading-relaxed">
+                <h3 className="font-mono text-base sm:text-lg text-[var(--ink)] font-semibold leading-relaxed">
                   {research.question}
                 </h3>
               </div>
 
               {/* Scorecard Matrix */}
-              <div className="border border-[#2D161C] bg-[#140A0D] p-5 sm:p-6 space-y-4 rounded-xl">
-                <div className="flex items-center justify-between border-b border-[#2D161C] pb-3">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[#8E7C79] font-bold flex items-center gap-1.5">
+              <div className="border border-[var(--line)] bg-[var(--panel)] p-5 sm:p-6 space-y-4 rounded-xl">
+                <div className="flex items-center justify-between border-b border-[var(--line)] pb-3">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--muted)] font-bold flex items-center gap-1.5">
                     <Award className="w-4 h-4 text-amber-400" />
                     RESEARCH CONTENT VALUE ASSESSMENT
                   </span>
@@ -270,17 +270,17 @@ export function ResearchDossierModal({
                     { label: "Evidence Quality", val: research.contentValue.evidenceQuality },
                     { label: "Story Value", val: research.contentValue.storyValue },
                   ].map((score) => (
-                    <div key={score.label} className="p-3 border border-[#2D161C] bg-[#0C0608] rounded-lg">
-                      <span className="text-[10px] font-mono text-[#8E7C79] block">{score.label}</span>
+                    <div key={score.label} className="p-3 border border-[var(--line)] bg-[var(--bg)] rounded-lg">
+                      <span className="text-[10px] font-mono text-[var(--muted)] block">{score.label}</span>
                       <div className="flex items-center gap-1 mt-1">
-                        <span className="font-mono text-lg font-bold text-[#F5EBE1]">{score.val}</span>
-                        <span className="text-xs font-mono text-[#8E7C79]">/ 5</span>
+                        <span className="font-mono text-lg font-bold text-[var(--ink)]">{score.val}</span>
+                        <span className="text-xs font-mono text-[var(--muted)]">/ 5</span>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <p className="font-sans text-xs sm:text-sm text-[#D9C7B8] leading-relaxed pt-2 border-t border-[#2D161C]">
+                <p className="font-sans text-xs sm:text-sm text-[var(--muted)] leading-relaxed pt-2 border-t border-[var(--line)]">
                   {research.contentValue.commentary}
                 </p>
               </div>
@@ -294,11 +294,11 @@ export function ResearchDossierModal({
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-mono text-base sm:text-lg font-semibold text-[#F5EBE1] flex items-center gap-2">
-                      <Cpu className="w-4 h-4 text-[#DF7987]" />
+                    <h3 className="font-mono text-base sm:text-lg font-semibold text-[var(--ink)] flex items-center gap-2">
+                      <Cpu className="w-4 h-4 text-[var(--accent-brass)]" />
                       Core Subsystems Architecture (Phases 26–27)
                     </h3>
-                    <p className="font-sans text-xs text-[#8E7C79] mt-0.5">
+                    <p className="font-sans text-xs text-[var(--muted)] mt-0.5">
                       Formal operating system components implementing execution control, memory gatekeeping, and communication buses.
                     </p>
                   </div>
@@ -308,19 +308,19 @@ export function ResearchDossierModal({
                   {research.initialApproach.subsystems.map((sub) => (
                     <div
                       key={sub.number}
-                      className="p-4 border border-[#2D161C] bg-[#140A0D] hover:border-[#801D2C] rounded-xl transition-colors flex flex-col justify-between"
+                      className="p-4 border border-[var(--line)] bg-[var(--panel)] hover:border-[var(--accent-brass)] rounded-xl transition-colors flex flex-col justify-between"
                     >
                       <div>
                         <div className="flex items-center justify-between text-[11px] font-mono mb-2">
-                          <span className="text-[#DF7987] font-bold">0{sub.number} {"//"} SUBSYSTEM</span>
-                          <span className="text-[#8E7C79] px-2 py-0.5 border border-[#2D161C] bg-[#0C0608] rounded text-[9px]">
+                          <span className="text-[var(--accent-brass)] font-bold">0{sub.number} {"//"} SUBSYSTEM</span>
+                          <span className="text-[var(--muted)] px-2 py-0.5 border border-[var(--line)] bg-[var(--bg)] rounded text-[9px]">
                             {sub.role}
                           </span>
                         </div>
-                        <h4 className="font-mono text-sm font-semibold text-[#F5EBE1] mb-1.5">
+                        <h4 className="font-mono text-sm font-semibold text-[var(--ink)] mb-1.5">
                           {sub.name}
                         </h4>
-                        <p className="font-sans text-xs text-[#D9C7B8] leading-relaxed">
+                        <p className="font-sans text-xs text-[var(--muted)] leading-relaxed">
                           {sub.description}
                         </p>
                       </div>
@@ -330,24 +330,24 @@ export function ResearchDossierModal({
               </div>
 
               {/* 7-Layer Hierarchy Visual Stack */}
-              <div className="border border-[#2D161C] bg-[#140A0D] p-5 sm:p-6 space-y-4 rounded-xl">
-                <h3 className="font-mono text-sm font-semibold text-[#F5EBE1] flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#DF7987]" />
+              <div className="border border-[var(--line)] bg-[var(--panel)] p-5 sm:p-6 space-y-4 rounded-xl">
+                <h3 className="font-mono text-sm font-semibold text-[var(--ink)] flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-[var(--accent-brass)]" />
                   Strict 7-Layer Dependency Hierarchy (docs/03_LAYER_ARCHITECTURE.md)
                 </h3>
-                <p className="font-sans text-xs text-[#8E7C79]">
+                <p className="font-sans text-xs text-[var(--muted)]">
                   Architectural rule: Layers must strictly flow sequentially from Client down to Models. Skipping layers is explicitly forbidden.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-1.5 pt-2">
                   {research.initialApproach.layerHierarchy.map((layer, idx) => (
                     <React.Fragment key={layer}>
-                      <div className="flex-1 p-2.5 border border-[#2D161C] bg-[#0C0608] rounded-lg text-center font-mono text-xs">
-                        <span className="text-[9px] text-[#8E7C79] block">L{idx + 1}</span>
-                        <span className="text-[#F5EBE1] font-medium">{layer}</span>
+                      <div className="flex-1 p-2.5 border border-[var(--line)] bg-[var(--bg)] rounded-lg text-center font-mono text-xs">
+                        <span className="text-[9px] text-[var(--muted)] block">L{idx + 1}</span>
+                        <span className="text-[var(--ink)] font-medium">{layer}</span>
                       </div>
                       {idx < research.initialApproach.layerHierarchy.length - 1 && (
-                        <div className="hidden sm:flex items-center justify-center text-[#DF7987] px-1">
+                        <div className="hidden sm:flex items-center justify-center text-[var(--accent-brass)] px-1">
                           <ArrowRight className="w-3.5 h-3.5" />
                         </div>
                       )}
@@ -356,9 +356,9 @@ export function ResearchDossierModal({
                 </div>
 
                 {/* Boot DAG Specification */}
-                <div className="mt-4 p-3.5 border border-[#2D161C] bg-[#0C0608] rounded-lg font-mono text-xs text-[#D9C7B8] space-y-1">
-                  <span className="text-[10px] text-[#DF7987] uppercase block">BOOT SEQUENCE SPECIFICATION</span>
-                  <p className="text-[#8E7C79]">{research.initialApproach.bootSequence}</p>
+                <div className="mt-4 p-3.5 border border-[var(--line)] bg-[var(--bg)] rounded-lg font-mono text-xs text-[var(--muted)] space-y-1">
+                  <span className="text-[10px] text-[var(--accent-brass)] uppercase block">BOOT SEQUENCE SPECIFICATION</span>
+                  <p className="text-[var(--muted)]">{research.initialApproach.bootSequence}</p>
                 </div>
               </div>
             </div>
@@ -378,19 +378,19 @@ export function ResearchDossierModal({
                     BOOT TIME: 1.29 SECONDS
                   </span>
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-[#D9C7B8] leading-relaxed">
+                <p className="font-sans text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
                   {research.whatHappened.summary}
                 </p>
               </div>
 
               {/* Kernel Components Checklist */}
-              <div className="border border-[#2D161C] bg-[#140A0D] p-5 sm:p-6 space-y-3 rounded-xl">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#8E7C79] font-bold block">
+              <div className="border border-[var(--line)] bg-[var(--panel)] p-5 sm:p-6 space-y-3 rounded-xl">
+                <span className="font-mono text-xs uppercase tracking-wider text-[var(--muted)] font-bold block">
                   VERIFIED KERNEL PRIMITIVES IMPLEMENTATION
                 </span>
-                <div className="space-y-2 font-mono text-xs text-[#D9C7B8]">
+                <div className="space-y-2 font-mono text-xs text-[var(--muted)]">
                   {research.whatHappened.kernelComponents.map((comp, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 p-2.5 border border-[#2D161C] bg-[#0C0608] rounded-lg">
+                    <div key={idx} className="flex items-start gap-2.5 p-2.5 border border-[var(--line)] bg-[var(--bg)] rounded-lg">
                       <span className="text-emerald-400 font-bold">✓</span>
                       <span>{comp}</span>
                     </div>
@@ -409,10 +409,10 @@ export function ResearchDossierModal({
                     281 ARCHITECTURAL VIOLATIONS
                   </span>
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-[#F5EBE1] leading-relaxed">
+                <p className="font-sans text-xs sm:text-sm text-[var(--ink)] leading-relaxed">
                   {research.whatHappened.violationFinding}
                 </p>
-                <div className="p-3 border border-rose-500/20 bg-[#0C0608] rounded-lg font-mono text-xs text-[#8E7C79]">
+                <div className="p-3 border border-rose-500/20 bg-[var(--bg)] rounded-lg font-mono text-xs text-[var(--muted)]">
                   <span className="text-rose-300 block text-[10px] uppercase mb-1">AUDIT ARTIFACT</span>
                   <code>phase_28_x_2_violation_report.md</code> — Database calls completely bypassed CMMU memory bus via legacy SQLAlchemy sessions.
                 </div>
@@ -431,7 +431,7 @@ export function ResearchDossierModal({
                       <CheckCircle2 className="w-4 h-4" />
                       Established Fact
                     </div>
-                    <p className="font-sans text-xs sm:text-sm text-[#D9C7B8] leading-relaxed">
+                    <p className="font-sans text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
                       {research.diagnosis.established}
                     </p>
                   </div>
@@ -443,19 +443,19 @@ export function ResearchDossierModal({
                       <Zap className="w-4 h-4" />
                       Likely Architectural State
                     </div>
-                    <p className="font-sans text-xs sm:text-sm text-[#D9C7B8] leading-relaxed">
+                    <p className="font-sans text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
                       {research.diagnosis.likely}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-5 border border-[#2D161C] bg-[#140A0D] rounded-xl flex flex-col justify-between">
+                <div className="p-5 border border-[var(--line)] bg-[var(--panel)] rounded-xl flex flex-col justify-between">
                   <div>
-                    <div className="font-mono text-xs text-[#8E7C79] font-bold flex items-center gap-1.5 mb-2 uppercase">
-                      <Activity className="w-4 h-4 text-[#8E7C79]" />
+                    <div className="font-mono text-xs text-[var(--muted)] font-bold flex items-center gap-1.5 mb-2 uppercase">
+                      <Activity className="w-4 h-4 text-[var(--muted)]" />
                       Unknown Validation Boundary
                     </div>
-                    <p className="font-sans text-xs sm:text-sm text-[#8E7C79] leading-relaxed">
+                    <p className="font-sans text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
                       {research.diagnosis.unknown}
                     </p>
                   </div>
@@ -463,30 +463,30 @@ export function ResearchDossierModal({
               </div>
 
               {/* What I Learned & What Changed */}
-              <div className="border border-[#2D161C] bg-[#140A0D] p-5 sm:p-6 space-y-4 rounded-xl">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#DF7987] font-bold block">
+              <div className="border border-[var(--line)] bg-[var(--panel)] p-5 sm:p-6 space-y-4 rounded-xl">
+                <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent-brass)] font-bold block">
                   KEY ENGINEERING RETROSPECTIVE
                 </span>
                 
-                <div className="space-y-4 font-sans text-xs sm:text-sm text-[#D9C7B8]">
-                  <div className="p-4 border border-[#2D161C] bg-[#0C0608] rounded-lg space-y-1.5">
-                    <span className="font-mono text-[10px] uppercase text-[#8E7C79] block">WHAT I LEARNED</span>
+                <div className="space-y-4 font-sans text-xs sm:text-sm text-[var(--muted)]">
+                  <div className="p-4 border border-[var(--line)] bg-[var(--bg)] rounded-lg space-y-1.5">
+                    <span className="font-mono text-[10px] uppercase text-[var(--muted)] block">WHAT I LEARNED</span>
                     <p className="leading-relaxed">{research.whatILearned}</p>
                   </div>
 
-                  <div className="p-4 border border-[#2D161C] bg-[#0C0608] rounded-lg space-y-1.5">
-                    <span className="font-mono text-[10px] uppercase text-[#8E7C79] block">WHAT I WOULD DO DIFFERENTLY (HINDSIGHT)</span>
+                  <div className="p-4 border border-[var(--line)] bg-[var(--bg)] rounded-lg space-y-1.5">
+                    <span className="font-mono text-[10px] uppercase text-[var(--muted)] block">WHAT I WOULD DO DIFFERENTLY (HINDSIGHT)</span>
                     <p className="leading-relaxed">{research.whatIWouldDoDifferently}</p>
                   </div>
                 </div>
               </div>
 
               {/* Broader Principle Highlight */}
-              <div className="p-6 border border-[#DF7987]/50 bg-gradient-to-r from-[#801D2C]/25 to-[#140A0D] rounded-xl space-y-2">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-[#DF7987] font-bold block">
+              <div className="p-6 border border-[var(--accent-brass)]/50 bg-gradient-to-r from-[var(--accent-brass)]/25 to-[var(--panel)] rounded-xl space-y-2">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--accent-brass)] font-bold block">
                   BROADER ARCHITECTURAL PRINCIPLE
                 </span>
-                <p className="font-mono text-sm sm:text-base text-[#F5EBE1] font-semibold leading-relaxed">
+                <p className="font-mono text-sm sm:text-base text-[var(--ink)] font-semibold leading-relaxed">
                   &ldquo;{research.broaderPrinciple}&rdquo;
                 </p>
               </div>
@@ -497,9 +497,9 @@ export function ResearchDossierModal({
           {activeTab === "evidence" && (
             <div className="space-y-8 animate-fadeIn">
               {/* Primary Evidence Artifacts */}
-              <div className="border border-[#2D161C] bg-[#140A0D] p-5 sm:p-6 space-y-4 rounded-xl">
-                <div className="flex items-center justify-between border-b border-[#2D161C] pb-3">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[#8E7C79] font-bold flex items-center gap-1.5">
+              <div className="border border-[var(--line)] bg-[var(--panel)] p-5 sm:p-6 space-y-4 rounded-xl">
+                <div className="flex items-center justify-between border-b border-[var(--line)] pb-3">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--muted)] font-bold flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
                     PRIMARY VERIFIED SOURCE EVIDENCE ({research.evidence.length} Artifacts)
                   </span>
@@ -510,12 +510,12 @@ export function ResearchDossierModal({
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {research.evidence.map((item, idx) => (
-                    <div key={idx} className="p-3 border border-[#2D161C] bg-[#0C0608] rounded-lg space-y-1 font-mono text-xs">
-                      <div className="flex items-center gap-2 text-[#DF7987]">
+                    <div key={idx} className="p-3 border border-[var(--line)] bg-[var(--bg)] rounded-lg space-y-1 font-mono text-xs">
+                      <div className="flex items-center gap-2 text-[var(--accent-brass)]">
                         <FileCode2 className="w-3.5 h-3.5 flex-shrink-0" />
                         <span className="font-semibold break-all">{item.file}</span>
                       </div>
-                      <p className="font-sans text-[11px] text-[#8E7C79] leading-relaxed pl-5">
+                      <p className="font-sans text-[11px] text-[var(--muted)] leading-relaxed pl-5">
                         {item.description}
                       </p>
                     </div>
@@ -524,15 +524,15 @@ export function ResearchDossierModal({
               </div>
 
               {/* Technical Code References */}
-              <div className="border border-[#2D161C] bg-[#140A0D] p-5 sm:p-6 space-y-3 rounded-xl">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#F5EBE1] font-bold block">
+              <div className="border border-[var(--line)] bg-[var(--panel)] p-5 sm:p-6 space-y-3 rounded-xl">
+                <span className="font-mono text-xs uppercase tracking-wider text-[var(--ink)] font-bold block">
                   TECHNICAL CODE REPOSITORY REFERENCES
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {research.technicalReferences.map((ref, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 border border-[#2D161C] bg-[#0C0608] font-mono text-xs text-[#DF7987] rounded"
+                      className="px-2.5 py-1 border border-[var(--line)] bg-[var(--bg)] font-mono text-xs text-[var(--accent-brass)] rounded"
                     >
                       {ref}
                     </span>
@@ -541,7 +541,7 @@ export function ResearchDossierModal({
               </div>
 
               {/* Publication Notes */}
-              <div className="p-4 border border-[#2D161C] bg-[#0C0608] rounded-xl font-mono text-xs text-[#8E7C79] flex items-center justify-between">
+              <div className="p-4 border border-[var(--line)] bg-[var(--bg)] rounded-xl font-mono text-xs text-[var(--muted)] flex items-center justify-between">
                 <span>PUBLICATION CLEARANCE: {research.publicationNotes}</span>
                 <span className="text-emerald-400 font-semibold">CLEARED FOR DISPATCH</span>
               </div>
@@ -550,7 +550,7 @@ export function ResearchDossierModal({
         </div>
 
         {/* Footer Bar */}
-        <div className="border-t border-[#2D161C] bg-[#140A0D] px-4 sm:px-8 py-4 flex items-center justify-between flex-wrap gap-3 font-mono text-xs text-[#8E7C79]">
+        <div className="border-t border-[var(--line)] bg-[var(--panel)] px-4 sm:px-8 py-4 flex items-center justify-between flex-wrap gap-3 font-mono text-xs text-[var(--muted)]">
           <div>
             <span>SYSTEM IDENTIFIER: {research.slug}</span>
           </div>
@@ -558,7 +558,7 @@ export function ResearchDossierModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 border border-[#2D161C] bg-[#0C0608] hover:border-[#801D2C] hover:bg-[#1F1015] text-[#F5EBE1] rounded-lg transition-colors"
+              className="px-4 py-2 border border-[var(--line)] bg-[var(--bg)] hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] text-[var(--ink)] rounded-lg transition-colors"
             >
               CLOSE DISPATCH
             </button>

@@ -51,7 +51,7 @@ export function LabFiltersSearch({
     <div className="w-full my-6 sm:my-8 space-y-3 sm:space-y-4 font-mono text-xs">
       {/* Category Pills Row - Swipeable on mobile with edge-to-edge touch */}
       <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-x">
-        <span className="text-[10px] uppercase tracking-wider text-[#8E7C79] shrink-0 mr-1 hidden sm:inline">
+        <span className="text-[10px] uppercase tracking-wider text-[var(--muted)] shrink-0 mr-1 hidden sm:inline">
           DISCIPLINE:
         </span>
         {categories.map((cat) => {
@@ -63,8 +63,8 @@ export function LabFiltersSearch({
               onClick={() => onCategoryChange(cat.key)}
               className={`px-3.5 py-2 sm:py-1.5 whitespace-nowrap transition-colors border text-[11px] sm:text-xs min-h-[38px] sm:min-h-0 shrink-0 rounded-lg ${
                 isSelected
-                  ? "bg-[#801D2C]/20 text-[#DF7987] border-[#801D2C]/60 shadow-[0_0_12px_rgba(128,29,44,0.25)] font-semibold"
-                  : "bg-[#140A0D] text-[#8E7C79] border-[#2D161C] hover:border-[#801D2C]/60 hover:text-[#F5EBE1]"
+                  ? "bg-[var(--accent-brass)]/20 text-[var(--accent-brass)] border-[var(--accent-brass)]/60 shadow-[0_0_12px_rgba(128,29,44,0.25)] font-semibold"
+                  : "bg-[var(--panel)] text-[var(--muted)] border-[var(--line)] hover:border-[var(--accent-brass)]/60 hover:text-[var(--ink)]"
               }`}
             >
               <span>{cat.label}</span>
@@ -78,21 +78,21 @@ export function LabFiltersSearch({
 
       {/* Search Input Bar */}
       <div className="relative flex items-center">
-        <Search className="w-4 h-4 absolute left-3.5 text-[#8E7C79] pointer-events-none shrink-0" />
+        <Search className="w-4 h-4 absolute left-3.5 text-[var(--muted)] pointer-events-none shrink-0" />
         <input
           ref={inputRef}
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Filter archive by title, keyword, or failure mode..."
-          className="w-full bg-[#140A0D] border border-[#2D161C] pl-10 pr-10 py-3 sm:py-2.5 text-base sm:text-xs text-[#F5EBE1] placeholder-[#8E7C79] focus:outline-none focus:border-[#801D2C] focus:ring-1 focus:ring-[#801D2C]/40 transition-all rounded-xl min-h-[44px]"
+          className="w-full bg-[var(--panel)] border border-[var(--line)] pl-10 pr-10 py-3 sm:py-2.5 text-base sm:text-xs text-[var(--ink)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--accent-brass)] focus:ring-1 focus:ring-[var(--accent-brass)]/40 transition-all rounded-xl min-h-[44px]"
         />
         {searchQuery && (
           <button
             type="button"
             onClick={() => onSearchChange("")}
             aria-label="Clear search"
-            className="absolute right-1 text-[#8E7C79] hover:text-[#DF7987] transition-colors w-10 h-10 flex items-center justify-center"
+            className="absolute right-1 text-[var(--muted)] hover:text-[var(--accent-brass)] transition-colors w-10 h-10 flex items-center justify-center"
           >
             <X className="w-4 h-4" />
           </button>
