@@ -1,125 +1,100 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useTheme } from "@/components/theme/theme-context";
 
-const NAV_ITEMS = [
-  { num: "01", label: "About", href: "/#about" },
-  { num: "02", label: "Systems", href: "/projects" },
-  { num: "03", label: "Journey", href: "/#journey" },
-  { num: "04", label: "What I Build", href: "/#what-i-build" },
-  { num: "05", label: "How I Work", href: "/#process" },
-  { num: "06", label: "Stack", href: "/#stack" },
-  { num: "07", label: "Focus", href: "/#focus" },
-  { num: "08", label: "Contact", href: "/#contact" },
+const NAV = [
+  { label: "Specifications", href: "/projects", match: "/projects" },
+  { label: "Lab", href: "/lab", match: "/lab" },
+  { label: "Inventor", href: "/#inventor" },
+  { label: "Method", href: "/#method" },
 ];
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [open]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[var(--bg)]/90 backdrop-blur-xl border-b border-[var(--line)] shadow-lg shadow-black/20 py-3"
-          : "bg-[var(--bg)]/60 backdrop-blur-md border-b border-[var(--line)]/40 py-4"
-      }`}
-    >
-      <nav
-        aria-label="Main navigation"
-        className="section-container flex items-center justify-between gap-4"
-      >
-        {/* Brand / Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 group whitespace-nowrap shrink-0 select-none"
-        >
-          <span className="font-mono text-xs px-2 py-0.5 rounded border border-[var(--line)] bg-[var(--panel)] text-[var(--accent-brass)] group-hover:border-[var(--accent-brass)] transition-colors shadow-sm">
-            /\_/\
-          </span>
-          <span className="text-base sm:text-lg font-bold text-[var(--ink)] font-sans tracking-tight">
-            Ashish <span className="text-[var(--accent-brass)] font-medium">Labs</span>
-          </span>
+    <header className="fixed top-0 inset-x-0 z-50 bg-[var(--paper)] border-b-2 border-[var(--ink)]">
+      <nav aria-label="Main" className="sheet h-14 flex items-center justify-between gap-6">
+        <Link href="/" className="flex items-baseline gap-2 shrink-0" aria-label="Ashish Labs, home">
+          <span className="display text-[1.9rem] leading-none translate-y-[2px]">Ashish Labs</span>
         </Link>
 
-        {/* Desktop Nav Links: Single-line pill items with subtle brass numbers */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--panel)] transition-all whitespace-nowrap"
-            >
-              <span className="font-mono text-[10px] text-[var(--accent-brass)] opacity-60 group-hover:opacity-100 transition-opacity">
-                {item.num}.
-              </span>
-              <span className="font-sans font-medium tracking-tight">
-                {item.label}
-              </span>
-            </Link>
-          ))}
-        </div>
+        <ul className="hidden md:flex items-center gap-7">
+          {NAV.map((item) => {
+            const active = item.match ? pathname.startsWith(item.match) : false;
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`font-bold condensed uppercase text-[0.95rem] tracking-[0.02em] py-1 border-b-2 transition-colors ${
+                    active ? "border-[var(--ink)]" : "border-transparent hover:border-[var(--cobalt)] hover:text-[var(--cobalt)]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
-        {/* Right CTA Button & Mobile Menu Button */}
-        <div className="flex items-center gap-3 shrink-0">
-          <Link
-            href="/#contact"
-            className="whitespace-nowrap hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-sans font-semibold bg-gradient-to-r from-[#d4a568] via-[#e5ca97] to-[#bf9c62] text-[#0f1b15] hover:brightness-110 shadow-sm shadow-[rgba(212,165,104,0.3)] transition-all active:scale-[0.98]"
-          >
-            <span>Get in Touch</span>
-            <span className="text-[11px] font-bold" aria-hidden="true">→</span>
-          </Link>
-
-          {/* Mobile Menu Toggle Button */}
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden px-2.5 py-1.5 text-[var(--muted)] hover:text-[var(--ink)] border border-[var(--line)] bg-[var(--panel)] rounded-md font-mono text-xs transition-colors"
-            aria-label="Toggle Navigation Menu"
-            aria-expanded={mobileMenuOpen}
+            type="button"
+            onClick={toggleTheme}
+            className="numeral text-xs h-9 px-3 border-2 border-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--paper)] transition-colors"
+            aria-label={theme === "dark" ? "Switch to paper (light) theme" : "Switch to negative (dark) theme"}
           >
-            {mobileMenuOpen ? "[✕]" : "[☰ MENU]"}
+            {theme === "dark" ? "NEG" : "POS"}
+          </button>
+          <Link
+            href="/#correspondence"
+            className="hidden sm:inline-flex items-center h-9 px-4 bg-[var(--ink)] text-[var(--paper)] font-bold condensed uppercase text-[0.9rem] hover:bg-[var(--cobalt)] hover:text-[var(--on-cobalt)] transition-colors"
+          >
+            Write to me
+          </Link>
+          <button
+            type="button"
+            className="md:hidden h-9 px-3 border-2 border-[var(--ink)] font-bold condensed uppercase text-[0.9rem]"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? "Close" : "Index"}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-[var(--panel)] border-b border-[var(--line)] px-4 sm:px-6 py-4 sm:py-6 space-y-3 sm:space-y-4 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
-          <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-2 sm:gap-2.5">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 p-2 sm:p-2.5 border border-[var(--line)] rounded-lg bg-[var(--bg)]/80 text-xs font-sans text-[var(--muted)] hover:text-[var(--ink)] hover:border-[var(--accent-brass)] transition-all min-w-0"
-              >
-                <span className="font-mono text-[10px] text-[var(--accent-brass)] shrink-0">
-                  {item.num}.
-                </span>
-                <span className="font-medium truncate">{item.label}</span>
-              </Link>
+      {open && (
+        <div id="mobile-nav" className="md:hidden fixed inset-x-0 top-14 bottom-0 field-cobalt overflow-y-auto">
+          <ul className="sheet py-6">
+            {[...NAV, { label: "Write to me", href: "/#correspondence" }].map((item, i) => (
+              <li key={item.href} className="border-b border-[var(--on-cobalt)]">
+                <Link href={item.href} onClick={() => setOpen(false)} className="flex items-baseline gap-4 py-4">
+                  <span className="numeral text-sm opacity-80">{String((i + 1) * 10)}</span>
+                  <span className="display text-[3.5rem]">{item.label}</span>
+                </Link>
+              </li>
             ))}
-          </div>
-          <div className="pt-2 border-t border-[var(--line)]">
-            <Link
-              href="/#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full justify-center inline-flex items-center gap-1.5 py-2.5 rounded-lg text-xs font-sans font-semibold bg-gradient-to-r from-[#d4a568] via-[#e5ca97] to-[#bf9c62] text-[#0f1b15] shadow-md shadow-[rgba(212,165,104,0.3)]"
-            >
-              <span>Get in Touch</span>
-              <span>→</span>
-            </Link>
-          </div>
+          </ul>
         </div>
       )}
     </header>

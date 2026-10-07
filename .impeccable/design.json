@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T00:00:00Z",
+  "title": "Design System: Ashish Labs",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Cool Paper", "canonical": "#f2f2ee", "negative": "#0d0d0f", "tonalRamp": ["#21211f", "#3a3a37", "#55554f", "#74746d", "#95958e", "#b7b7b0", "#d6d6d0", "#f2f2ee"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper Shade", "canonical": "#e6e6e0", "negative": "#18181b", "tonalRamp": ["#21211f", "#3a3a37", "#55554f", "#74746d", "#95958e", "#b7b7b0", "#d2d2ca", "#e6e6e0"] },
+      "ink": { "role": "neutral", "displayName": "Line Ink", "canonical": "#0a0a0a", "negative": "#f2f2ee", "tonalRamp": ["#0a0a0a", "#1f1f1e", "#333331", "#4a4a47", "#5a5a56", "#7a7a75", "#a3a39d", "#d2d2cc"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink 2", "canonical": "#333331", "negative": "#c9c9c3", "tonalRamp": ["#0a0a0a", "#1f1f1e", "#333331", "#4a4a47", "#5a5a56", "#7a7a75", "#a3a39d", "#d2d2cc"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink 3", "canonical": "#5a5a56", "negative": "#9a9a94", "tonalRamp": ["#0a0a0a", "#1f1f1e", "#333331", "#4a4a47", "#5a5a56", "#7a7a75", "#a3a39d", "#d2d2cc"] },
+      "rule-soft": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(10, 10, 10, 0.16)", "negative": "rgba(242, 242, 238, 0.18)" },
+      "cobalt": { "role": "primary", "displayName": "Patent Cobalt", "canonical": "#2b2bff", "negative": "#3a3aff", "tonalRamp": ["#08084a", "#0f0f7a", "#1515ad", "#1c1cd6", "#2b2bff", "#6363ff", "#a0a0ff", "#dcdcff"] },
+      "cobalt-deep": { "role": "primary", "displayName": "Cobalt Deep", "canonical": "#1c1cd6", "negative": "#5252ff", "tonalRamp": ["#08084a", "#0f0f7a", "#1515ad", "#1c1cd6", "#2b2bff", "#6363ff", "#a0a0ff", "#dcdcff"] },
+      "on-cobalt": { "role": "neutral", "displayName": "Paper on Cobalt", "canonical": "#f2f2ee" },
+      "on-cobalt-2": { "role": "neutral", "displayName": "Paper on Cobalt, secondary", "canonical": "rgba(242, 242, 238, 0.8)" },
+      "stamp": { "role": "secondary", "displayName": "Deficiency Vermilion", "canonical": "#ff4a1c", "negative": "#ff5a2e", "tonalRamp": ["#3d0d00", "#6b1800", "#9a2400", "#c23200", "#ff4a1c", "#ff7a52", "#ffac94", "#ffdcd2"] },
+      "stamp-ink": { "role": "secondary", "displayName": "Stamp Ink", "canonical": "#c23200", "negative": "#ff7a52", "tonalRamp": ["#3d0d00", "#6b1800", "#9a2400", "#c23200", "#ff4a1c", "#ff7a52", "#ffac94", "#ffdcd2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Sheet titles, first-viewport project names (sized to word length, up to 15rem), FIG. captions, the footer mark. Always uppercase; font-stretch 62%." },
+      "headline": { "displayName": "Headline", "purpose": "Sub-heading under a sheet title; problem and concept headlines. Uppercase, font-stretch 75%." },
+      "title": { "displayName": "Title", "purpose": "Step names, row titles, decision titles. Uppercase, font-stretch 75%." },
+      "body": { "displayName": "Body", "purpose": "Running prose in ink-2, capped at 68ch." },
+      "label": { "displayName": "Label", "purpose": "Definition-list keys, entry labels, field captions. Uppercase." },
+      "numeral": { "displayName": "Numeral", "purpose": "Reference numerals, sheet numbers, dates, paths and measured facts." },
+      "tag": { "displayName": "Tag", "purpose": "Part status in numeral lists and entries. Uppercase." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing curve: button and link state changes (0.2-0.25s), figure draw-in, numeral fade." },
+      { "name": "draw-in", "value": "stroke-dasharray 160; stroke-dashoffset 160 -> 0 over 1.1s ease-out, once", "purpose": "Figure leader lines draw in on entry. Disabled under prefers-reduced-motion." },
+      { "name": "numeral-fade", "value": "opacity 0 -> 1 over 0.6s ease-out", "purpose": "Figure numerals appear as their leader lines land. Disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px", "note": "gutter 32px" },
+      { "name": "lg", "value": "1024px", "note": "12-column sheet grid engages" },
+      { "name": "xl", "value": "1280px", "note": "gutter 48px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Primary action, e.g. Read the specification. Solid ink, turns cobalt on hover.",
+      "html": "<a class=\"ds-btn ds-btn-ink\" href=\"#\">Read the specification <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path d=\"M12 4v15M6 13l6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 48px; padding: 0 1.4rem; font-family: var(--font-sans), Archivo, system-ui, sans-serif; font-stretch: 75%; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--ink, #0a0a0a); border-radius: 0; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ink { background: var(--ink, #0a0a0a); color: var(--paper, #f2f2ee); } .ds-btn-ink:hover { background: var(--cobalt, #2b2bff); border-color: var(--cobalt, #2b2bff); color: var(--on-cobalt, #f2f2ee); } .ds-btn:focus-visible { outline: 2px solid var(--cobalt, #2b2bff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action, e.g. Lab notes. Ink outline, inverts to solid ink on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Lab notes <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 48px; padding: 0 1.4rem; font-family: var(--font-sans), Archivo, system-ui, sans-serif; font-stretch: 75%; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none; background: transparent; color: var(--ink, #0a0a0a); border: 2px solid var(--ink, #0a0a0a); border-radius: 0; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover { background: var(--ink, #0a0a0a); color: var(--paper, #f2f2ee); } .ds-btn-line:focus-visible { outline: 2px solid var(--cobalt, #2b2bff); outline-offset: 3px; }"
+    },
+    {
+      "name": "On-Cobalt Button",
+      "kind": "button",
+      "refersTo": "button-on-cobalt",
+      "description": "Action set on a cobalt field. Paper outline, fills paper on hover.",
+      "html": "<div class=\"ds-field\"><a class=\"ds-btn-oc\" href=\"#\">Open the numerals</a></div>",
+      "css": ".ds-field { background: var(--cobalt, #2b2bff); color: var(--on-cobalt, #f2f2ee); padding: 32px; } .ds-btn-oc { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.4rem; font-family: var(--font-sans), Archivo, system-ui, sans-serif; font-stretch: 75%; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none; background: transparent; color: var(--on-cobalt, #f2f2ee); border: 2px solid var(--on-cobalt, #f2f2ee); border-radius: 0; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-oc:hover { background: var(--on-cobalt, #f2f2ee); color: var(--cobalt, #2b2bff); } .ds-btn-oc:focus-visible { outline: 2px solid var(--on-cobalt, #f2f2ee); outline-offset: 3px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Fixed paper strip with 2px ink rule, display wordmark, condensed caps links, POS/NEG toggle.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#\">Ashish Labs</a><ul><li><a class=\"ds-nav-link is-current\" href=\"#\">Specifications</a></li><li><a class=\"ds-nav-link\" href=\"#\">Lab</a></li><li><a class=\"ds-nav-link\" href=\"#\">Inventor</a></li></ul><button class=\"ds-nav-toggle\" type=\"button\">POS</button></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 56px; padding: 0 32px; background: var(--paper, #f2f2ee); color: var(--ink, #0a0a0a); border-bottom: 2px solid var(--ink, #0a0a0a); font-family: var(--font-sans), Archivo, system-ui, sans-serif; } .ds-nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; } .ds-nav-mark { font-stretch: 62%; font-weight: 900; font-size: 1.9rem; line-height: 1; text-transform: uppercase; color: inherit; text-decoration: none; } .ds-nav-link { font-stretch: 75%; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; color: inherit; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; } .ds-nav-link.is-current { border-color: var(--ink, #0a0a0a); } .ds-nav-link:hover { color: var(--cobalt, #2b2bff); border-color: var(--cobalt, #2b2bff); } .ds-nav-link:focus-visible, .ds-nav-toggle:focus-visible { outline: 2px solid var(--cobalt, #2b2bff); outline-offset: 3px; } .ds-nav-toggle { height: 36px; padding: 0 12px; font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; background: transparent; color: inherit; border: 2px solid var(--ink, #0a0a0a); border-radius: 0; cursor: pointer; } .ds-nav-toggle:hover { background: var(--ink, #0a0a0a); color: var(--paper, #f2f2ee); }"
+    },
+    {
+      "name": "Sheet Header",
+      "kind": "custom",
+      "refersTo": "sheet-header",
+      "description": "Section opener: 2px ink rule, display title left, mono sheet number right.",
+      "html": "<header class=\"ds-sheet-head\"><h2>Claims</h2><span>SHEET 7 / 13</span></header>",
+      "css": ".ds-sheet-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px 32px; padding-top: 16px; border-top: 2px solid var(--ink, #0a0a0a); color: var(--ink, #0a0a0a); } .ds-sheet-head h2 { margin: 0; font-family: var(--font-sans), Archivo, system-ui, sans-serif; font-stretch: 62%; font-weight: 900; font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.84; letter-spacing: -0.01em; text-transform: uppercase; } .ds-sheet-head span { padding-top: 8px; font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.875rem; opacity: 0.8; }"
+    },
+    {
+      "name": "Stamp",
+      "kind": "chip",
+      "refersTo": "stamp",
+      "description": "Rubber stamp for deficiencies and failures only. Stamp-ink box, rotated -2deg.",
+      "html": "<span class=\"ds-stamp\">Failed</span>",
+      "css": ".ds-stamp { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0.55rem; border: 2px solid var(--stamp-ink, #c23200); color: var(--stamp-ink, #c23200); font-family: var(--font-sans), Archivo, system-ui, sans-serif; font-stretch: 75%; font-weight: 900; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; transform: rotate(-2deg); border-radius: 0; }"
+    },
+    {
+      "name": "Materials Chip",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Stack item in a 1px ink box, set in mono.",
+      "html": "<span class=\"ds-chip\">TypeScript</span> <span class=\"ds-chip\">SQLite</span>",
+      "css": ".ds-chip { display: inline-block; padding: 4px 8px; border: 1px solid var(--ink, #0a0a0a); color: var(--ink, #0a0a0a); font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; border-radius: 0; }"
+    },
+    {
+      "name": "Reference Numeral Row",
+      "kind": "custom",
+      "refersTo": "numeral-row",
+      "description": "Row in the figure's reference list. Hover shades paper-2; selected inverts to ink.",
+      "html": "<ol class=\"ds-refs\"><li><button class=\"ds-ref\" type=\"button\"><span class=\"n\">110</span><span class=\"t\">Memory store</span><span class=\"s\">Verified</span></button></li><li><button class=\"ds-ref is-on\" type=\"button\" aria-pressed=\"true\"><span class=\"n\">112</span><span class=\"t\">Recall planner</span><span class=\"s\">Partial</span></button></li></ol>",
+      "css": ".ds-refs { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink, #0a0a0a); } .ds-ref { width: 100%; display: flex; align-items: baseline; gap: 16px; padding: 10px 0; background: transparent; color: var(--ink, #0a0a0a); border: 0; border-bottom: 1px solid var(--rule-soft, rgba(10,10,10,0.16)); text-align: left; font-family: var(--font-sans), Archivo, system-ui, sans-serif; cursor: pointer; transition: background-color 0.2s; } .ds-ref:hover { background: var(--paper-2, #e6e6e0); } .ds-ref.is-on { background: var(--ink, #0a0a0a); color: var(--paper, #f2f2ee); } .ds-ref:focus-visible { outline: 2px solid var(--cobalt, #2b2bff); outline-offset: 3px; } .ds-ref .n { width: 40px; flex-shrink: 0; font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.875rem; } .ds-ref .t { font-weight: 600; font-size: 0.95rem; } .ds-ref .s { margin-left: auto; padding-right: 8px; font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-size: 0.6875rem; letter-spacing: 0.02em; text-transform: uppercase; opacity: 0.7; }"
+    },
+    {
+      "name": "Cobalt Part Entry",
+      "kind": "card",
+      "refersTo": "field-cobalt",
+      "description": "Flat cobalt field opened by a selected numeral: display name, mono numeral, status tag, labelled entries.",
+      "html": "<article class=\"ds-entry\"><header><div><h3>Recall planner</h3><p class=\"n\">112 · in 100 Memory</p></div><span class=\"tag\">Partial</span></header><p>Chooses which memories to surface for the current turn.</p><dl><dt>Trade-off</dt><dd>Slower first token in exchange for fewer stale facts.</dd></dl></article>",
+      "css": ".ds-entry { background: var(--cobalt, #2b2bff); color: var(--on-cobalt, #f2f2ee); padding: 32px; display: flex; flex-direction: column; gap: 20px; font-family: var(--font-sans), Archivo, system-ui, sans-serif; } .ds-entry header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; } .ds-entry h3 { margin: 0; font-stretch: 62%; font-weight: 900; font-size: clamp(2.25rem, 4.4vw, 3.75rem); line-height: 0.84; text-transform: uppercase; } .ds-entry .n { margin: 8px 0 0; font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-size: 0.875rem; color: var(--on-cobalt-2, rgba(242,242,238,0.8)); } .ds-entry .tag { border: 1px solid var(--on-cobalt, #f2f2ee); padding: 6px 8px; font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace; font-size: 0.6875rem; text-transform: uppercase; } .ds-entry p { margin: 0; font-size: 1.0625rem; line-height: 1.6; } .ds-entry dt { font-stretch: 75%; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-cobalt-2, rgba(242,242,238,0.8)); } .ds-entry dd { margin: 4px 0 0; font-size: 0.95rem; line-height: 1.6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Specification",
+    "overview": "Every project is filed like an invention, not pitched like an app. A page is a sheet in a patent filing: a heavy ink rule across the top, a heading set in giant condensed caps on the left, the sheet position (\"SHEET 4 / 13\") set in mono at the right edge. Architecture is shown as a generated hairline drawing with reference numerals and leader lines; claims are numbered and each cites its evidence; failures are stamped in vermilion and shown in full; earlier projects are cited as prior art.\n\nThe material is cool paper and black line ink. Whole regions turn into flat cobalt fields that run to the sheet edge and carry the figure in paper-white line. Nothing is lit, glazed, blurred or lifted: depth is a matter of rules, fields and inversion. The dark theme is not a separate mood but the same sheet as a photostat negative (\"POS\" / \"NEG\" toggle).\n\nDensity is high and editorial: wide 12-column sheets, ruled definition lists, numbered rows, mono measurements. The display face is loud; everything around it is quiet, ruled and exact.",
+    "keyCharacteristics": [
+      "Paper and line ink; flat cobalt fields; vermilion only for deficiencies.",
+      "Archivo at its narrowest and heaviest for display; Archivo condensed for labels; JetBrains Mono for every numeral and measurement.",
+      "Square corners everywhere; 2px ink rules for structure, 16% ink hairlines for subdivision.",
+      "Figures are drawn from data, numbered in 10s and 100s, and deep-linkable (#n-112).",
+      "No shadows, gradients, glow or glass, in either theme."
+    ],
+    "rules": [
+      { "name": "The Vermilion Is Evidence Rule", "body": "Vermilion appears only where something failed, was refused, deprecated or pivoted. If nothing went wrong, the sheet has no vermilion.", "section": "colors" },
+      { "name": "The Whole Field Rule", "body": "Cobalt is applied as a flat field covering a region, or as a state (hover, focus, selection). It is not used for decorative fills, gradients or tinted cards.", "section": "colors" },
+      { "name": "The Measured In Mono Rule", "body": "Anything counted, dated, numbered or pathed is set in JetBrains Mono with tabular figures. Words that are not measurements never use mono.", "section": "typography" },
+      { "name": "The Width Axis Rule", "body": "Hierarchy comes from Archivo's width and weight, not from a second display family: 62 for display, 75 for labels and subheads, 100 for reading.", "section": "typography" },
+      { "name": "The Flat Ink Rule", "body": "If a surface needs to stand apart, rule it, fill it cobalt or invert it. Never shadow it.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set every sheet title in Archivo 900 at width 62, uppercase, line-height 0.84.",
+      "Do set every number, date, path and measurement in JetBrains Mono with tabular figures.",
+      "Do fill whole regions with flat cobalt (#2b2bff) and draw on them in paper line.",
+      "Do frame structure with 2px ink rules and subdivide with 1px hairlines at 16% ink.",
+      "Do number figure parts in tens and hundreds and make each numeral a deep link.",
+      "Do stamp failures openly in stamp-ink with the -2deg rotated stamp.",
+      "Do keep the negative theme a straight inversion of the same sheet."
+    ],
+    "donts": [
+      "Don't use shadows, gradients, glow, blur or glass on any surface.",
+      "Don't round corners.",
+      "Don't use vermilion for anything that did not fail, get refused or get deprecated.",
+      "Don't use cobalt as a tint, a small badge fill or a gradient stop.",
+      "Don't set ordinary words in mono or measurements in the sans.",
+      "Don't present an unsourced metric as a claim; list it as reported."
+    ]
+  }
+}

@@ -1,31 +1,12 @@
-import { Container } from "@/components/layout/container";
-import { Section } from "@/components/layout/section";
-import { Skeleton } from "@/components/ui/skeleton";
-
 export default function Loading() {
   return (
-    <div className="w-full flex-1">
-      <Section spacing="lg">
-        <Container width="wide">
-          <div className="space-y-6 max-w-3xl">
-            {/* Kicker Skeleton */}
-            <Skeleton className="h-4 w-32" />
-            {/* Heading Skeleton */}
-            <Skeleton className="h-12 w-3/4" />
-            <Skeleton className="h-12 w-1/2" />
-            {/* Lead Skeleton */}
-            <div className="space-y-2 pt-2">
-              <Skeleton className="h-5 w-full" />
-              <Skeleton className="h-5 w-5/6" />
-            </div>
-            {/* Badges Skeleton */}
-            <div className="flex gap-2 pt-4">
-              <Skeleton className="h-6 w-24 rounded-full" />
-              <Skeleton className="h-6 w-28 rounded-full" />
-            </div>
-          </div>
-        </Container>
-      </Section>
+    <div className="flex-1 bg-[var(--paper)] pt-16" aria-busy="true" aria-label="Loading">
+      <div className="sheet py-16">
+        <div className="border-t-2 border-[var(--ink)] pt-4 numeral text-sm text-[var(--ink-3)]">Fetching sheet…</div>
+        <div className="mt-8 h-24 sm:h-40 w-2/3 bg-[var(--paper-2)]" />
+        <div className="mt-6 h-5 w-full max-w-xl bg-[var(--paper-2)]" />
+        <div className="mt-3 h-5 w-5/6 max-w-lg bg-[var(--paper-2)]" />
+      </div>
     </div>
   );
 }

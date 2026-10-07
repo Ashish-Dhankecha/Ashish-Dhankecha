@@ -35,12 +35,12 @@ export const mainNav: NavItem[] = [
 
 export const footerNav = {
   internal: [
-    { title: "Home", href: "/#home" },
-    { title: "About", href: "/#about" },
-    { title: "Projects", href: "/#projects" },
+    { title: "Home", href: "/" },
+    { title: "Specifications", href: "/projects" },
     { title: "Lab", href: "/lab" },
-    { title: "Skills", href: "/#skills" },
-    { title: "Contact", href: "/#contact" },
+    { title: "Inventor", href: "/#inventor" },
+    { title: "Method", href: "/#method" },
+    { title: "Correspondence", href: "/#correspondence" },
   ],
   external: [
     {

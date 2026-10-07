@@ -1,8 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Container } from "@/components/layout/container";
-import { ContentReader } from "@/components/lab/content-reader";
+import { NoteReader } from "@/components/spec/lab/note-reader";
 import { getAllLabPieces, getLabPieceBySlug } from "@/lib/lab";
 
 interface Props {
@@ -43,11 +42,5 @@ export default async function LabPiecePage({ params }: Props) {
     notFound();
   }
 
-  return (
-    <div className="w-full min-h-screen bg-[var(--bg)] text-[var(--ink)] pb-24">
-      <Container width="wide">
-        <ContentReader piece={piece} />
-      </Container>
-    </div>
-  );
+  return <NoteReader piece={piece} />;
 }

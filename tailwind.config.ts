@@ -9,6 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        paper: { DEFAULT: "var(--paper)", 2: "var(--paper-2)" },
+        ink: { DEFAULT: "var(--ink)", 2: "var(--ink-2)", 3: "var(--ink-3)" },
+        cobalt: { DEFAULT: "var(--cobalt)", deep: "var(--cobalt-deep)", on: "var(--on-cobalt)" },
+        stamp: { DEFAULT: "var(--stamp)", ink: "var(--stamp-ink)" },
+        rule: { DEFAULT: "var(--rule)", soft: "var(--rule-soft)" },
         lamp: {
           bg: "var(--bg)",
           ink: "var(--ink)",
@@ -81,11 +86,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Space Grotesk", "system-ui", "sans-serif"],
-        body: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "JetBrains Mono", "Menlo", "monospace"],
-        serif: ["var(--font-serif-display)", "Playfair Display", "Georgia", "serif"],
-        script: ["var(--font-script)", "Alex Brush", "cursive"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        body: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
         content: "var(--max-width-content)",

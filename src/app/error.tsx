@@ -1,56 +1,27 @@
 "use client";
 
 import { useEffect } from "react";
-import { Container } from "@/components/layout/container";
-import { Section } from "@/components/layout/section";
-import { Display } from "@/components/typography/display";
-import { Text } from "@/components/typography/text";
-import { Mono } from "@/components/typography/mono";
-import { Kicker } from "@/components/typography/kicker";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
-    // Log the error to an error reporting service if configured
-    console.error("Runtime exception captured:", error);
+    console.error(error);
   }, [error]);
 
   return (
-    <div className="w-full flex-1 flex items-center">
-      <Section spacing="lg">
-        <Container width="content">
-          <div className="max-w-xl space-y-6">
-            <Kicker index="500" label="Runtime Exception" />
-            <Display size="md">
-              An unexpected execution state occurred.
-            </Display>
-            <Text variant="body" muted>
-              The system encountered an error while rendering this component. You can attempt to reset the application state.
-            </Text>
-            {error.digest && (
-              <div className="p-3 bg-bg-surface hairline-border rounded-md">
-                <Mono size="xs" className="text-text-subtle">
-                  Digest ID: {error.digest}
-                </Mono>
-              </div>
-            )}
-            <div className="flex items-center gap-3 pt-2">
-              <Button onClick={() => reset()} variant="primary">
-                Try again
-              </Button>
-              <Button href="/" variant="outline">
-                Return home
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </Section>
+    <div className="flex-1 bg-[var(--paper)] text-[var(--ink)] pt-16">
+      <div className="sheet py-16 sm:py-24">
+        <div className="border-t-2 border-[var(--ink)] pt-4 numeral text-sm">500 · this sheet failed to render</div>
+        <h1 className="display mt-6 text-[clamp(4rem,14vw,12rem)]">Deficiency</h1>
+        <p className="mt-6 text-[1.25rem] leading-snug max-w-[46ch] text-[var(--ink-2)]">
+          Something broke while loading this page. Try again; if it keeps failing, the specifications and the Lab still work.
+        </p>
+        {error.digest && <p className="mt-3 numeral text-xs text-[var(--ink-3)]">Reference {error.digest}</p>}
+        <div className="mt-8 flex flex-wrap gap-3">
+          <button type="button" onClick={reset} className="btn btn-ink">Try again</button>
+          <Link href="/projects" className="btn btn-line">Specifications</Link>
+        </div>
+      </div>
     </div>
   );
 }

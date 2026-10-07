@@ -100,7 +100,7 @@ export function ProjectStack({ items }: ProjectStackProps) {
               role="tabpanel"
               aria-labelledby={`tab-${i}`}
               aria-hidden={isInert}
-              inert={isInert ? "" : undefined}
+              inert={isInert ? true : undefined}
               style={style}
             >
               <div className="face">

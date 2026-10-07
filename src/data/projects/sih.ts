@@ -201,7 +201,7 @@ export const sihCaseStudy: ProjectCaseStudy = {
   executionFlow: {
     title: "Execution Flow: Industrial SOP Compliance Audit",
     description:
-      "A real-world trace showing how SIH26117 audits a refinery maintenance report against internal safety SOPs and generates a certified presentation.",
+      "An illustrative walk-through, written to show the flow (not a captured log), of how SIH26117 audits a refinery maintenance report against internal safety SOPs and generates a certified presentation.",
     concreteExample: {
       input: "Engineer uploads 'Boiler Inspection Report 2026.pdf' and requests: 'Verify compliance against MRPL Safety SOP 402 and generate a summary slide deck.'",
       steps: [
@@ -425,7 +425,7 @@ export const sihCaseStudy: ProjectCaseStudy = {
   },
   lessons: {
     quote:
-      "Deep systems like Ashi require months of careful architectural iteration; hackathons require decisive execution under strict constraints. Being an all-rounder engineer means mastering both modes.",
+      "Deep systems like ÆON require months of careful architectural iteration; hackathons require decisive execution under strict constraints. Being an all-rounder engineer means mastering both modes.",
     takeaways: [
       {
         title: "Mock Interfaces Accelerate Velocity",
@@ -479,6 +479,6 @@ export const sihCaseStudy: ProjectCaseStudy = {
   },
   lineage: {
     roleInEvolution:
-      "A parallel demonstration of rapid, high-intensity execution under tight hackathon constraints, complementing the long-horizon research of Ashi.",
+      "A parallel demonstration of rapid, high-intensity execution under tight hackathon constraints, complementing the long-horizon research of ÆON.",
   },
 };

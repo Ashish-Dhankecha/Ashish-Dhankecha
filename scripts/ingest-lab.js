@@ -21,14 +21,14 @@ const PROJECT_META = {
   Ashi: {
     id: "ashi",
     number: "01",
-    short_name: "Ashi",
-    name: "Ashi — Personal Cognitive Operating System",
+    short_name: "ÆON",
+    name: "ÆON — Personal Cognitive Operating System",
     status: "Active Long-Term Build",
     documented_period: "16 July 2026 – Present",
     technologies: ["Python", "uv Monorepo", "PostgreSQL", "llama.cpp", "Gemini API", "FastAPI"],
-    one_line_summary: "A 28-package personal AI operating system built from first principles to think alongside one person, running locally with cloud fallback.",
+    one_line_summary: "A personal AI operating system (28 packages at genesis, 34 today) built from first principles to think alongside one person, running locally with cloud fallback.",
     problem_statement: "Building an autonomous personal AI that operates persistently across days requires maintaining rigorous action integrity, avoiding silent empty completions, and executing local inference without destabilizing system latency.",
-    project_story: "Ashi was developed as an independent research investigation toward an autonomous personal cognitive operating system. Built as a 28-package Python monorepo with an acyclic dependency graph, Ashi was subjected to intense empirical audits—including a 3/10 behavioral integrity scoring, discovery of the vacuous success bug where empty plans counted as completed achievements, and benchmarking six sub-2B models to find the real capability ceiling on consumer hardware.",
+    project_story: "ÆON was developed as an independent research investigation toward an autonomous personal cognitive operating system. Begun as a 28-package Python monorepo (34 packages by October 2026) with an acyclic dependency graph, ÆON was subjected to intense empirical audits—including a 3/10 behavioral integrity scoring, discovery of the vacuous success bug where empty plans counted as completed achievements, and benchmarking six sub-2B models to find the real capability ceiling on consumer hardware.",
     documented_milestones: [
       { date: "2026-07", label: "Initial Monorepo Architecture", detail: "28 packages established in uv workspace with strict 6-layer dependency rules." },
       { date: "2026-07", label: "Inference Engine Benchmark", detail: "6 sub-2B models evaluated on consumer hardware; discovered llama.cpp cancellation segfault." },
@@ -43,7 +43,7 @@ const PROJECT_META = {
     ],
     evolutionary_flow: {
       what_i_thought: "High unit test coverage across 28 decoupled packages would guarantee reliable autonomous behavior in live operation.",
-      what_happened: "Ashi scored 3/10 in live audit: vacuous truth caused empty plans to be marked 'ACHIEVED' in 370ms, and initiative notes were calculated every turn but dropped before rendering.",
+      what_happened: "ÆON scored 3/10 in live audit: vacuous truth caused empty plans to be marked 'ACHIEVED' in 370ms, and initiative notes were calculated every turn but dropped before rendering.",
       what_i_learned: "Unit tests exercising subsystems in isolation cannot detect starvation by valid empty inputs. 'Doing nothing' must never evaluate to 'task succeeded.'",
       what_i_do_differently_now: "Enforce strict truth boundaries (execution evidence required for completion), architecture freezes during stabilization, and empirical audits against live system state."
     },
@@ -83,7 +83,7 @@ const PROJECT_META = {
     },
     cross_project_connections: [
       "The 281 direct-database violations in LEO directly prompted VANI's strict 'Phase 0 Architecture Before Features' rule and AST Architecture Guardian.",
-      "LEO's complex Neo4j + Redis + Postgres stack directly caused VANI and Ashi to reject dedicated graph databases in favor of simple SQLite/Postgres schemas."
+      "LEO's complex Neo4j + Redis + Postgres stack directly caused VANI and ÆON to reject dedicated graph databases in favor of simple SQLite/Postgres schemas."
     ]
   },
   Vani: {
@@ -117,7 +117,7 @@ const PROJECT_META = {
     },
     cross_project_connections: [
       "Direct architectural evolution of LEO's lessons: LEO had 281 architecture violations; VANI built an AST Guardian to make violations syntactically impossible.",
-      "VANI's model-independent AIPort protocol and SQLite strategy formed the conceptual blueprint for Ashi's local-first inference layer."
+      "VANI's model-independent AIPort protocol and SQLite strategy formed the conceptual blueprint for ÆON's local-first inference layer."
     ]
   }
 };
@@ -160,31 +160,69 @@ const CATEGORY_GROUPS = {
   "BUILD_LOG": "Build Logs",
 };
 
+function unquoteYamlScalar(val) {
+  if (val.startsWith("'") && val.endsWith("'") && val.length >= 2) {
+    // Single-quoted YAML: '' is an escaped quote
+    return val.slice(1, -1).replace(/''/g, "'");
+  }
+  if (val.startsWith('"') && val.endsWith('"') && val.length >= 2) {
+    try {
+      // "\ " is YAML's escaped space; JSON has no such escape
+      return JSON.parse(val.replace(/\\ /g, " "));
+    } catch {
+      return val.slice(1, -1);
+    }
+  }
+  return val;
+}
+
+function coerceYamlScalar(val) {
+  const lower = val.toLowerCase();
+  if (lower === "true") return true;
+  if (lower === "false") return false;
+  if (lower === "null" || val === "~") return null;
+  if (!isNaN(val) && val !== "") return Number(val);
+  return unquoteYamlScalar(val);
+}
+
 function parseYamlFrontmatter(raw) {
   const result = {};
   const lines = raw.split("\n");
   let currentKey = null;
   let inArray = false;
+  let pendingScalar = null; // raw text of a scalar that may continue on folded lines
+
+  const flushScalar = () => {
+    if (currentKey !== null && pendingScalar !== null) {
+      result[currentKey] = coerceYamlScalar(pendingScalar);
+    }
+    pendingScalar = null;
+  };
 
   for (let line of lines) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith("#")) continue;
 
-    // Check for array item
-    if (trimmed.startsWith("- ") && currentKey && inArray) {
-      let item = trimmed.slice(2).trim();
-      if ((item.startsWith('"') && item.endsWith('"')) || (item.startsWith("'") && item.endsWith("'"))) {
-        item = item.slice(1, -1);
-      }
-      result[currentKey].push(item);
+    // Folded continuation of a multi-line scalar (indented, not a list item)
+    if (pendingScalar !== null && /^\s+/.test(line) && !trimmed.startsWith("- ")) {
+      // A trailing backslash in a double-quoted scalar escapes the line break
+      pendingScalar = pendingScalar.endsWith("\\")
+        ? pendingScalar.slice(0, -1) + trimmed
+        : pendingScalar + " " + trimmed;
       continue;
     }
 
-    // Check for key-value
+    // Array item
+    if (trimmed.startsWith("- ") && currentKey && inArray) {
+      result[currentKey].push(unquoteYamlScalar(trimmed.slice(2).trim()));
+      continue;
+    }
+
     const colonIdx = line.indexOf(":");
     if (colonIdx !== -1) {
+      flushScalar();
       const key = line.slice(0, colonIdx).trim();
-      let val = line.slice(colonIdx + 1).trim();
+      const val = line.slice(colonIdx + 1).trim();
 
       if (val === "" || val === "[]") {
         currentKey = key;
@@ -193,29 +231,19 @@ function parseYamlFrontmatter(raw) {
       } else {
         inArray = false;
         currentKey = key;
-
         if (val.startsWith("[") && val.endsWith("]")) {
-          // Inline array like [foo, bar]
           result[key] = val
             .slice(1, -1)
             .split(",")
-            .map((s) => s.trim().replace(/^['"]|['"]$/g, ""))
+            .map((s) => unquoteYamlScalar(s.trim()))
             .filter(Boolean);
-        } else if (val.toLowerCase() === "true") {
-          result[key] = true;
-        } else if (val.toLowerCase() === "false") {
-          result[key] = false;
-        } else if (!isNaN(val) && val !== "") {
-          result[key] = Number(val);
         } else {
-          if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-            val = val.slice(1, -1);
-          }
-          result[key] = val;
+          pendingScalar = val;
         }
       }
     }
   }
+  flushScalar();
 
   return result;
 }
@@ -288,7 +316,7 @@ function extractEvolutionaryFlow(sections) {
 
 function ingestAll() {
   console.log(`[*] Scanning Lab Content in ${LAB_CONTENT_DIR}...`);
-  const projectDirs = ["Ashi", "Leo", "Vani"];
+  const projectDirs = ["Ashi", "Leo", "Vani"]; // directory names; Ashi is displayed as ÆON
   const pieces = [];
 
   for (const projDir of projectDirs) {
@@ -343,7 +371,7 @@ function ingestAll() {
       let projectDisplay;
       if (/ashi/i.test(projName)) {
         projectId = "ashi";
-        projectDisplay = "Ashi";
+        projectDisplay = "ÆON";
       } else if (/leo/i.test(projName)) {
         projectId = "leo";
         projectDisplay = "LEO";
@@ -511,7 +539,7 @@ function ingestAll() {
 
   console.log(`[✓] Successfully generated ${OUTPUT_JSON_PATH}`);
   console.log(`    - Total Pieces: ${totalPieces}`);
-  console.log(`    - Ashi: ${byProject.ashi || 0}`);
+  console.log(`    - ÆON: ${byProject.ashi || 0}`);
   console.log(`    - LEO: ${byProject.leo || 0}`);
   console.log(`    - VANI: ${byProject.vani || 0}`);
   console.log(`    - Content Types:`, JSON.stringify(byType, null, 4));

@@ -6,10 +6,10 @@ export const vaniCaseStudy: ProjectCaseStudy = {
   title: "Vani",
   subtitle: "Sovereign Local-First Cognitive Operating System",
   tagline: "A cognitive operating system engineered for 50-year longevity with zero cloud infrastructure and an automated AST Architecture Guardian.",
-  startDate: "Mid 2026",
-  endDate: "Late 2026",
+  startDate: "10 July 2026",
+  endDate: "16 July 2026",
   status: "SUPERSEDED",
-  statusLabel: "Sovereign Architecture Milestone · Precursor to Ashi",
+  statusLabel: "Sovereign Architecture Milestone · Precursor to ÆON",
   isFlagship: false,
   accentColor: "#436a58",
   summary:
@@ -22,24 +22,24 @@ export const vaniCaseStudy: ProjectCaseStudy = {
     },
     {
       label: "Lab Notes: AST Guardian",
-      url: "/lab/vani/009-architecture-guardian-ast",
+      url: "/lab/vani/architecture-guardian-ast-analysis",
       type: "notes",
     },
     {
       label: "Why LangChain Was Rejected",
-      url: "/lab/vani/014-rejecting-langchain",
+      url: "/lab/vani/rejecting-langchain-direct-contracts",
       type: "docs",
     },
     {
       label: "Graph Database Rejection",
-      url: "/lab/vani/003-graph-database-rejection",
+      url: "/lab/vani/graph-database-rejection-sqlite",
       type: "docs",
     },
   ],
   snapshot: {
     type: "Sovereign Local-First Cognitive OS",
-    started: "Mid 2026",
-    status: "Completed Architecture Milestone · Evolved into Ashi",
+    started: "10 July 2026",
+    status: "Completed Architecture Milestone · Evolved into ÆON",
     primaryLanguage: "Python 3.12 (Strict Typing / Mypy Strict)",
     stack: [
       "Python 3.12",
@@ -50,7 +50,7 @@ export const vaniCaseStudy: ProjectCaseStudy = {
       "PyTest",
     ],
     domain: "Local-First AI / Long-Term Software Durability / Static Architecture Verification",
-    scale: "13,000+ Lines · Zero External Daemons · 100% Deterministic Boot",
+    scale: "13,772 Lines · Zero External Daemons · 100% Deterministic Boot",
     architectureStyle: "Layered Composition Root · AST-Enforced Layer Invariants · Clean Port Architecture",
     verificationRatio: "100% Architecture Conformance via AST Static Analysis",
   },
@@ -381,11 +381,11 @@ export const vaniCaseStudy: ProjectCaseStudy = {
     {
       phase: "Phase 2",
       date: "Late 2026",
-      title: "Transition & Architectural Merge into Ashi",
-      whatChanged: "Synthesized Vani's AST rigor and SQLite longevity into the 28-package uv monorepo of Ashi.",
+      title: "Transition & Architectural Merge into ÆON",
+      whatChanged: "Synthesized Vani's AST rigor and SQLite longevity into the 28-package uv monorepo of ÆON.",
       why: "Expand scope to encompass local SLM inference, multimodality, and empirical soak testing.",
-      implementation: "Migrated Vani's domain contracts into Ashi's foundation layers.",
-      result: "Vani archived as an architectural success; core DNA active in Ashi.",
+      implementation: "Migrated Vani's domain contracts into ÆON's foundation layers.",
+      result: "Vani archived as an architectural success; core DNA active in ÆON.",
       status: "PIVOT",
     },
   ],
@@ -469,14 +469,14 @@ export const vaniCaseStudy: ProjectCaseStudy = {
   currentState: {
     status: "SUPERSEDED",
     summary:
-      "Vani completed its architectural mission and was superseded by Ashi. Its core design principles—AST enforcement, zero cloud bloat, and models as fuel—live on in Ashi's foundation layers.",
+      "Vani completed its architectural mission and was superseded by ÆON. Its core design principles—AST enforcement, zero cloud bloat, and models as fuel—live on in ÆON's foundation layers.",
     whatWorks: [
       "AST Static Analysis Guardian with 100% layer enforcement.",
       "Zero-daemon cognitive event bus and SQLite property graph.",
       "Strictly typed `AIPort` protocol isolating model dependencies.",
     ],
     whatIsIncomplete: [
-      "High-level autonomous planning was intentionally deferred to Phase 2 (which occurred inside Ashi).",
+      "High-level autonomous planning was intentionally deferred to Phase 2 (which occurred inside ÆON).",
     ],
     whatRemains: [
       "Serves as an architectural textbook and clean template for sovereign, local-first Python software.",
@@ -486,13 +486,13 @@ export const vaniCaseStudy: ProjectCaseStudy = {
     ],
   },
   next: {
-    statusNotice: "Vani's architectural lineage continues directly in Ashi.",
+    statusNotice: "Vani's architectural lineage continues directly in ÆON.",
     items: [
       {
-        title: "Ashi Monorepo Evolution",
+        title: "ÆON Monorepo Evolution",
         type: "PLANNED",
         description:
-          "Vani's AST layer enforcement evolved into Ashi's automated `test_substrate_architecture_invariants.py`.",
+          "Vani's AST layer enforcement evolved into ÆON's automated `test_substrate_architecture_invariants.py`.",
       },
     ],
   },
@@ -504,8 +504,8 @@ export const vaniCaseStudy: ProjectCaseStudy = {
     },
     successor: {
       slug: "ashi",
-      name: "Ashi",
-      relationship: "Ashi expanded Vani's sovereign architecture into a 28-package uv monorepo with local SLM execution.",
+      name: "ÆON",
+      relationship: "ÆON expanded Vani's sovereign architecture into a 28-package uv monorepo with local SLM execution.",
     },
     roleInEvolution:
       "The critical transitional bridge where architectural discipline, static verification, and local-first sovereignty became non-negotiable foundations.",

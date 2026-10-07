@@ -11,7 +11,7 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
+  theme: "light",
   setTheme: () => {},
   toggleTheme: () => {},
 });
@@ -19,7 +19,7 @@ const ThemeContext = createContext<ThemeContextType>({
 const STORAGE_KEY = "ashish_site_theme";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
 
   const applyTheme = useCallback((newTheme: Theme, persist = true) => {
     setThemeState(newTheme);
@@ -51,7 +51,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Initial theme detection
-    let initialTheme: Theme = "dark";
+    let initialTheme: Theme = "light";
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
       if (stored === "light" || stored === "dark") {

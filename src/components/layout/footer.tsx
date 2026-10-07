@@ -1,152 +1,47 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
+import { footerNav } from "@/config/nav";
 
 export function Footer() {
   return (
-    <footer
-      aria-label="Site footer"
-      className="relative z-10 border-t border-[var(--line)] bg-[var(--panel)] transition-colors duration-700"
-    >
-      <div className="section-container section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
-          {/* Col 1: Brand & Tagline */}
-          <div>
-            <div
-              className="flex items-center gap-2 mb-3 group select-none"
-            >
-              <span className="font-mono text-[var(--accent-brass)] text-sm group-hover:text-[var(--accent-gold)] transition-colors">
-                /\_/\
-              </span>
-              <span className="text-lg font-bold text-[var(--ink)] font-sans tracking-tight">
-                Ashish Labs
-              </span>
-            </div>
-            <p className="text-sm text-[var(--muted)] font-body leading-relaxed">
-              <span className="font-mono text-[var(--accent-brass)]">{"// "}</span>
-              AI systems, software, automation, and products from first principles.
-              I WILL MAKE IT HAPPEN. No matter what.
-            </p>
-          </div>
-
-          {/* Col 2: Navigation Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--ink)] mb-4 font-sans uppercase tracking-wider">
-              Navigation
-            </h4>
-            <div className="flex flex-col gap-2">
-              <Link
-                href="/#hero"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Home
-              </Link>
-              <Link
-                href="/#about"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                About
-              </Link>
-              <Link
-                href="/projects"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Systems &amp; Experiments
-              </Link>
-              <Link
-                href="/#journey"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Build Journey
-              </Link>
-              <Link
-                href="/#what-i-build"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                What I Build
-              </Link>
-              <Link
-                href="/#process"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                How I Work
-              </Link>
-              <Link
-                href="/#stack"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Tech Stack
-              </Link>
-              <Link
-                href="/#focus"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Current Focus
-              </Link>
-              <Link
-                href="/#contact"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/lab"
-                className="text-sm text-[var(--accent-brass)] hover:text-[var(--accent-gold)] transition-colors font-mono pt-1"
-              >
-                &gt; Lab Archive (62 notes &amp; ADRs)
-              </Link>
-            </div>
-          </div>
-
-          {/* Col 3: Contact & Utilities */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--ink)] mb-4 font-sans uppercase tracking-wider">
-              Connect
-            </h4>
-            <div className="flex flex-col gap-2">
-              <a
-                href="mailto:ashishdhankecha256@gmail.com"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body break-all sm:break-normal"
-              >
-                ashishdhankecha256@gmail.com
-              </a>
-              <a
-                href="https://github.com/Ashish-Dhankecha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://x.com/Ashishdhankecha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                X (Twitter)
-              </a>
-            </div>
-          </div>
+    <footer aria-label="Site footer" className="bg-[var(--ink)] text-[var(--paper)]">
+      <div className="sheet pt-14 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <p className="md:col-span-5 text-[1.15rem] leading-snug max-w-[34ch]">
+            AI systems, built from first principles and filed with their evidence. I will make it happen. No matter what.
+          </p>
+          <ul className="md:col-span-3 space-y-2">
+            {footerNav.internal.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="font-bold condensed uppercase underline-offset-4 decoration-2 hover:underline">
+                  {l.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="md:col-span-4 space-y-2">
+            {footerNav.external.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target={l.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                  className="font-bold condensed uppercase underline-offset-4 decoration-2 hover:underline"
+                >
+                  {l.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <p className="text-xs text-[var(--muted)] font-body">
-            Built by Ashish Dhankecha — First Principles AI Systems
+        <div className="[container-type:inline-size] mt-14">
+          <p aria-hidden="true" className="display text-[20.9cqw] leading-[0.78] whitespace-nowrap -ml-[0.02em]">
+            Ashish Labs
           </p>
-          <p className="text-xs font-mono text-[var(--accent-brass)]">
-            ASHISH_LAB_OS {"//"} SYS.ONLINE
-          </p>
+        </div>
+        <div className="mt-6 pt-4 border-t border-[color:rgb(242_242_238/0.25)] flex flex-wrap justify-between gap-3 numeral text-xs opacity-80">
+          <span>© {new Date().getFullYear()} Ashish Dhankecha</span>
+          <span>Every figure on this site is measured from a repository or a lab note.</span>
         </div>
       </div>
     </footer>

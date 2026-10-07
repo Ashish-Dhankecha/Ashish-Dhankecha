@@ -6,10 +6,10 @@ export const leoCaseStudy: ProjectCaseStudy = {
   title: "Leo",
   subtitle: "Open-Architecture Cognitive Operating System",
   tagline: "An ambitious cognitive operating system mapping 43 subsystems that exposed the critical reality gap between architecture and implementation.",
-  startDate: "Late 2025",
-  endDate: "Mid 2026",
+  startDate: "16 June 2026",
+  endDate: "10 July 2026",
   status: "SUPERSEDED",
-  statusLabel: "Pioneering Milestone · Superseded by Vani & Ashi",
+  statusLabel: "Pioneering Milestone · Superseded by Vani & ÆON",
   isFlagship: false,
   accentColor: "#d4a568",
   summary:
@@ -22,19 +22,19 @@ export const leoCaseStudy: ProjectCaseStudy = {
     },
     {
       label: "Lab Notes: 281 Violations",
-      url: "/lab/leo/004-281-violation-debt-architecture-enforcement",
+      url: "/lab/leo/281-architectural-violations-phase-28",
       type: "notes",
     },
     {
       label: "CMMU Architecture Note",
-      url: "/lab/leo/002-cmmu-as-memory-gatekeeper",
+      url: "/lab/leo/cmmu-cognitive-memory-management-unit",
       type: "docs",
     },
   ],
   snapshot: {
     type: "Cognitive Operating System Prototype",
-    started: "Late 2025",
-    status: "Archived & Superseded by Vani / Ashi",
+    started: "16 June 2026",
+    status: "Archived & Superseded by Vani / ÆON",
     primaryLanguage: "Python 3.11 / React 18",
     stack: [
       "Python 3.11",
@@ -317,7 +317,7 @@ export const leoCaseStudy: ProjectCaseStudy = {
       finalApproach:
         "Two-phase commit coordinator in the CMMU with a compensation rollback ledger.",
       currentState:
-        "Functional but fragile. The sheer operational pain directly led to rejecting multi-database setups in Vani and Ashi.",
+        "Functional but fragile. The sheer operational pain directly led to rejecting multi-database setups in Vani and ÆON.",
     },
     {
       title: "The Reality Gap: Architecture on Paper vs Code in Production",
@@ -479,7 +479,7 @@ export const leoCaseStudy: ProjectCaseStudy = {
   currentState: {
     status: "SUPERSEDED",
     summary:
-      "Leo is permanently archived. Its architectural successes (DAG scheduler, temporal clock) and forensic audit lessons (281 violations) served as the direct conceptual foundation for Vani and Ashi.",
+      "Leo is permanently archived. Its architectural successes (DAG scheduler, temporal clock) and forensic audit lessons (281 violations) served as the direct conceptual foundation for Vani and ÆON.",
     whatWorks: [
       "DAG Scheduler with priority task preemption.",
       "Unified Communication Interface handling multi-channel transports.",
@@ -499,13 +499,13 @@ export const leoCaseStudy: ProjectCaseStudy = {
     ],
   },
   next: {
-    statusNotice: "Leo is archived. Its active evolution continues in Ashi.",
+    statusNotice: "Leo is archived. Its active evolution continues in ÆON.",
     items: [
       {
-        title: "Lineage Continuation in Ashi",
+        title: "Lineage Continuation in ÆON",
         type: "PLANNED",
         description:
-          "The priority scheduling and cognitive clock primitives from Leo were redesigned into Ashi's 28-package acyclic monorepo.",
+          "The priority scheduling and cognitive clock primitives from Leo were redesigned into ÆON's 28-package acyclic monorepo.",
       },
     ],
   },

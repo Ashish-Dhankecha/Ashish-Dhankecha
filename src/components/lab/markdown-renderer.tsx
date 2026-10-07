@@ -15,7 +15,7 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
   const blocks = parseBlocks(content);
 
   return (
-    <div className={`space-y-3.5 sm:space-y-4 font-sans text-[var(--muted)] leading-relaxed ${className}`}>
+    <div className={`space-y-5 text-[var(--ink-2)] leading-relaxed max-w-[70ch] ${className}`}>
       {blocks.map((block, idx) => {
         switch (block.type) {
           case "code":
@@ -32,7 +32,7 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
             return (
               <h1
                 key={idx}
-                className="font-sans text-xl sm:text-3xl text-[var(--ink)] font-bold pt-5 sm:pt-6 pb-2 border-b border-[var(--line)]"
+                className="font-extrabold [font-stretch:75%] uppercase text-[1.9rem] leading-tight text-[var(--ink)] pt-6 pb-2 border-b-2 border-[var(--ink)]"
               >
                 {renderInline(block.text || "")}
               </h1>
@@ -41,7 +41,7 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
             return (
               <h2
                 key={idx}
-                className="font-sans text-lg sm:text-2xl text-[var(--ink)] font-semibold pt-4 sm:pt-5 pb-1 border-b border-[var(--line)]"
+                className="font-extrabold [font-stretch:75%] uppercase text-[1.5rem] leading-tight text-[var(--ink)] pt-5 pb-1 border-b border-[var(--rule-soft)]"
               >
                 {renderInline(block.text || "")}
               </h2>
@@ -50,7 +50,7 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
             return (
               <h3
                 key={idx}
-                className="font-sans text-sm sm:text-lg text-[var(--ink)] font-semibold pt-3 sm:pt-4"
+                className="font-extrabold [font-stretch:75%] uppercase text-[1.2rem] leading-tight text-[var(--ink)] pt-4"
               >
                 {renderInline(block.text || "")}
               </h3>
@@ -59,7 +59,7 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
             return (
               <h4
                 key={idx}
-                className="font-mono text-xs uppercase tracking-wider text-[var(--accent-brass)] font-semibold pt-2.5 sm:pt-3"
+                className="label text-[var(--cobalt)] pt-3"
               >
                 {renderInline(block.text || "")}
               </h4>
@@ -68,14 +68,14 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
             return (
               <blockquote
                 key={idx}
-                className="border-l-2 border-[var(--accent-brass)] pl-3 sm:pl-4 py-1.5 my-2.5 sm:my-3 bg-[var(--panel)] text-[var(--muted)] italic text-xs sm:text-sm leading-relaxed rounded-r-lg"
+                className="border-2 border-[var(--ink)] px-5 py-4 my-4 text-[var(--ink)] text-[1.05rem] leading-relaxed"
               >
                 {renderInline(block.text || "")}
               </blockquote>
             );
           case "list":
             return (
-              <ul key={idx} className="list-disc list-outside pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 text-xs sm:text-base text-[var(--muted)]">
+              <ul key={idx} className="list-disc list-outside pl-5 space-y-2 text-[1.0625rem] marker:text-[var(--ink)]">
                 {(block.items || []).map((item, i) => (
                   <li key={i}>{renderInline(item)}</li>
                 ))}
@@ -83,18 +83,18 @@ export function MarkdownRenderer({ content, className = "" }: Props) {
             );
           case "ordered-list":
             return (
-              <ol key={idx} className="list-decimal list-outside pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 text-xs sm:text-base text-[var(--muted)]">
+              <ol key={idx} className="list-decimal list-outside pl-6 space-y-2 text-[1.0625rem] marker:font-mono marker:text-[var(--ink)]">
                 {(block.items || []).map((item, i) => (
                   <li key={i}>{renderInline(item)}</li>
                 ))}
               </ol>
             );
           case "hr":
-            return <hr key={idx} className="my-5 sm:my-6 border-t border-[var(--line)]" />;
+            return <hr key={idx} className="my-8 border-t-2 border-[var(--ink)]" />;
           case "paragraph":
           default:
             return (
-              <p key={idx} className="text-xs sm:text-base leading-relaxed text-[var(--muted)]">
+              <p key={idx} className="text-[1.0625rem] leading-[1.7] text-[var(--ink-2)]">
                 {renderInline(block.text || "")}
               </p>
             );
@@ -127,21 +127,21 @@ function CodeBlock({ code, language }: { code: string; language?: string }) {
   };
 
   return (
-    <div className="relative my-3.5 sm:my-4 border border-[var(--line)] bg-[var(--bg)] text-[var(--muted)] rounded-xl overflow-hidden shadow-sm">
-      <div className="flex items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2 border-b border-[var(--line)] bg-[var(--panel)] text-xs font-mono text-[var(--muted)]">
-        <span className="uppercase tracking-wider text-[10px] sm:text-[11px] text-[var(--accent-brass)]">
+    <div className="relative my-5 bg-[var(--ink)] text-[var(--paper)] overflow-hidden">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-[color:rgb(128_128_128/0.35)] text-xs font-mono">
+        <span className="uppercase tracking-wider text-[11px] opacity-80">
           {language || "code"}
         </span>
         <button
           type="button"
           onClick={handleCopy}
           aria-label="Copy code to clipboard"
-          className="flex items-center gap-1.5 px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider text-[var(--muted)] hover:text-[var(--accent-brass)] hover:bg-[var(--panel-hover)] transition-colors min-h-[30px]"
+          className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider opacity-80 hover:opacity-100 hover:underline min-h-[30px]"
         >
           {copied ? (
             <>
-              <Check className="w-3 h-3 text-emerald-400" />
-              <span className="text-emerald-400">Copied</span>
+              <Check className="w-3 h-3 text-[var(--paper)]" />
+              <span className="text-[var(--paper)]">Copied</span>
             </>
           ) : (
             <>
@@ -151,7 +151,7 @@ function CodeBlock({ code, language }: { code: string; language?: string }) {
           )}
         </button>
       </div>
-      <div className="overflow-x-auto touch-pan-x p-3 sm:p-4 font-mono text-[11px] sm:text-xs leading-relaxed text-[var(--muted)]">
+      <div className="overflow-x-auto touch-pan-x p-4 font-mono text-[0.8125rem] leading-relaxed">
         <pre className="whitespace-pre">
           <code>{code}</code>
         </pre>
@@ -166,25 +166,25 @@ function TableBlock({ rows }: { rows: string[][] }) {
   const bodyRows = rows.slice(1);
 
   return (
-    <div className="my-4 sm:my-6 overflow-x-auto touch-pan-x border border-[var(--line)] bg-[var(--bg)] rounded-xl overflow-hidden">
-      <table className="w-full text-left text-xs font-sans border-collapse min-w-[340px]">
+    <div className="my-6 overflow-x-auto touch-pan-x border-2 border-[var(--ink)]">
+      <table className="w-full text-left text-[0.9rem] border-collapse min-w-[420px]">
         <thead>
-          <tr className="bg-[var(--panel)] border-b border-[var(--line)] text-[var(--ink)] font-mono text-[10px] sm:text-[11px] uppercase tracking-wider">
+          <tr className="border-b-2 border-[var(--ink)] text-[var(--ink)]">
             {header.map((cell, idx) => (
-              <th key={idx} className="py-2 sm:py-2.5 px-2.5 sm:px-3 font-semibold whitespace-nowrap sm:whitespace-normal">
+              <th key={idx} className="label py-2.5 px-3 whitespace-nowrap sm:whitespace-normal">
                 {renderInline(cell.trim())}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-[var(--line)]">
+        <tbody className="divide-y divide-[var(--rule-soft)]">
           {bodyRows.map((row, rIdx) => (
             <tr
               key={rIdx}
-              className="hover:bg-[var(--panel-hover)] transition-colors text-[var(--muted)]"
+              className="text-[var(--ink-2)]"
             >
               {row.map((cell, cIdx) => (
-                <td key={cIdx} className="py-1.5 sm:py-2 px-2.5 sm:px-3 align-top leading-normal text-[11px] sm:text-xs">
+                <td key={cIdx} className="py-2.5 px-3 align-top leading-normal">
                   {renderInline(cell.trim())}
                 </td>
               ))}
@@ -208,7 +208,7 @@ function renderInline(text: string): React.ReactNode {
       return (
         <code
           key={i}
-          className="px-1.5 py-0.5 bg-[var(--panel)] text-[var(--accent-brass)] font-mono text-[0.88em] border border-[var(--line)] rounded break-all"
+          className="px-1 py-0.5 bg-[var(--paper-2)] text-[var(--ink)] font-mono text-[0.86em] break-all"
         >
           {part.slice(1, -1)}
         </code>
@@ -233,7 +233,7 @@ function parseInlineFormatting(text: string): React.ReactNode {
     const token = match[0];
     if (token.startsWith("**") && token.endsWith("**")) {
       tokens.push(
-        <strong key={match.index} className="font-semibold text-[var(--ink)]">
+        <strong key={match.index} className="font-bold text-[var(--ink)]">
           {token.slice(2, -2)}
         </strong>
       );
@@ -252,7 +252,7 @@ function parseInlineFormatting(text: string): React.ReactNode {
             href={linkMatch[2]}
             target={linkMatch[2].startsWith("http") ? "_blank" : undefined}
             rel={linkMatch[2].startsWith("http") ? "noopener noreferrer" : undefined}
-            className="text-[var(--accent-brass)] underline underline-offset-2 hover:text-[var(--accent-brass)]/80 transition-colors break-words"
+            className="text-[var(--cobalt)] underline underline-offset-4 decoration-1 hover:decoration-2 break-words"
           >
             {linkMatch[1]}
           </a>

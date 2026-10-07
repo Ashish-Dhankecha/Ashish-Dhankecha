@@ -1,9 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Container } from "@/components/layout/container";
-import { ProjectDossierView } from "@/components/lab/project-dossier-view";
-import { ContentReader } from "@/components/lab/content-reader";
+import { LabProjectFile } from "@/components/spec/lab/lab-project";
+import { NoteReader } from "@/components/spec/lab/note-reader";
 import {
   getAllProjects,
   getProjectBySlug,
@@ -70,30 +69,12 @@ export default async function ProjectOrPiecePage({ params }: Props) {
   // If it's a project dossier route
   if (project) {
     const pieces = getLabPiecesByProject(project.id);
-    return (
-      <div className="w-full min-h-screen bg-[var(--bg)] text-[var(--ink)] transition-colors duration-700 pb-24">
-        <Container width="wide">
-          <ProjectDossierView
-            project={project}
-            pieces={pieces}
-            isStandalonePage={true}
-          />
-        </Container>
-      </div>
-    );
+    return <LabProjectFile project={project} pieces={pieces} />;
   }
 
-  // If it's a legacy piece slug URL, render the piece or redirect
+  // Legacy flat URL: /lab/[slug]
   const piece = getLabPieceBySlug(segment);
-  if (piece) {
-    return (
-      <div className="w-full min-h-screen bg-[var(--bg)] text-[var(--ink)] transition-colors duration-700 pb-24">
-        <Container width="wide">
-          <ContentReader piece={piece} />
-        </Container>
-      </div>
-    );
-  }
+  if (piece) return <NoteReader piece={piece} />;
 
   notFound();
 }
