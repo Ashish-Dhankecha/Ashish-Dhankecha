@@ -16,11 +16,6 @@ export const sihCaseStudy: ProjectCaseStudy = {
     "Built in a rapid 1-day hackathon sprint for Smart India Hackathon 2026, SIH26117 is an air-gapped, on-premise agentic AI workbench designed for confidential industrial operations (specifically MRPL). It combines local Qwen SLM inference, an EvidenceGate RAG boundary that prevents hallucinations, deep OOXML artifact validation, and Linux unshare sandbox execution.",
   links: [
     {
-      label: "GitHub Repository",
-      url: "https://github.com/Ashish-Dhankecha",
-      type: "github",
-    },
-    {
       label: "Technical Inventory",
       url: "/lab/sih/01_REPOSITORY_INVENTORY",
       type: "docs",

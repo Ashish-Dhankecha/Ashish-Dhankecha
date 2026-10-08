@@ -16,11 +16,6 @@ export const vaniCaseStudy: ProjectCaseStudy = {
     "Vani was engineered as a reaction against fragile cloud-dependent AI frameworks. Designed around a 50-year longevity mandate, it eliminated external Docker and cloud services in favor of pure SQLite, introduced an AST Architecture Guardian to make import violations impossible, and treated AI models as interchangeable fuel rather than core identity.",
   links: [
     {
-      label: "GitHub Archive",
-      url: "https://github.com/Ashish-Dhankecha",
-      type: "github",
-    },
-    {
       label: "Lab Notes: AST Guardian",
       url: "/lab/vani/architecture-guardian-ast-analysis",
       type: "notes",

@@ -16,8 +16,8 @@ export const leoCaseStudy: ProjectCaseStudy = {
     "Leo was an early, ambitious exploration into treating artificial intelligence as an operating system workload. It introduced a centralized cognitive kernel, a Cognitive Memory Management Unit (CMMU), and 43 granular subsystems, but a forensic Phase 28 audit uncovered 281 direct database violations that permanently reshaped my approach to engineering enforcement.",
   links: [
     {
-      label: "GitHub Archive",
-      url: "https://github.com/Ashish-Dhankecha",
+      label: "Repository",
+      url: "https://github.com/Ashish-Dhankecha/Leo",
       type: "github",
     },
     {

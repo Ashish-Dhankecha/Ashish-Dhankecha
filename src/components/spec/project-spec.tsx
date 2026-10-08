@@ -151,7 +151,7 @@ export function ProjectSpecView({
             {repo && (
               <p className="mt-5 text-sm text-[var(--ink-3)]">
                 <a href={repo.url} target="_blank" rel="noopener noreferrer" className="link-ink">
-                  Source on GitHub
+                  {repo.label || "Repository"}
                 </a>
                 {spec.sourceNote ? <> · {spec.sourceNote}</> : null}
               </p>

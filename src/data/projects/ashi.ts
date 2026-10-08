@@ -16,11 +16,6 @@ export const ashiCaseStudy: ProjectCaseStudy = {
     "ÆON is an ambitious, stateful cognitive operating system designed to accumulate a longitudinal model of one person—their goals, habits, relationships, and cognitive processes—over years without suffering from context drift or hallucinated task completion.",
   links: [
     {
-      label: "GitHub Monorepo",
-      url: "https://github.com/Ashish-Dhankecha",
-      type: "github",
-    },
-    {
       label: "Lab Notes & ADRs",
       url: "/lab/ashi",
       type: "notes",
@@ -906,7 +901,6 @@ export const ashiCaseStudy: ProjectCaseStudy = {
     ],
   },
   codeExploration: {
-    githubUrl: "https://github.com/Ashish-Dhankecha",
     localSnippets: [
       {
         title: "Substrate Architectural Invariant Linter",
