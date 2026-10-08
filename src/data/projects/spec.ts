@@ -45,7 +45,6 @@ export const projectSpecs: Record<string, ProjectSpec> = {
     facts: [
       { value: "951", label: "commits" },
       { value: "34", label: "workspace packages" },
-      { value: "282,092", label: "lines of package Python" },
       { value: "6,458", label: "test functions" },
       { value: "200", label: "architecture decision records" },
       { value: "16 Jul 2026", label: "first commit" },
@@ -89,7 +88,6 @@ export const projectSpecs: Record<string, ProjectSpec> = {
     facts: [
       { value: "4", label: "commits" },
       { value: "13,772", label: "lines of source Python" },
-      { value: "530", label: "tracked Python files" },
       { value: "21", label: "lab notes" },
       { value: "10 Jul 2026", label: "first commit" },
       { value: "15 Jul 2026", label: "last commit" },

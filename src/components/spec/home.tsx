@@ -13,15 +13,14 @@ export function HomeSpec() {
   const lab = getLabMetrics();
 
   const ticker = [
-    "951 commits on ÆON",
-    "282,092 lines of package Python",
+    "32.8 s → 5.4 s turn latency",
+    "281 violations found and published",
+    "3/10 on the first behavioural audit, published",
+    "297 passing mock tests hid 11 broken live integrations",
     "6,458 test functions",
     "200 decision records",
-    "281 violations found and published",
     `${lab.total_pieces} lab notes`,
     "0 external network calls in SIH26117",
-    "32.8 s → 5.4 s turn latency",
-    "3/10 on the first behavioural audit, published",
   ];
 
   return (
@@ -66,7 +65,7 @@ export function HomeSpec() {
               {(
                 [
                   ["4", "systems on file"],
-                  ["1,123", "commits across them"],
+                  ["281", "violations found and published"],
                   [String(lab.total_pieces), "lab notes"],
                 ] as const
               ).map(([v, l], i) => (

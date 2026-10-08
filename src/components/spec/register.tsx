@@ -55,6 +55,11 @@ export function SpecRegister() {
                     </div>
                   ))}
                 </dl>
+                {(p.slug === "ashi" || p.slug === "aeon") && (
+                  <p className="numeral text-xs text-[var(--ink-3)] mt-3">
+                    282,092 lines of package Python
+                  </p>
+                )}
                 <span className="mt-7 inline-flex items-center gap-2 font-extrabold condensed uppercase border-b-2 border-[var(--ink)] group-hover:border-[var(--cobalt)] group-hover:text-[var(--cobalt)] transition-colors">
                   Open specification <Arrow />
                 </span>
