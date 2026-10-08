@@ -146,6 +146,7 @@ export function HomeSpec() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-10">
           <figure className="lg:col-span-5 group">
             <div className="relative aspect-[4/5] overflow-hidden border-2 border-[var(--ink)] bg-[var(--paper-2)]">
+              {/* TODO: A plain-face headshot photo may be preferable for admissions over the sunglasses bridge photo */}
               <Image
                 src="/images/ashish-inventor.jpg"
                 alt="Ashish Dhankecha standing on a cable-stayed bridge, in a black sweater and sunglasses"
