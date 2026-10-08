@@ -889,7 +889,7 @@ function ClaimRow({
 const LINE = [
   { slug: "leo", name: "Leo" },
   { slug: "vani", name: "Vani" },
-  { slug: "ashi", name: "ÆON" },
+  { slug: "aeon", name: "ÆON" },
 ];
 
 /** The one continuous lineage line, Leo → Vani → ÆON, with SIH26117 filed apart. */

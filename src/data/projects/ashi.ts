@@ -2,7 +2,7 @@ import { ProjectCaseStudy } from "@/types/project-case-study";
 
 export const ashiCaseStudy: ProjectCaseStudy = {
   id: "ashi",
-  slug: "ashi",
+  slug: "aeon",
   title: "ÆON",
   subtitle: "Personal Cognitive Operating System",
   tagline: "A 34-package personal AI operating system for a single human user.",

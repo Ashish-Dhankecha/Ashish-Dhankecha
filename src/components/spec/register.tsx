@@ -5,7 +5,7 @@ import { projectSpecs } from "@/data/projects/spec";
 import { ArchitectureFigure, numberLayers } from "./figure-draw";
 import { Arrow } from "./sheet";
 
-const ORDER = ["ashi", "sih", "vani", "leo"];
+const ORDER = ["aeon", "sih", "vani", "leo"];
 
 export function SpecRegister() {
   const ordered = ORDER.map((s) => allProjects.find((p) => p.slug === s)).filter(

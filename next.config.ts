@@ -60,6 +60,37 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "ashishlabs.com",
+          },
+        ],
+        destination: "https://ashishdhankecha.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.ashishlabs.com",
+          },
+        ],
+        destination: "https://ashishdhankecha.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/projects/ashi",
+        destination: "/projects/aeon",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

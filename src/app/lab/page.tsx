@@ -4,12 +4,13 @@ import Link from "next/link";
 import { getLabMetrics, getAllProjects, getAllLabPieces } from "@/lib/lab";
 import { LabIndex } from "@/components/spec/lab/lab-index";
 import { Arrow } from "@/components/spec/sheet";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "The Lab: engineering notes | Ashish Labs",
   description:
     "Engineering notes, decision records, debugging sessions and post-mortems from building ÆON, Leo and Vani. Written while building, not tidied afterwards.",
-  alternates: { canonical: "https://ashishdhankecha.com/lab" },
+  alternates: { canonical: `${siteConfig.url}/lab` },
 };
 
 export default function LabPage() {

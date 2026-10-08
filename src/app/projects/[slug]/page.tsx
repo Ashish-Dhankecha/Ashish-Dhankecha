@@ -9,6 +9,7 @@ import { getProjectSpec } from "@/data/projects/spec";
 import { getLabPieceBySlug, getProjectBySlug as getLabProject } from "@/lib/lab";
 import { ProjectSpecView } from "@/components/spec/project-spec";
 import type { ProjectLink } from "@/types/project-case-study";
+import { siteConfig } from "@/config/site";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   const title = `${project.title}: ${project.subtitle} | Ashish Labs`;
   const description = getProjectSpec(project.slug)?.claim ?? project.summary;
-  const canonicalUrl = `https://ashishdhankecha.com/projects/${project.slug}`;
+  const canonicalUrl = `${siteConfig.url}/projects/${project.slug}`;
 
   return {
     title,

@@ -55,7 +55,7 @@ export const recordOfWork: RecordEntry[] = [
     summary:
       "A 34-package uv monorepo. Audited the live system (first score 3/10), found and removed the vacuous-success bug, and cut local llama.cpp turn latency from 32.8 s to 5.4 s.",
     takeaway: "Persistent memory, truth boundaries and acyclic structure.",
-    href: "/projects/ashi",
+    href: "/projects/aeon",
   },
   {
     period: "30 Aug 2026",

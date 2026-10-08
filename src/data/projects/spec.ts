@@ -35,7 +35,7 @@ const lab = (project: string, slug: string, ref: string) => ({
 export const MEASURED_ON = "7 Oct 2026";
 
 export const projectSpecs: Record<string, ProjectSpec> = {
-  ashi: {
+  aeon: {
     specNo: "AL-0004",
     claim:
       "A cognitive operating system for one person, built to remember, plan, act and check its own work for years.",
@@ -121,6 +121,8 @@ export const projectSpecs: Record<string, ProjectSpec> = {
     },
   },
 };
+
+projectSpecs.ashi = projectSpecs.aeon;
 
 export function getProjectSpec(slug: string): ProjectSpec | undefined {
   return projectSpecs[slug];

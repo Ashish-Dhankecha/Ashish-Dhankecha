@@ -498,7 +498,7 @@ export const vaniCaseStudy: ProjectCaseStudy = {
       relationship: "Vani was created directly to eliminate Leo's 281 architectural violations and database sprawl.",
     },
     successor: {
-      slug: "ashi",
+      slug: "aeon",
       name: "ÆON",
       relationship: "ÆON expanded Vani's sovereign architecture into a 28-package uv monorepo with local SLM execution.",
     },

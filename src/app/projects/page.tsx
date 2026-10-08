@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import { SpecRegister } from "@/components/spec/register";
 import { ProgramFigure } from "@/components/spec/program-figure";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Projects | Ashish Labs",
   description:
     "Four AI systems by Ashish Dhankecha, each filed with its architecture, claims, decisions and failures: ÆON, SIH26117, Vani and Leo.",
-  alternates: { canonical: "https://ashishdhankecha.com/projects" },
+  alternates: { canonical: `${siteConfig.url}/projects` },
 };
 
 export default function ProjectsIndexPage() {
