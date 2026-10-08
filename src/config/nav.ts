@@ -41,6 +41,7 @@ export const footerNav = {
     { title: "About", href: "/#about" },
     { title: "Method", href: "/#method" },
     { title: "Contact", href: "/#contact" },
+    { title: "CV (PDF)", href: "/cv.pdf" },
   ],
   external: [
     {

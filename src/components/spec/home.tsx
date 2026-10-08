@@ -394,21 +394,23 @@ export function HomeSpec() {
               </span>
             </a>
           </div>
-          <ul className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--on-cobalt)] border-2 border-[var(--on-cobalt)]">
+          <ul className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--on-cobalt)] border-2 border-[var(--on-cobalt)]">
             {[
-              { t: "GitHub", h: "https://github.com/Ashish-Dhankecha", d: "Ashish-Dhankecha" },
+              { t: "GitHub", h: "https://github.com/Ashish-Dhankecha", d: "Ashish-Dhankecha", ext: true },
               {
                 t: "LinkedIn",
                 h: "https://www.linkedin.com/in/ashish-dhankecha-a993703a5/",
                 d: "Ashish Dhankecha",
+                ext: true,
               },
-              { t: "X", h: "https://x.com/Ashishdhankecha", d: "@Ashishdhankecha" },
+              { t: "X", h: "https://x.com/Ashishdhankecha", d: "@Ashishdhankecha", ext: true },
+              { t: "CV (PDF)", h: "/cv.pdf", d: "Curriculum Vitae", ext: false },
             ].map((l) => (
               <li key={l.t} className="bg-[var(--cobalt)]">
                 <a
                   href={l.h}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={l.ext ? "_blank" : undefined}
+                  rel={l.ext ? "noopener noreferrer" : undefined}
                   className="group flex items-center justify-between gap-4 p-5 sm:p-6 h-full hover:bg-[var(--on-cobalt)] hover:text-[var(--cobalt)] transition-colors duration-300"
                 >
                   <span>
