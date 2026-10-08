@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/theme/theme-context";
 
 const NAV = [
-  { label: "Specifications", href: "/projects", match: "/projects" },
+  { label: "Projects", href: "/projects", match: "/projects" },
   { label: "Lab", href: "/lab", match: "/lab" },
-  { label: "Inventor", href: "/#inventor" },
+  { label: "About", href: "/#about" },
   { label: "Method", href: "/#method" },
 ];
 
@@ -63,10 +63,10 @@ export function Header() {
             className="numeral text-xs h-9 px-3 border-2 border-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--paper)] transition-colors"
             aria-label={theme === "dark" ? "Switch to paper (light) theme" : "Switch to negative (dark) theme"}
           >
-            {theme === "dark" ? "NEG" : "POS"}
+            {theme === "dark" ? "LIGHT" : "DARK"}
           </button>
           <Link
-            href="/#correspondence"
+            href="/#contact"
             className="hidden sm:inline-flex items-center h-9 px-4 bg-[var(--ink)] text-[var(--paper)] font-bold condensed uppercase text-[0.9rem] hover:bg-[var(--cobalt)] hover:text-[var(--on-cobalt)] transition-colors"
           >
             Write to me
@@ -86,7 +86,7 @@ export function Header() {
       {open && (
         <div id="mobile-nav" className="md:hidden fixed inset-x-0 top-14 bottom-0 field-cobalt overflow-y-auto">
           <ul className="sheet py-6">
-            {[...NAV, { label: "Write to me", href: "/#correspondence" }].map((item, i) => (
+            {[...NAV, { label: "Contact", href: "/#contact" }].map((item, i) => (
               <li key={item.href} className="border-b border-[var(--on-cobalt)]">
                 <Link href={item.href} onClick={() => setOpen(false)} className="flex items-baseline gap-4 py-4">
                   <span className="numeral text-sm opacity-80">{String((i + 1) * 10)}</span>

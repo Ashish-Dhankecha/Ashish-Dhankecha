@@ -103,7 +103,7 @@ export function ProjectSpecView({
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b-2 border-[var(--ink)] py-3 numeral text-xs sm:text-sm">
             <span>
               <Link href="/projects" className="link-ink">
-                Specifications
+                Projects
               </Link>{" "}
               / {spec.specNo}
             </span>
@@ -798,7 +798,7 @@ export function ProjectSpecView({
                 <Arrow />
               </Link>
             )}
-            <Link href="/#correspondence" className="btn btn-on-cobalt">
+            <Link href="/#contact" className="btn btn-on-cobalt">
               Write to Ashish
               <Arrow />
             </Link>

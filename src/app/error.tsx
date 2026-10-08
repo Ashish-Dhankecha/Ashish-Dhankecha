@@ -19,7 +19,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         {error.digest && <p className="mt-3 numeral text-xs text-[var(--ink-3)]">Reference {error.digest}</p>}
         <div className="mt-8 flex flex-wrap gap-3">
           <button type="button" onClick={reset} className="btn btn-ink">Try again</button>
-          <Link href="/projects" className="btn btn-line">Specifications</Link>
+          <Link href="/projects" className="btn btn-line">Projects</Link>
         </div>
       </div>
     </div>

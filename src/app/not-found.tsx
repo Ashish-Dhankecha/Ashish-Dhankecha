@@ -10,7 +10,7 @@ export default function NotFound() {
           This page was moved or never existed. The specifications and the Lab are where everything lives now.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/projects" className="btn btn-ink">Specifications</Link>
+          <Link href="/projects" className="btn btn-ink">Projects</Link>
           <Link href="/lab" className="btn btn-line">The Lab</Link>
         </div>
       </div>

@@ -53,11 +53,11 @@ export function HomeSpec() {
                 Four systems on file, every failure included.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#register" className="btn btn-ink">
+                <a href="#projects" className="btn btn-ink">
                   Read the specifications
                   <ArrowDown />
                 </a>
-                <a href="#correspondence" className="btn btn-line">
+                <a href="#contact" className="btn btn-line">
                   Write to me
                 </a>
               </div>
@@ -118,8 +118,15 @@ export function HomeSpec() {
         </div>
       </section>
 
-      {/* ============================ REGISTER ============================ */}
-      <SheetSection id="register" title="Specifications" sheet={2} of={N}>
+      {/* ============================ PROJECTS ============================ */}
+      <div id="register" className="sr-only" aria-hidden="true" />
+      <SheetSection
+        id="projects"
+        title="Projects"
+        sheet={2}
+        of={N}
+        aside={<span className="numeral text-xs opacity-60 uppercase">Register of specifications</span>}
+      >
         <SpecRegister />
         <p className="mt-8">
           <Link href="/projects" className="link-ink font-semibold">
@@ -128,8 +135,15 @@ export function HomeSpec() {
         </p>
       </SheetSection>
 
-      {/* ============================ INVENTOR ============================ */}
-      <SheetSection id="inventor" title="Inventor" sheet={3} of={N}>
+      {/* ============================ ABOUT ============================ */}
+      <div id="inventor" className="sr-only" aria-hidden="true" />
+      <SheetSection
+        id="about"
+        title="About"
+        sheet={3}
+        of={N}
+        aside={<span className="numeral text-xs opacity-60 uppercase">Inventor</span>}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-10">
           <figure className="lg:col-span-5 group">
             <div className="relative aspect-[4/5] overflow-hidden border-2 border-[var(--ink)] bg-[var(--paper-2)]">
@@ -318,20 +332,24 @@ export function HomeSpec() {
         </div>
       </SheetSection>
 
-      {/* ============================ CORRESPONDENCE ============================ */}
+      {/* ============================ CONTACT ============================ */}
+      <div id="correspondence" className="sr-only" aria-hidden="true" />
       <section
-        id="correspondence"
-        aria-labelledby="correspondence-h"
+        id="contact"
+        aria-labelledby="contact-h"
         className="field-cobalt scroll-mt-16"
       >
         <div className="sheet py-16 sm:py-24">
           <div className="border-t-2 border-[var(--on-cobalt)] pt-4 flex flex-wrap justify-between gap-4">
-            <h2
-              id="correspondence-h"
-              className="display text-[clamp(3rem,9vw,7.5rem)] !text-[var(--on-cobalt)]"
-            >
-              Correspondence
-            </h2>
+            <div>
+              <h2
+                id="contact-h"
+                className="display text-[clamp(3rem,9vw,7.5rem)] !text-[var(--on-cobalt)]"
+              >
+                Contact
+              </h2>
+              <span className="numeral text-xs opacity-60 uppercase block mt-1">Correspondence</span>
+            </div>
             <span className="numeral text-sm pt-2 opacity-80">
               SHEET {N} / {N}
             </span>
