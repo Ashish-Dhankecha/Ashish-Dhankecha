@@ -5,7 +5,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   slug: "ashi",
   title: "ÆON",
   subtitle: "Personal Cognitive Operating System",
-  tagline: "A 34-package personal AI operating system built from first principles for a single human user.",
+  tagline: "A 34-package personal AI operating system for a single human user.",
   startDate: "16 July 2026",
   endDate: "Present",
   status: "ACTIVE",
@@ -13,7 +13,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   isFlagship: true,
   accentColor: "var(--accent-brass)",
   summary:
-    "ÆON is an ambitious, stateful cognitive operating system designed from first principles to accumulate a longitudinal model of one person—their goals, habits, relationships, and cognitive processes—over years without suffering from context drift or hallucinated task completion.",
+    "ÆON is an ambitious, stateful cognitive operating system designed to accumulate a longitudinal model of one person—their goals, habits, relationships, and cognitive processes—over years without suffering from context drift or hallucinated task completion.",
   links: [
     {
       label: "GitHub Monorepo",

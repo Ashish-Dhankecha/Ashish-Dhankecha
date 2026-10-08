@@ -8,7 +8,7 @@ export function Footer() {
       <div className="sheet pt-14 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <p className="md:col-span-5 text-[1.15rem] leading-snug max-w-[34ch]">
-            AI systems, built from first principles and filed with their evidence.
+            AI systems built and filed with their evidence.
           </p>
           <ul className="md:col-span-3 space-y-2">
             {footerNav.internal.map((l) => (

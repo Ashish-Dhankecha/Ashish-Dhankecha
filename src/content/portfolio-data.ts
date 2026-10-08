@@ -45,7 +45,7 @@ export const heroContent = {
   },
   supportingParagraphs: [
     "I'm Ashish Dhankecha, a Computer Engineering student focused on artificial intelligence, software systems, and real-world problem solving.",
-    "I learn from first principles, build through experimentation, and document what I discover.",
+    "I learn from core principles, build through experimentation, and document what I discover.",
   ],
   ctaPrimary: {
     label: "View My Work",
@@ -201,12 +201,12 @@ export const selectedProjects: ProjectDossier[] = [
     id: "machine-learning-experiments",
     number: "04",
     title: "Machine Learning Experiments",
-    tagline: "Implementations and experiments from first principles.",
+    tagline: "Implementations and experiments from core principles.",
     status: "Continuous Study & Implementation",
     year: "2025–2026",
     technologies: ["Python", "PyTorch", "Linear Algebra", "NumPy"],
     overview:
-      "A collection of educational and experimental implementations of core machine learning algorithms and neural network architectures built from first principles to deeply internalize the mathematics.",
+      "A collection of educational and experimental implementations of core machine learning algorithms and neural network architectures built from core principles to deeply internalize the mathematics.",
     architecture:
       "Structured into modular computational graphs: forward passes, automatic/manual backward passes, optimization step implementations, and evaluation loops.",
     problem:
@@ -337,7 +337,7 @@ export const theDirectionContent: TheDirectionContent = {
         "DATA STRUCTURES",
         "ALGORITHMS",
       ],
-      annotation: "First Principles Rigor",
+      annotation: "Core Principles Rigor",
       layerConcept: "Mathematical substrate & algorithmic correctness",
     },
     {
@@ -426,7 +426,7 @@ export const theDirectionContent: TheDirectionContent = {
     label: "THE LONG-TERM GOAL",
     statement: {
       prefix: "To become an engineer and researcher capable of taking a difficult problem from ",
-      term1: "first principles",
+      term1: "core principles",
       arrow1: " → ",
       term2: "research",
       arrow2: " → ",
@@ -440,7 +440,7 @@ export const theDirectionContent: TheDirectionContent = {
     label: "ENGINEERING CAPABILITY LOOP",
     kicker: "CONTINUOUS DISCOVERY & REFINEMENT CYCLE",
     steps: [
-      { number: "01", label: "UNDERSTAND", detail: "Deconstruct laws and constraints from first principles" },
+      { number: "01", label: "UNDERSTAND", detail: "Deconstruct laws and constraints from core principles" },
       { number: "02", label: "DISCOVER", detail: "Formulate hypotheses and empirical investigations" },
       { number: "03", label: "DESIGN", detail: "Architect invariants, state ledgers, and boundaries" },
       { number: "04", label: "BUILD", detail: "Implement with deterministic software rigor" },
@@ -633,7 +633,7 @@ export const engineeringNotes: EngineeringNote[] = [
   {
     id: "note-03",
     issue: "NOTE / 03",
-    title: "Learning AI From First Principles",
+    title: "Learning AI From Core Principles",
     subtitle: "The path from mathematical foundations to modern AI systems.",
     category: "Methodology & Foundations",
     date: "July 2025",
@@ -675,7 +675,7 @@ export const skillsGrouped = {
   sectionNumber: "/ 07",
   eyebrow: "TECHNICAL INDEX",
   title: "Tools & Technologies",
-  subtitle: "Technologies I actively use and study from first principles.",
+  subtitle: "Technologies I actively use and study from core principles.",
   categories: [
     {
       name: "AI / MACHINE LEARNING",

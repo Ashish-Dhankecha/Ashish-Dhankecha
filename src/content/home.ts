@@ -4,7 +4,7 @@ export const inventor = {
   name: "Ashish Dhankecha",
   role: "AI developer and systems builder",
   education: "BE Computer Engineering, SSASIT Surat, 2024 to present",
-  claim: "I build AI systems from first principles, and file every one with its evidence.",
+  claim: "I build AI systems and publish where they fail.",
   paragraphs: [
     "I'm a Computer Engineering student working on artificial intelligence, software systems and real-world problem solving.",
     "I take difficult ideas apart, understand how they work, rebuild them, and test them against reality. My interest is the system around the model: memory, state, verification, recovery.",
@@ -28,7 +28,7 @@ export const recordOfWork: RecordEntry[] = [
     subtitle: "SSASIT, Surat",
     summary:
       "Computer architecture, operating systems, compilers, algorithms, discrete mathematics and systems programming. Studying the machinery before trusting the abstractions.",
-    takeaway: "Foundation: computer science from first principles.",
+    takeaway: "Foundation: computer science fundamentals.",
   },
   {
     period: "16 Jun – 10 Jul 2026",

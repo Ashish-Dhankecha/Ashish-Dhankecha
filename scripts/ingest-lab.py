@@ -86,7 +86,7 @@ PROJECT_META = {
         "status": "Active / Production",
         "documented_period": "2025–2026",
         "technologies": ["Python", "uv Monorepo", "PostgreSQL", "llama.cpp", "Gemini API", "FastAPI"],
-        "one_line_summary": "A 28-package personal AI operating system built from first principles to think alongside one person, running locally with cloud fallback.",
+        "one_line_summary": "A 28-package personal AI operating system built to think alongside one person, running locally with cloud fallback.",
         "problem_statement": "Building an autonomous personal AI that operates persistently across days requires maintaining rigorous action integrity, avoiding silent empty completions, and executing local inference without destabilizing system latency.",
         "project_story": "Ashi was developed as an independent research investigation toward an autonomous personal cognitive operating system. Built as a 28-package Python monorepo with an acyclic dependency graph, Ashi was subjected to intense empirical audits—including a 3/10 behavioral integrity scoring, discovery of the vacuous success bug where empty plans counted as completed achievements, and benchmarking six sub-2B models to find the real capability ceiling on consumer hardware.",
         "documented_milestones": [

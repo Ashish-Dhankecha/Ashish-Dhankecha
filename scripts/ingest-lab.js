@@ -26,7 +26,7 @@ const PROJECT_META = {
     status: "Active Long-Term Build",
     documented_period: "16 July 2026 – Present",
     technologies: ["Python", "uv Monorepo", "PostgreSQL", "llama.cpp", "Gemini API", "FastAPI"],
-    one_line_summary: "A personal AI operating system (28 packages at genesis, 34 today) built from first principles to think alongside one person, running locally with cloud fallback.",
+    one_line_summary: "A personal AI operating system (28 packages at genesis, 34 today) built to think alongside one person, running locally with cloud fallback.",
     problem_statement: "Building an autonomous personal AI that operates persistently across days requires maintaining rigorous action integrity, avoiding silent empty completions, and executing local inference without destabilizing system latency.",
     project_story: "ÆON was developed as an independent research investigation toward an autonomous personal cognitive operating system. Begun as a 28-package Python monorepo (34 packages by October 2026) with an acyclic dependency graph, ÆON was subjected to intense empirical audits—including a 3/10 behavioral integrity scoring, discovery of the vacuous success bug where empty plans counted as completed achievements, and benchmarking six sub-2B models to find the real capability ceiling on consumer hardware.",
     documented_milestones: [
