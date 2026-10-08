@@ -139,12 +139,81 @@ export const method = [
   },
 ];
 
-export const materials = [
-  { category: "AI / ML", items: ["PyTorch", "Transformers", "llama.cpp", "Local SLMs (Qwen, Llama)", "GGUF quantization", "RAG pipelines", "Embeddings"] },
-  { category: "Languages", items: ["Python", "TypeScript", "C / C++", "SQL", "Bash"] },
-  { category: "Systems", items: ["OS architecture", "asyncio", "Event-bus runtimes", "AST static analysis", "Process sandboxing", "Acyclic monorepos"] },
-  { category: "Data", items: ["PostgreSQL", "SQLite (WAL)", "Vector stores", "Relational schemas"] },
-  { category: "Infrastructure", items: ["Linux", "Docker", "Local-first architecture", "Git"] },
-  { category: "Application", items: ["FastAPI", "Next.js", "React", "Tailwind CSS", "REST APIs"] },
-  { category: "Tooling", items: ["uv workspaces", "pytest", "Git", "VS Code", "Linux CLI"] },
+export interface MaterialItem {
+  name: string;
+  projects: ("Leo" | "Vani" | "ÆON" | "SIH26117")[];
+}
+
+export interface MaterialCategory {
+  category: string;
+  items: MaterialItem[];
+}
+
+export const materials: MaterialCategory[] = [
+  {
+    category: "AI / ML",
+    items: [
+      { name: "PyTorch", projects: ["ÆON"] },
+      { name: "Transformers", projects: ["Leo", "ÆON"] },
+      { name: "llama.cpp", projects: ["ÆON"] },
+      { name: "Local SLMs (Qwen, Llama)", projects: ["ÆON", "SIH26117"] },
+      { name: "GGUF quantization", projects: ["ÆON"] },
+      { name: "RAG pipelines", projects: ["ÆON", "SIH26117"] },
+      { name: "Embeddings", projects: ["Leo", "ÆON", "SIH26117"] },
+    ],
+  },
+  {
+    category: "Languages",
+    items: [
+      { name: "Python", projects: ["Leo", "Vani", "ÆON", "SIH26117"] },
+      { name: "TypeScript", projects: ["Leo", "SIH26117"] },
+      { name: "SQL", projects: ["Leo", "Vani", "ÆON"] },
+      { name: "Bash", projects: ["Leo", "SIH26117"] },
+    ],
+  },
+  {
+    category: "Systems",
+    items: [
+      { name: "OS architecture", projects: ["Leo", "Vani", "ÆON"] },
+      { name: "asyncio", projects: ["Leo", "ÆON", "SIH26117"] },
+      { name: "Event-bus runtimes", projects: ["Leo", "ÆON"] },
+      { name: "AST static analysis", projects: ["Vani"] },
+      { name: "Process sandboxing", projects: ["ÆON", "SIH26117"] },
+      { name: "Acyclic monorepos", projects: ["ÆON"] },
+    ],
+  },
+  {
+    category: "Data",
+    items: [
+      { name: "PostgreSQL", projects: ["Leo", "ÆON"] },
+      { name: "SQLite (WAL)", projects: ["Vani", "ÆON"] },
+      { name: "Vector stores", projects: ["Leo", "SIH26117"] },
+      { name: "Relational schemas", projects: ["Leo", "ÆON"] },
+    ],
+  },
+  {
+    category: "Infrastructure",
+    items: [
+      { name: "Linux", projects: ["Leo", "SIH26117", "ÆON"] },
+      { name: "Docker", projects: ["Leo", "ÆON", "SIH26117"] },
+      { name: "Local-first architecture", projects: ["Vani", "ÆON", "SIH26117"] },
+      { name: "Git", projects: ["Leo", "Vani", "ÆON", "SIH26117"] },
+    ],
+  },
+  {
+    category: "Application",
+    items: [
+      { name: "FastAPI", projects: ["Leo", "SIH26117", "ÆON"] },
+      { name: "React", projects: ["Leo", "SIH26117"] },
+      { name: "Tailwind CSS", projects: ["SIH26117"] },
+      { name: "REST APIs", projects: ["Leo", "SIH26117"] },
+    ],
+  },
+  {
+    category: "Tooling",
+    items: [
+      { name: "uv workspaces", projects: ["ÆON"] },
+      { name: "pytest", projects: ["Leo", "Vani", "ÆON", "SIH26117"] },
+    ],
+  },
 ];

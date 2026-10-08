@@ -287,8 +287,14 @@ export function HomeSpec() {
                 <dt className="md:col-span-3 label pt-1">{m.category}</dt>
                 <dd className="md:col-span-9 flex flex-wrap gap-2">
                   {m.items.map((it) => (
-                    <span key={it} className="numeral text-xs border border-[var(--ink)] px-2 py-1">
-                      {it}
+                    <span
+                      key={it.name}
+                      className="numeral text-xs border border-[var(--ink)] px-2 py-1 inline-flex items-center gap-1.5"
+                    >
+                      <span>{it.name}</span>
+                      <span className="opacity-60 text-[10px] tracking-tight">
+                        [{it.projects.join(", ")}]
+                      </span>
                     </span>
                   ))}
                 </dd>
