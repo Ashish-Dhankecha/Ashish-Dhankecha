@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getLabMetrics } from "@/lib/lab";
-import { fields, inventor, longTermGoal, materials, method, recordOfWork } from "@/content/home";
+import { directionIntro, fields, inventor, materials, method, recordOfWork } from "@/content/home";
 import { SpecRegister } from "./register";
 import { ProgramFigure } from "./program-figure";
 import { Arrow, ArrowDown, SheetSection } from "./sheet";
@@ -222,10 +222,18 @@ export function HomeSpec() {
         </div>
       </SheetSection>
 
-      {/* ============================ FIELDS ============================ */}
-      <SheetSection id="fields" title="Field" sheet={4} of={N} tone="cobalt">
+      {/* ============================ DIRECTION ============================ */}
+      <div id="fields" className="sr-only" aria-hidden="true" />
+      <SheetSection
+        id="direction"
+        title="Direction"
+        sheet={4}
+        of={N}
+        tone="cobalt"
+        aside={<span className="numeral text-xs opacity-60 uppercase">Direction</span>}
+      >
         <p className="text-[clamp(1.5rem,3vw,2.6rem)] leading-[1.1] font-extrabold condensed uppercase max-w-[30ch]">
-          {longTermGoal}
+          {directionIntro}
         </p>
         <ol className="mt-14 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-[var(--on-cobalt)] border-2 border-[var(--on-cobalt)]">
           {fields.map((f, i) => (

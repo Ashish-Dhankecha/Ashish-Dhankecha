@@ -101,6 +101,8 @@ export const fields = [
   },
 ];
 
+export const directionIntro = "Direction, not results. Where the work is heading.";
+
 export const longTermGoal =
   "To become an engineer and researcher who can take a difficult problem from first principles to research, to system, to reality.";
 
