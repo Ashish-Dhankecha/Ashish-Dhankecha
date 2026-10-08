@@ -162,9 +162,6 @@ export function HomeSpec() {
                 </p>
               ))}
             </div>
-            <p className="display mt-10 text-[clamp(2.6rem,6vw,5.5rem)] text-[var(--cobalt)] max-w-[14ch]">
-              {inventor.motto}
-            </p>
           </div>
         </div>
 

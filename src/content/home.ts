@@ -10,7 +10,6 @@ export const inventor = {
     "I take difficult ideas apart, understand how they work, rebuild them, and test them against reality. My interest is the system around the model: memory, state, verification, recovery.",
     "I don't limit myself to one stack. If something needs to be learned, I learn it. If something needs to be built, I build it. If something breaks, I find out why.",
   ],
-  motto: "I will make it happen. No matter what.",
 };
 
 export interface RecordEntry {

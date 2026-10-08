@@ -53,7 +53,7 @@ Most student AI portfolios list demos. This one shows the system around the mode
 - **Name:** "Ashish Labs" is the site brand, used alongside his personal name, Ashish Dhankecha.
 - **Presence:** the site should read as a founder, researcher, and highly ambitious builder: someone running a lab, not a student showing coursework. The ambition is backed by evidence, never inflated.
 - **Project pages as product sites (binding):** each project page should present its project the way a top-tier product marketing site presents a product. It should be persuasive and confident at the top, with the real engineering depth underneath. The source is the full project repository, not a summary.
-- **Voice in use today:** first-principles, direct, engineering-led ("Build systems, not just demos."; "I WILL MAKE IT HAPPEN. No matter what.").
+- **Voice in use today:** direct, engineering-led ("Build systems, not just demos.").
 - **Links:** GitHub `Ashish-Dhankecha`, X `Ashishdhankecha`, LinkedIn, email `ashishdhankecha256@gmail.com`.
 
 ## Evidence on Hand
