@@ -389,6 +389,10 @@ function ingestAll() {
       const topics = Array.isArray(fm.topics) ? fm.topics : [];
       const evidenceLevel = String(fm.evidence_level || "high").trim().toLowerCase();
       const publishable = fm.publishable !== undefined ? Boolean(fm.publishable) : true;
+      if (!publishable) {
+        console.log(`[*] Skipping unpublished draft: ${basename}`);
+        continue;
+      }
 
       const orderMatch = basename.match(/^(\d+)-/);
       const orderNum = orderMatch ? parseInt(orderMatch[1], 10) : 999;

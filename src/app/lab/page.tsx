@@ -69,7 +69,12 @@ export default function LabPage() {
 
       <section aria-labelledby="index-h" className="sheet mt-20">
         <h2 id="index-h" className="display text-[clamp(3rem,9vw,7.5rem)] mb-8">Index</h2>
-        <LabIndex rows={rows} projects={projects.map((p) => ({ id: p.id, name: p.short_name }))} categories={categories} />
+        <LabIndex
+          rows={rows}
+          projects={projects.map((p) => ({ id: p.id, name: p.short_name }))}
+          categories={categories}
+          featuredExperiment={null}
+        />
       </section>
     </div>
   );

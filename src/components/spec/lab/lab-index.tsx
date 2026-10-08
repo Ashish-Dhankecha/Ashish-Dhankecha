@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import { Arrow } from "@/components/spec/sheet";
 
 export interface IndexRow {
   slug: string;
@@ -19,10 +20,12 @@ export function LabIndex({
   rows,
   projects,
   categories,
+  featuredExperiment,
 }: {
   rows: IndexRow[];
   projects: { id: string; name: string }[];
   categories: string[];
+  featuredExperiment?: IndexRow | null;
 }) {
   const [project, setProject] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
@@ -45,6 +48,32 @@ export function LabIndex({
 
   return (
     <div>
+      {featuredExperiment && (
+        <div className="mb-10 border-2 border-[var(--ink)] bg-[var(--paper-2)] p-6 sm:p-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--rule-soft)] pb-3 mb-4">
+            <span className="label font-extrabold uppercase tracking-wider text-[var(--cobalt)]">
+              Featured experiment
+            </span>
+            <span className="numeral text-xs opacity-70">
+              {featuredExperiment.project} · {featuredExperiment.date ?? "Draft"}
+            </span>
+          </div>
+          <Link
+            href={`/lab/${featuredExperiment.project_slug}/${featuredExperiment.slug}`}
+            className="group block"
+          >
+            <h3 className="display text-[clamp(1.75rem,3.2vw,2.75rem)] group-hover:text-[var(--cobalt)] transition-colors">
+              {featuredExperiment.title}
+            </h3>
+            <p className="mt-3 text-[1rem] leading-relaxed text-[var(--ink-2)] max-w-[75ch]">
+              {featuredExperiment.summary}
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 font-extrabold condensed uppercase text-sm">
+              Open experiment <Arrow />
+            </span>
+          </Link>
+        </div>
+      )}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 border-t-2 border-[var(--ink)] pt-6">
         <div className="lg:col-span-5">
           <label htmlFor="lab-q" className="label block mb-2">
