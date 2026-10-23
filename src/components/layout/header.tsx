@@ -16,7 +16,9 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const checkActiveSection = () => {
       const scrollPosition = window.scrollY + 200;
       for (const link of NAV_LINKS) {
         const el = document.getElementById(link.id);
@@ -29,10 +31,18 @@ export function Header() {
           }
         }
       }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(checkActiveSection);
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    checkActiveSection();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

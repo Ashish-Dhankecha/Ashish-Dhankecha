@@ -15,8 +15,8 @@ export function HeroSection() {
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const heroCardRef = useRef<HTMLDivElement | null>(null);
+  const tiltTicking = useRef(false);
 
   // Typewriter effect
   useEffect(() => {
@@ -43,19 +43,32 @@ export function HeroSection() {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, phraseIdx]);
 
-  // 3D Tilt Effect on Mouse Move
+  // 3D Tilt Effect on Mouse Move (Desktop Only, GPU-accelerated via ref)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!heroCardRef.current) return;
-    const rect = heroCardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    const rotX = -(y / (rect.height / 2)) * 6;
-    const rotY = (x / (rect.width / 2)) * 6;
-    setMousePos({ x: rotY, y: rotX });
+    if (!heroCardRef.current || tiltTicking.current) return;
+    tiltTicking.current = true;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+
+    requestAnimationFrame(() => {
+      if (!heroCardRef.current) {
+        tiltTicking.current = false;
+        return;
+      }
+      const rect = heroCardRef.current.getBoundingClientRect();
+      const x = clientX - rect.left - rect.width / 2;
+      const y = clientY - rect.top - rect.height / 2;
+      const rotX = -(y / (rect.height / 2)) * 4;
+      const rotY = (x / (rect.width / 2)) * 4;
+      heroCardRef.current.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
+      tiltTicking.current = false;
+    });
   };
 
   const handleMouseLeave = () => {
-    setMousePos({ x: 0, y: 0 });
+    if (heroCardRef.current) {
+      heroCardRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    }
   };
 
   return (
@@ -68,10 +81,9 @@ export function HeroSection() {
       <div
         ref={heroCardRef}
         style={{
-          transform: `perspective(1000px) rotateX(${mousePos.y}deg) rotateY(${mousePos.x}deg)`,
           transition: "transform 0.15s ease-out",
         }}
-        className="w-full max-w-5xl mx-auto flex flex-col items-center"
+        className="w-full max-w-5xl mx-auto flex flex-col items-center will-change-transform"
       >
         {/* Status Pill Badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-white/10 text-xs font-mono text-white/70 mb-8 select-none shadow-sm hover:border-white/20 transition-colors">

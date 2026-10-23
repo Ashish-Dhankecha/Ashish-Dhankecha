@@ -11,10 +11,10 @@ My work sits at the intersection of:
 
 ## Current Focus
 
-Building Ashi — a long-term personal AI system exploring reliable,
+Building ÆON — a long-term personal AI system exploring reliable,
 stateful, and autonomous AI.
 
-Alongside Ashi, I build smaller systems and experiments to understand
+Alongside ÆON, I build smaller systems and experiments to understand
 the underlying mathematics, models, and infrastructure from first principles.
 
 ## Learning → Building

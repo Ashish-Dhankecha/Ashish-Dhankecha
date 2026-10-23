@@ -33,11 +33,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         document.documentElement.classList.remove("light");
       }
 
-      // Sync any pull-lamp web components
-      const lamps = document.querySelectorAll("pull-lamp");
-      lamps.forEach((lamp) => {
-        lamp.toggleAttribute("on", newTheme === "light");
-      });
     }
 
     if (persist && typeof window !== "undefined") {
@@ -62,19 +57,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
 
     applyTheme(initialTheme, false);
-
-    // Listen for themechange events emitted by pull-lamp
-    const handleThemeChange = (e: Event) => {
-      const customEvent = e as CustomEvent<{ theme: Theme }>;
-      if (customEvent.detail?.theme) {
-        applyTheme(customEvent.detail.theme, true);
-      }
-    };
-
-    document.addEventListener("themechange", handleThemeChange);
-    return () => {
-      document.removeEventListener("themechange", handleThemeChange);
-    };
   }, [applyTheme]);
 
   const setTheme = useCallback(

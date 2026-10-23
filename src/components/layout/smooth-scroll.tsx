@@ -16,6 +16,15 @@ export function SmoothScrollProvider({
 
     if (prefersReducedMotion) return;
 
+    // Never hijack touch scrolling on mobile devices (coarse pointer / small screen / touch support).
+    // Native mobile touch inertia scrolling is 120Hz hardware-accelerated.
+    const isTouchOrMobile =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.innerWidth < 768 ||
+      "ontouchstart" in window;
+
+    if (isTouchOrMobile) return;
+
     const lenis = new Lenis({
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -23,7 +32,6 @@ export function SmoothScrollProvider({
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.5,
     });
 
     let animationFrameId: number;

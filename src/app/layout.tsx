@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono, Alex_Brush } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SkipToContent } from "@/components/layout/skip-to-content";
@@ -25,13 +25,6 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const alexBrush = Alex_Brush({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--font-script",
-  display: "swap",
-});
-
 export const metadata: Metadata = constructMetadata();
 
 export const viewport: Viewport = {
@@ -50,7 +43,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${alexBrush.variable} dark`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
       suppressHydrationWarning
     >
       <head>

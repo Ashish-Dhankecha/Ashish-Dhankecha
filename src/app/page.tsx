@@ -38,13 +38,7 @@ export default function HomePage() {
       { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
 
-    elements.forEach((el) => {
-      observer.observe(el);
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
-        el.classList.add("visible");
-      }
-    });
+    elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);

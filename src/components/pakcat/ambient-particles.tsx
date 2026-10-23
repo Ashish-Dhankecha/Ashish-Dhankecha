@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface NodeParticle {
   x: number;
@@ -14,8 +14,18 @@ interface NodeParticle {
 
 export function AmbientParticles() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const isTouchOrMobile =
+      window.innerWidth < 768 ||
+      window.matchMedia("(pointer: coarse)").matches;
+
+    if (isTouchOrMobile) {
+      setIsMobile(true);
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -25,7 +35,7 @@ export function AmbientParticles() {
     let animationFrameId: number;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     let mouseX = -9999;
     let mouseY = -9999;
@@ -36,9 +46,9 @@ export function AmbientParticles() {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    // Responsive particle count
+    // Responsive particle count (capped for smooth 60fps)
     const particleCount = Math.floor(
-      Math.min(width, 1600) * 0.045 * (prefersReducedMotion ? 0.3 : 1)
+      Math.min(width, 1400) * 0.03 * (prefersReducedMotion ? 0.3 : 1)
     );
 
     const particles: NodeParticle[] = [];
@@ -49,16 +59,21 @@ export function AmbientParticles() {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35,
-          radius: Math.random() * 1.5 + 0.5,
-          baseAlpha: Math.random() * 0.35 + 0.15,
-          alpha: Math.random() * 0.35 + 0.15,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          radius: Math.random() * 1.4 + 0.6,
+          baseAlpha: Math.random() * 0.3 + 0.15,
+          alpha: Math.random() * 0.3 + 0.15,
         });
       }
     };
 
     const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+        return;
+      }
+      setIsMobile(false);
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width * dpr;
@@ -83,7 +98,7 @@ export function AmbientParticles() {
       isVisible = !document.hidden;
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("visibilitychange", handleVisibilityChange);
@@ -96,8 +111,8 @@ export function AmbientParticles() {
         ctx.clearRect(0, 0, width, height);
 
         // Update and draw particles
-        const maxDist = 90;
-        const mouseRadius = 140;
+        const maxDist = 85;
+        const mouseRadius = 130;
 
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
@@ -116,10 +131,10 @@ export function AmbientParticles() {
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < mouseRadius) {
-              const force = (1 - dist / mouseRadius) * 0.6;
+              const force = (1 - dist / mouseRadius) * 0.5;
               p.x -= (dx / dist) * force;
               p.y -= (dy / dist) * force;
-              p.alpha = Math.min(1, p.baseAlpha + 0.4);
+              p.alpha = Math.min(1, p.baseAlpha + 0.35);
             } else {
               p.alpha += (p.baseAlpha - p.alpha) * 0.05;
             }
@@ -139,12 +154,12 @@ export function AmbientParticles() {
             const d = Math.sqrt(djx * djx + djy * djy);
 
             if (d < maxDist) {
-              const lineAlpha = (1 - d / maxDist) * 0.12;
+              const lineAlpha = (1 - d / maxDist) * 0.1;
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
               ctx.strokeStyle = `rgba(255, 255, 255, ${lineAlpha})`;
-              ctx.lineWidth = 0.65;
+              ctx.lineWidth = 0.5;
               ctx.stroke();
             }
           }
@@ -167,46 +182,48 @@ export function AmbientParticles() {
 
   return (
     <>
-      {/* 1. Interactive 2.5D Canvas Starfield & Constellation */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 pointer-events-none z-0"
-        aria-hidden="true"
-      />
+      {/* 1. Interactive 2.5D Canvas Starfield & Constellation (desktop only) */}
+      {!isMobile && (
+        <canvas
+          ref={canvasRef}
+          className="fixed inset-0 pointer-events-none z-0"
+          aria-hidden="true"
+        />
+      )}
 
       {/* 2. Cyber Subtle Coordinate Grid */}
       <div
-        className="fixed inset-0 pointer-events-none z-0 cyber-grid opacity-60"
+        className="fixed inset-0 pointer-events-none z-0 cyber-grid opacity-40 sm:opacity-60"
         aria-hidden="true"
       />
 
-      {/* 3. Floating Radial Glow Orbs (mal1k.xyz aesthetic) */}
+      {/* 3. Floating Radial Glow Orbs (hidden on mobile, optimized on desktop) */}
       <div
-        className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
+        className="hidden sm:block fixed inset-0 pointer-events-none z-0 overflow-hidden"
         aria-hidden="true"
       >
         <div
-          className="absolute -top-32 -right-32 w-[550px] h-[550px] rounded-full opacity-[0.07] animate-pulse"
+          className="absolute -top-32 -right-32 w-[450px] h-[450px] rounded-full opacity-[0.06]"
           style={{
             background:
-              "radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%)",
-            filter: "blur(80px)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(139, 92, 246, 0.15) 40%, transparent 70%)",
+            filter: "blur(60px)",
           }}
         />
         <div
-          className="absolute top-1/2 -left-48 w-[500px] h-[500px] rounded-full opacity-[0.05]"
+          className="absolute top-1/2 -left-48 w-[400px] h-[400px] rounded-full opacity-[0.04]"
           style={{
             background:
-              "radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(6, 182, 212, 0.2) 50%, transparent 70%)",
-            filter: "blur(90px)",
+              "radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 70%)",
+            filter: "blur(60px)",
           }}
         />
         <div
-          className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] rounded-full opacity-[0.06]"
+          className="absolute -bottom-40 right-1/4 w-[500px] h-[500px] rounded-full opacity-[0.05]"
           style={{
             background:
-              "radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%)",
-            filter: "blur(100px)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%)",
+            filter: "blur(70px)",
           }}
         />
       </div>
