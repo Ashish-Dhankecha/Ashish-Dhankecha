@@ -97,7 +97,7 @@ export function ExperienceSection() {
         <div className="mb-12 glass-card p-5 rounded-2xl border border-white/10 font-mono text-xs text-white/70 overflow-x-auto select-none">
           <div className="text-[10px] text-emerald-400 uppercase tracking-wider mb-2 font-bold flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>// TRAJECTORY: FOUNDATION → EXPERIMENTATION → ITERATION → MONOREPO OS</span>
+            <span>{"// TRAJECTORY: FOUNDATION → EXPERIMENTATION → ITERATION → MONOREPO OS"}</span>
           </div>
           <pre className="text-[11px] leading-relaxed text-white/80">
 {`JUL 2024  ─── Computer Engineering (SSASIT, Surat)

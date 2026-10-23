@@ -28,22 +28,22 @@ export function Footer() {
         {/* Minimal Navigation & Links */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-white/60 mb-8">
           <Link href="/#hero" className="hover:text-white transition-colors">
-            // home
+            {"// home"}
           </Link>
           <Link href="/#about" className="hover:text-white transition-colors">
-            // about
+            {"// about"}
           </Link>
           <Link href="/projects" className="hover:text-white transition-colors">
-            // systems
+            {"// systems"}
           </Link>
           <Link href="/#stack" className="hover:text-white transition-colors">
-            // stack
+            {"// stack"}
           </Link>
           <Link href="/lab" className="text-emerald-400 hover:underline transition-colors">
-            // lab_archive
+            {"// lab_archive"}
           </Link>
           <Link href="/#contact" className="hover:text-white transition-colors">
-            // contact
+            {"// contact"}
           </Link>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -121,12 +122,12 @@ export function ContactSection() {
           >
             Twitter / X ↗
           </a>
-          <a
+          <Link
             href="/lab"
             className="px-4 py-2.5 rounded-full glass border border-white/10 text-emerald-400/90 hover:text-emerald-400 hover:border-emerald-400/30 transition-all"
           >
             The Lab Archive (62 notes) →
-          </a>
+          </Link>
         </div>
       </div>
     </section>
