@@ -3,7 +3,7 @@ import { ProjectCaseStudy } from "@/types/project-case-study";
 export const ashiCaseStudy: ProjectCaseStudy = {
   id: "ashi",
   slug: "ashi",
-  title: "Ashi",
+  title: "ÆON",
   subtitle: "Personal Cognitive Operating System",
   tagline: "A 28-package personal AI operating system built from first principles for a single human user.",
   startDate: "16 July 2026",
@@ -13,7 +13,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   isFlagship: true,
   accentColor: "var(--accent-brass)",
   summary:
-    "Ashi is an ambitious, stateful cognitive operating system designed from first principles to accumulate a longitudinal model of one person—their goals, habits, relationships, and cognitive processes—over years without suffering from context drift or hallucinated task completion.",
+    "ÆON is an ambitious, stateful cognitive operating system designed from first principles to accumulate a longitudinal model of one person—their goals, habits, relationships, and cognitive processes—over years without suffering from context drift or hallucinated task completion.",
   links: [
     {
       label: "GitHub Monorepo",
@@ -68,7 +68,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
     originalHypothesis:
       "A durable personal AI companion must not be built as a prompt wrapper. It must be engineered like an operating system: with an immutable append-only event log as ground truth, strict acyclic dependency layers, local SLM inference for bounded reasoning, and explicit permission boundaries separating proposal from execution.",
     contextSummary:
-      "Ashi was started on 16 July 2026 after auditing previous iterations (Leo and Vani). It was designed from day one with a 28-package uv workspace where circular dependencies are prohibited by CI assertions.",
+      "ÆON was started on 16 July 2026 after auditing previous iterations (Leo and Vani). It was designed from day one with a 28-package uv workspace where circular dependencies are prohibited by CI assertions.",
   },
   concept: {
     headline: "The Longitudinal Cognitive Cycle",
@@ -116,7 +116,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   },
   architecture: {
     overview:
-      "Ashi is organized into six strictly stratified architectural layers across 28 distinct Python packages managed via uv workspaces. Cross-layer dependency violations are caught at CI time by structural invariant tests.",
+      "ÆON is organized into six strictly stratified architectural layers across 28 distinct Python packages managed via uv workspaces. Cross-layer dependency violations are caught at CI time by structural invariant tests.",
     layers: [
       {
         layerId: "L0",
@@ -373,7 +373,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   executionFlow: {
     title: "Execution Trace: Contextualized File Investigation",
     description:
-      "A real-world trace showing how Ashi processes a user request from sensory intake to sandboxed tool execution and immutable logging.",
+      "A real-world trace showing how ÆON processes a user request from sensory intake to sandboxed tool execution and immutable logging.",
     concreteExample: {
       input: "User asks: 'Did we finish fixing the database deadlock issue from yesterday?'",
       steps: [
@@ -561,7 +561,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
       id: "hard-sub2b-instruction",
       title: "Sub-2B Parameter Model Instruction Following Ceiling",
       whyDifficult:
-        "To run entirely locally on consumer hardware without GPU fan screaming, Ashi targets 1.5B parameter models (Qwen2.5-1.5B). Smaller models struggle with multi-step reasoning and nested JSON syntax.",
+        "To run entirely locally on consumer hardware without GPU fan screaming, ÆON targets 1.5B parameter models (Qwen2.5-1.5B). Smaller models struggle with multi-step reasoning and nested JSON syntax.",
       initialApproach:
         "Standard system prompts with few-shot examples requesting JSON output.",
       whatFailed:
@@ -577,7 +577,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
       title: "The Vacuous Success Bug: 85% of Plans Falsely Marked Completed",
       badge: "CRITICAL FAILURE",
       failure:
-        "During Phase T action integrity testing, Ashi reported a 100% plan success rate. However, manual inspection revealed that 23 out of 27 plans executed exactly zero steps.",
+        "During Phase T action integrity testing, ÆON reported a 100% plan success rate. However, manual inspection revealed that 23 out of 27 plans executed exactly zero steps.",
       rootCause:
         "In Python, the built-in function `all([])` evaluates to `True`. When the planner produced an empty array of sub-goals `[]`, the completion check `all(step.is_complete for step in plan.steps)` evaluated to `True` instantly. The system declared victory without doing any work.",
       attemptedFix:
@@ -689,7 +689,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   verification: {
     headline: "Empirical Testing & Rigorous Verification",
     testSuiteSummary:
-      "Ashi is verified through a dual testing regime: 181 deterministic architectural and unit invariant tests running in CI, combined with automated multi-hour soak benchmarks.",
+      "ÆON is verified through a dual testing regime: 181 deterministic architectural and unit invariant tests running in CI, combined with automated multi-hour soak benchmarks.",
     metrics: [
       {
         label: "Substrate Invariants",
@@ -749,7 +749,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   },
   performance: {
     summary:
-      "Performance optimization in Ashi focused on eliminating serialization hops and maximizing local GPU utilization without exceeding thermal or memory budgets.",
+      "Performance optimization in ÆON focused on eliminating serialization hops and maximizing local GPU utilization without exceeding thermal or memory budgets.",
     benchmarks: [
       {
         metric: "Cognitive Turn Latency",
@@ -859,7 +859,7 @@ export const ashiCaseStudy: ProjectCaseStudy = {
   currentState: {
     status: "ACTIVE",
     summary:
-      "Ashi is actively maintained and dogfooded daily on the author's primary workstation. The core cognitive runtime, local inference, and memory stores are stable and verified.",
+      "ÆON is actively maintained and dogfooded daily on the author's primary workstation. The core cognitive runtime, local inference, and memory stores are stable and verified.",
     whatWorks: [
       "28-package uv monorepo with 181 passing invariant tests.",
       "Local Qwen2.5-1.5B inference via llama.cpp with sub-6s turn latency.",
@@ -958,6 +958,6 @@ def test_layer_boundaries_are_respected():
       relationship: "Inherited zero-cloud philosophy, local-first runtime, and AST invariant enforcement.",
     },
     roleInEvolution:
-      "Ashi is the flagship system representing the culmination of architectural lessons from Leo and Vani, built with industrial-grade monorepo discipline and empirical testing.",
+      "ÆON is the flagship system representing the culmination of architectural lessons from Leo and Vani, built with industrial-grade monorepo discipline and empirical testing.",
   },
 };

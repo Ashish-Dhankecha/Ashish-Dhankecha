@@ -2,7 +2,7 @@
 title: A Three-Package Dependency Cycle Undetected Until an Invariant Audit
 slug: dependency-cycle-execution-planning-reflection-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-21'
 topics:
@@ -28,7 +28,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -44,7 +44,7 @@ A live three-package circular dependency (`ashi-execution → ashi-planning → 
 
 ## Context
 
-Ashi is a 28-package Python monorepo enforcing a strict 6-layer dependency hierarchy where lower-layer packages cannot import higher-layer ones. The architecture is documented and the separation is a stated design principle. A full "architectural-invariant audit" (`docs/audits/ashi-architectural-invariant-audit.md`) was commissioned to verify the implementation matched the design.
+ÆON is a 28-package Python monorepo enforcing a strict 6-layer dependency hierarchy where lower-layer packages cannot import higher-layer ones. The architecture is documented and the separation is a stated design principle. A full "architectural-invariant audit" (`docs/audits/ashi-architectural-invariant-audit.md`) was commissioned to verify the implementation matched the design.
 
 The audit was not looking for cycles specifically — it was looking for anything that violated stated invariants.
 

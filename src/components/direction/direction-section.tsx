@@ -176,7 +176,7 @@ export function DirectionSection({ onExploreAshi }: DirectionSectionProps) {
           {/* =========================================================================
               16 & 17. LOWER EDITORIAL SPLIT
               LEFT: Looking Further (The Bigger Ambition)
-              RIGHT: Editorial Bridge (Ashi as One Experiment in that Direction)
+              RIGHT: Editorial Bridge (ÆON as One Experiment in that Direction)
               ========================================================================= */}
           <div className="pt-6 sm:pt-8 border-t border-[#2D161C]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
@@ -200,7 +200,7 @@ export function DirectionSection({ onExploreAshi }: DirectionSectionProps) {
                 </div>
               </div>
 
-              {/* One Experiment in that Direction: Ashi Bridge */}
+              {/* One Experiment in that Direction: ÆON Bridge */}
               <div className="lg:col-span-6 rounded-xl border border-[#2D161C] bg-[#140A0D] p-5 sm:p-8 space-y-4 sm:space-y-5 shadow-lg">
                 <div className="flex items-center justify-between border-b border-[#2D161C] pb-3">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#DF7987] font-semibold">

@@ -2,7 +2,7 @@
 title: Managing a Free-Tier Gemini Quota Across 21 API Keys
 slug: gemini-quota-management-credential-pool-ashi
 content_type: TECHNICAL_DESIGN
-project: Ashi
+project: ÆON
 status: Implemented
 date: '2026-07-28'
 topics:
@@ -13,7 +13,7 @@ topics:
 - resource-constraints
 evidence_level: high
 publishable: true
-description: "Ashi operates on free-tier Gemini (500 req/day/project/model) using\
+description: "ÆON operates on free-tier Gemini (500 req/day/project/model) using\
   \ a credential pool across 21 independent Google Cloud projects, with a quota-reset\
   \ strategy that accounts for the midnight Pacific reset time \u2014 not the developer's\
   \ local time zone."
@@ -27,7 +27,7 @@ TECHNICAL DESIGN
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -39,11 +39,11 @@ Implemented
 
 ## One-Line Summary
 
-Ashi operates on free-tier Gemini (500 req/day/project/model) using a credential pool across 21 independent Google Cloud projects, with a quota-reset strategy that accounts for the midnight Pacific reset time — not the developer's local time zone.
+ÆON operates on free-tier Gemini (500 req/day/project/model) using a credential pool across 21 independent Google Cloud projects, with a quota-reset strategy that accounts for the midnight Pacific reset time — not the developer's local time zone.
 
 ## Context
 
-Building and running a personal AI system without spending money means engineering around rate limits as a primary constraint. Ashi's production LLM layer (`ashi-llm`) was designed from the start with this constraint as a first-class architectural concern.
+Building and running a personal AI system without spending money means engineering around rate limits as a primary constraint. ÆON's production LLM layer (`ashi-llm`) was designed from the start with this constraint as a first-class architectural concern.
 
 The free Gemini API tier allows 500 requests per day per project per model. With approximately 7.8 LLM attempts per turn (measured), 500 requests supports roughly 64 turns per day per project. To support sustained daily use, the credential pool spans multiple independent Google Cloud projects.
 
@@ -79,7 +79,7 @@ The pool targets 32 independent Gemini projects. Each has its own `GEMINI_API_KE
 
 **Quota reset boundary mismatch:**
 
-The measured constraint in `CLAUDE.md`: "Ashi's local accounting resets at 13:30 IST" (the developer's time zone offset from Pacific midnight). One soak baseline run straddled Google's actual midnight Pacific reset — a "full quota" run that wasn't, because the accounting window was different from Google's. This invalidated one baseline measurement.
+The measured constraint in `CLAUDE.md`: "ÆON's local accounting resets at 13:30 IST" (the developer's time zone offset from Pacific midnight). One soak baseline run straddled Google's actual midnight Pacific reset — a "full quota" run that wasn't, because the accounting window was different from Google's. This invalidated one baseline measurement.
 
 **Measured reality (CLAUDE.md, "Measured Constraints"):**
 - ~7.8 LLM attempts per turn
@@ -108,7 +108,7 @@ This is measured, not estimated. It includes: the main chat completion, embeddin
 
 **Engineering response:**
 
-The pool across 21 projects is the direct response to this constraint. The credential rotation is automatic; the developer's daily usage draws from whichever keys still have quota, transparently. If all 21 keys exhaust, Ashi degrades to LLM-free operations (memory retrieval and perception still work, LLM-backed responses wait for reset).
+The pool across 21 projects is the direct response to this constraint. The credential rotation is automatic; the developer's daily usage draws from whichever keys still have quota, transparently. If all 21 keys exhaust, ÆON degrades to LLM-free operations (memory retrieval and perception still work, LLM-backed responses wait for reset).
 
 ## What I Learned
 

@@ -3,7 +3,7 @@ title: 'World Perception at 24 Microseconds: Designing an LLM-Free Ambient Aware
   Layer'
 slug: world-perception-on-turn-path-design-ashi
 content_type: TECHNICAL_DESIGN
-project: Ashi
+project: ÆON
 status: Implemented and benchmarked
 date: '2026-07-27'
 topics:
@@ -14,7 +14,7 @@ topics:
 - ambient-computing
 evidence_level: high
 publishable: true
-description: "Ashi's world perception layer \u2014 which tracks filesystem, git state,\
+description: "ÆON's world perception layer \u2014 which tracks filesystem, git state,\
   \ and environment across 1,725 resources every 60 seconds \u2014 adds 24 \xB5s to\
   \ the turn-path (a snapshot read) while running the full 574 ms perception pass\
   \ completely off the turn path in the background."
@@ -28,7 +28,7 @@ TECHNICAL DESIGN
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -40,7 +40,7 @@ Implemented and benchmarked
 
 ## One-Line Summary
 
-Ashi's world perception layer — which tracks filesystem, git state, and environment across 1,725 resources every 60 seconds — adds 24 µs to the turn-path (a snapshot read) while running the full 574 ms perception pass completely off the turn path in the background.
+ÆON's world perception layer — which tracks filesystem, git state, and environment across 1,725 resources every 60 seconds — adds 24 µs to the turn-path (a snapshot read) while running the full 574 ms perception pass completely off the turn path in the background.
 
 ## Context
 
@@ -125,7 +125,7 @@ The atomic swap (`publish` step, 52 ms) is the one point where background and tu
 
 ## What I Learned
 
-The separation between "background work" and "turn-path cost" must be explicit and enforced by structure, not convention. In Ashi's architecture, the turn path never calls the perception sensors directly — it can only read the published snapshot. If the snapshot is available (it is after the first pass), the turn-path cost is bounded at ~24 µs regardless of how expensive the sensors are.
+The separation between "background work" and "turn-path cost" must be explicit and enforced by structure, not convention. In ÆON's architecture, the turn path never calls the perception sensors directly — it can only read the published snapshot. If the snapshot is available (it is after the first pass), the turn-path cost is bounded at ~24 µs regardless of how expensive the sensors are.
 
 Index file locking is a real, subtle gotcha with ambient git operations. `GIT_OPTIONAL_LOCKS=0` is the correct mitigation, but it should be verified by measuring the index mtime, not just by trusting the flag. The verification adds almost no overhead and provides direct evidence rather than indirect.
 
@@ -133,7 +133,7 @@ Zero-growth property must be tested by measurement over multiple passes, not ass
 
 ## What I Would Do Differently
 
-The `max_entries: 5000` cap in `configs/perception.yaml` exists to bound the snapshot size but is not exercised in this benchmark (1,725 resources at the Ashi repo). A separate test with a larger directory would verify the cap is enforced. As written, the cap is a documented guard without a test for its activation path.
+The `max_entries: 5000` cap in `configs/perception.yaml` exists to bound the snapshot size but is not exercised in this benchmark (1,725 resources at the ÆON repo). A separate test with a larger directory would verify the cap is enforced. As written, the cap is a documented guard without a test for its activation path.
 
 ## Broader Principle
 
@@ -154,7 +154,7 @@ The expensive work amortizes across many turns. The interaction latency budget c
 
 ## Source Confidence
 
-HIGH — all numbers are from a real benchmark run (`reports/x3-step6-perception-bench.json`) against the actual Ashi repository (1,344 files, 328 directories, 50 commits). The index mtime verification was directly observed. The zero-growth property was measured across 10 passes.
+HIGH — all numbers are from a real benchmark run (`reports/x3-step6-perception-bench.json`) against the actual ÆON repository (1,344 files, 328 directories, 50 commits). The index mtime verification was directly observed. The zero-growth property was measured across 10 passes.
 
 ---
 
@@ -174,4 +174,4 @@ The 24 µs vs 574 ms contrast is a strong headline. The git index locking issue 
 
 ## Publication Notes
 
-No credentials or private data. Repository statistics (1,344 files, 50 commits) are about the Ashi project's own development repository, not any user's private repository. Safe to publish.
+No credentials or private data. Repository statistics (1,344 files, 50 commits) are about the ÆON project's own development repository, not any user's private repository. Safe to publish.

@@ -7,147 +7,58 @@ export function Footer() {
   return (
     <footer
       aria-label="Site footer"
-      className="relative z-10 border-t border-[var(--line)] bg-[var(--panel)] transition-colors duration-700"
+      className="relative z-10 border-t border-white/[0.08] bg-[#050505] py-16 px-4 sm:px-6 overflow-hidden"
     >
-      <div className="section-container section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
-          {/* Col 1: Brand & Tagline */}
-          <div>
-            <div
-              className="flex items-center gap-2 mb-3 group select-none"
-            >
-              <span className="font-mono text-[var(--accent-brass)] text-sm group-hover:text-[var(--accent-gold)] transition-colors">
-                /\_/\
-              </span>
-              <span className="text-lg font-bold text-[var(--ink)] font-sans tracking-tight">
-                Ashish Labs
-              </span>
-            </div>
-            <p className="text-sm text-[var(--muted)] font-body leading-relaxed">
-              <span className="font-mono text-[var(--accent-brass)]">{"// "}</span>
-              AI systems, software, automation, and products from first principles.
-              I WILL MAKE IT HAPPEN. No matter what.
-            </p>
-          </div>
-
-          {/* Col 2: Navigation Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--ink)] mb-4 font-sans uppercase tracking-wider">
-              Navigation
-            </h4>
-            <div className="flex flex-col gap-2">
-              <Link
-                href="/#hero"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Home
-              </Link>
-              <Link
-                href="/#about"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                About
-              </Link>
-              <Link
-                href="/projects"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Systems &amp; Experiments
-              </Link>
-              <Link
-                href="/#journey"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Build Journey
-              </Link>
-              <Link
-                href="/#what-i-build"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                What I Build
-              </Link>
-              <Link
-                href="/#process"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                How I Work
-              </Link>
-              <Link
-                href="/#stack"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Tech Stack
-              </Link>
-              <Link
-                href="/#focus"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Current Focus
-              </Link>
-              <Link
-                href="/#contact"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/lab"
-                className="text-sm text-[var(--accent-brass)] hover:text-[var(--accent-gold)] transition-colors font-mono pt-1"
-              >
-                &gt; Lab Archive (62 notes &amp; ADRs)
-              </Link>
-            </div>
-          </div>
-
-          {/* Col 3: Contact & Utilities */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--ink)] mb-4 font-sans uppercase tracking-wider">
-              Connect
-            </h4>
-            <div className="flex flex-col gap-2">
-              <a
-                href="mailto:ashishdhankecha256@gmail.com"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body break-all sm:break-normal"
-              >
-                ashishdhankecha256@gmail.com
-              </a>
-              <a
-                href="https://github.com/Ashish-Dhankecha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://x.com/Ashishdhankecha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--muted)] hover:text-[var(--ink)] transition-colors font-body"
-              >
-                X (Twitter)
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <p className="text-xs text-[var(--muted)] font-body">
-            Built by Ashish Dhankecha — First Principles AI Systems
-          </p>
-          <p className="text-xs font-mono text-[var(--accent-brass)]">
-            ASHISH_LAB_OS {"//"} SYS.ONLINE
+      <div className="section-container max-w-5xl mx-auto flex flex-col items-center text-center">
+        {/* Signature Giant Strikethrough Headline (mal1k.xyz signature) */}
+        <div className="mb-10 select-none">
+          <p
+            className="font-extrabold tracking-tighter uppercase text-white/90 leading-tight"
+            style={{ fontSize: "clamp(2rem, 7vw, 4.5rem)" }}
+          >
+            <span className="line-through decoration-white/40 text-white/30 mr-2 sm:mr-4">
+              Eat Sleep Repeat
+            </span>
+            <span className="text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+              Automate
+            </span>
           </p>
         </div>
+
+        {/* Minimal Navigation & Links */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-white/60 mb-8">
+          <Link href="/#hero" className="hover:text-white transition-colors">
+            // home
+          </Link>
+          <Link href="/#about" className="hover:text-white transition-colors">
+            // about
+          </Link>
+          <Link href="/projects" className="hover:text-white transition-colors">
+            // systems
+          </Link>
+          <Link href="/#stack" className="hover:text-white transition-colors">
+            // stack
+          </Link>
+          <Link href="/lab" className="text-emerald-400 hover:underline transition-colors">
+            // lab_archive
+          </Link>
+          <Link href="/#contact" className="hover:text-white transition-colors">
+            // contact
+          </Link>
+        </div>
+
+        {/* Telemetry Invariant Line */}
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full glass border border-white/10 text-[11px] font-mono text-white/40 mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>Status: All Systems Nominal</span>
+          <span className="text-white/20">•</span>
+          <span>Acyclic Invariants: 100%</span>
+        </div>
+
+        {/* Attribution & Copyright */}
+        <p className="text-xs text-white/30 font-mono">
+          &copy; {new Date().getFullYear()} Ashish Dhankecha. Built with Next.js 15, React 19, Lenis &amp; Tailwind CSS.
+        </p>
       </div>
     </footer>
   );

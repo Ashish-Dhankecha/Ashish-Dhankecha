@@ -17,55 +17,55 @@ export function VerificationMetrics({
   security,
 }: VerificationMetricsProps) {
   return (
-    <section className="py-16 md:py-20 border-b border-[var(--line)]">
+    <section className="py-16 md:py-24 border-b border-white/10 bg-[#050505]">
       <div className="section-container space-y-16">
         {/* ============================================================== */}
         {/* 12 — VERIFICATION & TESTING EVIDENCE                           */}
         {/* ============================================================== */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="font-mono text-xs text-[var(--accent-brass)] uppercase tracking-widest font-semibold">
+            <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest font-semibold">
               12 // VERIFICATION &amp; EMPIRICAL TESTING
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--ink)] font-sans tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-sans tracking-tight">
             {verification.headline}
           </h2>
-          <p className="text-sm sm:text-base text-[var(--muted)] font-body leading-relaxed max-w-3xl mt-2 mb-8">
+          <p className="text-sm sm:text-base text-white/60 font-sans leading-relaxed max-w-3xl mt-3 mb-10">
             {verification.testSuiteSummary}
           </p>
 
           {/* Metrics Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
             {verification.metrics.map((m, idx) => {
               const statusColors = {
-                pass: "border-emerald-800/60 bg-emerald-950/20 text-emerald-400",
-                fail: "border-rose-800/60 bg-rose-950/20 text-rose-400",
-                partial: "border-amber-800/60 bg-amber-950/20 text-amber-400",
-                audit: "border-[var(--accent-brass)]/60 bg-[var(--accent-enamel)]/30 text-[var(--accent-gold)]",
+                pass: "border-emerald-500/40 bg-emerald-950/40 text-emerald-400",
+                fail: "border-rose-500/40 bg-rose-950/40 text-rose-400",
+                partial: "border-amber-500/40 bg-amber-950/40 text-amber-400",
+                audit: "border-cyan-500/40 bg-cyan-950/40 text-cyan-400",
               }[m.status];
 
               return (
                 <div
                   key={idx}
-                  className="p-5 bg-[var(--panel)] border border-[var(--line)] rounded-sm space-y-2 flex flex-col justify-between"
+                  className="glass-card p-6 rounded-2xl border border-white/10 space-y-3 flex flex-col justify-between shadow-xl"
                 >
-                  <div className="space-y-1">
-                    <span className="font-mono text-[10px] text-[var(--accent-brass)] uppercase tracking-wider block">
+                  <div className="space-y-1.5">
+                    <span className="font-mono text-xs text-white/50 uppercase tracking-wider block font-semibold">
                       {m.label}
                     </span>
-                    <div className="text-2xl sm:text-3xl font-bold font-mono text-[var(--ink)]">
+                    <div className="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-tight">
                       {m.value}
                     </div>
                   </div>
 
-                  <p className="text-xs text-[var(--muted)] font-body leading-relaxed pt-2 border-t border-[var(--line)]/50">
+                  <p className="text-xs text-white/60 font-sans leading-relaxed pt-3 border-t border-white/10">
                     {m.context}
                   </p>
 
-                  <div className="pt-1">
+                  <div className="pt-2">
                     <span
-                      className={`inline-block font-mono text-[9px] uppercase px-2 py-0.5 rounded-sm border ${statusColors}`}
+                      className={`inline-block font-mono text-[10px] uppercase px-2.5 py-0.5 rounded-full border ${statusColors}`}
                     >
                       {m.status.toUpperCase()}
                     </span>
@@ -77,35 +77,35 @@ export function VerificationMetrics({
 
           {/* Audit Results Table / Cards */}
           {verification.auditResults.length > 0 && (
-            <div className="space-y-3">
-              <span className="font-mono text-[10px] text-[var(--accent-brass)] uppercase tracking-wider block">
+            <div className="space-y-4">
+              <span className="font-mono text-xs text-emerald-400 uppercase tracking-wider block font-semibold">
                 [ FORMAL AUDIT FINDINGS ]
               </span>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {verification.auditResults.map((audit, aIdx) => (
                   <div
                     key={aIdx}
-                    className="p-4 sm:p-5 bg-[var(--bg)]/90 border border-[var(--line)] rounded-sm space-y-2 text-xs"
+                    className="glass-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-3 text-xs"
                   >
-                    <div className="flex items-center justify-between gap-2 pb-2 border-b border-[var(--line)] font-mono">
-                      <span className="font-bold text-[var(--ink)]">
+                    <div className="flex items-center justify-between gap-2 pb-3 border-b border-white/10 font-mono">
+                      <span className="font-bold text-white text-sm">
                         {audit.auditName}
                       </span>
-                      <span className="text-[var(--accent-gold)] font-semibold">
+                      <span className="text-emerald-400 font-semibold bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
                         {audit.scoreOrVerdict}
                       </span>
                     </div>
 
-                    <p className="text-[var(--muted)] font-body leading-relaxed">
+                    <p className="text-white/70 font-sans leading-relaxed">
                       {audit.details}
                     </p>
 
                     {audit.uncoveredFlaws && audit.uncoveredFlaws.length > 0 && (
-                      <div className="pt-2 border-t border-[var(--line)]/50 space-y-1 font-mono text-[11px]">
+                      <div className="pt-3 border-t border-white/10 space-y-1.5 font-mono text-[11px]">
                         <span className="text-rose-400 block font-semibold">
                           Defects Documented:
                         </span>
-                        <ul className="list-disc list-inside text-[var(--muted)] space-y-0.5">
+                        <ul className="list-disc list-inside text-white/60 space-y-1">
                           {audit.uncoveredFlaws.map((flaw, fIdx) => (
                             <li key={fIdx}>{flaw}</li>
                           ))}
@@ -123,41 +123,41 @@ export function VerificationMetrics({
         {/* 13 — PERFORMANCE & BENCHMARKS (IF AVAILABLE)                   */}
         {/* ============================================================== */}
         {performance && (
-          <div className="pt-12 border-t border-[var(--line)]">
+          <div className="pt-14 border-t border-white/10">
             <div className="flex items-center gap-2 mb-3">
-              <span className="font-mono text-xs text-[var(--accent-brass)] uppercase tracking-widest font-semibold">
+              <span className="font-mono text-xs text-cyan-400 uppercase tracking-widest font-semibold">
                 13 // PERFORMANCE &amp; RESOURCE UTILIZATION
               </span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-[var(--ink)] font-sans mb-3">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white font-sans mb-3">
               Benchmarked Improvements
             </h3>
-            <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed max-w-3xl mb-6">
+            <p className="text-sm text-white/60 font-sans leading-relaxed max-w-3xl mb-8">
               {performance.summary}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
               {performance.benchmarks.map((bm, bIdx) => (
                 <div
                   key={bIdx}
-                  className="p-4 bg-[var(--panel)] border border-[var(--line)] rounded-sm space-y-2 font-mono text-xs"
+                  className="glass-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-3 font-mono text-xs"
                 >
-                  <span className="text-[var(--accent-brass)] block font-bold text-[11px]">
+                  <span className="text-cyan-400 block font-bold text-xs">
                     {bm.metric}
                   </span>
                   <div className="flex items-baseline gap-3 pt-1">
                     <span className="text-rose-400 line-through text-sm">
                       {bm.before}
                     </span>
-                    <span className="text-[var(--muted)] text-[10px]">→</span>
-                    <span className="text-emerald-400 font-bold text-base sm:text-lg">
+                    <span className="text-white/40 text-xs">→</span>
+                    <span className="text-emerald-400 font-extrabold text-xl">
                       {bm.after}
                     </span>
-                    <span className="text-[var(--muted)] text-[10px] ml-auto">
+                    <span className="text-white/40 text-[10px] ml-auto">
                       {bm.unit}
                     </span>
                   </div>
-                  <p className="text-[11px] text-[var(--muted)] font-body pt-1 border-t border-[var(--line)]/50">
+                  <p className="text-[11px] text-white/60 font-sans pt-2 border-t border-white/10 leading-relaxed">
                     {bm.notes}
                   </p>
                 </div>
@@ -165,24 +165,24 @@ export function VerificationMetrics({
             </div>
 
             {performance.resourceFootprint && (
-              <div className="space-y-2">
-                <span className="font-mono text-[10px] text-[var(--accent-brass)] uppercase tracking-wider block">
+              <div className="space-y-3">
+                <span className="font-mono text-xs text-white/50 uppercase tracking-wider block font-semibold">
                   [ RESOURCE FOOTPRINT ]
                 </span>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
                   {performance.resourceFootprint.map((rf, rIdx) => (
                     <div
                       key={rIdx}
-                      className="p-3 bg-[var(--bg)]/80 border border-[var(--line)] rounded-sm space-y-1"
+                      className="p-4 bg-white/[0.02] border border-white/10 rounded-xl space-y-1.5"
                     >
-                      <span className="text-[var(--ink)] font-bold block">
+                      <span className="text-white font-bold block">
                         {rf.component}
                       </span>
-                      <div className="flex items-center justify-between text-[11px] text-[var(--accent-gold)]">
+                      <div className="flex items-center justify-between text-[11px] text-cyan-400">
                         <span>RAM: {rf.memory}</span>
                         <span>CPU: {rf.cpuOrLatency}</span>
                       </div>
-                      <p className="text-[10px] text-[var(--muted)] pt-1 border-t border-[var(--line)]/40 font-body">
+                      <p className="text-[10px] text-white/50 pt-2 border-t border-white/10 font-sans">
                         {rf.notes}
                       </p>
                     </div>
@@ -197,25 +197,26 @@ export function VerificationMetrics({
         {/* 14 — SECURITY & SANDBOXING (IF AVAILABLE)                      */}
         {/* ============================================================== */}
         {security && (
-          <div className="pt-12 border-t border-[var(--line)]">
+          <div className="pt-14 border-t border-white/10">
             <div className="flex items-center gap-2 mb-3">
-              <span className="font-mono text-xs text-[var(--accent-brass)] uppercase tracking-widest font-semibold">
+              <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest font-semibold">
                 14 // SECURITY &amp; PROCESS SANDBOXING
               </span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-[var(--ink)] font-sans mb-3">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white font-sans mb-3">
               Threat Model &amp; Permission Boundaries
             </h3>
-            <p className="text-xs sm:text-sm text-[var(--muted)] font-body leading-relaxed max-w-3xl mb-6">
+            <p className="text-sm text-white/60 font-sans leading-relaxed max-w-3xl mb-8">
               {security.threatModel}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono mb-4">
-              <div className="p-4 bg-[var(--panel)] border border-emerald-900/40 rounded-sm space-y-2">
-                <span className="text-emerald-400 font-bold block text-[11px] uppercase">
-                  ✓ PERMITTED OPERATIONS (BOUNDED)
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs font-mono mb-6">
+              <div className="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-3">
+                <span className="text-emerald-400 font-bold block text-xs uppercase flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  PERMITTED OPERATIONS (BOUNDED)
                 </span>
-                <ul className="space-y-1.5 text-[var(--ink-secondary)] font-body text-xs">
+                <ul className="space-y-2 text-white/80 font-sans text-xs">
                   {security.accessControls.allowed.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-emerald-400 font-mono">✓</span>
@@ -225,11 +226,12 @@ export function VerificationMetrics({
                 </ul>
               </div>
 
-              <div className="p-4 bg-[var(--panel)] border border-rose-900/40 rounded-sm space-y-2">
-                <span className="text-rose-400 font-bold block text-[11px] uppercase">
-                  ✕ STRICTLY PROHIBITED ACTIONS
+              <div className="p-5 rounded-2xl bg-rose-950/20 border border-rose-500/30 space-y-3">
+                <span className="text-rose-400 font-bold block text-xs uppercase flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                  STRICTLY PROHIBITED ACTIONS
                 </span>
-                <ul className="space-y-1.5 text-[var(--muted)] font-body text-xs">
+                <ul className="space-y-2 text-white/70 font-sans text-xs">
                   {security.accessControls.disallowed.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-rose-400 font-mono">✕</span>
@@ -240,11 +242,11 @@ export function VerificationMetrics({
               </div>
             </div>
 
-            <div className="p-3.5 bg-[var(--bg)]/90 border border-[var(--line)] rounded-sm text-xs font-mono text-[var(--muted)]">
-              <span className="text-[var(--accent-gold)] font-bold">
+            <div className="p-4 bg-white/[0.02] border border-white/10 rounded-xl text-xs font-mono text-white/60">
+              <span className="text-emerald-400 font-bold">
                 Sandboxing Implementation:{" "}
               </span>
-              <span>{security.sandboxingMechanism}</span>
+              <span className="text-white/80">{security.sandboxingMechanism}</span>
             </div>
           </div>
         )}

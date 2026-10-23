@@ -2,7 +2,7 @@
 title: A Segfault in llama.cpp from an Abandoned Generation Thread
 slug: segfault-llama-cpp-cancellation-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-05'
 topics:
@@ -27,7 +27,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 

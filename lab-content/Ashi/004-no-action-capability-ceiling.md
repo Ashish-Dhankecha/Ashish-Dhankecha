@@ -2,7 +2,7 @@
 title: 'Qwen2.5-1.5B''s No-Action Ceiling: When Prompt Engineering Stops Working'
 slug: no-action-failure-investigation-ashi
 content_type: EXPERIMENT
-project: Ashi
+project: ÆON
 status: "Completed \u2014 Recommendation: Option B (execution safeguard)"
 date: '2026-08-08'
 topics:
@@ -28,7 +28,7 @@ EXPERIMENT
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -160,7 +160,7 @@ Every other capability this platform measures is strong and substantially improv
 
 **Recommendation: Option B — production-ready only with an execution safeguard.**
 
-The failure is structurally narrow and boundable. A blanket confirmation/approval gate on `cognitive.intent`-sourced actions is sufficient — because the rest of the output is genuinely useful under a gate (parameter and destination extraction are strong), and Ashi's existing `PermissionBoundary` architecture is already designed to catch exactly this class of risk.
+The failure is structurally narrow and boundable. A blanket confirmation/approval gate on `cognitive.intent`-sourced actions is sufficient — because the rest of the output is genuinely useful under a gate (parameter and destination extraction are strong), and ÆON's existing `PermissionBoundary` architecture is already designed to catch exactly this class of risk.
 
 The safeguard was not implemented in Phase I.4.2 (out of scope). Phase I.5 remains the implementation phase.
 
@@ -208,4 +208,4 @@ This is one of the project's strongest research artifacts: a systematic eliminat
 
 ## Publication Notes
 
-No credentials or private data. Model behavior is fully documented in benchmark JSON files. System prompt text describes Ashi's internal instruction policy, which is noted in the README as private — consider paraphrasing the prompt content rather than quoting it directly. The conclusions and experimental design are safe to publish fully.
+No credentials or private data. Model behavior is fully documented in benchmark JSON files. System prompt text describes ÆON's internal instruction policy, which is noted in the README as private — consider paraphrasing the prompt content rather than quoting it directly. The conclusions and experimental design are safe to publish fully.

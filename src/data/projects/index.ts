@@ -12,19 +12,30 @@ export const allProjects: ProjectCaseStudy[] = [
 ];
 
 export function getProjectBySlug(slug: string): ProjectCaseStudy | undefined {
-  return allProjects.find((p) => p.slug === slug || p.id === slug);
+  const s = slug.toLowerCase();
+  return allProjects.find(
+    (p) =>
+      p.slug === s ||
+      p.id === s ||
+      ((s === "ashi" || s === "aeon" || s === "æon") && (p.slug === "ashi" || p.id === "ashi"))
+  );
 }
 
 export function getAllProjectSlugs(): string[] {
-  return allProjects.map((p) => p.slug);
+  return [...allProjects.map((p) => p.slug), "aeon"];
 }
 
 export function getAdjacentProjects(currentSlug: string): {
   previous: ProjectCaseStudy | null;
   next: ProjectCaseStudy | null;
 } {
+  const norm = currentSlug.toLowerCase();
   const index = allProjects.findIndex(
-    (p) => p.slug === currentSlug || p.id === currentSlug
+    (p) =>
+      p.slug === norm ||
+      p.id === norm ||
+      ((norm === "aeon" || norm === "æon" || norm === "ashi") &&
+        (p.slug === "ashi" || p.id === "ashi"))
   );
   if (index === -1) {
     return { previous: null, next: null };

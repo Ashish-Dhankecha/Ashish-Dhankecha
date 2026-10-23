@@ -86,7 +86,7 @@ export const philosophyStripWords = [
 export const featuredAshiContent = {
   sectionNumber: "/ 02",
   badge: "FEATURED PROJECT",
-  title: "Ashi",
+  title: "ÆON",
   subtitle: "An Autonomous AI Operating System",
   description:
     "A long-term project exploring reliable, stateful, and autonomous AI systems that can plan, reason, act, verify, and learn.",
@@ -97,7 +97,7 @@ export const featuredAshiContent = {
   whyText: [
     "Current AI systems are becoming increasingly capable. My interest is in what happens around the model:",
     "How should an intelligent system remember? How should it decide when to act? How should it recover from failure? How should its actions be evaluated? How should long-running work remain reliable?",
-    "Ashi is my attempt to explore those questions through engineering.",
+    "ÆON is my attempt to explore those questions through engineering.",
   ],
   githubUrl: "https://github.com/Ashish-Dhankecha",
 };
@@ -106,13 +106,13 @@ export const selectedProjects: ProjectDossier[] = [
   {
     id: "ashi",
     number: "01",
-    title: "Ashi",
+    title: "ÆON",
     tagline: "Autonomous AI system research and engineering.",
     status: "Active Core Build",
     year: "2026",
     technologies: ["Python", "PyTorch", "Linux", "Systems Architecture"],
     overview:
-      "Ashi is an ongoing exploration into reliable agentic computing. Rather than treating an LLM as a chatbot, Ashi treats the model as an untrusted reasoning engine connected to explicit state, structured memory, sandboxed execution environments, and deterministic verification gates.",
+      "ÆON is an ongoing exploration into reliable agentic computing. Rather than treating an LLM as a chatbot, ÆON treats the model as an untrusted reasoning engine connected to explicit state, structured memory, sandboxed execution environments, and deterministic verification gates.",
     architecture:
       "The runtime separates cognition from execution: Memory (episodic & semantic store) ↔ Planning (multi-step decomposition & hypothesis trees) ↓ Core Kernel ↙ ↘ Tool Sandbox & Execution Pipeline ↓ Evaluation & Invariant Verifier.",
     problem:
@@ -163,7 +163,7 @@ export const selectedProjects: ProjectDossier[] = [
     testing:
       "Unit tests verifying chain integrity, mutation detection, and deterministic replay accuracy.",
     currentState:
-      "Working prototype with unit test suite; evaluating integration as the backing storage for Ashi's execution trace.",
+      "Working prototype with unit test suite; evaluating integration as the backing storage for ÆON's execution trace.",
     githubUrl: "https://github.com/Ashish-Dhankecha",
   },
   {
@@ -458,12 +458,12 @@ export const theDirectionContent: TheDirectionContent = {
   },
   ashiBridge: {
     label: "ONE EXPERIMENT IN THAT DIRECTION",
-    title: "Ashi",
+    title: "ÆON",
     subtitle: "An Autonomous AI Operating System",
     description:
-      "Ashi is one of the ways I'm exploring this path today — a long-term attempt to understand what it takes to build AI systems with persistent state, reasoning, tools, verification, and autonomous execution.",
+      "ÆON is one of the ways I'm exploring this path today — a long-term attempt to understand what it takes to build AI systems with persistent state, reasoning, tools, verification, and autonomous execution.",
     ctaPrimary: {
-      label: "Explore Ashi",
+      label: "Explore ÆON",
       href: "#ashi-section",
     },
     ctaSecondary: {
@@ -516,7 +516,7 @@ export const currentFocusTimeline = {
     },
     {
       level: "07",
-      topic: "Ashi",
+      topic: "ÆON",
       detail: "Flagship synthesis of reliable autonomous runtime primitives.",
       status: "Active Long-Term Project",
     },
@@ -558,7 +558,7 @@ export const engineeringNotes: EngineeringNote[] = [
   {
     id: "note-01",
     issue: "NOTE / 01",
-    title: "Ashi Engineering Note #01: Verifiable Cognitive History",
+    title: "ÆON Engineering Note #01: Verifiable Cognitive History",
     subtitle: "Designing trustworthy history for autonomous systems.",
     category: "AI Systems & Architecture",
     date: "August 2025",
@@ -578,7 +578,7 @@ export const engineeringNotes: EngineeringNote[] = [
         {
           heading: "From String Buffers to Immutable Event Graphs",
           paragraphs: [
-            "In Ashi, we approach state history not as natural language memory, but as an append-only cryptographic event log. Every tool invocation, environment response, and intermediate planning branch is treated as an immutable transaction.",
+            "In ÆON, we approach state history not as natural language memory, but as an append-only cryptographic event log. Every tool invocation, environment response, and intermediate planning branch is treated as an immutable transaction.",
             "Each event record contains: a monotonic sequence ID, a timestamp, an actor token, a serialized payload hash, and the SHA-256 digest of the previous state.",
             "By structuring cognitive history as a directed acyclic graph (DAG) of state transitions, we gain three crucial properties: deterministic replay for debugging, mathematical proof against state tampering, and the ability to cleanly branch or backtrack when an action violates system invariants.",
           ],
@@ -586,7 +586,7 @@ export const engineeringNotes: EngineeringNote[] = [
         {
           heading: "Current Engineering Status",
           paragraphs: [
-            "The initial prototype of this cryptographic event log is being implemented as a standalone library (Cognitive Event Log) before integration into the Ashi kernel runtime.",
+            "The initial prototype of this cryptographic event log is being implemented as a standalone library (Cognitive Event Log) before integration into the ÆON kernel runtime.",
             "Early observations indicate that decoupling memory verification from model generation reduces catastrophic runaway loops by allowing an external verifier to halt execution the moment an invariant fails.",
           ],
         },

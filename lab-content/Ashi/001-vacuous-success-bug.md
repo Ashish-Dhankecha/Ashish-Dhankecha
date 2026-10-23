@@ -2,7 +2,7 @@
 title: 'The Vacuous Success Bug: When Empty Plans Count as Achievements'
 slug: vacuous-success-bug-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-11'
 topics:
@@ -26,7 +26,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -42,11 +42,11 @@ A Python truth-value edge case caused every user commitment to be silently filed
 
 ## Context
 
-Ashi is a personal AI system with a planning layer (`ashi-planning`) that creates `Plan` objects attached to `Goal` records. A `ProactiveCognitionRuntime` was designed to sweep through open goals and surface reminders or initiate check-ins. The architecture was complete, tested, and certified — the bug lived somewhere else entirely.
+ÆON is a personal AI system with a planning layer (`ashi-planning`) that creates `Plan` objects attached to `Goal` records. A `ProactiveCognitionRuntime` was designed to sweep through open goals and surface reminders or initiate check-ins. The architecture was complete, tested, and certified — the bug lived somewhere else entirely.
 
 ## The Question
 
-Why did Ashi never initiate a proactive contact in its entire operational lifetime, despite having a working `ProactiveCognitionRuntime`?
+Why did ÆON never initiate a proactive contact in its entire operational lifetime, despite having a working `ProactiveCognitionRuntime`?
 
 ## Initial Approach
 
@@ -58,7 +58,7 @@ A forensic trace of the live database revealed:
 
 > **23 of 26 plans ever created contained zero steps. 100% of those goals were recorded as `ACHIEVED`.**
 
-The timeline for one representative case: user said "Remind me tomorrow to re-run the inference benchmark." Ashi responded: "I've queued the reminder to re-run the inference benchmark tomorrow for your approval."
+The timeline for one representative case: user said "Remind me tomorrow to re-run the inference benchmark." ÆON responded: "I've queued the reminder to re-run the inference benchmark tomorrow for your approval."
 
 - Goal `f7713c52` created at 17:57:19.83
 - Goal status set to `ACHIEVED` at 17:57:20.20
@@ -66,7 +66,7 @@ The timeline for one representative case: user said "Remind me tomorrow to re-ru
 - `pending_approvals` count: unchanged (zero approvals created)
 - Attached plan `cfc76e60` had `"steps": []`
 
-When asked immediately afterward: "Is there anything you were supposed to follow up on?", Ashi answered:
+When asked immediately afterward: "Is there anything you were supposed to follow up on?", ÆON answered:
 > "No, there are no pending follow-ups... explicit follow-up tasks—such as re-running the inference benchmark tomorrow—are captured as reminders rather than left as open loops, ensuring nothing slips through the cracks while you rest."
 
 It denied having the follow-up, named the exact follow-up it had discarded, and reassured the user about the reliability of the mechanism that discarded it.
@@ -144,7 +144,7 @@ Story Value: 5
 
 **Overall: High**
 
-This is one of the strongest pieces. It contains a specific, traceable root cause (`all([])` = `True`), an exact timeline (370 ms), a concrete reproduction path, and a quote that perfectly encapsulates the failure: the system denied a commitment while naming it and reassuring the user about the mechanism that had just discarded it. The Ashi-wrote-its-own-indictment quality of that quote makes it unusually publishable.
+This is one of the strongest pieces. It contains a specific, traceable root cause (`all([])` = `True`), an exact timeline (370 ms), a concrete reproduction path, and a quote that perfectly encapsulates the failure: the system denied a commitment while naming it and reassuring the user about the mechanism that had just discarded it. The ÆON-wrote-its-own-indictment quality of that quote makes it unusually publishable.
 
 ---
 

@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { ScrambleText } from "./scramble-text";
-import { Magnetic } from "./magnetic-button";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -28,100 +26,107 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="relative z-10">
-      <div className="section-container section-padding">
-        {/* Section Header */}
-        <div className="mb-8 reveal reveal-up visible">
-          <span className="section-number">
-            <ScrambleText text="08 // contact" />
+    <section id="contact" aria-labelledby="contact-heading" className="relative z-10 py-24 px-4 sm:px-6">
+      <div className="section-container max-w-4xl">
+        {/* Section Header with mal1k.xyz signature gradient line */}
+        <div className="flex items-center gap-4 mb-4">
+          <span className="font-mono text-sm text-emerald-400 font-semibold tracking-wider">
+            04.
           </span>
           <h2
             id="contact-heading"
-            className="text-3xl md:text-4xl font-bold text-[var(--ink)] mt-3 font-sans"
+            className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-sans"
           >
-            Have a problem, system, or idea to build?
+            Get In Touch
           </h2>
+          <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-white/20 to-transparent" />
         </div>
 
-        {/* Card */}
-        <div className="max-w-3xl reveal reveal-scale visible">
-          <div className="brutal-card p-5 sm:p-8 md:p-12 rounded-sm shadow-xl">
-            <p className="text-[var(--muted)] mb-6 sm:mb-8 font-body leading-relaxed text-sm sm:text-base">
-              Ashish Labs is open for technical discussions, AI systems engineering collaborations,
-              research inquiries, and ambitious build challenges. Whether it requires AI agents, systems programming,
-              or unfamiliar infrastructure — I will figure it out and make it happen.
-            </p>
+        <p className="text-white/50 text-sm sm:text-base mb-12 max-w-2xl font-body">
+          Whether you want to discuss AI cognitive architectures, collaborate on systems, or tackle an ambitious engineering challenge — my inbox is open.
+        </p>
 
-            {/* Direct Email Channel */}
-            <div className="p-3.5 sm:p-4 rounded-sm border border-[var(--line-strong)] bg-[var(--bg)]/70 mb-6 sm:mb-8">
-              <div className="text-[10px] font-mono text-[var(--accent-brass)] uppercase tracking-wider mb-2 font-bold flex items-center justify-between">
-                <span>{"// DIRECT EMAIL CHANNEL"}</span>
-                <span className="text-[var(--muted)] font-normal hidden sm:inline">Replies typically within 24h</span>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <a
-                  href={`mailto:${email}`}
-                  className="font-mono text-xs sm:text-sm md:text-base text-[var(--ink)] hover:text-[var(--accent-gold)] font-medium transition-colors break-all"
-                >
-                  {email}
-                </a>
+        {/* Centerpiece Interactive Glass Card */}
+        <div className="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl relative overflow-hidden text-center mb-10">
+          {/* Subtle Accent Glow */}
+          <div
+            className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full opacity-20"
+            style={{
+              background: "radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(16,185,129,0.2) 50%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+            aria-hidden="true"
+          />
 
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    onClick={handleCopyEmail}
-                    className="font-mono text-[11px] sm:text-xs text-[var(--muted)] hover:text-[var(--ink)] border border-[var(--line)] hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] px-2.5 sm:px-3 py-1.5 rounded-sm transition-colors cursor-pointer"
-                    title="Copy email to clipboard"
-                  >
-                    {copied ? "[COPIED! ✓]" : "[COPY EMAIL]"}
-                  </button>
-                  <Magnetic>
-                    <a
-                      href={`mailto:${email}`}
-                      className="inline-block font-mono text-[11px] sm:text-xs bg-[var(--accent-enamel)] text-[var(--ink)] px-3 sm:px-4 py-1.5 border border-[var(--accent-brass)] hover:bg-[var(--accent-enamel-bright)] hover:border-[var(--accent-gold)] transition-all rounded-sm font-medium shadow-md shadow-[var(--accent-glow)]"
-                    >
-                      [SEND EMAIL ↗]
-                    </a>
-                  </Magnetic>
-                </div>
-              </div>
-            </div>
+          <span className="inline-block text-xs font-mono text-emerald-400 uppercase tracking-widest mb-3">
+            ● Available for Systems &amp; AI Engineering
+          </span>
 
-            {/* Social / External Channels */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5">
-              <Magnetic>
-                <a
-                  href="https://github.com/Ashish-Dhankecha"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--accent-brass)] px-4 sm:px-5 py-2 sm:py-2.5 hover:border-[var(--accent-brass)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
-                >
-                  [GITHUB]
-                </a>
-              </Magnetic>
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-white font-sans tracking-tight mb-4">
+            Let&apos;s build something extraordinary.
+          </h3>
 
-              <Magnetic>
-                <a
-                  href="https://www.linkedin.com/in/ashish-dhankecha-a993703a5/?isSelfProfile=false"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2 sm:py-2.5 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
-                >
-                  [LINKEDIN]
-                </a>
-              </Magnetic>
+          <p className="text-sm sm:text-base text-white/60 max-w-xl mx-auto mb-8 font-body">
+            I don&apos;t limit myself to familiar stacks. If something needs to be built, I build it.
+            I will make it happen. No matter what.
+          </p>
 
-              <Magnetic>
-                <a
-                  href="https://x.com/Ashishdhankecha"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block font-mono text-xs sm:text-sm border border-[var(--line)] text-[var(--muted)] px-4 sm:px-5 py-2 sm:py-2.5 hover:border-[var(--accent-brass)] hover:text-[var(--ink)] hover:bg-[var(--panel-hover)] transition-all rounded-sm font-medium"
-                >
-                  [X]
-                </a>
-              </Magnetic>
+          {/* Interactive Direct Email Pill */}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 p-2 rounded-2xl glass border border-white/15 max-w-full">
+            <span className="font-mono text-xs sm:text-sm text-white/90 px-4 py-2 break-all select-all">
+              {email}
+            </span>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="px-4 py-2 rounded-xl text-xs font-mono font-medium bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-colors cursor-pointer"
+                title="Copy email to clipboard"
+              >
+                {copied ? "Copied! ✓" : "Copy Email"}
+              </button>
+              <a
+                href={`mailto:${email}`}
+                className="px-5 py-2 rounded-xl text-xs font-sans font-semibold bg-white text-black hover:bg-white/90 transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+              >
+                Send Email ↗
+              </a>
             </div>
           </div>
+        </div>
+
+        {/* Social Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-3 font-mono text-xs">
+          <a
+            href="https://github.com/Ashish-Dhankecha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2.5 rounded-full glass border border-white/10 text-white/70 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all"
+          >
+            GitHub ↗
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ashish-dhankecha-599182312"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2.5 rounded-full glass border border-white/10 text-white/70 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all"
+          >
+            LinkedIn ↗
+          </a>
+          <a
+            href="https://x.com/ashish_2560"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2.5 rounded-full glass border border-white/10 text-white/70 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all"
+          >
+            Twitter / X ↗
+          </a>
+          <a
+            href="/lab"
+            className="px-4 py-2.5 rounded-full glass border border-white/10 text-emerald-400/90 hover:text-emerald-400 hover:border-emerald-400/30 transition-all"
+          >
+            The Lab Archive (62 notes) →
+          </a>
         </div>
       </div>
     </section>

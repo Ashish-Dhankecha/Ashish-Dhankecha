@@ -425,7 +425,7 @@ export const sihCaseStudy: ProjectCaseStudy = {
   },
   lessons: {
     quote:
-      "Deep systems like Ashi require months of careful architectural iteration; hackathons require decisive execution under strict constraints. Being an all-rounder engineer means mastering both modes.",
+      "Deep systems like ÆON require months of careful architectural iteration; hackathons require decisive execution under strict constraints. Being an all-rounder engineer means mastering both modes.",
     takeaways: [
       {
         title: "Mock Interfaces Accelerate Velocity",
@@ -479,6 +479,6 @@ export const sihCaseStudy: ProjectCaseStudy = {
   },
   lineage: {
     roleInEvolution:
-      "A parallel demonstration of rapid, high-intensity execution under tight hackathon constraints, complementing the long-horizon research of Ashi.",
+      "A parallel demonstration of rapid, high-intensity execution under tight hackathon constraints, complementing the long-horizon research of ÆON.",
   },
 };

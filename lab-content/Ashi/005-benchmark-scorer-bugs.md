@@ -2,7 +2,7 @@
 title: 'Three Scorer Bugs in a Single Benchmark: A Methodology Audit'
 slug: benchmark-scorer-bugs-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: "Completed \u2014 bugs fixed, numbers corrected"
 date: '2026-08-07'
 topics:
@@ -26,7 +26,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 

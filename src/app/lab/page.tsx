@@ -10,11 +10,11 @@ import { getLabMetrics, getAllProjects, getAllLabPieces } from "@/lib/lab";
 export const metadata: Metadata = {
   title: "The Lab — Technical Research & Engineering Notebook | Ashish Dhankecha",
   description:
-    "An authoritative research archive of 62 technical notes, failure analyses, and architectural decisions from Ashi, LEO, and VANI. Zero marketing claims.",
+    "An authoritative research archive of 62 technical notes, failure analyses, and architectural decisions from ÆON, LEO, and VANI. Zero marketing claims.",
   openGraph: {
     title: "The Lab — Technical Research & Engineering Notebook",
     description:
-      "An authoritative research archive of 62 technical notes, failure analyses, and architectural decisions from Ashi, LEO, and VANI.",
+      "An authoritative research archive of 62 technical notes, failure analyses, and architectural decisions from ÆON, LEO, and VANI.",
   },
 };
 

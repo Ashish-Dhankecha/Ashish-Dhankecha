@@ -2,7 +2,7 @@
 title: 'The 12-Hour Benchmark Hang That Wasn''t: Monitoring vs. Work'
 slug: benchmark-hang-monitoring-gap-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: "Closed \u2014 progress logging added"
 date: '2026-08-06'
 topics:
@@ -25,7 +25,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 

@@ -2,122 +2,166 @@
 
 import React from "react";
 import Link from "next/link";
-import { ScrambleText } from "./scramble-text";
-import { ProjectStack, ProjectItem } from "./project-stack";
 
-const projects: ProjectItem[] = [
+const bentoProjects = [
   {
-    title: "Ashi OS",
-    tag: "FLAGSHIP SYSTEM",
-    description: "A 28-package personal AI operating system built from first principles with a strict acyclic graph and 5.4s latency inference.",
+    id: "ashi",
+    title: "ÆON Cognitive OS",
+    badge: "Flagship Monorepo",
+    desc: "A 28-package autonomous AI operating system built from first principles. Features episodic memory, tool sandboxing, and strict acyclic graph architecture verified in code.",
+    tags: ["Python", "llama.cpp", "FastAPI", "SQLite", "Monorepo"],
     href: "/projects/ashi",
-    accent: "#d8ae79"
+    github: "https://github.com/Ashish-Dhankecha",
+    stats: "28 Packages • 5.4s Latency",
   },
   {
-    title: "SIH26117 Workbench",
-    tag: "HACKATHON SPRINT",
-    description: "Air-gapped on-premise workbench for confidential environments. Built in a rapid 1-day hackathon sprint with Qwen SLM.",
+    id: "sih",
+    title: "SIH26117 Sovereign Workbench",
+    badge: "Air-Gapped Prototype",
+    desc: "Confidential on-premise AI developer workbench built during a 1-day hackathon sprint. Runs fully offline with zero telemetry or cloud dependencies.",
+    tags: ["Qwen-SLM", "Docker", "Fastify", "Air-Gapped"],
     href: "/projects/sih",
-    accent: "#93b4ff"
+    github: "https://github.com/Ashish-Dhankecha",
+    stats: "1-Day Sprint • 0 External Calls",
   },
   {
-    title: "LEO Companion",
-    tag: "RESEARCH AUDIT",
-    description: "An ambitious exploration modeling an AI companion as an operating system kernel with a Cognitive Memory Management Unit.",
-    href: "/projects/leo",
-    accent: "#bdacf0"
-  },
-  {
+    id: "vani",
     title: "VANI 50-Year OS",
-    tag: "ZERO CLOUD",
-    description: "Built as a direct counter-reaction to fragile AI abstraction churn. AST architecture guardian & zero-infrastructure strategy.",
+    badge: "Sovereign Architecture",
+    desc: "Resilient software system built to run without changes for decades. Employs AST static analysis guardians to physically reject architectural violations.",
+    tags: ["AST Analysis", "Python", "Static Typing", "Zero-Churn"],
     href: "/projects/vani",
-    accent: "#7ee0b8"
+    github: "https://github.com/Ashish-Dhankecha",
+    stats: "AST Guardian • Invariant Verified",
   },
   {
-    title: "Sub-2B Benchmark",
-    tag: "EMPIRICAL BENCHMARK",
-    description: "Comprehensive benchmarking of 6 small language models on consumer hardware, optimizing llama.cpp for ultra-low latency.",
-    href: "/projects/ashi#architecture",
-    accent: "#ffb493"
-  }
+    id: "leo",
+    title: "LEO Companion Kernel",
+    badge: "Forensic Audit",
+    desc: "Companion runtime designed with a Cognitive Memory Management Unit and rigorous post-mortem documentation of real cognitive failures.",
+    tags: ["Multimodal", "CMMU", "PyTorch", "Auditing"],
+    href: "/projects/leo",
+    github: "https://github.com/Ashish-Dhankecha",
+    stats: "Real Audits • Honest Post-Mortem",
+  },
 ];
 
 export function ProjectsSection() {
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="relative z-10">
-      <div className="section-container section-padding">
-        {/* Section Header */}
-        <div className="mb-12 reveal reveal-up visible">
-          <span className="section-number">
-            <ScrambleText text="02 // systems & experiments" />
+    <section id="projects" aria-labelledby="projects-heading" className="relative z-10 py-20 px-4 sm:px-6">
+      <div className="section-container">
+        {/* Section Header with mal1k.xyz signature gradient line */}
+        <div className="flex items-center gap-4 mb-12">
+          <span className="font-mono text-sm text-emerald-400 font-semibold tracking-wider">
+            02.
           </span>
           <h2
             id="projects-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--ink)] mt-3 font-sans"
+            className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-sans"
           >
-            Things I&apos;ve Built
+            Featured Systems
           </h2>
-          <p className="text-[var(--muted)] text-sm sm:text-base mt-2 max-w-2xl font-body">
-            Flagship cognitive operating systems, empirical failure post-mortems, and rapid hackathon prototypes.
-            Documented with real code, architecture decision records, and honest failure logs.
-          </p>
+          <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-white/20 to-transparent" />
         </div>
 
-        {/* Project Stack */}
-        <div className="reveal reveal-up visible">
-          <ProjectStack items={projects} />
-        </div>
-
-        {/* Global CTAs */}
-        <div className="mt-16 flex flex-col gap-8 reveal reveal-up visible">
-          {/* Main Projects CTA */}
-          <div className="text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center justify-center text-center gap-2 font-mono text-xs sm:text-sm px-4 py-3 sm:px-6 sm:py-3.5 bg-[var(--panel)] hover:bg-[var(--panel-hover)] border border-[var(--accent-brass)] text-[var(--ink)] transition-all rounded-sm font-semibold shadow-lg hover:shadow-[var(--accent-glow)] max-w-full flex-wrap leading-relaxed"
+        {/* Bento Grid with Spotlight Glass Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+          {bentoProjects.map((p) => (
+            <div
+              key={p.id}
+              className="group glass-card p-6 sm:p-7 rounded-2xl border border-white/[0.08] flex flex-col justify-between hover:border-white/20 transition-all duration-300 relative overflow-hidden"
             >
-              <span>[ EXPLORE THE FULL DEEP CASE STUDY SYSTEM &amp; SYSTEM LINEAGE (/projects) ]</span>
-              <span className="text-[var(--accent-gold)]">→</span>
-            </Link>
-          </div>
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="font-mono text-[11px] px-2.5 py-0.5 rounded-full glass border border-white/10 text-emerald-400">
+                    {p.badge}
+                  </span>
+                  <span className="font-mono text-[11px] text-white/40">
+                    {p.stats}
+                  </span>
+                </div>
 
-          {/* Big Beautiful Lab Archive CTA */}
+                <h3 className="text-xl font-bold text-white group-hover:text-white font-sans flex items-center gap-2 mb-3">
+                  <span>{p.title}</span>
+                  <span className="text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-sm">
+                    ↗
+                  </span>
+                </h3>
+
+                <p className="text-sm text-white/60 leading-relaxed font-body mb-6">
+                  {p.desc}
+                </p>
+              </div>
+
+              <div>
+                {/* Tech Stack Pills */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {p.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 rounded-md text-[11px] font-mono glass border border-white/5 text-white/70"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                  <Link
+                    href={p.href}
+                    className="text-xs font-medium text-white hover:underline flex items-center gap-1"
+                  >
+                    Read Architecture Case Study <span>→</span>
+                  </Link>
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono text-white/40 hover:text-white/80 transition-colors ml-auto"
+                  >
+                    GitHub ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Navigation & Raw Lab Access */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link
+            href="/projects"
+            className="glass-card p-5 rounded-2xl border border-white/10 flex items-center justify-between hover:border-white/25 group transition-all"
+          >
+            <div>
+              <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider block mb-1">
+                Deep Systems Directory
+              </span>
+              <span className="text-sm font-semibold text-white group-hover:text-white">
+                View All Systems &amp; Case Studies
+              </span>
+            </div>
+            <span className="text-white/40 group-hover:text-white group-hover:translate-x-1 transition-transform text-sm font-bold">
+              →
+            </span>
+          </Link>
+
           <Link
             href="/lab"
-            className="group relative overflow-hidden brutal-card p-6 sm:p-8 lg:p-10 rounded-sm border-[var(--border-strong)] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 w-full"
+            className="glass-card p-5 rounded-2xl border border-white/10 flex items-center justify-between hover:border-white/25 group transition-all"
           >
-            {/* Ambient subtle glow for the lab */}
-            <div
-              className="pointer-events-none absolute -bottom-20 -left-20 w-80 h-80 bg-[radial-gradient(circle,var(--accent-glow)_0%,transparent_70%)] blur-2xl"
-              aria-hidden="true"
-            />
-            
-            <div className="relative z-10 text-left flex-1">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="lamp-badge">
-                  RAW UNFILTERED ACCESS
-                </span>
-                <span className="font-mono text-[10px] text-[var(--accent-brass)] bg-[var(--accent-enamel)]/30 border border-[var(--accent-brass)]/50 px-2 py-0.5 rounded-sm">
-                  62 RECORDS
-                </span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--ink)] font-sans tracking-tight mb-2">
-                The Lab Archive
-              </h3>
-              <p className="text-[var(--muted)] text-sm sm:text-base font-body leading-relaxed max-w-2xl">
-                Raw engineering post-mortems, architecture decision records (ADRs), and honest failure logs. No marketing fluff, just the raw reality of building complex cognitive systems.
-              </p>
+            <div>
+              <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider block mb-1">
+                Raw Unfiltered Access
+              </span>
+              <span className="text-sm font-semibold text-white group-hover:text-white">
+                The Lab Archive (62 Notes &amp; ADRs)
+              </span>
             </div>
-
-            <div className="relative z-10 shrink-0">
-              <div
-                className="inline-flex items-center justify-center gap-3 font-mono text-xs sm:text-sm px-6 py-4 bg-[var(--accent-enamel)] border border-[var(--accent-brass)] text-[var(--ink)] rounded-sm font-semibold shadow-md shadow-[var(--accent-glow)] group-hover:bg-[var(--accent-enamel-bright)] group-hover:border-[var(--accent-gold)] transition-colors"
-              >
-                <span>[ ENTER THE LAB ]</span>
-                <span className="text-[var(--accent-gold)]">→</span>
-              </div>
-            </div>
+            <span className="text-white/40 group-hover:text-white group-hover:translate-x-1 transition-transform text-sm font-bold">
+              →
+            </span>
           </Link>
         </div>
       </div>

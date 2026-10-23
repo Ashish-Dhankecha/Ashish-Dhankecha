@@ -2,7 +2,7 @@
 title: Benchmarking Six Sub-2B Language Models for On-Device Structured Intent Inference
 slug: sub-2b-model-benchmark-ashi
 content_type: EXPERIMENT
-project: Ashi
+project: ÆON
 status: Completed
 date: '2026-08-06'
 topics:
@@ -27,7 +27,7 @@ EXPERIMENT
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -43,13 +43,13 @@ Six GGUF models (268M–1.7B parameters) were benchmarked identically for struct
 
 ## Context
 
-Ashi's planning layer detected user intent with regex — which cannot understand natural language like "BBC must have released a new video, play it." Phase I introduced a local, bounded, CPU-first inference platform (`ashi-inference`) to give the planner real natural language understanding without contacting a cloud provider. Phase I.3 was the model selection step: benchmark candidates and pick the one that ships in production.
+ÆON's planning layer detected user intent with regex — which cannot understand natural language like "BBC must have released a new video, play it." Phase I introduced a local, bounded, CPU-first inference platform (`ashi-inference`) to give the planner real natural language understanding without contacting a cloud provider. Phase I.3 was the model selection step: benchmark candidates and pick the one that ships in production.
 
 The constraint was tight: must run on a CPU-only VPS, always-on, under 2GB RAM load delta, sub-2B parameters, Apache-2.0 or similar license.
 
 ## The Question
 
-Which sub-2B GGUF model most reliably produces valid, actionable structured JSON output for intent inference on Ashi's real vocabulary?
+Which sub-2B GGUF model most reliably produces valid, actionable structured JSON output for intent inference on ÆON's real vocabulary?
 
 ## Initial Approach
 
@@ -64,7 +64,7 @@ Six candidates evaluated, chosen by querying the HuggingFace Hub API (not from m
 | `google/gemma-3-1b-it` | 1.0B | Gemma |
 | `TinyLlama/TinyLlama-1.1B-Chat-v1.0` | 1.1B | Apache-2.0 |
 
-**One fixed prompt. One fixed JSON schema. Same temperature (0.8, library default). Same settings. No per-model tuning.** — This was a deliberate methodology choice mirroring Ashi's actual production pattern, where one fixed prompt is sent regardless of which backend model answers it.
+**One fixed prompt. One fixed JSON schema. Same temperature (0.8, library default). Same settings. No per-model tuning.** — This was a deliberate methodology choice mirroring ÆON's actual production pattern, where one fixed prompt is sent regardless of which backend model answers it.
 
 444 total generations (6 models × 37 examples × 2 repeats). All Q4_K_M quantization for comparability.
 
@@ -120,7 +120,7 @@ The most consequential finding was the scoring artifact: models that mostly fail
 
 **Known limitation (disclosed at time, not discovered later):**
 
-Every model was evaluated via raw completion without its native chat template. All six are `-it`/`-Instruct`/`-Chat` tuned and trained to be invoked through templates like `<|im_start|>`. The methodology understates every model's true capability. This was a deliberate choice (matching Ashi's actual production pattern at the time) — but flagged as a remaining risk before production use.
+Every model was evaluated via raw completion without its native chat template. All six are `-it`/`-Instruct`/`-Chat` tuned and trained to be invoked through templates like `<|im_start|>`. The methodology understates every model's true capability. This was a deliberate choice (matching ÆON's actual production pattern at the time) — but flagged as a remaining risk before production use.
 
 ## What Changed
 

@@ -35,7 +35,7 @@ const alexBrush = Alex_Brush({
 export const metadata: Metadata = constructMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#101b17",
+  themeColor: "#050505",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -73,7 +73,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#101b17] text-[#f2eee0] bg-lamp-bg text-lamp-ink font-body antialiased transition-colors duration-700">
+      <body className="min-h-screen flex flex-col bg-[#050505] text-white font-body antialiased selection:bg-white selection:text-black overflow-x-hidden">
+        {/* Signature Viewport Glass Frame (mal1k.xyz aesthetic) */}
+        <div 
+          className="fixed inset-0 pointer-events-none z-[9998] rounded-2xl border border-white/[0.08] m-2 sm:m-3 shadow-[inset_0_0_20px_rgba(255,255,255,0.02)]" 
+          aria-hidden="true" 
+        />
+        {/* Ambient Subtle Noise Layer */}
+        <div className="noise-overlay" aria-hidden="true" />
+
         <ThemeProvider>
           <SkipToContent />
           <Header />

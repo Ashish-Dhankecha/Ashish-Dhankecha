@@ -2,7 +2,7 @@
 title: '28 Packages, One Acyclic Graph: Building a Personal AI as a Monorepo'
 slug: ashi-monorepo-architecture-overview
 content_type: TECHNICAL_DESIGN
-project: Ashi
+project: ÆON
 status: Active
 date: '2026-07-25'
 topics:
@@ -13,7 +13,7 @@ topics:
 - software-design
 evidence_level: high
 publishable: true
-description: "Ashi is structured as 28 independent Python packages in a uv workspace,\
+description: "ÆON is structured as 28 independent Python packages in a uv workspace,\
   \ organized into a six-layer dependency hierarchy enforced at the build level \u2014\
   \ so architectural violations are visible at import time, not at runtime months\
   \ later."
@@ -27,7 +27,7 @@ TECHNICAL DESIGN
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -39,7 +39,7 @@ Active
 
 ## One-Line Summary
 
-Ashi is structured as 28 independent Python packages in a uv workspace, organized into a six-layer dependency hierarchy enforced at the build level — so architectural violations are visible at import time, not at runtime months later.
+ÆON is structured as 28 independent Python packages in a uv workspace, organized into a six-layer dependency hierarchy enforced at the build level — so architectural violations are visible at import time, not at runtime months later.
 
 ## Context
 

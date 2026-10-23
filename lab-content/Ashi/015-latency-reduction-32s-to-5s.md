@@ -3,7 +3,7 @@ title: 'From 32 Seconds to 5.4 Seconds: Tracing and Eliminating Latency in a 28-
   LLM System'
 slug: latency-reduction-32s-to-5s-ashi
 content_type: EXPERIMENT
-project: Ashi
+project: ÆON
 status: Completed
 date: '2026-07-26'
 topics:
@@ -28,7 +28,7 @@ EXPERIMENT
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -44,7 +44,7 @@ Phase X.2 attribution tracing reduced first-token latency from 32,836 ms to 5,45
 
 ## Context
 
-Ashi's turn processing involves a 16-contributor cognitive pipeline before reaching the LLM call that produces the user-facing response. First-token latency of 32+ seconds was unmistakably a product problem, not a benchmark concern.
+ÆON's turn processing involves a 16-contributor cognitive pipeline before reaching the LLM call that produces the user-facing response. First-token latency of 32+ seconds was unmistakably a product problem, not a benchmark concern.
 
 Phase X.2 introduced latency attribution: measuring and recording where time is spent within each turn, per contributor and per subsystem.
 

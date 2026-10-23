@@ -2,7 +2,7 @@
 title: 'When pytest Truncates Your Live Database: The Destructive Test Interlock'
 slug: destructive-test-database-interlock-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-12'
 topics:
@@ -27,7 +27,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -43,7 +43,7 @@ Fixed
 
 ## Context
 
-Ashi runs against a local Postgres instance. `@pytest.mark.postgres` tests execute `TRUNCATE TABLE` statements to reset state between tests. `PostgresConnection()` resolves the database via `ASHI_DATABASE_URL` environment variable, with a fallback to `DEFAULT_DSN = postgresql://ashi:ashi_dev@localhost:5432/ashi` — the live local store.
+ÆON runs against a local Postgres instance. `@pytest.mark.postgres` tests execute `TRUNCATE TABLE` statements to reset state between tests. `PostgresConnection()` resolves the database via `ASHI_DATABASE_URL` environment variable, with a fallback to `DEFAULT_DSN = postgresql://ashi:ashi_dev@localhost:5432/ashi` — the live local store.
 
 On a developer machine, `uv run pytest` with `ASHI_DATABASE_URL` unset would therefore truncate production tables. Nothing warned.
 

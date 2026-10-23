@@ -2,7 +2,7 @@
 title: 'Architecture Freeze: When to Lock Down a Cognitive Substrate and Why'
 slug: architecture-freeze-decision-ashi
 content_type: ARCHITECTURE_DECISION
-project: Ashi
+project: ÆON
 status: In effect
 date: '2026-07-25'
 topics:
@@ -28,7 +28,7 @@ ARCHITECTURAL DECISION
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -89,7 +89,7 @@ The freeze entered maintenance mode for the 17 frozen packages. Maintenance mode
 
 **Why this specific moment:**
 
-M5 (Multimodal & Ambient) was next. Its purpose: Ashi "perceives beyond text and becomes present rather than invoked" — continuous, ambient, proactive behavior with less per-turn human confirmation than anything built before. This is the riskiest milestone in the roadmap.
+M5 (Multimodal & Ambient) was next. Its purpose: ÆON "perceives beyond text and becomes present rather than invoked" — continuous, ambient, proactive behavior with less per-turn human confirmation than anything built before. This is the riskiest milestone in the roadmap.
 
 Building the riskiest milestone on an unverified foundation — a substrate whose correctness properties (determinism, replayability, safe degradation, regression signal) had not been verified until this week — would be building the hardest problem on the weakest foundation.
 

@@ -2,7 +2,7 @@
 title: 'Rate Limit Is Not a Health Signal: Fixing a Provider Cascade Failure'
 slug: rate-limit-health-signal-bug-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-07-26'
 topics:
@@ -27,7 +27,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -45,7 +45,7 @@ Daily quota exhaustion (HTTP 429) was being treated identically to infrastructur
 
 Phase X.2 validated a multi-tier Gemini routing system (tier 1: `gemini-3.5-flash`, tier 2: `gemini-3.1-flash`, tier 3: `gemma-4-31b-it`). A 15-turn smoke test passed. A 40-turn baseline run failed catastrophically. The difference was that 15 turns was too short to exhaust the daily per-project quota.
 
-The system uses the free Gemini API: 500 requests/day/project/model. Ashi runs on free-tier credentials across multiple projects.
+The system uses the free Gemini API: 500 requests/day/project/model. ÆON runs on free-tier credentials across multiple projects.
 
 ## The Question
 

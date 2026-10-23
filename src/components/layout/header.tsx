@@ -3,121 +3,137 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-const NAV_ITEMS = [
-  { num: "01", label: "About", href: "/#about" },
-  { num: "02", label: "Systems", href: "/projects" },
-  { num: "03", label: "Journey", href: "/#journey" },
-  { num: "04", label: "What I Build", href: "/#what-i-build" },
-  { num: "05", label: "How I Work", href: "/#process" },
-  { num: "06", label: "Stack", href: "/#stack" },
-  { num: "07", label: "Focus", href: "/#focus" },
-  { num: "08", label: "Contact", href: "/#contact" },
+const NAV_LINKS = [
+  { id: "about", label: "About", href: "/#about" },
+  { id: "projects", label: "Systems", href: "/#projects" },
+  { id: "experience", label: "Journey", href: "/#journey" },
+  { id: "stack", label: "Stack", href: "/#stack" },
+  { id: "contact", label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
+  const [activeSection, setActiveSection] = useState<string>("about");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const scrollPosition = window.scrollY + 200;
+      for (const link of NAV_LINKS) {
+        const el = document.getElementById(link.id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(link.id);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[var(--bg)]/90 backdrop-blur-xl border-b border-[var(--line)] shadow-lg shadow-black/20 py-3"
-          : "bg-[var(--bg)]/60 backdrop-blur-md border-b border-[var(--line)]/40 py-4"
-      }`}
-    >
+    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      {/* Floating Glass Pill Dock */}
       <nav
-        aria-label="Main navigation"
-        className="section-container flex items-center justify-between gap-4"
+        aria-label="Main Navigation"
+        className="pointer-events-auto flex items-center gap-1 sm:gap-2 px-3 py-1.5 rounded-full glass-dock border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300"
       >
         {/* Brand / Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group whitespace-nowrap shrink-0 select-none"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono text-white/90 hover:text-white transition-colors"
         >
-          <span className="font-mono text-xs px-2 py-0.5 rounded border border-[var(--line)] bg-[var(--panel)] text-[var(--accent-brass)] group-hover:border-[var(--accent-brass)] transition-colors shadow-sm">
-            /\_/\
-          </span>
-          <span className="text-base sm:text-lg font-bold text-[var(--ink)] font-sans tracking-tight">
-            Ashish <span className="text-[var(--accent-brass)] font-medium">Labs</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="font-bold tracking-tight text-sm font-sans">
+            Ashish
           </span>
         </Link>
 
-        {/* Desktop Nav Links: Single-line pill items with subtle brass numbers */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--panel)] transition-all whitespace-nowrap"
-            >
-              <span className="font-mono text-[10px] text-[var(--accent-brass)] opacity-60 group-hover:opacity-100 transition-opacity">
-                {item.num}.
-              </span>
-              <span className="font-sans font-medium tracking-tight">
+        {/* Divider */}
+        <div className="hidden md:block w-px h-4 bg-white/10 mx-1" />
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className={`relative px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
+                  isActive
+                    ? "text-white bg-white/10 shadow-sm border border-white/15"
+                    : "text-white/60 hover:text-white hover:bg-white/5"
+                }`}
+              >
                 {item.label}
-              </span>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Right CTA Button & Mobile Menu Button */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Lab Link / CTA */}
+        <div className="hidden sm:flex items-center gap-1.5 pl-1">
+          <Link
+            href="/lab"
+            className="px-2.5 py-1 rounded-full text-[11px] font-mono text-white/50 hover:text-white/90 transition-colors"
+          >
+            /lab
+          </Link>
           <Link
             href="/#contact"
-            className="whitespace-nowrap hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-sans font-semibold bg-gradient-to-r from-[#d4a568] via-[#e5ca97] to-[#bf9c62] text-[#0f1b15] hover:brightness-110 shadow-sm shadow-[rgba(212,165,104,0.3)] transition-all active:scale-[0.98]"
+            className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-white text-black hover:bg-white/90 transition-all font-sans shadow-[0_0_15px_rgba(255,255,255,0.2)]"
           >
-            <span>Get in Touch</span>
-            <span className="text-[11px] font-bold" aria-hidden="true">→</span>
+            Connect
           </Link>
-
-          {/* Mobile Menu Toggle Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden px-2.5 py-1.5 text-[var(--muted)] hover:text-[var(--ink)] border border-[var(--line)] bg-[var(--panel)] rounded-md font-mono text-xs transition-colors"
-            aria-label="Toggle Navigation Menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? "[✕]" : "[☰ MENU]"}
-          </button>
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5 transition-colors text-xs font-mono"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
+        >
+          {mobileMenuOpen ? "[✕]" : "[☰]"}
+        </button>
       </nav>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[var(--panel)] border-b border-[var(--line)] px-4 sm:px-6 py-4 sm:py-6 space-y-3 sm:space-y-4 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
-          <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-2 sm:gap-2.5">
-            {NAV_ITEMS.map((item) => (
+        <div className="pointer-events-auto fixed top-16 left-4 right-4 p-4 rounded-2xl glass-dock border border-white/15 shadow-2xl flex flex-col gap-2 md:hidden animate-fade-in z-50">
+          <div className="flex flex-col gap-1">
+            {NAV_LINKS.map((item) => (
               <Link
-                key={item.href}
+                key={item.id}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 p-2 sm:p-2.5 border border-[var(--line)] rounded-lg bg-[var(--bg)]/80 text-xs font-sans text-[var(--muted)] hover:text-[var(--ink)] hover:border-[var(--accent-brass)] transition-all min-w-0"
+                className="px-3 py-2 rounded-xl text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors flex items-center justify-between"
               >
-                <span className="font-mono text-[10px] text-[var(--accent-brass)] shrink-0">
-                  {item.num}.
-                </span>
-                <span className="font-medium truncate">{item.label}</span>
+                <span>{item.label}</span>
+                <span className="text-[10px] font-mono text-white/40">→</span>
               </Link>
             ))}
           </div>
-          <div className="pt-2 border-t border-[var(--line)]">
+          <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
+            <Link
+              href="/lab"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-xs font-mono text-white/60 hover:text-white py-1 px-2"
+            >
+              /lab archive
+            </Link>
             <Link
               href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full justify-center inline-flex items-center gap-1.5 py-2.5 rounded-lg text-xs font-sans font-semibold bg-gradient-to-r from-[#d4a568] via-[#e5ca97] to-[#bf9c62] text-[#0f1b15] shadow-md shadow-[rgba(212,165,104,0.3)]"
+              className="px-4 py-2 rounded-full text-xs font-medium bg-white text-black hover:bg-white/90"
             >
-              <span>Get in Touch</span>
-              <span>→</span>
+              Get in Touch
             </Link>
           </div>
         </div>

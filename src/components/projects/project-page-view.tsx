@@ -28,7 +28,7 @@ export function ProjectPageView({
   nextProject,
 }: ProjectPageViewProps) {
   return (
-    <article className="min-h-screen bg-[var(--bg)] text-[var(--ink)] selection:bg-[var(--accent-brass)] selection:text-[var(--bg)]">
+    <article className="min-h-screen bg-[#050505] text-[#FAFAFA] selection:bg-emerald-500 selection:text-black">
       {/* 01 — PROJECT HERO */}
       <ProjectHero project={project} />
 

@@ -3,7 +3,7 @@ title: 'litellm''s Undeclared fastapi Dependency: A Hidden Import That Broke Too
   Calling'
 slug: litellm-hidden-fastapi-dependency-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-11'
 topics:
@@ -28,7 +28,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -44,7 +44,7 @@ Fixed
 
 ## Context
 
-Phase T attempted to wire Ashi's planning layer to use `litellm.acompletion` with the `tools=` parameter, enabling structured tool-calling responses instead of free-text JSON parsing. The initial implementation appeared correct — the correct litellm API, properly formatted tool definitions.
+Phase T attempted to wire ÆON's planning layer to use `litellm.acompletion` with the `tools=` parameter, enabling structured tool-calling responses instead of free-text JSON parsing. The initial implementation appeared correct — the correct litellm API, properly formatted tool definitions.
 
 ## The Question
 
@@ -72,7 +72,7 @@ When `fastapi` is not installed in the environment, the import fails. litellm ca
 
 **The fix:**
 
-Add `fastapi` and `orjson` to `ashi-llm`'s own `pyproject.toml` as explicit declared dependencies. They are not needed by Ashi's code directly — only by litellm's MCP handler when tool-calling is active. But since Ashi uses litellm with tool-calling, they are transitive runtime requirements.
+Add `fastapi` and `orjson` to `ashi-llm`'s own `pyproject.toml` as explicit declared dependencies. They are not needed by ÆON's code directly — only by litellm's MCP handler when tool-calling is active. But since ÆON uses litellm with tool-calling, they are transitive runtime requirements.
 
 ```toml
 # packages/ashi-llm/pyproject.toml

@@ -2,7 +2,7 @@
 title: Removing Ollama After 71 of 82 Soak Failures Were 'Timeout Connecting to Ollama'
 slug: ollama-removal-gemini-migration-ashi
 content_type: ARCHITECTURE_DECISION
-project: Ashi
+project: ÆON
 status: Implemented
 date: '2026-07-22'
 topics:
@@ -27,7 +27,7 @@ ARCHITECTURAL DECISION
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -43,7 +43,7 @@ Ollama was removed entirely (no compatibility layer, no deprecated code path) af
 
 ## Context
 
-Ashi used Ollama as its local embedding provider (`nomic-embed-text`). `MemoryRecallContributor` and `MemoryEncodingContributor` called it on every turn to encode and search memory. A 12-hour M2.7.3 soak certification run (`reports/soak/m273-certification-12h/`) completed with 82 failed turns. Of those, **71 were `TimeoutError: Timeout connecting to Ollama`** — the local process repeatedly failing under sustained load.
+ÆON used Ollama as its local embedding provider (`nomic-embed-text`). `MemoryRecallContributor` and `MemoryEncodingContributor` called it on every turn to encode and search memory. A 12-hour M2.7.3 soak certification run (`reports/soak/m273-certification-12h/`) completed with 82 failed turns. Of those, **71 were `TimeoutError: Timeout connecting to Ollama`** — the local process repeatedly failing under sustained load.
 
 The request was explicit: "permanent architectural migration off Ollama entirely — no compatibility layer, no deprecated code path."
 

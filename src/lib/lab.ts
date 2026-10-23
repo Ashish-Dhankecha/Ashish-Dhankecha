@@ -17,17 +17,25 @@ export function getLabMetrics(): LabMetrics {
 }
 
 /**
- * Returns all ingested projects (Ashi, LEO, VANI).
+ * Returns all ingested projects (ÆON, LEO, VANI).
  */
 export function getAllProjects(): LabProject[] {
   return labData.projects;
 }
 
 /**
- * Retrieves a specific project dossier by its slug ('ashi', 'leo', 'vani').
+ * Retrieves a specific project dossier by its slug ('ashi', 'aeon', 'leo', 'vani').
  */
 export function getProjectBySlug(slug: string): LabProject | undefined {
   const norm = slug.toLowerCase().trim();
+  if (norm === "aeon" || norm === "æon") {
+    return labData.projects.find(
+      (p) =>
+        p.id.toLowerCase() === "ashi" ||
+        p.short_name.toLowerCase() === "æon" ||
+        p.short_name.toLowerCase() === "aeon"
+    );
+  }
   return labData.projects.find(
     (p) => p.id.toLowerCase() === norm || p.short_name.toLowerCase() === norm
   );
@@ -52,7 +60,10 @@ export function getLabPieceBySlug(slug: string): LabPiece | undefined {
  * Retrieves all pieces belonging to a specific project.
  */
 export function getLabPiecesByProject(projectSlug: string): LabPiece[] {
-  const norm = projectSlug.toLowerCase().trim();
+  let norm = projectSlug.toLowerCase().trim();
+  if (norm === "aeon" || norm === "æon") {
+    norm = "ashi";
+  }
   return labData.pieces.filter((p) => p.project_slug.toLowerCase() === norm);
 }
 

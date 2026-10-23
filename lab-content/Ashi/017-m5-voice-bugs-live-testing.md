@@ -3,7 +3,7 @@ title: 'SPACE BAR Does Nothing: Four Real Bugs Found Only by Actually Running th
   Product'
 slug: m5-voice-bugs-only-visible-live-ashi
 content_type: POST_MORTEM
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-14'
 topics:
@@ -28,7 +28,7 @@ POST-MORTEM
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -44,7 +44,7 @@ The M5 implementation was declared "implemented" with a browser UI showing `ONLI
 
 ## Context
 
-Ashi M5 (Multimodal & Ambient) added a browser frontend with voice interaction (`ashi-frontend`). The initial M5 slice built the backend voice pipeline (ALSA/CLI path, `ashi voice`) and the browser UI. M5.1 was a stabilization pass: "trace a real product failure to its actual root causes and fix them."
+ÆON M5 (Multimodal & Ambient) added a browser frontend with voice interaction (`ashi-frontend`). The initial M5 slice built the backend voice pipeline (ALSA/CLI path, `ashi voice`) and the browser UI. M5.1 was a stabilization pass: "trace a real product failure to its actual root causes and fix them."
 
 The mission was explicit: "Do not solve the screenshot by making the UI prettier."
 
@@ -75,7 +75,7 @@ This was not a bug. `TextConsole.tsx` was surfacing a real, correctly handled er
 **Fix applied:**
 
 - `ashi-frontend/src/state/connection/store.tsx` (new): real `GET /health` polling every 5s, 3s timeout, exposing `CONNECTING`/`ONLINE`/`OFFLINE`
-- `CognitiveField.tsx`: `ONLINE` indicator driven by real connection state; `TextConsole.tsx` input disabled with truthful "Ashi backend unavailable" when OFFLINE — the `ONLINE + Failed to fetch` contradiction is now structurally impossible
+- `CognitiveField.tsx`: `ONLINE` indicator driven by real connection state; `TextConsole.tsx` input disabled with truthful "ÆON backend unavailable" when OFFLINE — the `ONLINE + Failed to fetch` contradiction is now structurally impossible
 - `ashi-frontend/src/interaction/VoiceController.tsx` (new): missing browser voice transport — `getUserMedia`/`MediaRecorder` push-to-talk on Space
 - `apps/ashi/src/ashi/app/api_server.py`: `POST /voice/turn` endpoint — real ASR → cognition → TTS pipeline
 

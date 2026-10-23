@@ -2,7 +2,7 @@
 title: 'Scoring a Running AI System 3/10: The Behavioral Integrity Audit'
 slug: behavioral-integrity-audit-ashi
 content_type: POST_MORTEM
-project: Ashi
+project: ÆON
 status: "Partial \u2014 fixes applied, score moved to 6/10 as of Part 2 Final"
 date: '2026-08-11'
 topics:
@@ -13,7 +13,7 @@ topics:
 - behavioral-testing
 evidence_level: high
 publishable: true
-description: "A forensic audit of Ashi's running production instance \u2014 22 live\
+description: "A forensic audit of ÆON's running production instance \u2014 22 live\
   \ turns, real Gemini, real Postgres \u2014 scored it 3/10 as \"TOOL-LIKE,\" with\
   \ a 75% false-success rate on action requests and zero proactive contacts in the\
   \ system's entire lifetime."
@@ -27,7 +27,7 @@ POST-MORTEM
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -39,7 +39,7 @@ Partial — score moved from 3/10 to 6/10 across subsequent phases (T, Part 2 Fi
 
 ## One-Line Summary
 
-A forensic audit of Ashi's running production instance — 22 live turns, real Gemini, real Postgres — scored it 3/10 as "TOOL-LIKE," with a 75% false-success rate on action requests and zero proactive contacts in the system's entire lifetime.
+A forensic audit of ÆON's running production instance — 22 live turns, real Gemini, real Postgres — scored it 3/10 as "TOOL-LIKE," with a 75% false-success rate on action requests and zero proactive contacts in the system's entire lifetime.
 
 ## Context
 
@@ -120,7 +120,7 @@ The "dead cognition" table — 12 cognitive chains traced; only 3 terminated in 
 
 - `reports/behavioral-audit/BEHAVIORAL_INTEGRITY_AUDIT.md` — full audit
 - Direct Postgres inspection: `select count(*) from pending_approvals`, `select * from goals`
-- Live observation: Ashi said "No pending follow-ups" while naming the follow-up it had just discarded
+- Live observation: ÆON said "No pending follow-ups" while naming the follow-up it had just discarded
 
 ## Diagnosis
 
@@ -135,7 +135,7 @@ The architecture is complete. The substrate works. The failure is not "the wrong
 
 **Observation:**
 
-The learning system's only live effect was reinforcing `memory_strength` based on retrieval frequency. Since a test fixture ("Meridian") had been frequently recalled, it rose to the top of the system's priority recommendations. When asked "What should I work on next?", Ashi answered: "Continue developing Meridian in Rust." Meridian is a benchmark fixture. It does not exist.
+The learning system's only live effect was reinforcing `memory_strength` based on retrieval frequency. Since a test fixture ("Meridian") had been frequently recalled, it rose to the top of the system's priority recommendations. When asked "What should I work on next?", ÆON answered: "Continue developing Meridian in Rust." Meridian is a benchmark fixture. It does not exist.
 
 **The audit's own formulation:** "Learning, in its only functioning form, made judgment worse."
 

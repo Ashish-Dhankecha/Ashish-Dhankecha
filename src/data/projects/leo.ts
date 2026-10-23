@@ -9,7 +9,7 @@ export const leoCaseStudy: ProjectCaseStudy = {
   startDate: "Late 2025",
   endDate: "Mid 2026",
   status: "SUPERSEDED",
-  statusLabel: "Pioneering Milestone · Superseded by Vani & Ashi",
+  statusLabel: "Pioneering Milestone · Superseded by Vani & ÆON",
   isFlagship: false,
   accentColor: "#d4a568",
   summary:
@@ -34,7 +34,7 @@ export const leoCaseStudy: ProjectCaseStudy = {
   snapshot: {
     type: "Cognitive Operating System Prototype",
     started: "Late 2025",
-    status: "Archived & Superseded by Vani / Ashi",
+    status: "Archived & Superseded by Vani / ÆON",
     primaryLanguage: "Python 3.11 / React 18",
     stack: [
       "Python 3.11",
@@ -317,7 +317,7 @@ export const leoCaseStudy: ProjectCaseStudy = {
       finalApproach:
         "Two-phase commit coordinator in the CMMU with a compensation rollback ledger.",
       currentState:
-        "Functional but fragile. The sheer operational pain directly led to rejecting multi-database setups in Vani and Ashi.",
+        "Functional but fragile. The sheer operational pain directly led to rejecting multi-database setups in Vani and ÆON.",
     },
     {
       title: "The Reality Gap: Architecture on Paper vs Code in Production",
@@ -479,7 +479,7 @@ export const leoCaseStudy: ProjectCaseStudy = {
   currentState: {
     status: "SUPERSEDED",
     summary:
-      "Leo is permanently archived. Its architectural successes (DAG scheduler, temporal clock) and forensic audit lessons (281 violations) served as the direct conceptual foundation for Vani and Ashi.",
+      "Leo is permanently archived. Its architectural successes (DAG scheduler, temporal clock) and forensic audit lessons (281 violations) served as the direct conceptual foundation for Vani and ÆON.",
     whatWorks: [
       "DAG Scheduler with priority task preemption.",
       "Unified Communication Interface handling multi-channel transports.",
@@ -499,13 +499,13 @@ export const leoCaseStudy: ProjectCaseStudy = {
     ],
   },
   next: {
-    statusNotice: "Leo is archived. Its active evolution continues in Ashi.",
+    statusNotice: "Leo is archived. Its active evolution continues in ÆON.",
     items: [
       {
-        title: "Lineage Continuation in Ashi",
+        title: "Lineage Continuation in ÆON",
         type: "PLANNED",
         description:
-          "The priority scheduling and cognitive clock primitives from Leo were redesigned into Ashi's 28-package acyclic monorepo.",
+          "The priority scheduling and cognitive clock primitives from Leo were redesigned into ÆON's 28-package acyclic monorepo.",
       },
     ],
   },

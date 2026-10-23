@@ -22,7 +22,7 @@ import { siteConfig } from "@/config/site";
 
 // Sub-links for the Lab systems
 const labSystems = [
-  { name: "Ashi OS", slug: "ashi", count: "20" },
+  { name: "ÆON OS", slug: "ashi", count: "20" },
   { name: "LEO Runtime", slug: "leo", count: "21" },
   { name: "VANI Agent", slug: "vani", count: "21" },
 ];

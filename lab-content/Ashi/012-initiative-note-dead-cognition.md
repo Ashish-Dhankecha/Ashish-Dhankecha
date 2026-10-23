@@ -2,7 +2,7 @@
 title: The Initiative Note That Was Computed Every Turn and Dropped Before Rendering
 slug: initiative-note-dead-cognition-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: Fixed
 date: '2026-08-11'
 topics:
@@ -13,7 +13,7 @@ topics:
 - ai-assistants
 evidence_level: high
 publishable: true
-description: "`initiative_note` \u2014 the instruction that would make Ashi initiate\
+description: "`initiative_note` \u2014 the instruction that would make ÆON initiate\
   \ a topic or check-in \u2014 was computed on every eligible turn by `presence/initiative.py`\
   \ and then silently dropped one statement before it could reach the prompt, for\
   \ the system's entire lifetime."
@@ -27,7 +27,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -39,15 +39,15 @@ Fixed (Phase T)
 
 ## One-Line Summary
 
-`initiative_note` — the instruction that would make Ashi initiate a topic or check-in — was computed on every eligible turn by `presence/initiative.py` and then silently dropped one statement before it could reach the prompt, for the system's entire lifetime.
+`initiative_note` — the instruction that would make ÆON initiate a topic or check-in — was computed on every eligible turn by `presence/initiative.py` and then silently dropped one statement before it could reach the prompt, for the system's entire lifetime.
 
 ## Context
 
-Ashi's `ashi-presence` package has an `initiative.py` module that computes whether Ashi should initiate a topic this turn — a check-in, a follow-up, a proactive reference to something it knows. The module was implemented, tested, and part of the certified architecture. The behavioral audit found Ashi had never initiated a contact in its lifetime.
+ÆON's `ashi-presence` package has an `initiative.py` module that computes whether ÆON should initiate a topic this turn — a check-in, a follow-up, a proactive reference to something it knows. The module was implemented, tested, and part of the certified architecture. The behavioral audit found ÆON had never initiated a contact in its lifetime.
 
 ## The Question
 
-Why had Ashi never initiated a contact despite having a working initiative computation module?
+Why had ÆON never initiated a contact despite having a working initiative computation module?
 
 ## Initial Approach
 
@@ -77,7 +77,7 @@ This was not an edge case. Every eligible turn (when the conditions for initiati
 
 **Other affected capability in the same path:**
 
-The teaching flow — Ashi detecting an opportunity to teach the user something relevant — used the same mechanism and was similarly dead for the same reason.
+The teaching flow — ÆON detecting an opportunity to teach the user something relevant — used the same mechanism and was similarly dead for the same reason.
 
 ## Evidence
 
@@ -92,7 +92,7 @@ The teaching flow — Ashi detecting an opportunity to teach the user something 
 
 A simple omission: the result of `initiative_service.compute()` was received but the `initiative_note` field was never read from it. The directive assembly code used other fields from the result; initiative note was silently skipped.
 
-This class of bug — "field is returned, field is never consumed" — is invisible to unit tests of the compute function (which verify the return value is correct) and invisible to integration tests of the contributor (which verify the directive is formed correctly from the fields that *are* used). Only a behavioral integration test — "does Ashi actually initiate a topic?" — would have caught it.
+This class of bug — "field is returned, field is never consumed" — is invisible to unit tests of the compute function (which verify the return value is correct) and invisible to integration tests of the contributor (which verify the directive is formed correctly from the fields that *are* used). Only a behavioral integration test — "does ÆON actually initiate a topic?" — would have caught it.
 
 **Observation:**
 
@@ -108,7 +108,7 @@ Phase T, items T7/T8:
 - The directive renderer includes it in the final prompt
 - Unit test: verified that a compute result with a non-None `initiative_note` produces a directive that contains it, and that an empty note produces no directive
 
-After the fix: the behavioral audit's live re-run showed Ashi initiating a topic unprompted in its first session. The first proactive contact in the system's operational lifetime occurred approximately 30 minutes after the fix was deployed.
+After the fix: the behavioral audit's live re-run showed ÆON initiating a topic unprompted in its first session. The first proactive contact in the system's operational lifetime occurred approximately 30 minutes after the fix was deployed.
 
 ## What I Learned
 
@@ -157,4 +157,4 @@ Story Value: 5
 
 ## Publication Notes
 
-No credentials or private data. Code traces reference internal Ashi package paths with no privacy implications. Safe to publish.
+No credentials or private data. Code traces reference internal ÆON package paths with no privacy implications. Safe to publish.

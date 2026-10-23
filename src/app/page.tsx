@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { SmoothScrollProvider } from "@/components/layout/smooth-scroll";
 import { AmbientParticles } from "@/components/pakcat/ambient-particles";
 import { ScrollProgressBar } from "@/components/pakcat/scroll-progress";
 import { HeroSection } from "@/components/pakcat/hero-section";
@@ -49,34 +50,36 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#101b17] text-[#f2eee0] bg-[var(--bg)] text-[var(--ink)] overflow-x-hidden transition-colors duration-700">
-      {/* Background Particle and Texture Elements */}
-      <AmbientParticles />
-      <ScrollProgressBar />
+    <SmoothScrollProvider>
+      <div className="relative min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black overflow-x-hidden">
+        {/* Background 2.5D Canvas Particles & Lighting */}
+        <AmbientParticles />
+        <ScrollProgressBar />
 
-      {/* Ambient Banker Lamp & Forest Green Radial Glows */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(67,106,88,0.18),transparent_70%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(212,165,104,0.1),transparent_70%)]"
-        aria-hidden="true"
-      />
+        {/* Ambient Void Glows */}
+        <div
+          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(255,255,255,0.06),transparent_70%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(16,185,129,0.04),transparent_70%)]"
+          aria-hidden="true"
+        />
 
-      {/* Main Single-Page Sections (Ordered per Section 21 of Master Prompt) */}
-      <div className="relative z-10 flex flex-col">
-        <HeroSection />
-        <IdentityProofStrip />
-        <AboutSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <ExpertiseSection />
-        <ProcessSection />
-        <StackSection />
-        <CurrentFocusSection />
-        <ContactSection />
+        {/* Main Single-Page Sections */}
+        <div className="relative z-10 flex flex-col">
+          <HeroSection />
+          <IdentityProofStrip />
+          <AboutSection />
+          <ProjectsSection />
+          <ExperienceSection />
+          <ExpertiseSection />
+          <ProcessSection />
+          <StackSection />
+          <CurrentFocusSection />
+          <ContactSection />
+        </div>
       </div>
-    </div>
+    </SmoothScrollProvider>
   );
 }

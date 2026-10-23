@@ -3,7 +3,7 @@ title: 'Learning Made Judgment Worse: Strength Reinforcement Promoted a Benchmar
   Fixture'
 slug: learning-amplifying-noise-ashi
 content_type: DEBUGGING_DISCOVERY
-project: Ashi
+project: ÆON
 status: "Identified \u2014 remediation in progress"
 date: '2026-08-11'
 topics:
@@ -14,7 +14,7 @@ topics:
 - feedback-loops
 evidence_level: high
 publishable: true
-description: "Ashi's learning system reinforced memory strength based on retrieval\
+description: "ÆON's learning system reinforced memory strength based on retrieval\
   \ frequency, which promoted a benchmark test fixture called \"Meridian\" \u2014\
   \ accessed repeatedly during development testing \u2014 to the top of the system's\
   \ project priority recommendations, above the user's real ongoing work."
@@ -28,7 +28,7 @@ DEBUGGING DISCOVERY
 
 ## Project
 
-Ashi — Personal Cognitive Operating System
+ÆON — Personal Cognitive Operating System
 
 ## Date
 
@@ -40,7 +40,7 @@ Identified — gating condition recommended
 
 ## One-Line Summary
 
-Ashi's learning system reinforced memory strength based on retrieval frequency, which promoted a benchmark test fixture called "Meridian" — accessed repeatedly during development testing — to the top of the system's project priority recommendations, above the user's real ongoing work.
+ÆON's learning system reinforced memory strength based on retrieval frequency, which promoted a benchmark test fixture called "Meridian" — accessed repeatedly during development testing — to the top of the system's project priority recommendations, above the user's real ongoing work.
 
 ## Context
 
@@ -58,7 +58,7 @@ Inspection of the live `memory_records` table and `learning_results` store, with
 
 ## What Happened
 
-Ashi answered: **"Continue developing Meridian in Rust."**
+ÆON answered: **"Continue developing Meridian in Rust."**
 
 Meridian is a benchmark fixture used in integration tests for the `ashi-memory` package. It appears in test data as a project name. It does not exist as a real project.
 
