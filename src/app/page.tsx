@@ -17,6 +17,11 @@ import { ContactSection } from "@/components/pakcat/contact-section";
 
 export default function HomePage() {
   useEffect(() => {
+    // Reset scroll to top on fresh load if no specific hash target
+    if (typeof window !== "undefined" && !window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+
     // Reveal animation observer
     const elements = document.querySelectorAll(
       ".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale"

@@ -32,7 +32,8 @@ export function TerminalCard() {
   ]);
   const [inputVal, setInputVal] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const outputContainerRef = useRef<HTMLDivElement>(null);
+  const isInitialMount = useRef(true);
 
   const executeCommand = (cmd: string) => {
     const clean = cmd.trim().toLowerCase();
@@ -135,8 +136,12 @@ export function TerminalCard() {
   };
 
   useEffect(() => {
-    if (terminalEndRef.current) {
-      terminalEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (outputContainerRef.current) {
+      outputContainerRef.current.scrollTop = outputContainerRef.current.scrollHeight;
     }
   }, [history]);
 
@@ -159,7 +164,7 @@ export function TerminalCard() {
       </div>
 
       {/* Terminal Output Area */}
-      <div className="space-y-3 max-h-64 sm:max-h-72 overflow-y-auto pr-1">
+      <div ref={outputContainerRef} className="space-y-3 max-h-64 sm:max-h-72 overflow-y-auto pr-1">
         {history.map((item, idx) => (
           <div key={idx} className="space-y-1">
             <div className="flex items-center gap-2 text-white/60">
@@ -169,7 +174,6 @@ export function TerminalCard() {
             <div className="pl-4">{item.output}</div>
           </div>
         ))}
-        <div ref={terminalEndRef} />
       </div>
 
       {/* Active Command Input Line */}
